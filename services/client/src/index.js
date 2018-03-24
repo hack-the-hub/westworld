@@ -1,12 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import registerServiceWorker from "./register-service-worker";
 
-import App from "./App.jsx";
+import App from "./App";
+import store from "./store";
 
-ReactDOM.render(
-    <Router>
+import "font-awesome/css/font-awesome.min.css";
+import "stylesheets/reset.css";
+import "stylesheets/plugins.css";
+import "stylesheets/style.css";
+import "stylesheets/color.css";
+
+let rootElement = document.getElementById("root");
+
+render(
+    <Provider store={store}>
         <App />
-    </Router>,
-    document.getElementById("root")
+    </Provider>,
+    rootElement
 );
+
+registerServiceWorker();
