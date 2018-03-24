@@ -3,18 +3,10 @@ import React, { Component } from "react";
 import Header from "components/layout/header";
 import Footer from "components/layout/footer";
 
-import PromoVideo from "./components/promovideo";
-import Breadcrumb from "./components/breadcrumb";
-import Title from "./components/title";
-import Dashboard from "./components/dashboard";
 import Description from "./components/description";
-import Details from "./components/details";
-import WorkingHours from "./components/workinghours";
-import Reservation from "./components/reservation";
-import LocationInformation from "./components/locationinformation";
+import LocationInformation from "./components/location-information";
 
 import Communtity from "components/shared/community";
-import QuickLinks from "./components/quicklinks";
 
 import {listings} from './data';
 
@@ -22,9 +14,6 @@ class VenuePage extends Component {
     render() {
         const { dispatch, isAuthenticated } = this.props;
         const { id } = this.props.match.params;
-
-        console.log(id);
-
         const listing = listings.find(listing => listing.id==id);
 
         console.log(listing);
@@ -36,42 +25,29 @@ class VenuePage extends Component {
 
                     <div id="wrapper">
                         <div className="content">
-                            <QuickLinks />
 
                             <section className="gray-section no-top-padding">
                                 <div className="container">
                                     <div className="row">
+                                        <div className="col-md-4">
+                                            <div className="box-widget-wrap">
+                                                <LocationInformation listing={listing} />
+                                            </div>
+                                        </div>
+
                                         <div className="col-md-8">
                                             <div
                                                 className="list-single-main-wrapper fl-wrap"
                                                 id="sec2"
                                             >
-                                                <Breadcrumb />
-
-                                                <Title {...listing} />
-
-                                                <Dashboard />
-
-                                                <Description />
-
-                                                <PromoVideo />
-
-                                                <Details />
+                                                <Description listing={listing}/>
                                             </div>
                                         </div>
 
-                                        <div className="col-md-4">
-                                            <div className="box-widget-wrap">
-                                                <WorkingHours />
-
-                                                <Reservation />
-
-                                                <LocationInformation />
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </section>
+
                             <div className="limit-box fl-wrap" />
 
                             <Communtity />

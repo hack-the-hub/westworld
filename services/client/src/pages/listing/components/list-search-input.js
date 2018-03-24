@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 class ListSearchInput extends Component {
   render() {
-    return (<div className="listsearch-input-wrap fl-wrap">
+    return (<div className="listsearch-input-wrap fl-wrap listsearch-input-clearfix">
       <div className="listsearch-input-item">
         <i className="mbri-key single-i"/>
         <input type="text" placeholder="Keywords?" value=""/>

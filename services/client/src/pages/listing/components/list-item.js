@@ -3,26 +3,28 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 
 class ListSearchInput extends Component {
+
+  renderDescription(description) {
+    if (!description) return null;
+
+    const text = description.substring(0, 200);
+    return (
+      <span className="list-search-input-description">{text}...</span>
+    )
+  }
+
   render() {
-    const { id, name, type, creator, description, reviews, address, image} = this.props;
+    const { id, name, type, creator, description, address, image} = this.props;
 
     return (
       <div className="listing-item">
       <article className="geodir-category-listing fl-wrap">
         <div className="geodir-category-img">
-          <img src={image} alt=""/>
-          <div className="overlay"/>
-          <div className="list-post-counter">
-            <span>
-              {id}
-            </span>
-            <i className="fa fa-heart"/>
-          </div>
+          <Link to={`/developer/${id}`}>
+            <img src={image} alt=""/>
+          </Link>
         </div>
         <div className="geodir-category-content fl-wrap">
-          <a className="listing-geodir-category" href="listing.html">
-            {type}
-          </a>
           <div className="listing-avatar">
             <Link to={`/developer/${id}`}>
               <img src="images/avatar/1.jpg" alt=""/>
@@ -40,14 +42,9 @@ class ListSearchInput extends Component {
             </Link>
           </h3>
           <p>
-            {description}
+            {this.renderDescription(description)}
           </p>
           <div className="geodir-category-options fl-wrap">
-            <div className="listing-rating card-popup-rainingvis" data-starrating2="5">
-              <span>
-                ({reviews} reviews)
-              </span>
-            </div>
             <div className="geodir-category-location">
               <a href="#">
                 <i className="fa fa-map-marker" aria-hidden="true"/>

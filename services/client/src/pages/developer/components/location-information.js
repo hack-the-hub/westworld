@@ -1,20 +1,16 @@
 import React, { Component } from "react";
 
 class LocationInformation extends Component {
+
     render() {
+        const { image } = this.props.listing;
+
         return (
             <div className="box-widget-item fl-wrap">
-                <div className="box-widget-item-header">
-                    <h3>Location / Contacts :</h3>
-                </div>
                 <div className="box-widget">
-                    <div className="map-container">
-                        <div
-                            id="singleMap"
-                            data-latitude="40.7427837"
-                            data-longitude="-73.11445617675781"
-                            data-mapTitle="Our Location"
-                        />
+
+                    <div>
+                        <img className="profile-image-container" src={image} alt="" />
                     </div>
                     <div className="box-widget-content">
                         <div className="list-author-widget-contacts list-item-widget-contacts">

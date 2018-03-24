@@ -6,10 +6,10 @@ class Pagination extends Component {
       <a href="#" className="prevposts-link">
         <i className="fa fa-caret-left"/>
       </a>
-      <a href="#" className="blog-page transition">
+      <a href="#" className="blog-page current-page transition">
         1
       </a>
-      <a href="#" className="blog-page current-page transition">
+      <a href="#" className="blog-page transition">
         2
       </a>
       <a href="#" className="blog-page transition">
