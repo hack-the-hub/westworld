@@ -45,7 +45,7 @@ class Header extends Component {
                         <h3>
                             Sign In
                             <span>
-                                &nbsp;Venue<strong>Booker</strong>
+                                &nbsp;My Dev <strong>Space</strong>
                             </span>
                         </h3>
 

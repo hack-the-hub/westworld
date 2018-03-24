@@ -978,6 +978,9 @@ section.color-bg .section-title .breadcrumbs a:before {
 	width:100%;
 	height:100%;
 	z-index:3;
+	background-image: url(https://thumbor.forbes.com/thumbor/960x0/smart/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F765877054%2F960x0.jpg%3Ffit%3Dscale);
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 .individual-bubble {
 	position: absolute;
