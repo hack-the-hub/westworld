@@ -2,19 +2,6 @@ version: '3.3'
 
 services:
 
-  nginx:
-    container_name: nginx
-    build: ./services/nginx
-    restart: always
-    ports:
-      - 80:80
-    depends_on:
-      - users-service
-      - client
-      - swagger
-    links:
-      - users-service
-
   client:
     container_name: client
     build:
@@ -27,3 +14,12 @@ services:
     environment:
       - NODE_ENV=development
       - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
+
+  nginx:
+    container_name: nginx
+    build: ./services/nginx
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - client
