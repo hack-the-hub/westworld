@@ -1,0 +1,9 @@
+html, body {
+  background-color:black;
+}
+
+#galaxy {
+  position:absolute;
+  top:0;
+  left:0;
+}
