@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import bgCircle from "images/bg/circle.png";
-
 class Question extends Component {
     render() {
         return (

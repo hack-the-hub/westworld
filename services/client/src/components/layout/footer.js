@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import logo from "images/logo.png";
-import all from "images/all/1.jpg";
 
 class Footer extends Component {
     render() {
@@ -63,7 +62,7 @@ class Footer extends Component {
                                                 className="widget-posts-img"
                                             >
                                                 <img
-                                                    src={all}
+                                                    src=""
                                                     className="respimg"
                                                     alt=""
                                                 />
@@ -84,7 +83,7 @@ class Footer extends Component {
                                                 className="widget-posts-img"
                                             >
                                                 <img
-                                                    src={all}
+                                                    src=""
                                                     className="respimg"
                                                     alt=""
                                                 />
@@ -106,7 +105,7 @@ class Footer extends Component {
                                                 className="widget-posts-img"
                                             >
                                                 <img
-                                                    src={all}
+                                                    src=""
                                                     className="respimg"
                                                     alt=""
                                                 />
