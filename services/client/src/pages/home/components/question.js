@@ -6,9 +6,6 @@ class Question extends Component {
     render() {
         return (
             <section className="gradient-bg">
-                <div className="cirle-bg">
-                    <div className="bg" data-bg={bgCircle} />
-                </div>
                 <div className="container">
                     <div className="join-wrap fl-wrap">
                         <div className="row">
