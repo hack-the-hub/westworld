@@ -6,6 +6,8 @@ import { logoutUser } from "actions/logout";
 import Pane from "./pane";
 import Tabs from "./tabs";
 
+import logo from "images/logo.png";
+
 import Logout from "./logout";
 
 class Header extends Component {
@@ -126,7 +128,6 @@ class Header extends Component {
     }
 
     renderSignInUser() {
-        return null;
         return this.props.isAuthenticated
             ? this.renderUser()
             : this.renderSignin();
@@ -141,8 +142,7 @@ class Header extends Component {
                     <div className="header-inner">
                         <div className="logo-holder">
                             <a href="index.html">
-                                <img src="{logo}" alt="" />
-                                <span>My Dev Space</span>
+                                <img src={logo} alt="" />
                             </a>
                         </div>
 

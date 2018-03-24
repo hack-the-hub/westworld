@@ -2,7 +2,6 @@ import React, {Component} from "react";
 
 import Header from "components/layout/header";
 import Footer from "components/layout/footer";
-import Breadcrumb from "components/shared/breadcrumb";
 import Community from "components/shared/community";
 import Pagination from "./components/pagination";
 import SearchResultHeader from "./components/search-result-header";
@@ -20,11 +19,10 @@ class ListingPage extends Component {
         type,
         creator,
         description,
-        reviews,
         address,
         image
       } = el;
-      return (<ListItem key={id} id={id} name={name} type={type} creator={creator} description={description} reviews={reviews} address={address} image={image}/>)
+      return (<ListItem key={id} id={id} name={name} type={type} creator={creator} description={description} address={address} image={image}/>)
     })
   };
 
