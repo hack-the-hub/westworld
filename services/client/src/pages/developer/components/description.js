@@ -13,41 +13,33 @@ class Description extends Component {
                 </p>
                 <span className="fw-separator" />
                 <div className="list-single-main-item-title fl-wrap">
-                    <h3>Amenities</h3>
+                    <h3>Skills</h3>
                 </div>
                 <div className="listing-features fl-wrap">
                     <ul>
                         <li>
                             <i className="fa fa-rocket" />
-                            Elevator in building
+                            Java
                         </li>
                         <li>
                             <i className="fa fa-wifi" />
-                            Free Wi Fi
+                            Python
                         </li>
                         <li>
                             <i className="fa fa-motorcycle" />
-                            Free Parking
+                            Javascript
                         </li>
                         <li>
                             <i className="fa fa-cloud" />
-                            Air Conditioned
+                            React
                         </li>
                         <li>
-                            <i className="fa fa-shopping-cart" />
-                            Online Ordering
+                            <i className="fa fa-cloud" />
+                            AWS Services
                         </li>
                         <li>
-                            <i className="fa fa-paw" />
-                            Pet Friendly
-                        </li>
-                        <li>
-                            <i className="fa fa-tree" />
-                            Outdoor Seating
-                        </li>
-                        <li>
-                            <i className="fa fa-wheelchair" />
-                            Wheelchair Friendly
+                            <i className="fa fa-cloud" />
+                            HTML5 & CSS3
                         </li>
                     </ul>
                 </div>
@@ -56,12 +48,9 @@ class Description extends Component {
                     <h3>Tags</h3>
                 </div>
                 <div className="list-single-tags tags-stylwrap">
-                    <a href="#">Hotel</a>
-                    <a href="#">Hostel</a>
-                    <a href="#">Room</a>
-                    <a href="#">Spa</a>
-                    <a href="#">Restourant</a>
-                    <a href="#">Parking</a>
+                    <a href="#">Software Engineer</a>
+                    <a href="#">Stem Ambassador</a>
+                    <a href="#">Event Organiser</a>
                 </div>
             </div>
         );

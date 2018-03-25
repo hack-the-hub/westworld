@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class LocationInformation extends Component {
 
     render() {
-        const { image } = this.props.listing;
+        const { image, website } = this.props.listing;
 
         return (
             <div className="box-widget-item fl-wrap">
@@ -18,30 +18,16 @@ class LocationInformation extends Component {
                                 <li>
                                     <span>
                                         <i className="fa fa-map-marker" />
-                                        Adress :
+                                        Address :
                                     </span>
-                                    <a href="#">USA 27TH Brooklyn NY</a>
-                                </li>
-                                <li>
-                                    <span>
-                                        <i className="fa fa-phone" />
-                                        Phone :
-                                    </span>
-                                    <a href="#">+7(123)987654</a>
-                                </li>
-                                <li>
-                                    <span>
-                                        <i className="fa fa-envelope-o" />
-                                        Mail :
-                                    </span>
-                                    <a href="#">AlisaNoory@domain.com</a>
+                                    <a href="#">Belfast</a>
                                 </li>
                                 <li>
                                     <span>
                                         <i className="fa fa-globe" />
                                         Website :
                                     </span>
-                                    <a href="#">themeforest.net</a>
+                                    <a href="#">{website}</a>
                                 </li>
                             </ul>
                         </div>

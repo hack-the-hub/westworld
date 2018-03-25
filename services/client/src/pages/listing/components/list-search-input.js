@@ -15,25 +15,55 @@ class ListSearchInput extends Component {
         <div className="filter-tags-wrap">
           <input id="check-a" type="checkbox" name="check"/>
           <label for="check-a">
-            Python
+            Java
           </label>
         </div>
         <div className="filter-tags-wrap">
           <input id="check-b" type="checkbox" name="check"/>
           <label for="check-b">
-            Java
+            Python
           </label>
         </div>
         <div className="filter-tags-wrap">
           <input id="check-c" type="checkbox" name="check"/>
           <label for="check-c">
-            Go
+            Javascript
           </label>
         </div>
         <div className="filter-tags-wrap">
           <input id="check-d" type="checkbox" name="check"/>
           <label for="check-d">
-            Javascript
+            Ruby
+          </label>
+        </div>
+        <div className="filter-tags-wrap">
+          <input id="check-a" type="checkbox" name="check"/>
+          <label for="check-a">
+            C#
+          </label>
+        </div>
+        <div className="filter-tags-wrap">
+          <input id="check-a" type="checkbox" name="check"/>
+          <label for="check-a">
+            CSS3
+          </label>
+        </div>
+        <div className="filter-tags-wrap">
+          <input id="check-a" type="checkbox" name="check"/>
+          <label for="check-a">
+            Ruby on Rails
+          </label>
+        </div>
+        <div className="filter-tags-wrap">
+          <input id="check-a" type="checkbox" name="check"/>
+          <label for="check-a">
+            Swift
+          </label>
+        </div>
+        <div className="filter-tags-wrap">
+          <input id="check-a" type="checkbox" name="check"/>
+          <label for="check-a">
+            Angular
           </label>
         </div>
       </div>
