@@ -1,6 +1,3 @@
-# services/users/project/api/auth.py
-
-
 from flask import Blueprint, jsonify, request
 from sqlalchemy import exc, or_
 

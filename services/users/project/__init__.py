@@ -1,6 +1,3 @@
-# services/users/project/__init__.py
-
-
 import os
 
 from flask_cors import CORS

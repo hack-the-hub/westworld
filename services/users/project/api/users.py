@@ -1,13 +1,9 @@
-# services/users/project/api/users.py
-
-
 from sqlalchemy import exc
 from flask import Blueprint, jsonify, request, render_template
 
 from project.api.models import User
 from project import db
 from project.api.utils import authenticate, is_admin
-
 
 users_blueprint = Blueprint('users', __name__, template_folder='./templates')
 

@@ -1,6 +1,3 @@
-# services/users/manage.py
-
-
 import unittest
 import coverage
 
@@ -66,9 +63,9 @@ def recreate_db():
 def seed_db():
     """Seeds the database."""
     db.session.add(User(
-        username='apoclyps',
-        email='kyle90adam@hotmail.com',
-        password='hellokitty1'
+        username='user',
+        email='user@example.com',
+        password='password'
     ))
     db.session.commit()
 
