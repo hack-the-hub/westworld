@@ -2,7 +2,13 @@ from pymongo import MongoClient
 
 
 def connect():
-    client = MongoClient('34.243.235.124', 27017)
+    host = ''
+    post = 27017
+    user = ''
+    password = ''
+    source = ''
+
+    client = MongoClient(host, 27017)
     db = client.hack_the_hub
-    db.authenticate('root', 'irBp2LCqPXL2', source='admin')
+    db.authenticate(user=user, password=password, source=source)
     return db
