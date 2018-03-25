@@ -6154,3 +6154,14 @@ header.main-header {
 .item-grid-language img {
 	height: 100px;
 }
+
+.item-grid-meetup {
+	float: left;
+	width: 100%;
+	z-index: 1;
+	height: 100px;
+}
+
+.item-grid-meetup img {
+	height: 100px;
+}
