@@ -17,7 +17,7 @@ export const featuredDevelopers = [
   },
   {
     'id': 3,
-    'name': 'The Belfast .NET Developer Guild',
+    'name': ' .NET Developer Guild',
     'description': 'This is a group for anyone interested in developing code and applications in the .NET stack. We will be covering everything from coding best practice, tips and hints, new developments, complimentary tooling and more. With seminars that touch on web, mobile and desktop applications it really is going to be everything .NET. If you are a .NET developer (new or mature) and want to meet up with other developers in this space then this is the group for you.',
     'skill level': 'Intermediate',
     'technology': '.NET',

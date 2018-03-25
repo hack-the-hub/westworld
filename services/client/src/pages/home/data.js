@@ -49,6 +49,55 @@ export const featuredDevelopers = [
   }
 ]
 
+export const featuredLanguages = [
+  {
+    'id': '1',
+    'language': 'Java',
+    'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx6VbyqUefkJIiHf7wDnxdPKJckCzUcu_pajujaZfWLOx4NlSE'
+  },
+  {
+    'id': '2',
+    'language': 'Python',
+    'image': 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png'
+  },
+  {
+    'id': '3',
+    'language': 'JavaScript',
+    'image': 'https://cdn-images-1.medium.com/max/785/1*H-25KB7EbSHjv70HXrdl6w.png'
+  },
+  {
+    'id': '4',
+    'language': 'Ruby',
+    'image': 'https://gemnasium.com/img/gemnasium/ruby-card.png'
+  },
+  {
+    'id': '5',
+    'language': 'C#',
+    'image': 'https://cdn3.macworld.co.uk/cmsdata/features/3640347/learn_c_sharp_mac_osx_thumb800.jpg'
+  },
+  {
+    'id': '6',
+    'language': 'CSS',
+    'image': 'http://i1.wp.com/miyo20.es/wp-content/uploads/2013/11/css3.jpg?resize=405%2C202'
+  },
+  {
+    'id': '7',
+    'language': 'Ruby on Rails',
+    'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/1200px-Ruby_On_Rails_Logo.svg.png'
+  },
+  {
+    'id': '8',
+    'language': 'Swift',
+    'image': 'https://rkukmedia.files.wordpress.com/2016/04/swift-org.jpg?w=627&h=327'
+  },
+  {
+    'id': '9',
+    'language': 'AngularJS',
+    'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/800px-AngularJS_logo.svg.png'
+  }
+]
+
+
 export const featuredMeetups = [
   {
       'id': 1,
@@ -68,7 +117,7 @@ export const featuredMeetups = [
     },
     {
       'id': 3,
-      'name': 'The Belfast .NET Developer Guild',
+      'name': ' .NET Developer Guild',
       'description': 'This is a group for anyone interested in developing code and applications in the .NET stack. We will be covering everything from coding best practice, tips and hints, new developments, complimentary tooling and more. With seminars that touch on web, mobile and desktop applications it really is going to be everything .NET. If you are a .NET developer (new or mature) and want to meet up with other developers in this space then this is the group for you.',
       'skill level': 'Intermediate',
       'technology': '.NET',

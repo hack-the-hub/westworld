@@ -23,7 +23,7 @@ class FeaturedMeetupCard extends Component {
               <div className="listing-item-grid meetup-image">
                   <img src={image} alt="" />
                   <div className="listing-counter">
-                      <span>{technology} </span> {role}
+                      Technology: <span>{technology} </span> {role}
                   </div>
                   <div className="listing-item-cat">
                       <h3>

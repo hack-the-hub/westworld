@@ -6150,3 +6150,7 @@ header.main-header {
 .list-search-input-description{
 	height: 110px;
 }
+
+.item-grid-language img {
+	height: 100px;
+}

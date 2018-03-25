@@ -4,6 +4,7 @@ import Header from "components/layout/header";
 import Footer from "components/layout/footer";
 import FeaturedDevelopers from "./components/featured-developers";
 import FeaturedMeetups from "./components/featured-meetups";
+import FeaturedLanguages from "./components/featured-languages";
 import Question from "./components/question";
 
 class HomePage extends Component {
@@ -19,6 +20,8 @@ class HomePage extends Component {
                         <div className="content">
 
                             <FeaturedDevelopers />
+
+                            <FeaturedLanguages />
 
                             <FeaturedMeetups />
 
