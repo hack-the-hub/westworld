@@ -6,9 +6,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import HomePage from "pages/home";
 import ListingPage from "pages/listing";
+import MeetupListingPage from "pages/meetup-listing";
 import VenuePage from "pages/developer";
 import ErrorPage from "pages/404";
 import ProfilePage from "pages/profile";
+import AboutPage from "pages/about";
 
 class App extends Component {
     render() {
@@ -29,12 +31,22 @@ class App extends Component {
                             render={props => <ListingPage {...this.props} />}
                         />
                         <Route
+                            exact={true}
+                            path="/meetup-listing"
+                            render={props => <MeetupListingPage {...this.props} />}
+                        />
+                        <Route
                             path="/developer/:id"
                             render={props => <VenuePage {...this.props} {...props} />}
                         />
                         <Route
                             path="/profile"
                             render={props => <ProfilePage {...this.props} />}
+                        />
+                        <Route
+                            exact={true}
+                            path="/about"
+                            render={props => <AboutPage {...this.props} />}
                         />
                         <Route
                             render={props => <ErrorPage {...this.props} />}
