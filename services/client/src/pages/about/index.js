@@ -16,7 +16,6 @@ class AboutPage extends Component {
 
                     <div id="wrapper">
                         <div className="content">
-
                             <AboutUs />
 
                             <Question />

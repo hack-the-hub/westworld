@@ -5,7 +5,7 @@ import Footer from "components/layout/footer";
 import Question from "components/shared/question";
 import Profile from "./components/profile";
 
-import UserStatus from 'components/user/UserStatus';
+import UserStatus from "components/user/UserStatus";
 
 class ProfilePage extends Component {
     render() {
@@ -18,7 +18,6 @@ class ProfilePage extends Component {
 
                     <div id="wrapper">
                         <div className="content">
-
                             <Profile />
 
                             <div className="limit-box fl-wrap" />

@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import FeaturedLanguageCard from './featured-language-card';
+import FeaturedLanguageCard from "./featured-language-card";
 
 class FeaturedLanguages extends Component {
-
     renderLanguage(featuredLanguages) {
-      return featuredLanguages.map(function(el) {
-        const {
-           id, name, image
-        } = el;
-        return (<FeaturedLanguageCard key={id} id={id} image={image}/>)
-      })
+        return featuredLanguages.map(function(el) {
+            const { id, name, image } = el;
+            return <FeaturedLanguageCard key={id} id={id} image={image} />;
+        });
     }
 
     render() {
@@ -26,17 +23,21 @@ class FeaturedLanguages extends Component {
                         </div>
                         <span className="section-separator" />
                         <p>
-                            Meet some of the most influential developers in the Belfast area!
+                            Meet some of the most influential developers in the
+                            Belfast area!
                         </p>
                     </div>
                     <div className="gallery-items fl-wrap mr-bot spad">
-                      {this.renderLanguage(featuredLanguages)}
+                        {this.renderLanguage(featuredLanguages)}
                     </div>
-                    <Link to="/developers" className="btn big-btn circle-btn dec-btn color-bg flat-btn">
-                      View All <i className="fa fa-eye" />
+                    <Link
+                        to="/developers"
+                        className="btn big-btn circle-btn dec-btn color-bg flat-btn"
+                    >
+                        View All <i className="fa fa-eye" />
                     </Link>
-                  </div>
-              </section>
+                </div>
+            </section>
         );
     }
 }

@@ -46,7 +46,10 @@ class Header extends Component {
                 <div className="main-overlay" />
                 <div className="main-register-holder">
                     <div className="main-register fl-wrap">
-                        <div className="close-reg" onClick={this.handleSigninClick}>
+                        <div
+                            className="close-reg"
+                            onClick={this.handleSigninClick}
+                        >
                             <i className="fa fa-times" />
                         </div>
                         <h3>
@@ -75,19 +78,20 @@ class Header extends Component {
     }
 
     renderSignin() {
-        return (<div>
-            <div
-                className="show-login-form modal-open"
-                onClick={this.handleRegisterClick}
-            >
-                Register
-            </div>
-            <div
-                className="show-reg-form modal-open"
-                onClick={this.handleSigninClick}
-            >
-                <i className="fa fa-sign-in" />Sign In
-            </div>
+        return (
+            <div>
+                <div
+                    className="show-login-form modal-open"
+                    onClick={this.handleRegisterClick}
+                >
+                    Register
+                </div>
+                <div
+                    className="show-reg-form modal-open"
+                    onClick={this.handleSigninClick}
+                >
+                    <i className="fa fa-sign-in" />Sign In
+                </div>
             </div>
         );
     }

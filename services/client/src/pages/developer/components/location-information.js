@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class LocationInformation extends Component {
-
     render() {
         console.log(this.props);
         const { image, website } = this.props.listing;
@@ -9,9 +8,12 @@ class LocationInformation extends Component {
         return (
             <div className="box-widget-item fl-wrap">
                 <div className="box-widget">
-
                     <div>
-                        <img className="profile-image-container" src={image} alt="" />
+                        <img
+                            className="profile-image-container"
+                            src={image}
+                            alt=""
+                        />
                     </div>
                     <div className="box-widget-content">
                         <div className="list-author-widget-contacts list-item-widget-contacts">
