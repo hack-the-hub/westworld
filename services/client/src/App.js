@@ -13,13 +13,17 @@ import ErrorPage from "pages/404";
 import ProfilePage from "pages/profile";
 import AboutPage from "pages/about";
 
+import ScrollToTop from "components/navigation/scroll-to-top";
+
 class App extends Component {
+
     render() {
         const { isAuthenticated, errorMessage } = this.props;
 
         return (
             <div>
                 <Router>
+                <ScrollToTop>
                     <Switch>
                         <Route
                             exact={true}
@@ -57,6 +61,7 @@ class App extends Component {
                             render={props => <ErrorPage {...this.props} />}
                         />
                     </Switch>
+                      </ScrollToTop>
                 </Router>
             </div>
         );

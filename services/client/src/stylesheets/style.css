@@ -367,10 +367,26 @@ blockquote p {
 	cursor:pointer;
 	margin-right:40px;
 	position:relative;
-	top:30px;
+	top:32px;
 	font-size:13px;
 	font-weight:600;
 }
+
+.show-login-form {
+	float:right;
+	color:#666;
+	margin-right:40px;
+	position:relative;
+	top:32px;
+	font-size:13px;
+	font-weight:600;
+	color:white;
+}
+
+.show-login-form:hover {
+  color: #4DB7FE;
+}
+
 .dark-header .show-reg-form {
 	color:#fff;
 }
