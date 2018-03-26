@@ -14,7 +14,7 @@ class ListSearchInput extends Component {
   }
 
   render() {
-    const { id, name, type, creator, description, address, image} = this.props;
+    const { id, name, role, type, creator, description, address, image} = this.props;
 
     return (
       <div className="listing-item">
@@ -25,33 +25,14 @@ class ListSearchInput extends Component {
           </Link>
         </div>
         <div className="geodir-category-content fl-wrap">
-          <div className="listing-avatar">
-            <Link to={`/developer/${id}`}>
-              <img src="images/avatar/1.jpg" alt=""/>
-            </Link>
-            <span className="avatar-tooltip">
-              Added By
-              <strong>
-                {creator}
-              </strong>
-            </span>
-          </div>
           <h3>
             <Link to={`/developer/${id}`}>
               {name}
             </Link>
           </h3>
-          <p>
-            {this.renderDescription(description)}
+          <p className="">
+            {role}
           </p>
-          <div className="geodir-category-options fl-wrap">
-            <div className="geodir-category-location">
-              <a href="#">
-                <i className="fa fa-map-marker" aria-hidden="true"/>
-                {address}
-              </a>
-            </div>
-          </div>
         </div>
       </article>
     </div>

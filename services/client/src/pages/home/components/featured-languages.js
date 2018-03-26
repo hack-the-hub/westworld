@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import {featuredLanguages} from '../data';
 import FeaturedLanguageCard from './featured-language-card';
 
 class FeaturedLanguages extends Component {
 
-    renderLanguage() {
+    renderLanguage(featuredLanguages) {
       return featuredLanguages.map(function(el) {
         const {
            id, name, image
@@ -16,6 +15,7 @@ class FeaturedLanguages extends Component {
     }
 
     render() {
+        const { featuredLanguages } = this.props;
         return (
             <section id="featured-developer-section">
                 <div className="container">
@@ -30,7 +30,7 @@ class FeaturedLanguages extends Component {
                         </p>
                     </div>
                     <div className="gallery-items fl-wrap mr-bot spad">
-                      {this.renderLanguage()}
+                      {this.renderLanguage(featuredLanguages)}
                     </div>
                     <Link to="/listing" className="btn big-btn circle-btn dec-btn color-bg flat-btn">
                       View All <i className="fa fa-eye" />

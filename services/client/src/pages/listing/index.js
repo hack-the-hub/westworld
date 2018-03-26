@@ -17,12 +17,13 @@ class ListingPage extends Component {
         id,
         name,
         type,
+        role,
         creator,
         description,
         address,
         image
       } = el;
-      return (<ListItem key={id} id={id} name={name} type={type} creator={creator} description={description} address={address} image={image}/>)
+      return (<ListItem key={id} role={role} id={id} name={name} type={type} creator={creator} description={description} address={address} image={image}/>)
     })
   };
 

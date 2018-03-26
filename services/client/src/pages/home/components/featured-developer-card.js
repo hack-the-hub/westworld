@@ -13,7 +13,7 @@ class FeaturedDeveloperCard extends Component {
   }
 
   render() {
-    const { id, name,  description, technology, role, image} = this.props;
+    const { id, name, title,  description, technology, role, image} = this.props;
 
     return (
       <div className="gallery-item">
@@ -21,12 +21,12 @@ class FeaturedDeveloperCard extends Component {
               <div className="listing-item-grid">
                   <img src={image} alt="" />
                   <div className="listing-counter">
-                      <span>{name} </span>
+                      <span>{title} </span>
                   </div>
                   <div className="listing-item-cat">
                       <h3>
                           <Link to={`/developer/${id}`}>
-                              {technology} - {role}
+                              {name}
                           </Link>
                       </h3>
                       <p>

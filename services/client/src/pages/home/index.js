@@ -7,6 +7,8 @@ import FeaturedMeetups from "./components/featured-meetups";
 import FeaturedLanguages from "./components/featured-languages";
 import Question from "./components/question";
 
+import {featuredMeetups, featuredLanguages, featuredDevelopers} from '../../data';
+
 class HomePage extends Component {
     render() {
         const { dispatch, isAuthenticated } = this.props;
@@ -19,11 +21,11 @@ class HomePage extends Component {
                     <div id="wrapper">
                         <div className="content">
 
-                            <FeaturedDevelopers />
+                            <FeaturedDevelopers featuredDevelopers={featuredDevelopers}/>
 
-                            <FeaturedLanguages />
+                            <FeaturedLanguages featuredLanguages={featuredLanguages}/>
 
-                            <FeaturedMeetups />
+                            <FeaturedMeetups featuredMeetups={featuredMeetups} />
 
                             <Question />
                         </div>

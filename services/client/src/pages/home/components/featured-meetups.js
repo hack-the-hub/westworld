@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import {featuredMeetups} from '../data';
 import FeaturedMeetupCard from './featured-meetup-card';
 
 class FeaturedMeetups extends Component {
 
-    renderMeetups() {
+    renderMeetups(featuredMeetups) {
       return featuredMeetups.map(function(el) {
         const {
            id, name, description, technology, role, image
@@ -16,6 +15,7 @@ class FeaturedMeetups extends Component {
     }
 
     render() {
+        const { featuredMeetups } = this.props;
         return (
               <section id="featured-meetup-section">
               <div className="container">
@@ -30,7 +30,7 @@ class FeaturedMeetups extends Component {
                         </p>
                     </div>
                     <div className="gallery-items fl-wrap mr-bot spad">
-                      {this.renderMeetups()}
+                      {this.renderMeetups(featuredMeetups)}
                     </div>
                     <Link to="/listing" className="btn big-btn circle-btn dec-btn color-bg flat-btn">
                       View All <i className="fa fa-eye" />

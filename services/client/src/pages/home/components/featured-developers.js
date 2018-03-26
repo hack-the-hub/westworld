@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import {featuredDevelopers} from '../data';
 import FeaturedDeveloperCard from './featured-developer-card';
 
 class FeaturedDevelopers extends Component {
 
-    renderDeveloper() {
+    renderDeveloper(featuredDevelopers) {
       return featuredDevelopers.map(function(el) {
         const {
-           id, name, description, technology, role, image
+           id, name, description, technology, role, image, title
         } = el;
-        return (<FeaturedDeveloperCard key={id} id={id} name={name} description={description} technology={technology} role={role} image={image}/>)
+        return (<FeaturedDeveloperCard key={id} id={id} title={title} name={name} description={description} technology={technology} role={role} image={image}/>)
       })
     }
 
     render() {
+        const { featuredDevelopers } = this.props;
         return (
             <section id="featured-developer-section">
                 <div className="container">
@@ -30,7 +30,7 @@ class FeaturedDevelopers extends Component {
                         </p>
                     </div>
                     <div className="gallery-items fl-wrap mr-bot spad">
-                      {this.renderDeveloper()}
+                      {this.renderDeveloper(featuredDevelopers)}
                     </div>
                     <Link to="/listing" className="btn big-btn circle-btn dec-btn color-bg flat-btn">
                       View All <i className="fa fa-eye" />
