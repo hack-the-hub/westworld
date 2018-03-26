@@ -32,7 +32,7 @@ class FeaturedMeetups extends Component {
                     <div className="gallery-items fl-wrap mr-bot spad">
                       {this.renderMeetups(featuredMeetups)}
                     </div>
-                    <Link to="/listing" className="btn big-btn circle-btn dec-btn color-bg flat-btn">
+                    <Link to="/developers" className="btn big-btn circle-btn dec-btn color-bg flat-btn">
                       View All <i className="fa fa-eye" />
                     </Link>
                 </div>

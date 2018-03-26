@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import HomePage from "pages/home";
-import ListingPage from "pages/listing";
+import DeveloperListingPage from "pages/developers";
 import MeetupListingPage from "pages/meetup-listing";
 import DeveloperPage from "pages/developer";
 import ErrorPage from "pages/404";
@@ -27,8 +27,8 @@ class App extends Component {
                         />
                         <Route
                             exact={true}
-                            path="/listing"
-                            render={props => <ListingPage {...this.props} />}
+                            path="/developers"
+                            render={props => <DeveloperListingPage {...this.props} />}
                         />
                         <Route
                             exact={true}

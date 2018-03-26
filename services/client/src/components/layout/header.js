@@ -169,7 +169,7 @@ class Header extends Component {
                                     </li>
                                     <li>
                                         <Link
-                                            to="/listing"
+                                            to="/developers"
                                             className="nav-item is-tab"
                                         >
                                             Developers
