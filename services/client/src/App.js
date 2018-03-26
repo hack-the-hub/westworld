@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "pages/home";
 import ListingPage from "pages/listing";
 import MeetupListingPage from "pages/meetup-listing";
-import VenuePage from "pages/developer";
+import DeveloperPage from "pages/developer";
 import ErrorPage from "pages/404";
 import ProfilePage from "pages/profile";
 import AboutPage from "pages/about";
@@ -37,7 +37,7 @@ class App extends Component {
                         />
                         <Route
                             path="/developer/:id"
-                            render={props => <VenuePage {...this.props} {...props} />}
+                            render={props => <DeveloperPage {...this.props} {...props} />}
                         />
                         <Route
                             path="/profile"

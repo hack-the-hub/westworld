@@ -8,15 +8,13 @@ import LocationInformation from "./components/location-information";
 
 import Communtity from "components/shared/community";
 
-import {listings} from './data';
+import {developers} from '../../data';
 
-class VenuePage extends Component {
+class DeveloperPage extends Component {
     render() {
         const { dispatch, isAuthenticated } = this.props;
         const { id } = this.props.match.params;
-        const listing = listings.find(listing => listing.id==id);
-
-        console.log(listing);
+        const listing = developers.find(listing => listing.id==id);
 
         return (
             <div>
@@ -65,4 +63,4 @@ class VenuePage extends Component {
     }
 }
 
-export default VenuePage;
+export default DeveloperPage;

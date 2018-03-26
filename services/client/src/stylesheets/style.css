@@ -1384,6 +1384,7 @@ section.color-bg .section-title .breadcrumbs a:before {
 	text-align:left;
 	font-size:18px;
 	font-weight:600;
+	height:45px;
 }
 .card-listing .geodir-category-content h3  a {
 	color:#334e6f;
@@ -1436,6 +1437,11 @@ section.color-bg .section-title .breadcrumbs a:before {
 	border:6px solid rgba(255,255,255,0.4);
  	border-radius:100%;
 }
+
+.geodir-category-content p {
+	height: 120px;
+}
+
 .avatar-tooltip {
 	position:absolute;
 	top:-50px;
@@ -1929,7 +1935,7 @@ section.color-bg .section-title .breadcrumbs a:before {
 }
 .listing-item {
 	float:left;
-	width:50%;
+	width:20%;
 	padding:0 8px;
 	margin-bottom:12px;
 }
@@ -4119,7 +4125,7 @@ article .list-single-main-item {
 	padding:10px 20px 10px 0;
 }
 .gallery-item, .grid-sizer {
-	width: 33.3%;
+	width: 20%;
 	position:relative;
 	float:left;
 }

@@ -8,11 +8,11 @@ import SearchResultHeader from "./components/search-result-header";
 import ListSearchInput from './components/list-search-input';
 import ListItem from './components/list-item';
 
-import {listings} from './data';
+import {developers} from '../../data';
 
 class ListingPage extends Component {
   renderList() {
-    return listings.map(function(el) {
+    return developers.map(function(el) {
       const {
         id,
         name,
