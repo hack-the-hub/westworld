@@ -8,7 +8,7 @@ import SearchResultHeader from "./components/search-result-header";
 import ListSearchInput from './components/list-search-input';
 import ListItem from './components/list-item';
 
-import {meetupListings} from './data';
+import {meetupListings} from '../../data';
 
 class MeetupListingPage extends Component {
   renderList() {

@@ -177,7 +177,7 @@ class Header extends Component {
                                     </li>
                                     <li>
                                         <Link
-                                            to="/meetup-listing"
+                                            to="/meetups"
                                             className="nav-item is-tab"
                                         >
                                             Meetups

@@ -6,8 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import HomePage from "pages/home";
 import DeveloperListingPage from "pages/developers";
-import MeetupListingPage from "pages/meetup-listing";
+import MeetupListingPage from "pages/meetups";
 import DeveloperPage from "pages/developer";
+import MeetupPage from "pages/developer";
 import ErrorPage from "pages/404";
 import ProfilePage from "pages/profile";
 import AboutPage from "pages/about";
@@ -32,8 +33,12 @@ class App extends Component {
                         />
                         <Route
                             exact={true}
-                            path="/meetup-listing"
+                            path="/meetups"
                             render={props => <MeetupListingPage {...this.props} />}
+                        />
+                        <Route
+                            path="/meetup/:id"
+                            render={props => <MeetupPage {...this.props} {...props} />}
                         />
                         <Route
                             path="/developer/:id"

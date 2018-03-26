@@ -7,7 +7,7 @@ import Communtity from "components/shared/community";
 
 import {developers} from '../../data';
 
-class DeveloperPage extends Component {
+class MeetupPage extends Component {
     render() {
         const { dispatch, isAuthenticated } = this.props;
         const { id } = this.props.match.params;
@@ -35,7 +35,7 @@ class DeveloperPage extends Component {
                                                 className="list-single-main-wrapper fl-wrap"
                                                 id="sec2"
                                             >
-                                            
+
                                             </div>
                                         </div>
 
@@ -60,4 +60,4 @@ class DeveloperPage extends Component {
     }
 }
 
-export default DeveloperPage;
+export default MeetupPage;
