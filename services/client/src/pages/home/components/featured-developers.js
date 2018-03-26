@@ -1,33 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import FeaturedDeveloperCard from "./featured-developer-card";
+import FeaturedDeveloperCard from './featured-developer-card';
 
 class FeaturedDevelopers extends Component {
+
     renderDeveloper(featuredDevelopers) {
-        return featuredDevelopers.map(function(el) {
-            const {
-                id,
-                name,
-                description,
-                technology,
-                role,
-                image,
-                title
-            } = el;
-            return (
-                <FeaturedDeveloperCard
-                    key={id}
-                    id={id}
-                    title={title}
-                    name={name}
-                    description={description}
-                    technology={technology}
-                    role={role}
-                    image={image}
-                />
-            );
-        });
+      return featuredDevelopers.map(function(el) {
+        const {
+           id, name, description, technology, role, image, title
+        } = el;
+        return (<FeaturedDeveloperCard key={id} id={id} title={title} name={name} description={description} technology={technology} role={role} image={image}/>)
+      })
     }
 
     render() {
@@ -42,21 +26,17 @@ class FeaturedDevelopers extends Component {
                         </div>
                         <span className="section-separator" />
                         <p>
-                            Meet some of the most influential developers in the
-                            Belfast area!
+                            Meet some of the most influential developers in the Belfast area!
                         </p>
                     </div>
                     <div className="gallery-items fl-wrap mr-bot spad">
-                        {this.renderDeveloper(featuredDevelopers)}
+                      {this.renderDeveloper(featuredDevelopers)}
                     </div>
-                    <Link
-                        to="/developers"
-                        className="btn big-btn circle-btn dec-btn color-bg flat-btn"
-                    >
-                        View All <i className="fa fa-eye" />
+                    <Link to="/developers" className="btn big-btn circle-btn dec-btn color-bg flat-btn">
+                      View All <i className="fa fa-eye" />
                     </Link>
-                </div>
-            </section>
+                  </div>
+              </section>
         );
     }
 }

@@ -7,13 +7,13 @@ import Description from "./components/description";
 import LocationInformation from "./components/location-information";
 import Communtity from "components/shared/community";
 
-import { developers } from "../../data";
+import {developers} from '../../data';
 
 class DeveloperPage extends Component {
     render() {
         const { dispatch, isAuthenticated } = this.props;
         const { id } = this.props.match.params;
-        const listing = developers.find(listing => listing.id == id);
+        const listing = developers.find(listing => listing.id==id);
 
         return (
             <div>
@@ -22,14 +22,13 @@ class DeveloperPage extends Component {
 
                     <div id="wrapper">
                         <div className="content">
+
                             <section className="gray-section no-top-padding">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-md-4">
                                             <div className="box-widget-wrap">
-                                                <LocationInformation
-                                                    listing={listing}
-                                                />
+                                                <LocationInformation listing={listing} />
                                             </div>
                                         </div>
 
@@ -38,11 +37,10 @@ class DeveloperPage extends Component {
                                                 className="list-single-main-wrapper fl-wrap"
                                                 id="sec2"
                                             >
-                                                <Description
-                                                    listing={listing}
-                                                />
+                                                <Description listing={listing}/>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </section>

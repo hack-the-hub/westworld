@@ -2,13 +2,15 @@ import React, { Component } from "react";
 
 class Description extends Component {
     render() {
-        const { name, description } = this.props.listing;
+        const {name, description} = this.props.listing;
         return (
             <div className="list-single-main-item fl-wrap">
                 <div className="list-single-main-item-title fl-wrap">
                     <h3>{name}</h3>
                 </div>
-                <p>{description}</p>
+                <p>
+                    {description}
+                </p>
                 <span className="fw-separator" />
                 <div className="list-single-main-item-title fl-wrap">
                     <h3>Skills</h3>

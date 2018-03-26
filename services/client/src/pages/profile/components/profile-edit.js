@@ -13,11 +13,7 @@ class ProfileEdit extends Component {
                             Your Name
                             <i className="fa fa-user-o" />
                         </label>
-                        <input
-                            type="text"
-                            placeholder="Kyle Harrison"
-                            value=""
-                        />
+                        <input type="text" placeholder="Kyle Harrison" value="" />
                         <label>
                             Email Address<i className="fa fa-envelope-o" />
                         </label>
