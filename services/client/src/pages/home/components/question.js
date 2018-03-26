@@ -10,11 +10,7 @@ class Question extends Component {
                             <div className="col-md-8">
                                 <h3>Want to contribute to this project ?</h3>
                                 <p>
-                                    We welcome everyone to take part in building
-                                    a better developer network in Northern
-                                    Ireland. You can contribute ideas, time, or
-                                    even open a pull request or raise issues on
-                                    our Github.
+                                    We welcome everyone to take part in building a better developer network in Northern Ireland. You can contribute ideas, time, or even open a pull request or raise issues on our Github.
                                 </p>
                             </div>
                             <div className="col-md-4">

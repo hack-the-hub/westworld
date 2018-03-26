@@ -8,13 +8,13 @@ import LocationInformation from "./components/location-information";
 
 import Communtity from "components/shared/community";
 
-import { meetups } from "../../data";
+import {meetups} from '../../data';
 
 class MeetupPage extends Component {
     render() {
         const { dispatch, isAuthenticated } = this.props;
         const { id } = this.props.match.params;
-        const listing = meetups.find(listing => listing.id == id);
+        const listing = meetups.find(listing => listing.id==id);
 
         return (
             <div>
@@ -23,14 +23,13 @@ class MeetupPage extends Component {
 
                     <div id="wrapper">
                         <div className="content">
+
                             <section className="gray-section no-top-padding">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-md-4">
                                             <div className="box-widget-wrap">
-                                                <LocationInformation
-                                                    listing={listing}
-                                                />
+                                                <LocationInformation listing={listing} />
                                             </div>
                                         </div>
 
@@ -39,11 +38,10 @@ class MeetupPage extends Component {
                                                 className="list-single-main-wrapper fl-wrap"
                                                 id="sec2"
                                             >
-                                                <Description
-                                                    listing={listing}
-                                                />
+                                                <Description listing={listing}/>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </section>
