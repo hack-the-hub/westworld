@@ -212,7 +212,7 @@ export const developers = [
   }
 ]
 
-export const meetupListings = [
+export const meetups = [
   {
     'id': '2',
     "name": "PyBelfast",

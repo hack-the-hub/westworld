@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Header from "components/layout/header";
 import Footer from "components/layout/footer";
 
+import Description from "./components/description";
+import LocationInformation from "./components/location-information";
 import Communtity from "components/shared/community";
 
 import {developers} from '../../data';
@@ -26,7 +28,7 @@ class DeveloperPage extends Component {
                                     <div className="row">
                                         <div className="col-md-4">
                                             <div className="box-widget-wrap">
-
+                                                <LocationInformation listing={listing} />
                                             </div>
                                         </div>
 
@@ -35,7 +37,7 @@ class DeveloperPage extends Component {
                                                 className="list-single-main-wrapper fl-wrap"
                                                 id="sec2"
                                             >
-                                            
+                                                <Description listing={listing}/>
                                             </div>
                                         </div>
 

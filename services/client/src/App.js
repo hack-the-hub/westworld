@@ -8,7 +8,7 @@ import HomePage from "pages/home";
 import DeveloperListingPage from "pages/developers";
 import MeetupListingPage from "pages/meetups";
 import DeveloperPage from "pages/developer";
-import MeetupPage from "pages/developer";
+import MeetupPage from "pages/meetup";
 import ErrorPage from "pages/404";
 import ProfilePage from "pages/profile";
 import AboutPage from "pages/about";
