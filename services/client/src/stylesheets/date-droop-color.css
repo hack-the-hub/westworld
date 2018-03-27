@@ -3,10 +3,10 @@
 	INSTRUCTIONS ---------------------------------------------------------------------------------
   
   1. link this stylesheet in the head of your HTML
-  	 <link href="YOUR PATH/my-style.css" rel="stylesheet" type="text/css" />
+  	 <link href='YOUR PATH/my-style.css' rel='stylesheet' type='text/css' />
      
   2. Set the file name as data-theme attribute on your input
-  	 <input data-theme="my-style" />
+  	 <input data-theme='my-style' />
      
   3. That's it!
   

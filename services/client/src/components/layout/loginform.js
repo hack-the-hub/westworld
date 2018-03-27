@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Login from "./login";
+import Login from './login';
 
-import { loginUser } from "actions/login";
+import { loginUser } from 'actions/login';
 
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 class LoginForm extends Component {
   render() {
@@ -13,7 +13,7 @@ class LoginForm extends Component {
     return (
       <div>
         {isAuthenticated &&
-          redirectTo !== null && <Redirect push="push" to="/profile" />}
+          redirectTo !== null && <Redirect push='push' to='/profile' />}
 
         {!isAuthenticated && (
           <Login

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 // propTypes: {
 //   label: React.PropTypes.string.isRequired,

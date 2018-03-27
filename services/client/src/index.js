@@ -1,18 +1,18 @@
-import React from "react";
-import { render } from "react-dom";
-import { Provider } from "react-redux";
-import registerServiceWorker from "./register-service-worker";
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import registerServiceWorker from './register-service-worker';
 
-import App from "./App";
-import store from "./store";
+import App from './App';
+import store from './store';
 
-import "font-awesome/css/font-awesome.min.css";
-import "stylesheets/reset.css";
-import "stylesheets/plugins.css";
-import "stylesheets/style.css";
-import "stylesheets/color.css";
+import 'font-awesome/css/font-awesome.min.css';
+import 'stylesheets/reset.css';
+import 'stylesheets/plugins.css';
+import 'stylesheets/style.css';
+import 'stylesheets/color.css';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
 render(
   <Provider store={store}>

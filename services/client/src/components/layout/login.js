@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
   render() {
@@ -8,36 +8,36 @@ export default class Login extends Component {
 
     return (
       <div>
-        <div className="custom-form">
-          <form name="registerform">
+        <div className='custom-form'>
+          <form name='registerform'>
             <label>Username or Email Address *</label>
             <input
-              type="text"
-              ref="email"
-              placeholder="Username"
-              className="input"
+              type='text'
+              ref='email'
+              placeholder='Username'
+              className='input'
             />
             <label>Password *</label>
             <input
-              type="password"
-              ref="password"
-              className="input"
-              placeholder="●●●●●●●"
+              type='password'
+              ref='password'
+              className='input'
+              placeholder='●●●●●●●'
             />
             <button
-              className="log-submit-btn"
+              className='log-submit-btn'
               onClick={event => this.handleClick(event)}
             >
               <span>Log In</span>
             </button>
-            <div className="clearfix" />
-            <div className="filter-tags">
-              <input id="check-a" type="checkbox" name="check" />
-              <label htmlFor="check-a">Remember me</label>
+            <div className='clearfix' />
+            <div className='filter-tags'>
+              <input id='check-a' type='checkbox' name='check' />
+              <label htmlFor='check-a'>Remember me</label>
             </div>
           </form>
-          <div className="lost_password">
-            <Link to="/lost_password">Lost Your Password?</Link>
+          <div className='lost_password'>
+            <Link to='/lost_password'>Lost Your Password?</Link>
           </div>
         </div>
 

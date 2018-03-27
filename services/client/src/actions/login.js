@@ -1,6 +1,6 @@
-export const LOGIN_REQUEST = "LOGIN_REQUEST";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_FAILURE = "LOGIN_FAILURE";
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 function requestLogin(creds) {
   return {
@@ -37,9 +37,9 @@ export function loginUser(creds) {
   };
 
   const config = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(payload)
   };
@@ -48,7 +48,7 @@ export function loginUser(creds) {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds));
 
-    return fetch("http://localhost:5001/auth/login", config)
+    return fetch('http://localhost:5001/auth/login', config)
       .then(response => response.json().then(user => ({ user, response })))
       .then(({ user, response }) => {
         if (!response.ok) {
@@ -56,24 +56,24 @@ export function loginUser(creds) {
           // dispatch the error condition
           dispatch(
             loginError(
-              "Invalid login - please ensure your credentials are correct."
+              'Invalid login - please ensure your credentials are correct.'
             )
           );
           return Promise.reject(user);
         }
         // If login was successful, set the token in local storage
 
-        localStorage.setItem("access_token", user.auth_token);
+        localStorage.setItem('access_token', user.auth_token);
         // Dispatch the success action
         dispatch(receiveLogin(user));
       })
       .catch(err => {
         dispatch(
           loginError(
-            "Server Error - please ensure your credentials are correct."
+            'Server Error - please ensure your credentials are correct.'
           )
         );
-        console.log("Error: ", err);
+        console.log('Error: ', err);
       });
   };
 }

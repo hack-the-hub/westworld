@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import HomePage from "pages/home";
-import DeveloperListingPage from "pages/developers";
-import MeetupListingPage from "pages/meetups";
-import DeveloperPage from "pages/developer";
-import MeetupPage from "pages/meetup";
-import ErrorPage from "pages/404";
-import ProfilePage from "pages/profile";
-import AboutPage from "pages/about";
+import HomePage from 'pages/home';
+import DeveloperListingPage from 'pages/developers';
+import MeetupListingPage from 'pages/meetups';
+import DeveloperPage from 'pages/developer';
+import MeetupPage from 'pages/meetup';
+import ErrorPage from 'pages/404';
+import ProfilePage from 'pages/profile';
+import AboutPage from 'pages/about';
 
-import ScrollToTop from "components/navigation/scroll-to-top";
+import ScrollToTop from 'components/navigation/scroll-to-top';
 
 class App extends Component {
   render() {
@@ -24,34 +24,34 @@ class App extends Component {
             <Switch>
               <Route
                 exact
-                path="/"
+                path='/'
                 render={props => <HomePage {...this.props} />}
               />
               <Route
                 exact
-                path="/developers"
+                path='/developers'
                 render={props => <DeveloperListingPage {...this.props} />}
               />
               <Route
                 exact
-                path="/meetups"
+                path='/meetups'
                 render={props => <MeetupListingPage {...this.props} />}
               />
               <Route
-                path="/meetup/:id"
+                path='/meetup/:id'
                 render={props => <MeetupPage {...this.props} {...props} />}
               />
               <Route
-                path="/developer/:id"
+                path='/developer/:id'
                 render={props => <DeveloperPage {...this.props} {...props} />}
               />
               <Route
-                path="/profile"
+                path='/profile'
                 render={props => <ProfilePage {...this.props} />}
               />
               <Route
                 exact
-                path="/about"
+                path='/about'
                 render={props => <AboutPage {...this.props} />}
               />
               <Route render={props => <ErrorPage {...this.props} />} />

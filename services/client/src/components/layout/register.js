@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Login extends Component {
   render() {
@@ -7,24 +7,24 @@ export default class Login extends Component {
 
     return (
       <div>
-        <div className="custom-form">
+        <div className='custom-form'>
           <form
-            method="post"
-            name="registerform"
-            className="main-register-form"
-            id="main-register-form2"
+            method='post'
+            name='registerform'
+            className='main-register-form'
+            id='main-register-form2'
           >
             <label>Name *</label>
-            <input name="name" type="text" value="" />
+            <input name='name' type='text' value='' />
             <label>Username *</label>
-            <input name="username" type="text" value="" />
+            <input name='username' type='text' value='' />
             <label>Email Address *</label>
-            <input name="email" type="text" value="" />
+            <input name='email' type='text' value='' />
             <label>Password *</label>
-            <input name="password" type="password" value="" />
+            <input name='password' type='password' value='' />
             <button
-              type="submit"
-              className="log-submit-btn"
+              type='submit'
+              className='log-submit-btn'
               onClick={event => this.handleClick(event)}
             >
               <span>Register</span>

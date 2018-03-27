@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset 'utf-8';
 /*======================================
  [ -Main Stylesheet-
   Theme: CityBook
@@ -78,7 +78,7 @@ blockquote:before {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f10e";
+	content: '\f10e';
 	position:absolute;
 	color:#ccc;
 	bottom:3px;
@@ -87,7 +87,7 @@ blockquote:before {
 	opacity:0.4
 }
 blockquote p {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-style:italic;
 	color:#494949;
 }
@@ -136,7 +136,7 @@ blockquote p {
 	z-index: -2
 }
 .pulse:after{
-    content: "";
+    content: '';
     border-radius: 50%;
     height: 40px;
     width :40px;
@@ -505,7 +505,7 @@ blockquote p {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f0d7";
+	content: '\f0d7';
 	position:absolute;
 	color:#fff;
 	bottom:1px;
@@ -1483,7 +1483,7 @@ section.color-bg .section-title .breadcrumbs a:before {
 	top: 100%;
 	right: 22px;
 	border: solid transparent;
-	content: " ";
+	content: ' ';
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -2048,7 +2048,7 @@ section.color-bg .section-title .breadcrumbs a:before {
 	top: 100%;
 	left: 50%;
 	border: solid transparent;
-	content: " ";
+	content: ' ';
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -2934,7 +2934,7 @@ article .list-single-main-item {
 	position:relative;
 	top:-3px;
 }
-.leave-rating input[type="radio"] {
+.leave-rating input[type='radio'] {
     display: none;
 }
 .leave-rating label {
@@ -2946,10 +2946,10 @@ article .list-single-main-item {
     transition: 0.3s;
 }
 .leave-rating label:hover:before  , .leave-rating label.selected:before {
-    content: "\f005";
+    content: '\f005';
 }
-.leave-rating:hover input[type="radio"]:checked~label:before , .leave-rating input[type="radio"]:checked~label:before  , .leave-rating label:hover~label:before{
-    content: "\f005"!important;
+.leave-rating:hover input[type='radio']:checked~label:before , .leave-rating input[type='radio']:checked~label:before  , .leave-rating label:hover~label:before{
+    content: '\f005'!important;
 }
 .box-widget.widget-posts li {
 	padding: 8px 0;
@@ -3109,7 +3109,7 @@ article .list-single-main-item {
 .custom-form .selectbox .trigger .arrow {
 	border-top: 5px solid #fff;
 }
-.custom-form  textarea , .custom-form input[type="text"] , .custom-form  input[type=email] , .custom-form  input[type=password] , .custom-form  input[type=button]{
+.custom-form  textarea , .custom-form input[type='text'] , .custom-form  input[type=email] , .custom-form  input[type=password] , .custom-form  input[type=button]{
     float: left;
     border: 1px solid #eee;
     background: #f9f9f9;
@@ -3158,7 +3158,7 @@ article .list-single-main-item {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f00c";
+	content: '\f00c';
 	font-size: 14px;
 	position: absolute;
 	top:2px;
@@ -3260,12 +3260,12 @@ article .list-single-main-item {
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-    content: "ON";
+    content: 'ON';
     padding-left: 21px;
     background-color: #4DB7FE; color: #FFFFFF;
 }
 .onoffswitch-inner:after {
-    content: "OFF";
+    content: 'OFF';
     padding-right: 21px;
     background-color: #4DB7FE; color: #FFFFFF;
     text-align: right;
@@ -3284,7 +3284,7 @@ article .list-single-main-item {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
-.main-register .custom-form input[type="text"] , .main-register .custom-form  input[type=email] ,
+.main-register .custom-form input[type='text'] , .main-register .custom-form  input[type=email] ,
 .main-register .custom-form  input[type=password]{
 	padding-left:20px;
 }
@@ -3454,10 +3454,10 @@ article .list-single-main-item {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f068";
+	content: '\f068';
 }
 .mapzoom-in:before{
-	content: "\f067";
+	content: '\f067';
 }
 .mapzoom-in {
 	margin-top:-80px;
@@ -3659,7 +3659,7 @@ article .list-single-main-item {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f013";
+	content: '\f013';
 	color:#999;
 }
 .user-profile-menu-wrap:before {
@@ -3904,7 +3904,7 @@ article .list-single-main-item {
 	border-radius:3px;
 	box-sizing:border-box;
 }
-.radio input[type="radio"]{
+.radio input[type='radio']{
 	cursor: pointer;
 	position:absolute;
 	width:100%;
@@ -3912,15 +3912,15 @@ article .list-single-main-item {
 	z-index: 1;
 	opacity: 0;
 }
-.radio input[type="radio"]:checked + span{
+.radio input[type='radio']:checked + span{
 	color:#98AAB8;
 }
-.radio input[type="radio"]:checked + span:before{
+.radio input[type='radio']:checked + span:before{
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f00c";
+	content: '\f00c';
 	font-size: 13px;
 	position: absolute;
 	top:3px;
@@ -4295,7 +4295,7 @@ article .list-single-main-item {
 	font-size:17px;
 }
 .price-num-desc {
- 	font-family: Georgia, "Times New Roman", Times, serif;
+ 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-style:italic;
 	color: #bcbcbc;
 	display:block;
@@ -4369,7 +4369,7 @@ article .list-single-main-item {
 	top: -30px;
 	left: 50%;
 	border: solid transparent;
-	content: " ";
+	content: ' ';
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -4436,18 +4436,18 @@ article .list-single-main-item {
 	font-size:34px;
 }
 .testimonilas-text:before {
-	content: "\f10e";
+	content: '\f10e';
 	top:20px;
 	left:20px;
 }
 .testimonilas-text:after {
-	content:"\f10d";
+	content:'\f10d';
 	bottom:20px;
 	right:20px;
 }
 .testimonilas-text p {
 	font-size:14px;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
 }
 .testimonials-carousel .slick-current .testimonilas-text:before  , .testimonials-carousel .slick-current .testimonilas-text:after {
@@ -4620,7 +4620,7 @@ footer.main-footer.fixed-footer {
 }
 #footer-twiit  .timePosted a {
 	color:#ccc;
- 	font-family: Georgia, "Times New Roman", Times, serif;
+ 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-style:italic;
 	position:relative;
 	float:left;
@@ -4632,7 +4632,7 @@ footer.main-footer.fixed-footer {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f099";
+	content: '\f099';
 	position:absolute;
 	top:0;
 	left:0;
@@ -4644,7 +4644,7 @@ footer.main-footer.fixed-footer {
 	top: -10px;
 	left: 22px;
 	border: solid transparent;
-	content: " ";
+	content: ' ';
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -4725,7 +4725,7 @@ footer.main-footer.fixed-footer {
 	height:auto;
 }
 .footer-widget .about-widget h4 {
- 	font-family: Georgia, "Times New Roman", Times, serif;
+ 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-style:italic;
 	color: #bcbcbc;
 	padding-top:6px;
@@ -5439,7 +5439,7 @@ footer.main-footer.fixed-footer {
 	padding-bottom:20px;
 }
 .video-item p {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-style:italic;
 	color:#eee;
 	text-align:left;
@@ -5533,7 +5533,7 @@ footer.main-footer.fixed-footer {
 	top: 100%;
 	right: 22px;
 	border: solid transparent;
-	content: " ";
+	content: ' ';
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -5573,49 +5573,49 @@ footer.main-footer.fixed-footer {
     text-decoration: inherit;
 }
 .share-icon-digg:before {
-    content: "\f1a6";
+    content: '\f1a6';
 }
 .share-icon-email:before  {
-    content: "\f003";
+    content: '\f003';
 }
 .share-icon-flickr:before  {
-    content: "\f16e";
+    content: '\f16e';
 }
 .share-icon-foursquare:before  {
-    content: "\f180";
+    content: '\f180';
 }
 .share-icon-rss:before {
-    content: "\f09e";
+    content: '\f09e';
 }
 .share-icon-facebook:before  {
-    content: "\f09a";
+    content: '\f09a';
 }
 .share-icon-twitter:before {
-    content: "\f099";
+    content: '\f099';
 }
 .share-icon-tumblr:before {
-   content: "\f173";
+   content: '\f173';
 }
 .share-icon-linkedin:before {
-     content: "\f08c";
+     content: '\f08c';
 }
 .share-icon-vimeo:before {
-   content: "\f194";
+   content: '\f194';
 }
 .share-icon-instagram:before {
-    content: "\f16d";
+    content: '\f16d';
 }
 .share-icon-pinterest:before {
-    content: "\f0d2";
+    content: '\f0d2';
 }
 .share-icon-googleplus:before {
-   content: "\f0d5";
+   content: '\f0d5';
 }
 .share-icon-in1:before {
-    content: "\f08c";
+    content: '\f08c';
 }
 .share-icon-stumbleupon:before {
-    content: "\f1a4";
+    content: '\f1a4';
 }
 /*------404------------------------------------------------*/
 .error-wrap {
@@ -5889,7 +5889,7 @@ footer.main-footer.fixed-footer {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-	content: "\f177";
+	content: '\f177';
 	font-size:14px;
 }
 .process-wrap li {

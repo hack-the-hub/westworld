@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import FeaturedMeetupCard from "./featured-meetup-card";
+import FeaturedMeetupCard from './featured-meetup-card';
 
 class FeaturedMeetups extends Component {
   renderMeetups(featuredMeetups) {
@@ -24,24 +24,24 @@ class FeaturedMeetups extends Component {
   render() {
     const { featuredMeetups } = this.props;
     return (
-      <section id="featured-meetup-section">
-        <div className="container">
-          <div className="section-title">
+      <section id='featured-meetup-section'>
+        <div className='container'>
+          <div className='section-title'>
             <h2>Featured Meetups</h2>
-            <div className="section-subtitle">Featured Meetups</div>
-            <span className="section-separator" />
+            <div className='section-subtitle'>Featured Meetups</div>
+            <span className='section-separator' />
             <p>
               Discover the most populate meetup groups with upcoming events!
             </p>
           </div>
-          <div className="gallery-items fl-wrap mr-bot spad">
+          <div className='gallery-items fl-wrap mr-bot spad'>
             {this.renderMeetups(featuredMeetups)}
           </div>
           <Link
-            to="/developers"
-            className="btn big-btn circle-btn dec-btn color-bg flat-btn"
+            to='/developers'
+            className='btn big-btn circle-btn dec-btn color-bg flat-btn'
           >
-            View All <i className="fa fa-eye" />
+            View All <i className='fa fa-eye' />
           </Link>
         </div>
       </section>

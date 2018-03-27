@@ -1,5 +1,5 @@
-export const LOGOUT_REQUEST = "LOGOUT_REQUEST";
-export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 
 function requestLogout() {
   return {
@@ -20,8 +20,8 @@ function receiveLogout() {
 export function logoutUser() {
   return dispatch => {
     dispatch(requestLogout());
-    localStorage.removeItem("id_token");
-    localStorage.removeItem("access_token");
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('access_token');
     dispatch(receiveLogout());
   };
 }

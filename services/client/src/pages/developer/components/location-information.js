@@ -1,55 +1,55 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class LocationInformation extends Component {
   render() {
     const { image, website } = this.props.developer;
 
     return (
-      <div className="box-widget-item fl-wrap">
-        <div className="box-widget">
+      <div className='box-widget-item fl-wrap'>
+        <div className='box-widget'>
           <div>
-            <img className="profile-image-container" src={image} alt="" />
+            <img className='profile-image-container' src={image} alt='' />
           </div>
-          <div className="box-widget-content">
-            <div className="list-author-widget-contacts list-item-widget-contacts">
+          <div className='box-widget-content'>
+            <div className='list-author-widget-contacts list-item-widget-contacts'>
               <ul>
                 <li>
                   <span>
-                    <i className="fa fa-map-marker" />
+                    <i className='fa fa-map-marker' />
                     Address :
                   </span>
-                  <Link to="/">Belfast</Link>
+                  <Link to='/'>Belfast</Link>
                 </li>
                 <li>
                   <span>
-                    <i className="fa fa-globe" />
+                    <i className='fa fa-globe' />
                     Website :
                   </span>
-                  <Link to="/">{website}</Link>
+                  <Link to='/'>{website}</Link>
                 </li>
               </ul>
             </div>
-            <div className="list-widget-social">
+            <div className='list-widget-social'>
               <ul>
                 <li>
-                  <Link to="/">
-                    <i className="fa fa-facebook" />
+                  <Link to='/'>
+                    <i className='fa fa-facebook' />
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
-                    <i className="fa fa-twitter" />
+                  <Link to='/'>
+                    <i className='fa fa-twitter' />
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
-                    <i className="fa fa-vk" />
+                  <Link to='/'>
+                    <i className='fa fa-vk' />
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
-                    <i className="fa fa-whatsapp" />
+                  <Link to='/'>
+                    <i className='fa fa-whatsapp' />
                   </Link>
                 </li>
               </ul>

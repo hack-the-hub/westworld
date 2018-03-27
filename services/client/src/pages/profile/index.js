@@ -1,22 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Header from "components/layout/header";
-import Footer from "components/layout/footer";
-import Question from "components/shared/question";
-import Profile from "./components/profile";
+import Header from 'components/layout/header';
+import Footer from 'components/layout/footer';
+import Question from 'components/shared/question';
+import Profile from './components/profile';
 
 class ProfilePage extends Component {
   render() {
     return (
       <div>
-        <div id="main">
+        <div id='main'>
           <Header {...this.props} />
 
-          <div id="wrapper">
-            <div className="content">
+          <div id='wrapper'>
+            <div className='content'>
               <Profile />
 
-              <div className="limit-box fl-wrap" />
+              <div className='limit-box fl-wrap' />
 
               <Question />
             </div>
@@ -24,8 +24,8 @@ class ProfilePage extends Component {
 
           <Footer />
 
-          <a className="to-top">
-            <i className="fa fa-angle-up" />
+          <a className='to-top'>
+            <i className='fa fa-angle-up' />
           </a>
         </div>
       </div>

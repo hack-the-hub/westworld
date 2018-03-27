@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Header from "components/layout/header";
-import Footer from "components/layout/footer";
-import Community from "components/shared/community";
-import Pagination from "./components/pagination";
-import SearchResultHeader from "./components/search-result-header";
-import ListSearchInput from "./components/list-search-input";
-import ListItem from "./components/list-item";
+import Header from 'components/layout/header';
+import Footer from 'components/layout/footer';
+import Community from 'components/shared/community';
+import Pagination from './components/pagination';
+import SearchResultHeader from './components/search-result-header';
+import ListSearchInput from './components/list-search-input';
+import ListItem from './components/list-item';
 
-import { developers } from "../../data";
+import { developers } from '../../data';
 
 class ListingPage extends Component {
   renderList() {
@@ -33,25 +33,25 @@ class ListingPage extends Component {
   render() {
     return (
       <div>
-        <div id="main">
+        <div id='main'>
           <Header {...this.props} />
 
-          <div id="wrapper">
-            <div className="content">
-              <section className="gray-bg no-pading no-top-padding" id="sec1">
-                <div className="col-list-wrap fh-col-list-wrap  left-list">
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-8">
+          <div id='wrapper'>
+            <div className='content'>
+              <section className='gray-bg no-pading no-top-padding' id='sec1'>
+                <div className='col-list-wrap fh-col-list-wrap  left-list'>
+                  <div className='container'>
+                    <div className='row'>
+                      <div className='col-md-8'>
                         <SearchResultHeader />
-                        <div className="list-main-wrap fl-wrap card-listing">
+                        <div className='list-main-wrap fl-wrap card-listing'>
                           {this.renderList()}
 
                           <Pagination />
                         </div>
                       </div>
-                      <div className="col-md-4">
-                        <div className="fl-wrap">
+                      <div className='col-md-4'>
+                        <div className='fl-wrap'>
                           <ListSearchInput />
                         </div>
                       </div>
@@ -60,7 +60,7 @@ class ListingPage extends Component {
                 </div>
               </section>
 
-              <div className="limit-box fl-wrap" />
+              <div className='limit-box fl-wrap' />
 
               <Community />
             </div>
@@ -68,8 +68,8 @@ class ListingPage extends Component {
 
           <Footer />
 
-          <a className="to-top">
-            <i className="fa fa-angle-up" />
+          <a className='to-top'>
+            <i className='fa fa-angle-up' />
           </a>
         </div>
       </div>

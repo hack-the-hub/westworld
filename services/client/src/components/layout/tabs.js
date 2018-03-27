@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 // propTypes: {
 //   selected: React.PropTypes.number,
@@ -24,11 +24,11 @@ class Tabs extends Component {
 
   _renderTitles() {
     function labels(child, index) {
-      const activeClass = this.state.selected === index ? "active" : "";
+      const activeClass = this.state.selected === index ? 'active' : '';
       return (
         <li key={index}>
           <Link
-            to="/"
+            to='/'
             className={activeClass}
             onClick={this.handleClick.bind(this, index)}
           >
@@ -38,7 +38,7 @@ class Tabs extends Component {
       );
     }
     return (
-      <ul className="tabs__labels">
+      <ul className='tabs__labels'>
         {this.props.children.map(labels.bind(this))}
       </ul>
     );
@@ -46,7 +46,7 @@ class Tabs extends Component {
 
   _renderContent() {
     return (
-      <div className="tabs__content">
+      <div className='tabs__content'>
         {this.props.children[this.state.selected]}
       </div>
     );
@@ -54,9 +54,9 @@ class Tabs extends Component {
 
   render() {
     return (
-      <div id="tabs-container">
-        <ul className="tabs-menu">{this._renderTitles()}</ul>
-        <div className="tabs_container">{this._renderContent()}</div>
+      <div id='tabs-container'>
+        <ul className='tabs-menu'>{this._renderTitles()}</ul>
+        <div className='tabs_container'>{this._renderContent()}</div>
       </div>
     );
   }

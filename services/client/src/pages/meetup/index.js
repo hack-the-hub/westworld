@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import Header from "components/layout/header";
-import Footer from "components/layout/footer";
-import Description from "./components/description";
-import LocationInformation from "./components/location-information";
-import Communtity from "components/shared/community";
-import { meetups } from "../../data";
+import React, { Component } from 'react';
+import Header from 'components/layout/header';
+import Footer from 'components/layout/footer';
+import Description from './components/description';
+import LocationInformation from './components/location-information';
+import Communtity from 'components/shared/community';
+import { meetups } from '../../data';
 
 class MeetupPage extends Component {
   render() {
@@ -13,24 +13,24 @@ class MeetupPage extends Component {
 
     return (
       <div>
-        <div id="main">
+        <div id='main'>
           <Header {...this.props} />
 
-          <div id="wrapper">
-            <div className="content">
-              <section className="gray-section no-top-padding">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-4">
-                      <div className="box-widget-wrap">
+          <div id='wrapper'>
+            <div className='content'>
+              <section className='gray-section no-top-padding'>
+                <div className='container'>
+                  <div className='row'>
+                    <div className='col-md-4'>
+                      <div className='box-widget-wrap'>
                         <LocationInformation meetup={meetup} />
                       </div>
                     </div>
 
-                    <div className="col-md-8">
+                    <div className='col-md-8'>
                       <div
-                        className="list-single-main-wrapper fl-wrap"
-                        id="sec2"
+                        className='list-single-main-wrapper fl-wrap'
+                        id='sec2'
                       >
                         <Description meetup={meetup} />
                       </div>
@@ -39,7 +39,7 @@ class MeetupPage extends Component {
                 </div>
               </section>
 
-              <div className="limit-box fl-wrap" />
+              <div className='limit-box fl-wrap' />
 
               <Communtity />
             </div>
@@ -47,8 +47,8 @@ class MeetupPage extends Component {
 
           <Footer />
 
-          <a className="to-top">
-            <i className="fa fa-angle-up" />
+          <a className='to-top'>
+            <i className='fa fa-angle-up' />
           </a>
         </div>
       </div>

@@ -1,7 +1,7 @@
-const BASE_URL = "http://localhost:5001/auth/login";
+const BASE_URL = 'http://localhost:5001/auth/login';
 
 function callApi(endpoint, authenticated) {
-  const token = localStorage.getItem("access_token") || null;
+  const token = localStorage.getItem('access_token') || null;
   let config = {};
 
   if (authenticated) {
@@ -10,7 +10,7 @@ function callApi(endpoint, authenticated) {
         headers: { Authorization: `Bearer ${token}` }
       };
     } else {
-      throw new Error("No token saved!");
+      throw new Error('No token saved!');
     }
   }
 
@@ -26,13 +26,13 @@ function callApi(endpoint, authenticated) {
     .catch(err => console.log(err));
 }
 
-export const CALL_API = Symbol("Call API");
+export const CALL_API = Symbol('Call API');
 
 export default store => next => action => {
   const callAPI = action[CALL_API];
 
   // So the middleware doesn't get applied to every single action
-  if (typeof callAPI === "undefined") {
+  if (typeof callAPI === 'undefined') {
     return next(action);
   }
 
@@ -50,7 +50,7 @@ export default store => next => action => {
       }),
     error =>
       next({
-        error: error.message || "There was an error.",
+        error: error.message || 'There was an error.',
         type: errorType
       })
   );

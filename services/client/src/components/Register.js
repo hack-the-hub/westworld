@@ -1,51 +1,51 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Register extends Component {
   render() {
     const { dispatch, isAuthenticated, errorMessage, redirectTo } = this.props;
 
     return (
-      <div className="column is-6 ">
-        <h1 className="title">Register an Account</h1>
+      <div className='column is-6 '>
+        <h1 className='title'>Register an Account</h1>
 
-        <div className="box">
-          <label className="label">Username</label>
-          <p className="control">
+        <div className='box'>
+          <label className='label'>Username</label>
+          <p className='control'>
             <input
-              className="input"
-              ref="username"
-              type="text"
-              placeholder="Joe Bloggs"
+              className='input'
+              ref='username'
+              type='text'
+              placeholder='Joe Bloggs'
             />
           </p>
 
-          <label className="label">Email</label>
-          <p className="control">
+          <label className='label'>Email</label>
+          <p className='control'>
             <input
-              type="text"
-              ref="email"
-              type="email"
-              placeholder="Email"
-              className="input"
-              placeholder="jsmith@example.org"
+              type='text'
+              ref='email'
+              type='email'
+              placeholder='Email'
+              className='input'
+              placeholder='jsmith@example.org'
             />
           </p>
 
-          <label className="label">Password</label>
-          <p className="control">
+          <label className='label'>Password</label>
+          <p className='control'>
             <input
-              type="password"
-              ref="password"
-              className="input"
-              placeholder="●●●●●●●"
+              type='password'
+              ref='password'
+              className='input'
+              placeholder='●●●●●●●'
             />
           </p>
           <hr />
 
-          <p className="control">
+          <p className='control'>
             <button
-              className="button is-primary"
+              className='button is-primary'
               onClick={event => this.handleClick(event)}
             >
               Register
