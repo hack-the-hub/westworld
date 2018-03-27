@@ -8,47 +8,41 @@ import FeaturedLanguages from "./components/featured-languages";
 import Question from "./components/question";
 
 import {
-    featuredMeetups,
-    featuredLanguages,
-    featuredDevelopers
+  featuredMeetups,
+  featuredLanguages,
+  featuredDevelopers
 } from "../../data";
 
 class HomePage extends Component {
-    render() {
-        const { dispatch, isAuthenticated } = this.props;
+  render() {
+    const { dispatch, isAuthenticated } = this.props;
 
-        return (
-            <div>
-                <div id="main">
-                    <Header {...this.props} />
+    return (
+      <div>
+        <div id="main">
+          <Header {...this.props} />
 
-                    <div id="wrapper">
-                        <div className="content">
-                            <FeaturedDevelopers
-                                featuredDevelopers={featuredDevelopers}
-                            />
+          <div id="wrapper">
+            <div className="content">
+              <FeaturedDevelopers featuredDevelopers={featuredDevelopers} />
 
-                            <FeaturedLanguages
-                                featuredLanguages={featuredLanguages}
-                            />
+              <FeaturedLanguages featuredLanguages={featuredLanguages} />
 
-                            <FeaturedMeetups
-                                featuredMeetups={featuredMeetups}
-                            />
+              <FeaturedMeetups featuredMeetups={featuredMeetups} />
 
-                            <Question />
-                        </div>
-                    </div>
-
-                    <Footer />
-
-                    <a className="to-top">
-                        <i className="fa fa-angle-up" />
-                    </a>
-                </div>
+              <Question />
             </div>
-        );
-    }
+          </div>
+
+          <Footer />
+
+          <a className="to-top">
+            <i className="fa fa-angle-up" />
+          </a>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default HomePage;

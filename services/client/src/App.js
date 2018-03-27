@@ -16,80 +16,68 @@ import AboutPage from "pages/about";
 import ScrollToTop from "components/navigation/scroll-to-top";
 
 class App extends Component {
-    render() {
-        const { isAuthenticated, errorMessage } = this.props;
+  render() {
+    const { isAuthenticated, errorMessage } = this.props;
 
-        return (
-            <div>
-                <Router>
-                    <ScrollToTop>
-                        <Switch>
-                            <Route
-                                exact={true}
-                                path="/"
-                                render={props => <HomePage {...this.props} />}
-                            />
-                            <Route
-                                exact={true}
-                                path="/developers"
-                                render={props => (
-                                    <DeveloperListingPage {...this.props} />
-                                )}
-                            />
-                            <Route
-                                exact={true}
-                                path="/meetups"
-                                render={props => (
-                                    <MeetupListingPage {...this.props} />
-                                )}
-                            />
-                            <Route
-                                path="/meetup/:id"
-                                render={props => (
-                                    <MeetupPage {...this.props} {...props} />
-                                )}
-                            />
-                            <Route
-                                path="/developer/:id"
-                                render={props => (
-                                    <DeveloperPage {...this.props} {...props} />
-                                )}
-                            />
-                            <Route
-                                path="/profile"
-                                render={props => (
-                                    <ProfilePage {...this.props} />
-                                )}
-                            />
-                            <Route
-                                exact={true}
-                                path="/about"
-                                render={props => <AboutPage {...this.props} />}
-                            />
-                            <Route
-                                render={props => <ErrorPage {...this.props} />}
-                            />
-                        </Switch>
-                    </ScrollToTop>
-                </Router>
-            </div>
-        );
-    }
+    return (
+      <div>
+        <Router>
+          <ScrollToTop>
+            <Switch>
+              <Route
+                exact={true}
+                path="/"
+                render={props => <HomePage {...this.props} />}
+              />
+              <Route
+                exact={true}
+                path="/developers"
+                render={props => <DeveloperListingPage {...this.props} />}
+              />
+              <Route
+                exact={true}
+                path="/meetups"
+                render={props => <MeetupListingPage {...this.props} />}
+              />
+              <Route
+                path="/meetup/:id"
+                render={props => <MeetupPage {...this.props} {...props} />}
+              />
+              <Route
+                path="/developer/:id"
+                render={props => <DeveloperPage {...this.props} {...props} />}
+              />
+              <Route
+                path="/profile"
+                render={props => <ProfilePage {...this.props} />}
+              />
+              <Route
+                exact={true}
+                path="/about"
+                render={props => <AboutPage {...this.props} />}
+              />
+              <Route render={props => <ErrorPage {...this.props} />} />
+            </Switch>
+          </ScrollToTop>
+        </Router>
+      </div>
+    );
+  }
 }
 
 App.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired,
-    errorMessage: PropTypes.string
+  dispatch: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  errorMessage: PropTypes.string
 };
 
 // These props come from the application's
 // state when it is started
 function mapStateToProps(state) {
-    const { auth } = state;
-    const { isAuthenticated, errorMessage } = auth;
+  const { auth } = state;
+  const { isAuthenticated, errorMessage } = auth;
 
-    return { isAuthenticated, errorMessage };
+  return { isAuthenticated, errorMessage };
 }
 
 export default connect(mapStateToProps)(App);

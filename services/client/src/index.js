@@ -15,10 +15,10 @@ import "stylesheets/color.css";
 let rootElement = document.getElementById("root");
 
 render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    rootElement
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
 );
 
 registerServiceWorker();
