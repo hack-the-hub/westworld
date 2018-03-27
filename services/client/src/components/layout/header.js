@@ -7,7 +7,6 @@ import Pane from "./pane";
 import Tabs from "./tabs";
 
 import logo from "images/logo.png";
-
 import Logout from "./logout";
 
 class Header extends Component {

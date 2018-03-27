@@ -23,17 +23,17 @@ class App extends Component {
           <ScrollToTop>
             <Switch>
               <Route
-                exact={true}
+                exact
                 path="/"
                 render={props => <HomePage {...this.props} />}
               />
               <Route
-                exact={true}
+                exact
                 path="/developers"
                 render={props => <DeveloperListingPage {...this.props} />}
               />
               <Route
-                exact={true}
+                exact
                 path="/meetups"
                 render={props => <MeetupListingPage {...this.props} />}
               />
@@ -50,7 +50,7 @@ class App extends Component {
                 render={props => <ProfilePage {...this.props} />}
               />
               <Route
-                exact={true}
+                exact
                 path="/about"
                 render={props => <AboutPage {...this.props} />}
               />

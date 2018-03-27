@@ -12,7 +12,7 @@ import { meetups } from "../../data";
 
 class MeetupListingPage extends Component {
   renderList() {
-    return meetups.map(function(el) {
+    return meetups.map(el => {
       const { id, name, type, creator, description, address, image } = el;
       return (
         <ListItem

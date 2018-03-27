@@ -54,10 +54,10 @@ const app = combineReducers({
   auth
 });
 
-let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, api)(
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, api)(
   createStore
 );
 
-let store = createStoreWithMiddleware(app);
+const store = createStoreWithMiddleware(app);
 
 export default store;

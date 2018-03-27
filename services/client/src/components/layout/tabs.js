@@ -24,7 +24,7 @@ class Tabs extends Component {
 
   _renderTitles() {
     function labels(child, index) {
-      let activeClass = this.state.selected === index ? "active" : "";
+      const activeClass = this.state.selected === index ? "active" : "";
       return (
         <li key={index}>
           <Link

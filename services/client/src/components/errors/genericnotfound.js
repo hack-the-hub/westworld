@@ -5,7 +5,7 @@ class GenericNotFound extends Component {
   render() {
     return (
       <div id="wrapper">
-        <div class="content">
+        <div className="content">
           <section id="sec1">
             <div className="overlay" />
             <div className="bubble-bg" />

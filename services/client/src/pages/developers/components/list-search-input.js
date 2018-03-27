@@ -13,39 +13,39 @@ class ListSearchInput extends Component {
           <h4>Filter by Tags</h4>
           <div className="filter-tags-wrap">
             <input id="check-a" type="checkbox" name="check" />
-            <label for="check-a">Java</label>
+            <label htmlFor="check-a">Java</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-b" type="checkbox" name="check" />
-            <label for="check-b">Python</label>
+            <label htmlFor="check-b">Python</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-c" type="checkbox" name="check" />
-            <label for="check-c">Javascript</label>
+            <label htmlFor="check-c">Javascript</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-d" type="checkbox" name="check" />
-            <label for="check-d">Ruby</label>
+            <label htmlFor="check-d">Ruby</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-a" type="checkbox" name="check" />
-            <label for="check-a">C#</label>
+            <label htmlFor="check-a">C#</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-a" type="checkbox" name="check" />
-            <label for="check-a">CSS3</label>
+            <label htmlFor="check-a">CSS3</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-a" type="checkbox" name="check" />
-            <label for="check-a">Ruby on Rails</label>
+            <label htmlFor="check-a">Ruby on Rails</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-a" type="checkbox" name="check" />
-            <label for="check-a">Swift</label>
+            <label htmlFor="check-a">Swift</label>
           </div>
           <div className="filter-tags-wrap">
             <input id="check-a" type="checkbox" name="check" />
-            <label for="check-a">Angular</label>
+            <label htmlFor="check-a">Angular</label>
           </div>
         </div>
 

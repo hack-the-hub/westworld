@@ -5,7 +5,7 @@ import FeaturedMeetupCard from "./featured-meetup-card";
 
 class FeaturedMeetups extends Component {
   renderMeetups(featuredMeetups) {
-    return featuredMeetups.map(function(el) {
+    return featuredMeetups.map(el => {
       const { id, name, description, technology, role, image } = el;
       return (
         <FeaturedMeetupCard

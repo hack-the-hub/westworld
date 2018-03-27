@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:5001/auth/login";
 
 function callApi(endpoint, authenticated) {
-  let token = localStorage.getItem("access_token") || null;
+  const token = localStorage.getItem("access_token") || null;
   let config = {};
 
   if (authenticated) {
@@ -36,7 +36,7 @@ export default store => next => action => {
     return next(action);
   }
 
-  let { endpoint, types, authenticated } = callAPI;
+  const { endpoint, types, authenticated } = callAPI;
 
   const [successType, errorType] = types;
 

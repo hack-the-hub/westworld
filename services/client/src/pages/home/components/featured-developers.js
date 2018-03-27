@@ -5,7 +5,7 @@ import FeaturedDeveloperCard from "./featured-developer-card";
 
 class FeaturedDevelopers extends Component {
   renderDeveloper(featuredDevelopers) {
-    return featuredDevelopers.map(function(el) {
+    return featuredDevelopers.map(el => {
       const { id, name, description, technology, role, image, title } = el;
       return (
         <FeaturedDeveloperCard

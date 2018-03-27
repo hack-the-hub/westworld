@@ -33,13 +33,13 @@ function registerError(message) {
 
 // Calls the API to get a token and dispatches actions along the way
 export function registerUser(creds) {
-  let payload = {
+  const payload = {
     username: creds.username,
     email: creds.email,
     password: creds.password
   };
 
-  let config = {
+  const config = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
@@ -61,12 +61,11 @@ export function registerUser(creds) {
             )
           );
           return Promise.reject(user);
-        } else {
-          // If register was successful, set the token in local storage
-          localStorage.setItem("access_token", user.auth_token);
-          // Dispatch the success action
-          dispatch(receiveLogin(user));
         }
+        // If register was successful, set the token in local storage
+        localStorage.setItem("access_token", user.auth_token);
+        // Dispatch the success action
+        dispatch(receiveLogin(user));
       })
       .catch(err => console.log("Error: ", err));
   };

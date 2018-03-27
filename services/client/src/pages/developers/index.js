@@ -12,7 +12,7 @@ import { developers } from "../../data";
 
 class ListingPage extends Component {
   renderList() {
-    return developers.map(function(el) {
+    return developers.map(el => {
       const { id, name, type, role, creator, description, address, image } = el;
       return (
         <ListItem

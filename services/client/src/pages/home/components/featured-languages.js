@@ -5,7 +5,7 @@ import FeaturedLanguageCard from "./featured-language-card";
 
 class FeaturedLanguages extends Component {
   renderLanguage(featuredLanguages) {
-    return featuredLanguages.map(function(el) {
+    return featuredLanguages.map(el => {
       const { id, image } = el;
       return <FeaturedLanguageCard key={id} id={id} image={image} />;
     });

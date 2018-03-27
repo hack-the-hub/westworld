@@ -19,7 +19,6 @@ class UserStatus extends Component {
     }
   }
   getUserStatus(event) {
-    debugger;
     const accessToken = localStorage.getItem("access_token");
     const options = {
       url: `${process.env.REACT_APP_USERS_SERVICE_URL}/auth/status`,

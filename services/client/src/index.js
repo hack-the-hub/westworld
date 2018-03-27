@@ -12,7 +12,7 @@ import "stylesheets/plugins.css";
 import "stylesheets/style.css";
 import "stylesheets/color.css";
 
-let rootElement = document.getElementById("root");
+const rootElement = document.getElementById("root");
 
 render(
   <Provider store={store}>
