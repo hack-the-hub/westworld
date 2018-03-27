@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import logo from "images/logo.png";
 
@@ -23,24 +24,20 @@ class Footer extends Component {
                       <span>
                         <i className="fa fa-envelope-o" /> Mail :
                       </span>
-                      <a href="#" target="_blank">
-                        yourmail@domain.com
-                      </a>
+                      <Link to="/">yourmail@domain.com</Link>
                     </li>
                     <li>
                       {" "}
                       <span>
                         <i className="fa fa-map-marker" /> Adress :
                       </span>
-                      <a href="#" target="_blank">
-                        USA 27TH Brooklyn NY
-                      </a>
+                      <Link to="/">USA 27TH Brooklyn NY</Link>
                     </li>
                     <li>
                       <span>
                         <i className="fa fa-phone" /> Phone :
                       </span>
-                      <a href="#">+7(111)123456789</a>
+                      <Link to="/">+7(111)123456789</Link>
                     </li>
                   </ul>
                 </div>
@@ -52,13 +49,13 @@ class Footer extends Component {
                 <div className="widget-posts fl-wrap">
                   <ul>
                     <li className="clearfix">
-                      <a href="#" className="widget-posts-img">
+                      <Link to="/" className="widget-posts-img">
                         <img src="" className="respimg" alt="" />
-                      </a>
+                      </Link>
                       <div className="widget-posts-descr">
-                        <a href="#" title="">
+                        <Link to="/" title="">
                           Vivamus dapibus rutrum
-                        </a>
+                        </Link>
                         <span className="widget-posts-date">
                           {" "}
                           21 Mar 09.05{" "}
@@ -66,25 +63,25 @@ class Footer extends Component {
                       </div>
                     </li>
                     <li className="clearfix">
-                      <a href="#" className="widget-posts-img">
+                      <Link to="/" className="widget-posts-img">
                         <img src="" className="respimg" alt="" />
-                      </a>
+                      </Link>
                       <div className="widget-posts-descr">
-                        <a href="#" title="">
+                        <Link to="/" title="">
                           {" "}
                           In hac habitasse platea
-                        </a>
+                        </Link>
                         <span className="widget-posts-date"> 7 Mar 18.21 </span>
                       </div>
                     </li>
                     <li className="clearfix">
-                      <a href="#" className="widget-posts-img">
+                      <Link to="/" className="widget-posts-img">
                         <img src="" className="respimg" alt="" />
-                      </a>
+                      </Link>
                       <div className="widget-posts-descr">
-                        <a href="#" title="">
+                        <Link to="/" title="">
                           Tortor tempor in porta
-                        </a>
+                        </Link>
                         <span className="widget-posts-date"> 7 Mar 16.42 </span>
                       </div>
                     </li>
@@ -135,16 +132,16 @@ class Footer extends Component {
                   <div className="footer-menu fl-wrap">
                     <ul>
                       <li>
-                        <a href="#">Home </a>
+                        <Link to="/">Home </Link>
                       </li>
                       <li>
-                        <a href="#">Blog</a>
+                        <Link to="/">Blog</Link>
                       </li>
                       <li>
-                        <a href="#">Listing</a>
+                        <Link to="/">Listing</Link>
                       </li>
                       <li>
-                        <a href="#">Contacts</a>
+                        <Link to="/">Contacts</Link>
                       </li>
                     </ul>
                   </div>
@@ -171,29 +168,29 @@ class Footer extends Component {
                 <div className="footer-social">
                   <ul>
                     <li>
-                      <a href="#" target="_blank">
+                      <Link to="/">
                         <i className="fa fa-facebook-official" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" target="_blank">
+                      <Link to="/">
                         <i className="fa fa-twitter" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" target="_blank">
+                      <Link to="/">
                         <i className="fa fa-chrome" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" target="_blank">
+                      <Link to="/">
                         <i className="fa fa-vk" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" target="_blank">
+                      <Link to="/">
                         <i className="fa fa-whatsapp" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

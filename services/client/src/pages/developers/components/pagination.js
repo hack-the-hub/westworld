@@ -1,27 +1,28 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Pagination extends Component {
   render() {
     return (
       <div className="pagination">
-        <a href="#" className="prevposts-link">
+        <Link to="#" className="prevposts-link">
           <i className="fa fa-caret-left" />
-        </a>
-        <a href="#" className="blog-page current-page transition">
+        </Link>
+        <Link to="#" className="blog-page current-page transition">
           1
-        </a>
-        <a href="#" className="blog-page transition">
+        </Link>
+        <Link to="#" className="blog-page transition">
           2
-        </a>
-        <a href="#" className="blog-page transition">
+        </Link>
+        <Link to="#" className="blog-page transition">
           3
-        </a>
-        <a href="#" className="blog-page transition">
+        </Link>
+        <Link to="#" className="blog-page transition">
           4
-        </a>
-        <a href="#" className="nextposts-link">
+        </Link>
+        <Link to="#" className="nextposts-link">
           <i className="fa fa-caret-right" />
-        </a>
+        </Link>
       </div>
     );
   }

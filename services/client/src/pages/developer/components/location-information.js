@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class LocationInformation extends Component {
   render() {
-    console.log(this.props);
-    const { image, website } = this.props.listing;
+    const { image, website } = this.props.developer;
 
     return (
       <div className="box-widget-item fl-wrap">
@@ -19,38 +19,38 @@ class LocationInformation extends Component {
                     <i className="fa fa-map-marker" />
                     Address :
                   </span>
-                  <a href="#">Belfast</a>
+                  <Link to="/">Belfast</Link>
                 </li>
                 <li>
                   <span>
                     <i className="fa fa-globe" />
                     Website :
                   </span>
-                  <a href="#">{website}</a>
+                  <Link to="/">{website}</Link>
                 </li>
               </ul>
             </div>
             <div className="list-widget-social">
               <ul>
                 <li>
-                  <a href="#" target="_blank">
+                  <Link to="/">
                     <i className="fa fa-facebook" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" target="_blank">
+                  <Link to="/">
                     <i className="fa fa-twitter" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" target="_blank">
+                  <Link to="/">
                     <i className="fa fa-vk" />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" target="_blank">
+                  <Link to="/">
                     <i className="fa fa-whatsapp" />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

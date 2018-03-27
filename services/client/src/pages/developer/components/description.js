@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Description extends Component {
   render() {
-    const { name, description } = this.props.listing;
+    const { name, description } = this.props.developer;
     return (
       <div className="list-single-main-item fl-wrap">
         <div className="list-single-main-item-title fl-wrap">
@@ -46,9 +47,9 @@ class Description extends Component {
           <h3>Tags</h3>
         </div>
         <div className="list-single-tags tags-stylwrap">
-          <a href="#">Software Engineer</a>
-          <a href="#">Stem Ambassador</a>
-          <a href="#">Event Organiser</a>
+          <Link to="/">Software Engineer</Link>
+          <Link to="/">Stem Ambassador</Link>
+          <Link to="/">Event Organiser</Link>
         </div>
       </div>
     );

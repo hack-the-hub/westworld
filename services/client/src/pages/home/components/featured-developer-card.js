@@ -10,15 +10,7 @@ class FeaturedDeveloperCard extends Component {
   }
 
   render() {
-    const {
-      id,
-      name,
-      title,
-      description,
-      technology,
-      role,
-      image
-    } = this.props;
+    const { id, name, title, image } = this.props;
 
     return (
       <div className="gallery-item">

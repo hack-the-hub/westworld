@@ -1,20 +1,15 @@
 import React, { Component } from "react";
-
 import Header from "components/layout/header";
 import Footer from "components/layout/footer";
-
 import Description from "./components/description";
 import LocationInformation from "./components/location-information";
-
 import Communtity from "components/shared/community";
-
 import { meetups } from "../../data";
 
 class MeetupPage extends Component {
   render() {
-    const { dispatch, isAuthenticated } = this.props;
     const { id } = this.props.match.params;
-    const listing = meetups.find(listing => listing.id == id);
+    const meetup = meetups.find(meetup => meetup.id === id);
 
     return (
       <div>
@@ -28,7 +23,7 @@ class MeetupPage extends Component {
                   <div className="row">
                     <div className="col-md-4">
                       <div className="box-widget-wrap">
-                        <LocationInformation listing={listing} />
+                        <LocationInformation meetup={meetup} />
                       </div>
                     </div>
 
@@ -37,7 +32,7 @@ class MeetupPage extends Component {
                         className="list-single-main-wrapper fl-wrap"
                         id="sec2"
                       >
-                        <Description listing={listing} />
+                        <Description meetup={meetup} />
                       </div>
                     </div>
                   </div>

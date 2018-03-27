@@ -17,8 +17,6 @@ import ScrollToTop from "components/navigation/scroll-to-top";
 
 class App extends Component {
   render() {
-    const { isAuthenticated, errorMessage } = this.props;
-
     return (
       <div>
         <Router>

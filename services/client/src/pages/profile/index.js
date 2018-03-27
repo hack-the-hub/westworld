@@ -5,12 +5,8 @@ import Footer from "components/layout/footer";
 import Question from "components/shared/question";
 import Profile from "./components/profile";
 
-import UserStatus from "components/user/UserStatus";
-
 class ProfilePage extends Component {
   render() {
-    const { dispatch, isAuthenticated } = this.props;
-
     return (
       <div>
         <div id="main">

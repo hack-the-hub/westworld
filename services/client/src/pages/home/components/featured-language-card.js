@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class FeaturedLanguagesCard extends Component {
   render() {
-    const { id, image } = this.props;
+    const { image } = this.props;
 
     return (
       <div className="gallery-item">

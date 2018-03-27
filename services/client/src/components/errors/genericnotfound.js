@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class GenericNotFound extends Component {
   render() {
@@ -39,10 +40,10 @@ class GenericNotFound extends Component {
                     </p>
                   </div>
                   <div className="col-md-4">
-                    <a href="#" className="join-wrap-btn modal-open">
+                    <Link to="/" className="join-wrap-btn modal-open">
                       Sign Up
                       <i className="fa fa-sign-in" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

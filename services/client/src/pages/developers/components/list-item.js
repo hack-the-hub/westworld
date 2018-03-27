@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 
 class ListSearchInput extends Component {
@@ -11,16 +10,7 @@ class ListSearchInput extends Component {
   }
 
   render() {
-    const {
-      id,
-      name,
-      role,
-      type,
-      creator,
-      description,
-      address,
-      image
-    } = this.props;
+    const { id, name, role, image } = this.props;
 
     return (
       <div className="listing-item">

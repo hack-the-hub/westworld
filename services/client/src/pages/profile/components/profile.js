@@ -1,9 +1,8 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import ProfileUpload from "./profile-upload";
 import ProfileEdit from "./profile-edit";
-
-import { Link } from "react-router-dom";
 
 class Profile extends Component {
   render() {
@@ -50,35 +49,35 @@ class Profile extends Component {
                       <h3>Listings</h3>
                       <ul>
                         <li>
-                          <a href="dashboard-listing-table.html">
+                          <Link to="dashboard-listing-table">
                             <i className="fa fa-th-list" />
                             My listigs
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a href="dashboard-bookings.html">
+                          <Link to="dashboard-bookings">
                             <i className="fa fa-calendar-check-o" />
                             Bookings
                             <span>2</span>
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a href="dashboard-review.html">
+                          <Link to="dashboard-review">
                             <i className="fa fa-comments-o" />
                             Reviews
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a href="dashboard-add-listing.html">
+                          <Link to="dashboard-add-listing">
                             <i className="fa fa-plus-square-o" />
                             Add New
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
-                    <a href="#" className="log-out-btn">
+                    <Link to="#" className="log-out-btn">
                       Log Out
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

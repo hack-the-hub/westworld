@@ -12,7 +12,7 @@ class ListSearchInput extends Component {
   }
 
   render() {
-    const { id, name, type, creator, description, address, image } = this.props;
+    const { id, name, creator, description, image } = this.props;
 
     return (
       <div className="listing-item">

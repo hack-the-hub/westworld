@@ -26,7 +26,7 @@ class FeaturedMeetupCard extends Component {
               <h3>
                 <Link to={`/developer/${id}`}>{name}</Link>
               </h3>
-              <p>{this.renderDescription()}</p>
+              <p>{this.renderDescription(description)}</p>
             </div>
           </div>
         </div>

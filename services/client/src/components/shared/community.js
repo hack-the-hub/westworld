@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Community extends Component {
   render() {
@@ -14,10 +15,9 @@ class Community extends Component {
                 </p>
               </div>
               <div className="col-md-4">
-                <a href="#" className="join-wrap-btn modal-open">
-                  Sign Up
-                  <i className="fa fa-sign-in" />
-                </a>
+                <Link to="/" className="join-wrap-btn modal-open">
+                  <i className="fa fa-sign-in" /> Sign Up
+                </Link>
               </div>
             </div>
           </div>

@@ -7,8 +7,6 @@ import AboutUs from "./components/aboutus";
 
 class AboutPage extends Component {
   render() {
-    const { dispatch, isAuthenticated } = this.props;
-
     return (
       <div>
         <div id="main">

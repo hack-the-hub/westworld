@@ -38,7 +38,7 @@ export default store => next => action => {
 
   let { endpoint, types, authenticated } = callAPI;
 
-  const [requestType, successType, errorType] = types;
+  const [successType, errorType] = types;
 
   // Passing the authenticated boolean back in our data will let us distinguish between normal and secret quotes
   return callApi(endpoint, authenticated).then(

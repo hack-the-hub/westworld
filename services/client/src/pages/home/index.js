@@ -15,8 +15,6 @@ import {
 
 class HomePage extends Component {
   render() {
-    const { dispatch, isAuthenticated } = this.props;
-
     return (
       <div>
         <div id="main">
