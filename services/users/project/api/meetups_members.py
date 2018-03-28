@@ -1,9 +1,9 @@
 from flask import Blueprint, jsonify, abort
 import json
-import os
 
 
-meetup_members_blueprint = Blueprint('meetups_members', __name__, template_folder='./templates')
+meetup_members_blueprint = Blueprint(
+    'meetups_members', __name__, template_folder='./templates')
 
 
 @meetup_members_blueprint.route('/meetups_members/', methods=['GET'])
@@ -14,6 +14,7 @@ def get_members_all():
     return jsonify({
         'results': meetups_json
     })
+
 
 @meetup_members_blueprint.route('/meetups_members/<meetup_id>', methods=['GET'])
 def get_members_by_id(meetup_id):
