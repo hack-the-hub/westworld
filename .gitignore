@@ -3,3 +3,5 @@ env
 htmlcov/
 jest_0/
 node_modules
+
+*.pem

@@ -41,6 +41,7 @@ services:
     depends_on:
       - users-service
       - client
+      - swagger
     links:
       - users-service
 
@@ -52,11 +53,25 @@ services:
     volumes:
       - './services/client:/usr/src/app'
     ports:
-      - '3007:3000'
+      - '3007:3000' # expose ports - HOST:CONTAINER
     environment:
       - NODE_ENV=development
       - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
     depends_on:
       - users-service
     links:
+      - users-service
+
+  swagger:
+    container_name: swagger
+    build:
+      context: ./services/swagger
+      dockerfile: Dockerfile-dev
+    volumes:
+      - './services/swagger/swagger.json:/usr/share/nginx/html/swagger.json'
+    ports:
+      - '3008:8080'
+    environment:
+      - URL=swagger.json
+    depends_on:
       - users-service

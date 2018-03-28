@@ -1,4 +1,6 @@
-# Westworld Service
+# My Dev Space Service
+
+[![Build Status](https://travis-ci.com/apoclyps/my-dev-space.svg?token=putHnyd9Fyt2bwsGacCD&branch=master)](https://travis-ci.com/apoclyps/my-dev-space?token=putHnyd9Fyt2bwsGacCD&branch=master)
 
 ### Build Commands
 
