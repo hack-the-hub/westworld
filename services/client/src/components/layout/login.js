@@ -4,9 +4,11 @@ import {Link} from 'react-router-dom';
 
 export default class Login extends Component {
 
-  handleClick = (e) => {
-    e.preventDefault();
+  handleClick = () => {
     const {email, password} = this.refs;;
+
+    if (!email && !password) return undefined;
+    
     const creds = {
       email: email.value.trim(),
       password: password.value.trim()

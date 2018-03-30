@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import Header from 'components/layout/header';
 import Footer from 'components/layout/footer';
@@ -11,18 +12,23 @@ import ListItem from './components/list-item';
 import {meetups} from '../../data';
 
 class MeetupListingPage extends Component {
+
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string.isRequired
+  };
+
   renderList() {
     return meetups.map(el => {
-      const {id, name, type, creator, description, address, image} = el;
+      const {id, name, creator, description, image} = el;
       return (
         <ListItem
           key={id}
           id={id}
           name={name}
-          type={type}
           creator={creator}
           description={description}
-          address={address}
           image={image}
         />
       );

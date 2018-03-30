@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class ScrollToTop extends Component {
   static propTypes = {
-    location: PropTypes.string.isRequired,
+    location: PropTypes.object.isRequired,
     children: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.element

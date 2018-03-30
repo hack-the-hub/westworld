@@ -14,10 +14,7 @@ class Header extends Component {
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired,
-    errorMessage: PropTypes.string.isRequired,
-    redirectTo: PropTypes.string.isRequired,
-    onLogoutClick: PropTypes.func.isRequired
+    isAuthenticated: PropTypes.bool.isRequired
   };
 
   constructor(props) {
@@ -103,8 +100,6 @@ class Header extends Component {
   }
 
   renderUserMenu() {
-    const {dispatch} = this.props;
-
     return (
       <ul>
         <li>

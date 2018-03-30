@@ -13,10 +13,6 @@ import {developers} from '../../data';
 
 class ListingPage extends Component {
 
-  static propTypes = {
-    developers: PropTypes.array.isRequired
-  };
-
   renderList() {
     return developers.map(el => {
       const {id, name, type, role, creator, description, address, image} = el;

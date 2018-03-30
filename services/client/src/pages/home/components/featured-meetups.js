@@ -12,7 +12,7 @@ class FeaturedMeetups extends Component {
 
   renderMeetups(featuredMeetups) {
     return featuredMeetups.map(el => {
-      const {id, name, description, technology, role, image} = el;
+      const {id, name, description, technology, image} = el;
       return (
         <FeaturedMeetupCard
           key={id}
@@ -20,7 +20,6 @@ class FeaturedMeetups extends Component {
           name={name}
           description={description}
           technology={technology}
-          role={role}
           image={image}
         />
       );

@@ -11,7 +11,6 @@ class FeaturedMeetupCard extends Component {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     technology: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
   };
 
@@ -23,7 +22,7 @@ class FeaturedMeetupCard extends Component {
   }
 
   render() {
-    const {id, name, description, technology, role, image} = this.props;
+    const {id, name, description, technology, image} = this.props;
 
     return (
       <div className='gallery-item'>
@@ -31,7 +30,7 @@ class FeaturedMeetupCard extends Component {
           <div className='listing-item-grid meetup-image'>
             <img src={image} alt='' />
             <div className='listing-counter'>
-              Technology: <span>{technology} </span> {role}
+              Technology: <span>{technology} </span>
             </div>
             <div className='listing-item-cat'>
               <h3>

@@ -16,6 +16,13 @@ import AboutPage from 'pages/about';
 import ScrollToTop from 'components/navigation/scroll-to-top';
 
 class App extends Component {
+
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string.isRequired
+  };
+
   render() {
     return (
       <div>
@@ -63,17 +70,10 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired,
-  errorMessage: PropTypes.string.isRequired
-};
-
 // These props come from the application's
 // state when it is started
 function mapStateToProps(state) {
-  const {auth} = state;
-  const {isAuthenticated, errorMessage} = auth;
+  const {isAuthenticated, errorMessage} = state.auth;
 
   return {isAuthenticated, errorMessage};
 }

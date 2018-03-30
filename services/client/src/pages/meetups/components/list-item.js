@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import './stylesheet/index.css';
 
-class ListSearchInput extends Component {
+class ListItem extends Component {
 
   static propTypes = {
     id: PropTypes.string.isRequired,
@@ -56,4 +56,4 @@ class ListSearchInput extends Component {
   }
 }
 
-export default ListSearchInput;
+export default ListItem;

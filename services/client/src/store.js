@@ -12,8 +12,9 @@ import {LOGOUT_SUCCESS} from 'actions/logout';
 function auth(
   state = {
     isFetching: false,
-    isAuthenticated: !!localStorage.getItem('access_token'),
-    redirectTo: null
+    isAuthenticated: false,
+    redirectTo: null,
+    errorMessage: ''
   },
   action
 ) {
@@ -23,7 +24,8 @@ function auth(
         isFetching: true,
         isAuthenticated: false,
         user: action.creds,
-        redirectTo: null
+        redirectTo: null,
+        errorMessage: ''
       });
     case LOGIN_SUCCESS:
       return Object.assign({}, state, {
@@ -43,7 +45,8 @@ function auth(
       return Object.assign({}, state, {
         isFetching: true,
         isAuthenticated: false,
-        redirectTo: '/'
+        redirectTo: '/',
+        errorMessage: ''
       });
     default:
       return state;
