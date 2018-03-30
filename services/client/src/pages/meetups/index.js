@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Header from 'components/layout/header';
 import Footer from 'components/layout/footer';
@@ -8,12 +8,12 @@ import SearchResultHeader from './components/search-result-header';
 import ListSearchInput from './components/list-search-input';
 import ListItem from './components/list-item';
 
-import { meetups } from '../../data';
+import {meetups} from '../../data';
 
 class MeetupListingPage extends Component {
   renderList() {
     return meetups.map(el => {
-      const { id, name, type, creator, description, address, image } = el;
+      const {id, name, type, creator, description, address, image} = el;
       return (
         <ListItem
           key={id}

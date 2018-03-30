@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class Breadcrumb extends Component {
   render() {
@@ -7,7 +7,6 @@ class Breadcrumb extends Component {
         <div
           className='bg par-elem '
           data-bg='images/bg/1.jpg'
-          data-scrollax='properties: { translateY: '30%' }'
         />
       </section>
     );

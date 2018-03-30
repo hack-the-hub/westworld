@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import Header from 'components/layout/header';
 import Footer from 'components/layout/footer';
@@ -8,12 +9,17 @@ import SearchResultHeader from './components/search-result-header';
 import ListSearchInput from './components/list-search-input';
 import ListItem from './components/list-item';
 
-import { developers } from '../../data';
+import {developers} from '../../data';
 
 class ListingPage extends Component {
+
+  static propTypes = {
+    developers: PropTypes.array.isRequired
+  };
+
   renderList() {
     return developers.map(el => {
-      const { id, name, type, role, creator, description, address, image } = el;
+      const {id, name, type, role, creator, description, address, image} = el;
       return (
         <ListItem
           key={id}

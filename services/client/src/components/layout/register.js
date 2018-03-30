@@ -1,9 +1,29 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 export default class Login extends Component {
+
+  static propTypes = {
+    errorMessage: PropTypes.string.isRequired,
+    onRegisterClick: PropTypes.func.isRequired,
+  };
+
+  handleClick = (e) => {
+    e.preventDefault();
+
+    const {name, username, email, password} = this.refs;
+
+    const creds = {
+      name: name.value.trim(),
+      username: username.value.trim(),
+      email: email.value.trim(),
+      password: password.value.trim()
+    };
+    this.props.onRegisterClick(creds);
+  };
+
   render() {
-    const { errorMessage } = this.props;
+    const {errorMessage} = this.props;
 
     return (
       <div>
@@ -25,7 +45,7 @@ export default class Login extends Component {
             <button
               type='submit'
               className='log-submit-btn'
-              onClick={event => this.handleClick(event)}
+              onClick={this.handleClick()}
             >
               <span>Register</span>
             </button>
@@ -36,22 +56,4 @@ export default class Login extends Component {
       </div>
     );
   }
-
-  handleClick(event) {
-    const name = this.refs.name;
-    const username = this.refs.username;
-    const email = this.refs.email;
-    const password = this.refs.password;
-    const creds = {
-      name: name.value.trim(),
-      username: name.value.trim(),
-      email: email.value.trim(),
-      password: password.value.trim()
-    };
-    this.props.onRegisterClick(creds);
-  }
 }
-
-Login.propTypes = {
-  errorMessage: PropTypes.string
-};

@@ -41,7 +41,7 @@ export function registerUser(creds) {
 
   const config = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(payload)
   };
 
@@ -50,8 +50,8 @@ export function registerUser(creds) {
     dispatch(requesRegister(creds));
 
     return fetch('http://localhost:5001/auth/register', config)
-      .then(response => response.json().then(user => ({ user, response })))
-      .then(({ user, response }) => {
+      .then(response => response.json().then(user => ({user, response})))
+      .then(({user, response}) => {
         if (!response.ok) {
           // If there was a problem, we want to
           // dispatch the error condition

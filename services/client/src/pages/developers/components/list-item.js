@@ -1,7 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class ListSearchInput extends Component {
+
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  };
+
   renderDescription(description) {
     if (!description) return null;
 
@@ -10,7 +19,7 @@ class ListSearchInput extends Component {
   }
 
   render() {
-    const { id, name, role, image } = this.props;
+    const {id, name, role, image} = this.props;
 
     return (
       <div className='listing-item'>

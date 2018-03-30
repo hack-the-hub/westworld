@@ -1,7 +1,15 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class FeaturedDeveloperCard extends Component {
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  };
+
   renderDescription(description) {
     if (!description) return null;
 
@@ -10,7 +18,7 @@ class FeaturedDeveloperCard extends Component {
   }
 
   render() {
-    const { id, name, title, image } = this.props;
+    const {id, name, title, image} = this.props;
 
     return (
       <div className='gallery-item'>

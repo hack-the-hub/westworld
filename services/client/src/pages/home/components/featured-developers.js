@@ -1,12 +1,18 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 import FeaturedDeveloperCard from './featured-developer-card';
 
 class FeaturedDevelopers extends Component {
+
+  static propTypes = {
+    featuredDevelopers: PropTypes.array.isRequired
+  };
+
   renderDeveloper(featuredDevelopers) {
     return featuredDevelopers.map(el => {
-      const { id, name, description, technology, role, image, title } = el;
+      const {id, name, description, technology, role, image, title} = el;
       return (
         <FeaturedDeveloperCard
           key={id}
@@ -23,7 +29,7 @@ class FeaturedDevelopers extends Component {
   }
 
   render() {
-    const { featuredDevelopers } = this.props;
+    const {featuredDevelopers} = this.props;
     return (
       <section id='featured-developer-section'>
         <div className='container'>

@@ -1,12 +1,18 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 import FeaturedMeetupCard from './featured-meetup-card';
 
 class FeaturedMeetups extends Component {
+
+  static propTypes = {
+    featuredMeetups: PropTypes.array.isRequired
+  };
+
   renderMeetups(featuredMeetups) {
     return featuredMeetups.map(el => {
-      const { id, name, description, technology, role, image } = el;
+      const {id, name, description, technology, role, image} = el;
       return (
         <FeaturedMeetupCard
           key={id}
@@ -22,7 +28,7 @@ class FeaturedMeetups extends Component {
   }
 
   render() {
-    const { featuredMeetups } = this.props;
+    const {featuredMeetups} = this.props;
     return (
       <section id='featured-meetup-section'>
         <div className='container'>

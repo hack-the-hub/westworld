@@ -3,7 +3,7 @@ export const featuredDevelopers = [
     id: '1',
     name: 'Kyle Harrison',
     description:
-      'After gaduatiing from a BSc in Applied Computing in 2014, Kyle has worked as in software development roles at Chain Reaction Cycles, Alert Loging, and ShopKeep. He is well recognised in Belfast's meetup community and has volenteered as a mentor at Coder Dojo',
+      'After gaduatiing from a BSc in Applied Computing in 2014, Kyle has worked as in software development roles at Chain Reaction Cycles, Alert Loging, and ShopKeep. He is well recognised in Belfast\'s meetup community and has volenteered as a mentor at Coder Dojo',
     technology: 'Python',
     role: 'Software Engineer - ShopKeep',
     title: 'Engineer',
@@ -49,7 +49,7 @@ export const featuredDevelopers = [
     description:
       'Final year student, drinking cofee and avoiding heart attacks.',
     technology: 'Python',
-    role: 'BEng Computer Science - Queen's University',
+    role: 'BEng Computer Science - Queen\'s University',
     title: 'Student',
     image:
       'https://media.licdn.com/dms/image/C4D03AQFZiIOn5aWpnA/profile-displayphoto-shrink_800_800/0?e=1527156000&v=alpha&t=L9SxGEcGdy7FVQ8LVw3c8ERYOGuurEo7Jp1kNPTyFxM'
@@ -138,7 +138,7 @@ export const featuredMeetups = [
     id: '2',
     name: 'NI Testers Meetup',
     description:
-      'For anyone interested in Software Testing from any aspects of the Software Engineering discipline AND happen to be around Belfast, Northern Ireland then this is the group for you. We'll do things with a bit of a lean coffee style approach so we don't have any particular set agendas but instead we democratically decide this. As we progress, we'll include talks / evenings / events etc.',
+      'For anyone interested in Software Testing from any aspects of the Software Engineering discipline AND happen to be around Belfast, Northern Ireland then this is the group for you. We\'ll do things with a bit of a lean coffee style approach so we don\'t have any particular set agendas but instead we democratically decide this. As we progress, we\'ll include talks / evenings / events etc.',
     'skill level': 'Any',
     technology: 'Testing',
     image:
@@ -168,7 +168,7 @@ export const featuredMeetups = [
     id: '5',
     name: 'Nigma',
     description:
-      'This is a meetup which is aimed at keeping software engineering students up to date on the latest technology stacks and current software trends that are being demanded by employers. We know it can be difficult as a student software developer heading out into industry for the first time, whether that be on your placement or your first graduate job. It can be very intimidating and challenging to filter out what you need to learn, especially when there seems to be a new framework being released every time you go online. (There probably is!) Well, Nigma was created to try and fix this. We are aiming to bridge the gap between software dev. students in education and the workplace by providing a series of meetups that offers students the opportunity to talk about code, listen to kick ass talks on code and meet other passionate developers that are equally keen to learn about.... well...code. So if you're a student studying a computing related course or have just recently graduated then this is for you.',
+      'This is a meetup which is aimed at keeping software engineering students up to date on the latest technology stacks and current software trends that are being demanded by employers. We know it can be difficult as a student software developer heading out into industry for the first time, whether that be on your placement or your first graduate job. It can be very intimidating and challenging to filter out what you need to learn, especially when there seems to be a new framework being released every time you go online. (There probably is!) Well, Nigma was created to try and fix this. We are aiming to bridge the gap between software dev. students in education and the workplace by providing a series of meetups that offers students the opportunity to talk about code, listen to kick ass talks on code and meet other passionate developers that are equally keen to learn about.... well...code. So if you\'re a student studying a computing related course or have just recently graduated then this is for you.',
     'skill level': 'Any',
     technology: 'All',
     image:
@@ -213,7 +213,7 @@ export const developers = [
     id: '1',
     name: 'Kyle Harrison',
     description:
-      'After gaduatiing from a BSc in Applied Computing in 2014, Kyle has worked as in software development roles at Chain Reaction Cycles, Alert Loging, and ShopKeep. He is well recognised in Belfast's meetup community and has volenteered as a mentor at Coder Dojo',
+      'After gaduatiing from a BSc in Applied Computing in 2014, Kyle has worked as in software development roles at Chain Reaction Cycles, Alert Loging, and ShopKeep. He is well recognised in Belfast\'s meetup community and has volenteered as a mentor at Coder Dojo',
     technology: 'Python',
     title: 'Engineer',
     role: 'Software Engineer - ShopKeep',
@@ -249,7 +249,7 @@ export const developers = [
       'Final year student, drinking cofee and avoiding heart attacks.',
     technology: 'Python',
     title: 'Student',
-    role: 'BEng Computer Science - Queen's University',
+    role: 'BEng Computer Science - Queen\'s University',
     image:
       'https://media.licdn.com/dms/image/C4D03AQFZiIOn5aWpnA/profile-displayphoto-shrink_800_800/0?e=1527156000&v=alpha&t=L9SxGEcGdy7FVQ8LVw3c8ERYOGuurEo7Jp1kNPTyFxM'
   }

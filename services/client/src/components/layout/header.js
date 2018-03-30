@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import LoginForm from './loginform';
 import RegisterForm from './registerform';
-import { logoutUser } from 'actions/logout';
+import {logoutUser} from 'actions/logout';
 import Pane from './pane';
 import Tabs from './tabs';
 
@@ -10,6 +11,15 @@ import logo from 'images/logo.png';
 import Logout from './logout';
 
 class Header extends Component {
+
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string.isRequired,
+    redirectTo: PropTypes.string.isRequired,
+    onLogoutClick: PropTypes.func.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -93,7 +103,7 @@ class Header extends Component {
   }
 
   renderUserMenu() {
-    const { dispatch } = this.props;
+    const {dispatch} = this.props;
 
     return (
       <ul>
@@ -122,7 +132,7 @@ class Header extends Component {
     return (
       <div className='header-user-menu'>
         <div className='header-user-name' onClick={this.handleUserMenuDropdown}>
-          <Link to='/profile' style={{ position: 'initial' }}>
+          <Link to='/profile' style={{position: 'initial'}}>
             <span>
               <img
                 src='https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/1455115_10153441244790459_1787397019_n.jpg?oh=bc43967651e9dc8288e9b7666ca88dfe&oe=5B4594E3'

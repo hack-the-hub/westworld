@@ -1,10 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class Login extends Component {
+
+  handleClick = (e) => {
+    e.preventDefault();
+    const {email, password} = this.refs;;
+    const creds = {
+      email: email.value.trim(),
+      password: password.value.trim()
+    };
+    this.props.onLoginClick(creds);
+  };
+
   render() {
-    const { errorMessage } = this.props;
+    const {errorMessage} = this.props;
 
     return (
       <div>
@@ -26,7 +37,7 @@ export default class Login extends Component {
             />
             <button
               className='log-submit-btn'
-              onClick={event => this.handleClick(event)}
+              onClick={this.handleClick()}
             >
               <span>Log In</span>
             </button>
@@ -45,19 +56,9 @@ export default class Login extends Component {
       </div>
     );
   }
-
-  handleClick(event) {
-    event.preventDefault();
-    const email = this.refs.email;
-    const password = this.refs.password;
-    const creds = {
-      email: email.value.trim(),
-      password: password.value.trim()
-    };
-    this.props.onLoginClick(creds);
-  }
 }
 
 Login.propTypes = {
-  errorMessage: PropTypes.string
+  errorMessage: PropTypes.string.isRequired,
+  onLoginClick: PropTypes.func.isRequired
 };

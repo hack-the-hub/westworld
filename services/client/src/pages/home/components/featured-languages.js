@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 import FeaturedLanguageCard from './featured-language-card';
 
 class FeaturedLanguages extends Component {
+
+  static propTypes = {
+    featuredLanguages: PropTypes.array.isRequired
+  };
+
   renderLanguage(featuredLanguages) {
     return featuredLanguages.map(el => {
-      const { id, image } = el;
+      const {id, image} = el;
       return <FeaturedLanguageCard key={id} id={id} image={image} />;
     });
   }
 
   render() {
-    const { featuredLanguages } = this.props;
+    const {featuredLanguages} = this.props;
     return (
       <section id='featured-developer-section'>
         <div className='container'>

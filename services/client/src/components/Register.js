@@ -1,9 +1,26 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 export default class Register extends Component {
+
+  static propTypes = {
+    errorMessage: PropTypes.string.isRequired,
+    onRegisterClick: PropTypes.func.isRequired
+  };
+
+  handleClick = (e) => {
+    e.preventDefault();
+    const {username, email, password} = this.refs;
+    const creds = {
+      username: username.value.trim(),
+      email: email.value.trim(),
+      password: password.value.trim()
+    };
+    this.props.onRegisterClick(creds);
+  };
+
   render() {
-    const { dispatch, isAuthenticated, errorMessage, redirectTo } = this.props;
+    const {errorMessage} = this.props;
 
     return (
       <div className='column is-6 '>
@@ -57,20 +74,4 @@ export default class Register extends Component {
       </div>
     );
   }
-
-  handleClick(event) {
-    const username = this.refs.username;
-    const email = this.refs.email;
-    const password = this.refs.password;
-    const creds = {
-      username: username.value.trim(),
-      email: email.value.trim(),
-      password: password.value.trim()
-    };
-    this.props.onRegisterClick(creds);
-  }
 }
-
-Register.propTypes = {
-  errorMessage: PropTypes.string
-};

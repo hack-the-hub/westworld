@@ -7,7 +7,7 @@ function callApi(endpoint, authenticated) {
   if (authenticated) {
     if (token) {
       config = {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: {Authorization: `Bearer ${token}`}
       };
     } else {
       throw new Error('No token saved!');
@@ -15,15 +15,16 @@ function callApi(endpoint, authenticated) {
   }
 
   return fetch(BASE_URL + endpoint, config)
-    .then(response => response.text().then(text => ({ text, response })))
-    .then(({ text, response }) => {
+    .then(response => response.text().then(text => ({text, response})))
+    .then(({text, response}) => {
       if (!response.ok) {
         return Promise.reject(text);
       }
 
       return text;
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err)
+  );
 }
 
 export const CALL_API = Symbol('Call API');
@@ -36,7 +37,7 @@ export default store => next => action => {
     return next(action);
   }
 
-  const { endpoint, types, authenticated } = callAPI;
+  const {endpoint, types, authenticated} = callAPI;
 
   const [successType, errorType] = types;
 

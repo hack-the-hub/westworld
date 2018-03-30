@@ -1,15 +1,26 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Header from 'components/layout/header';
 import Footer from 'components/layout/footer';
 import Description from './components/description';
 import LocationInformation from './components/location-information';
 import Communtity from 'components/shared/community';
-import { meetups } from '../../data';
+import {meetups} from '../../data';
 
 class MeetupPage extends Component {
+
+  static propTypes = {
+    meetups: PropTypes.array.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.node,
+      }).isRequired,
+    }).isRequired
+  };
+
   render() {
-    const { id } = this.props.match.params;
-    const meetup = meetups.find(meetup => meetup.id === id);
+    const {id} = this.props.match.params;
+    const meetup = meetups.find(m => m.id === id);
 
     return (
       <div>

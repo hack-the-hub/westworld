@@ -1,10 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import api from 'middleware/api';
 
-import { combineReducers } from 'redux';
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from 'actions/login';
-import { LOGOUT_SUCCESS } from 'actions/logout';
+import {combineReducers} from 'redux';
+import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE} from 'actions/login';
+import {LOGOUT_SUCCESS} from 'actions/logout';
 
 // The auth reducer. The starting state sets authentication
 // based on a token being in local storage. In a real app,

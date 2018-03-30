@@ -1,9 +1,20 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 import './stylesheet/index.css';
 
 class FeaturedMeetupCard extends Component {
+
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    technology: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  };
+
   renderDescription(description) {
     if (!description) return null;
 
@@ -12,7 +23,7 @@ class FeaturedMeetupCard extends Component {
   }
 
   render() {
-    const { id, name, description, technology, role, image } = this.props;
+    const {id, name, description, technology, role, image} = this.props;
 
     return (
       <div className='gallery-item'>

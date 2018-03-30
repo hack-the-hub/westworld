@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class Description extends Component {
+
+  static propTypes = {
+    meetup: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    }).isRequired
+  };
+
   render() {
-    const { name, description } = this.props.meetup;
+    const {name, description} = this.props.meetup;
     return (
       <div className='list-single-main-item fl-wrap'>
         <div className='list-single-main-item-title fl-wrap'>

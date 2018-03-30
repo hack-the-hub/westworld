@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class FeaturedLanguagesCard extends Component {
+  static propTypes = {
+    image: PropTypes.string.isRequired
+  };
+
   render() {
-    const { image } = this.props;
+    const {image} = this.props;
 
     return (
       <div className='gallery-item'>

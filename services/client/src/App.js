@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import HomePage from 'pages/home';
 import DeveloperListingPage from 'pages/developers';
@@ -25,36 +25,36 @@ class App extends Component {
               <Route
                 exact
                 path='/'
-                render={props => <HomePage {...this.props} />}
+                render={props => <HomePage {...props} />}
               />
               <Route
                 exact
                 path='/developers'
-                render={props => <DeveloperListingPage {...this.props} />}
+                render={props => <DeveloperListingPage {...props} />}
               />
               <Route
                 exact
                 path='/meetups'
-                render={props => <MeetupListingPage {...this.props} />}
+                render={props => <MeetupListingPage {...props} />}
               />
               <Route
                 path='/meetup/:id'
-                render={props => <MeetupPage {...this.props} {...props} />}
+                render={props => <MeetupPage {...props} {...props} />}
               />
               <Route
                 path='/developer/:id'
-                render={props => <DeveloperPage {...this.props} {...props} />}
+                render={props => <DeveloperPage {...props} {...props} />}
               />
               <Route
                 path='/profile'
-                render={props => <ProfilePage {...this.props} />}
+                render={props => <ProfilePage {...props} />}
               />
               <Route
                 exact
                 path='/about'
-                render={props => <AboutPage {...this.props} />}
+                render={props => <AboutPage {...props} />}
               />
-              <Route render={props => <ErrorPage {...this.props} />} />
+              <Route render={props => <ErrorPage {...props} />} />
             </Switch>
           </ScrollToTop>
         </Router>
@@ -66,16 +66,16 @@ class App extends Component {
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  errorMessage: PropTypes.string
+  errorMessage: PropTypes.string.isRequired
 };
 
 // These props come from the application's
 // state when it is started
 function mapStateToProps(state) {
-  const { auth } = state;
-  const { isAuthenticated, errorMessage } = auth;
+  const {auth} = state;
+  const {isAuthenticated, errorMessage} = auth;
 
-  return { isAuthenticated, errorMessage };
+  return {isAuthenticated, errorMessage};
 }
 
 export default connect(mapStateToProps)(App);

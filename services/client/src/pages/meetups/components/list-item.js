@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
-
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import './stylesheet/index.css';
 
 class ListSearchInput extends Component {
+
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    creator: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  };
+
   renderDescription(description) {
     if (!description) return null;
 
@@ -12,7 +21,7 @@ class ListSearchInput extends Component {
   }
 
   render() {
-    const { id, name, creator, description, image } = this.props;
+    const {id, name, creator, description, image} = this.props;
 
     return (
       <div className='listing-item'>

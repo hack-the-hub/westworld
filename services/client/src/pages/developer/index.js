@@ -1,15 +1,26 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Header from 'components/layout/header';
 import Footer from 'components/layout/footer';
 import Description from './components/description';
 import LocationInformation from './components/location-information';
 import Communtity from 'components/shared/community';
-import { developers } from '../../data';
+import {developers} from '../../data';
 
 class DeveloperPage extends Component {
+
+  static propTypes = {
+    developers: PropTypes.array.isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.node,
+      }).isRequired,
+    }).isRequired
+  };
+
   render() {
-    const { id } = this.props.match.params;
-    const developer = developers.find(developer => developer.id === id);
+    const {id} = this.props.match.params;
+    const developer = developers.find(d => d.id === id);
 
     return (
       <div>

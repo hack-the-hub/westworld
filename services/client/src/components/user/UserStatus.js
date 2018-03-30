@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class UserStatus extends Component {
+
+  static propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -13,12 +19,15 @@ class UserStatus extends Component {
       admin: ''
     };
   }
+
   componentDidMount() {
     if (this.props.isAuthenticated) {
       this.getUserStatus();
     }
   }
-  getUserStatus(event) {
+
+  getUserStatus = (e) => {
+    e.preventDefault();
     const accessToken = localStorage.getItem('access_token');
     const options = {
       url: `${process.env.REACT_APP_USERS_SERVICE_URL}/auth/status`,
@@ -41,7 +50,8 @@ class UserStatus extends Component {
       .catch(error => {
         console.log(error);
       });
-  }
+  };
+
   render() {
     if (!this.props.isAuthenticated) {
       return (

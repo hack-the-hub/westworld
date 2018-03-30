@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Redirect} from 'react-router-dom';
 
 import Login from './login';
-
-import { loginUser } from 'actions/login';
-
-import { Redirect } from 'react-router-dom';
+import {loginUser} from 'actions/login';
 
 class LoginForm extends Component {
+
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string.isRequired,
+    redirectTo: PropTypes.string.isRequired
+  };
+
   render() {
-    const { dispatch, isAuthenticated, errorMessage, redirectTo } = this.props;
+    const {dispatch, isAuthenticated, errorMessage, redirectTo} = this.props;
 
     return (
       <div>

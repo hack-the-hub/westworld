@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class LocationInformation extends Component {
+
+  static propTypes = {
+    meetup: PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      website: PropTypes.string.isRequired
+    }).isRequired
+  };
+
   render() {
-    const { image, website } = this.props.meetup;
+    const {image, website} = this.props.meetup;
 
     return (
       <div className='box-widget-item fl-wrap'>
