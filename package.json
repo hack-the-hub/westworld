@@ -1,7 +1,12 @@
 {
   "name": "test-driven",
   "devDependencies": {
+    "all-contributors-cli": "^4.11.1",
     "randomstring": "^1.1.5",
     "testcafe": "^0.18.2"
+  },
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   }
 }

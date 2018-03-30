@@ -1,0 +1,77 @@
+{
+  "projectName": "my-dev-space",
+  "projectOwner": "apoclyps",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "apoclyps",
+      "name": "Kyle Harrison",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1443700?v=4",
+      "profile": "http://www.kyleharrison.co.uk",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "FatalEnigma",
+      "name": "Adam Smith",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6596210?v=4",
+      "profile": "https://github.com/FatalEnigma",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "TheMicroGirl",
+      "name": "Ewa G ",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17544636?v=4",
+      "profile": "https://github.com/TheMicroGirl",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "MichaelGrundie",
+      "name": "Michael Grundie",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16101792?v=4",
+      "profile": "https://www.linkedin.com/in/michaelgrundie",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "DermotMcAteer",
+      "name": "DermotMcAteer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9554484?v=4",
+      "profile": "https://github.com/DermotMcAteer",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kimmoylan",
+      "name": "kimmoylan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/28186624?v=4",
+      "profile": "https://github.com/kimmoylan",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "GoldenCrow",
+      "name": "Peter Stevenson",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2376829?v=4",
+      "profile": "https://github.com/GoldenCrow",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
+}
