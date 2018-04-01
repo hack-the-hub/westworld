@@ -18,7 +18,26 @@ services:
   - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.14.0
+  global:
+    - DOCKER_COMPOSE_VERSION=1.14.0
+    - COMMIT=${TRAVIS_COMMIT::8}
+    - MAIN_REPO=ssh://git@github.com/apoclyps/my-dev-space.git
+
+    - USERS=my-dev-space-users
+    - USERS_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/users
+    - USERS_DIR=services/users
+
+    - USERS_DB=my-dev-space-users_db
+    - USERS_DB_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db
+    - USERS_DB_DIR=services/users/project/db
+
+    - CLIENT=my-dev-space-client
+    - CLIENT_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/client
+    - CLIENT_DIR=services/client
+
+    - SWAGGER=my-dev-space-swagger
+    - SWAGGER_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger
+    - SWAGGER_DIR=services/swagger
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -29,13 +48,20 @@ before_install:
 before_script:
   - export TEST_URL=http://127.0.0.1
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
+  - export SECRET_KEY=my_precious
   - export DISPLAY=:99.0
+  - export DOCKER_ENV=$(if [ "$TRAVIS_BRANCH" == "production" ]; then echo "prod"; else echo "stage"; fi)
   - sh -e /etc/init.d/xvfb start
   - sleep 3
-  - docker-compose -f docker-compose-prod.yml up --build -d
+  - docker-compose -f docker-compose-stage.yml up --build -d
 
 script:
-  - bash test.sh stage
+  - bash test.sh $DOCKER_ENV
 
 after_script:
-  - docker-compose -f docker-compose-prod.yml down
+  - docker-compose -f docker-compose-stage.yml down
+
+after_success:
+  - bash ./docker-push.sh
+  - bash ./docker-deploy-stage.sh
+  - bash ./docker-deploy-prod.sh
