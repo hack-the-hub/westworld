@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "users-service",
-      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/test-driven-users:staging",
+      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/my-dev-space-users:staging",
       "essential": true,
       "memoryReservation": 300,
       "portMappings": [
@@ -36,14 +36,14 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "testdriven-users-stage",
+          "awslogs-group": "my-dev-space-users-stage",
           "awslogs-region": "us-east-1"
         }
       }
     },
     {
       "name": "users-db",
-      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/test-driven-users_db:staging",
+      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/my-dev-space-users_db:staging",
       "essential": true,
       "memoryReservation": 300,
       "portMappings": [
@@ -66,11 +66,11 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "testdriven-users_db-stage",
+          "awslogs-group": "my-dev-space-users_db-stage",
           "awslogs-region": "us-east-1"
         }
       }
     }
   ],
-  "family": "testdriven-users-stage-td"
+  "family": "my-dev-space-users-stage-td"
 }

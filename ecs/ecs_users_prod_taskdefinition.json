@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "users-service",
-      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/test-driven-users:production",
+      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/my-dev-space-users:production",
       "essential": true,
       "memoryReservation": 300,
       "portMappings": [
@@ -33,11 +33,11 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "testdriven-users-prod",
+          "awslogs-group": "my-dev-space-users-prod",
           "awslogs-region": "us-east-1"
         }
       }
     }
   ],
-  "family": "testdriven-users-prod-td"
+  "family": "my-dev-space-users-prod-td"
 }

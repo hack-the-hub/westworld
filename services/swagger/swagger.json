@@ -137,7 +137,7 @@
     }
   },
   "servers": [{
-    "url": "http://testdriven-production-alb-453010484.us-east-1.elb.amazonaws.com"
+    "url": "http://my-dev-space-production-alb-453010484.us-east-1.elb.amazonaws.com"
   }],
   "components": {
     "securitySchemes": {

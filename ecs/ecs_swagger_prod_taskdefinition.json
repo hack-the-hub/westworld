@@ -2,13 +2,13 @@
   "containerDefinitions": [
     {
       "name": "swagger",
-      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/test-driven-swagger:production",
+      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/my-dev-space-swagger:production",
       "essential": true,
 
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "testdriven-swagger-prod",
+          "awslogs-group": "my-dev-space-swagger-prod",
           "awslogs-region": "us-east-1"
         }
       },
@@ -28,5 +28,5 @@
       "memoryReservation": 300
     }
   ],
-  "family": "testdriven-swagger-prod-td"
+  "family": "my-dev-space-swagger-prod-td"
 }

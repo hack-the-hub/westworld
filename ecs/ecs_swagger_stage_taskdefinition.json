@@ -2,13 +2,13 @@
   "containerDefinitions": [
     {
       "name": "swagger",
-      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/test-driven-swagger:staging",
+      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/my-dev-space-swagger:staging",
       "essential": true,
 
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "testdriven-swagger-stage",
+          "awslogs-group": "my-dev-space-swagger-stage",
           "awslogs-region": "us-east-1"
         }
       },
@@ -28,5 +28,5 @@
       "memoryReservation": 300
     }
   ],
-  "family": "testdriven-swagger-stage-td"
+  "family": "my-dev-space-swagger-stage-td"
 }
