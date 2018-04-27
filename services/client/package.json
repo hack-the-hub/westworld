@@ -9,7 +9,7 @@
     "ajv": "^6.4.0",
     "autoprefixer": "7.1.2",
     "axios": "^0.18.0",
-    "case-sensitive-paths-webpack-plugin": "2.1.1",
+    "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chainable-check": "^1.0.0",
     "css-loader": "0.28.11",
     "dotenv": "4.0.0",
