@@ -30,6 +30,36 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
+  events-service:
+    container_name: events-service
+    build:
+      context: ./services/events
+      dockerfile: Dockerfile-prod
+    volumes:
+      - './services/events:/usr/src/app'
+    ports:
+      - 5002:5000
+    environment:
+      - SECRET_KEY=my_precious
+      - APP_SETTINGS=project.config.ProductionConfig
+      - DATABASE_URL=postgres://postgres:postgres@events-db:5432/events_prod
+      - DATABASE_TEST_URL=postgres://postgres:postgres@events-db:5432/events_test
+    depends_on:
+      - events-db
+    links:
+      - events-db
+
+  events-db:
+    container_name: events-db
+    build:
+      context: ./services/events/project/db
+      dockerfile: Dockerfile
+    ports:
+      - 5437:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
   nginx:
     container_name: nginx
     build: ./services/nginx
