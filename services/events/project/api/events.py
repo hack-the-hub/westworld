@@ -76,7 +76,6 @@ def add_event():
     try:
         event = Event.query.filter_by(id=id).first()
         if not event:
-
             created = int(created) / 1000
             created = datetime.utcfromtimestamp(
                 created).replace(tzinfo=timezone.utc)
