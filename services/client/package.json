@@ -41,7 +41,7 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "babel-core": "6.25.0",
+    "babel-core": "6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.1",
