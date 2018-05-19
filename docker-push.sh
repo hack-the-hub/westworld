@@ -41,6 +41,18 @@ then
     docker push $REPO/$USERS_DB:$TAG
     cd ../../../../
 
+    cd $EVENTS_DIR
+    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV .
+    docker tag $EVENTS:$COMMIT $REPO/$EVENTS:$TAG
+    docker push $REPO/$EVENTS:$TAG
+    cd ../../
+
+    cd $EVENTS_DB_DIR
+    docker build -t $EVENTS_DB:$COMMIT -f Dockerfile .
+    docker tag $EVENTS_DB:$COMMIT $REPO/$EVENTS_DB:$TAG
+    docker push $REPO/$EVENTS_DB:$TAG
+    cd ../../../../
+
     cd $CLIENT_DIR
     docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL .
     docker tag $CLIENT:$COMMIT $REPO/$CLIENT:$TAG
