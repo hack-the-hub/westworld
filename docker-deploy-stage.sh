@@ -44,6 +44,15 @@ then
       register_definition
       update_service
 
+      # events
+      service="my-dev-space-events-stage-service"
+      template="ecs_events_stage_taskdefinition.json"
+      task_template=$(cat "ecs/$template")
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_ACCOUNT_ID)
+      echo "$task_def"
+      register_definition
+      update_service
+
       # client
       service="my-dev-space-client-stage-service"
       template="ecs_client_stage_taskdefinition.json"

@@ -31,6 +31,14 @@ env:
     - USERS_DB_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db
     - USERS_DB_DIR=services/users/project/db
 
+    - EVENTS=my-dev-space-events
+    - EVENTS_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/events
+    - EVENTS_DIR=services/events
+
+    - EVENTS_DB=my-dev-space-events_db
+    - EVENTS_DB_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/events/project/db
+    - EVENTS_DB_DIR=services/events/project/db
+
     - CLIENT=my-dev-space-client
     - CLIENT_REPO=${MAIN_REPO}#${TRAVIS_BRANCH}:services/client
     - CLIENT_DIR=services/client

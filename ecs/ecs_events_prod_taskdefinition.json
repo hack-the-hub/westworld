@@ -1,0 +1,43 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "events-service",
+      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/my-dev-space-events:production",
+      "essential": true,
+      "memoryReservation": 300,
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 5000
+        }
+      ],
+      "environment": [
+        {
+          "name": "APP_SETTINGS",
+          "value": "project.config.ProductionConfig"
+        },
+        {
+          "name": "DATABASE_TEST_URL",
+          "value": "postgres://postgres:postgres@events-db:5432/events_test"
+        },
+        {
+          "name": "DATABASE_URL",
+          "value": "%s"
+        },
+        {
+          "name": "SECRET_KEY",
+          "value": "%s"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "my-dev-space-events-prod",
+          "awslogs-region": "us-east-1"
+        }
+      }
+    }
+  ],
+  "family": "my-dev-space-events-prod-td"
+}
