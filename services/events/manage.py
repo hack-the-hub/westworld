@@ -79,6 +79,11 @@ def seed_db():
     ))
     db.session.commit()
 
+@manager.command
+def run():
+    """Run the application locally in the debug server
+    """
+    app.run(port=6000)
 
 if __name__ == '__main__':
     manager.run()

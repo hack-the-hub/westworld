@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.4'
 
 services:
 
@@ -45,8 +45,8 @@ services:
     build:
       context: ./services/events/project/db
       dockerfile: Dockerfile
-    ports:
-      - 5437:5432
+    expose:
+      - 5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -56,8 +56,8 @@ services:
     build:
       context: ./services/users/project/db
       dockerfile: Dockerfile
-    ports:
-      - 5435:5432
+    expose:
+      - 5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
