@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.2'
 
 services:
 
@@ -38,7 +38,7 @@ services:
     volumes:
       - './services/events:/usr/src/app'
     ports:
-      - 5002:5000
+      - 6000:6000
     environment:
       - SECRET_KEY=my_precious
       - APP_SETTINGS=project.config.ProductionConfig
