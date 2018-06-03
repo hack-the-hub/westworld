@@ -1,81 +1,31 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Events from './pages/Events';
+import Projects from './pages/Projects';
+import Latest from './pages/Latest';
+import Speakers from './pages/Speakers';
+import Developers from './pages/Developers';
 
-import HomePage from 'pages/home';
-import DeveloperListingPage from 'pages/developers';
-import MeetupListingPage from 'pages/meetups';
-import DeveloperPage from 'pages/developer';
-import MeetupPage from 'pages/meetup';
-import ErrorPage from 'pages/404';
-import ProfilePage from 'pages/profile';
-import AboutPage from 'pages/about';
-
-import ScrollToTop from 'components/navigation/scroll-to-top';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 class App extends Component {
-
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired,
-    errorMessage: PropTypes.string.isRequired
-  };
-
   render() {
-    return (
-      <div>
-        <Router>
-          <ScrollToTop>
-            <Switch>
-              <Route
-                exact
-                path='/'
-                render={props => <HomePage {...props} />}
-              />
-              <Route
-                exact
-                path='/developers'
-                render={props => <DeveloperListingPage {...props} />}
-              />
-              <Route
-                exact
-                path='/meetups'
-                render={props => <MeetupListingPage {...props} />}
-              />
-              <Route
-                path='/meetup/:id'
-                render={props => <MeetupPage {...props} {...props} />}
-              />
-              <Route
-                path='/developer/:id'
-                render={props => <DeveloperPage {...props} {...props} />}
-              />
-              <Route
-                path='/profile'
-                render={props => <ProfilePage {...props} />}
-              />
-              <Route
-                exact
-                path='/about'
-                render={props => <AboutPage {...props} />}
-              />
-              <Route render={props => <ErrorPage {...props} />} />
-            </Switch>
-          </ScrollToTop>
-        </Router>
+    return (<Router>
+      <div id="event" className="container mx-auto shadow-lg lg:max-w-md">
+        <Header/>
+        <Switch>
+          <Route exact path='/' render={props => <Latest {...props}/>}/>
+          <Route exact path='/latest' render={props => <Latest {...props}/>}/>
+          <Route exact path='/event' render={props => <Events {...props}/>}/>
+          <Route exact path='/project' render={props => <Projects {...props}/>}/>
+          <Route exact path='/speaker' render={props => <Speakers {...props}/>}/>
+          <Route exact path='/developer' render={props => <Developers {...props}/>}/>
+        </Switch>
+        <Footer/>
       </div>
-    );
+    </Router>);
   }
 }
 
-// These props come from the application's
-// state when it is started
-function mapStateToProps(state) {
-  const {isAuthenticated, errorMessage} = state.auth;
-
-  return {isAuthenticated, errorMessage};
-}
-
-export default connect(mapStateToProps)(App);
+export default App;
