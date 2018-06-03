@@ -68,6 +68,9 @@ def seed_db():
     created = datetime.utcfromtimestamp(
         1525290524).replace(tzinfo=timezone.utc)
 
+    time = datetime.utcfromtimestamp(
+        1525290524).replace(tzinfo=timezone.utc)
+
     db.session.add(Event(
         id=1,
         name='Meetup name',
@@ -75,7 +78,10 @@ def seed_db():
         status='upcoming',
         photo_url='http://example.com/photo.jpg',
         event_url='http://example.com/id=1',
-        description='A description of the meetup'
+        description='A description of the meetup',
+        group_name='Meetup Group',
+        member_type='Member',
+        time=time
     ))
     db.session.commit()
 

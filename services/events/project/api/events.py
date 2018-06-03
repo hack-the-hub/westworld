@@ -21,6 +21,9 @@ def index():
         photo_url = request.form['photo_url']
         event_url = request.form['event_url']
         description = request.form['description']
+        group_name = request.form['group_name']
+        member_type = request.form['member_type']
+        time = request.form['time']
 
         event = Event(
             id=id,
@@ -29,7 +32,10 @@ def index():
             status=status,
             photo_url=photo_url,
             event_url=event_url,
-            description=description
+            description=description,
+            group_name=group_name,
+            member_type=member_type,
+            time=time
         )
 
         db.session.add(event)
@@ -72,6 +78,9 @@ def add_event():
     photo_url = post_data.get('photo_url')
     event_url = post_data.get('event_url')
     description = post_data.get('description')
+    group_name = post_data.get('group_name')
+    member_type = post_data.get('member_type')
+    time = post_data.get('time')
 
     try:
         event = Event.query.filter_by(id=id).first()
@@ -80,6 +89,10 @@ def add_event():
             created = datetime.utcfromtimestamp(
                 created).replace(tzinfo=timezone.utc)
 
+            time = int(time) / 1000
+            time = datetime.utcfromtimestamp(
+                time).replace(tzinfo=timezone.utc)
+
             event = Event(
                 id=id,
                 name=name,
@@ -87,7 +100,10 @@ def add_event():
                 status=status,
                 photo_url=photo_url,
                 event_url=event_url,
-                description=description
+                description=description,
+                group_name=group_name,
+                member_type=member_type,
+                time=time
             )
 
             db.session.add(event)
@@ -97,11 +113,11 @@ def add_event():
             return jsonify(response_object), 201
         else:
             response_object['message'] = 'Sorry. That id already exists.'
-            return jsonify(response_object), 400
-    except exc.IntegrityError as e:
+            return jsonify(response_object), 202
+    except (exc.IntegrityError, ValueError) as e:
         db.session.rollback()
         return jsonify(response_object), 400
-    except (exc.IntegrityError, ValueError) as e:
+    except exc.IntegrityError as e:
         db.session.rollback()
         return jsonify(response_object), 400
 
@@ -127,7 +143,10 @@ def get_single_event(event_id):
                     'status': event.status,
                     'photo_url': event.photo_url,
                     'event_url': event.event_url,
-                    'description': event.description
+                    'description': event.description,
+                    'group_name': group_name,
+                    'member_type': member_type,
+                    'time': time
                 }
             }
             return jsonify(response_object), 200
