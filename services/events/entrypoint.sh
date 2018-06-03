@@ -8,4 +8,4 @@ done
 
 echo "PostgreSQL started"
 
-python manage.py runserver -h 0.0.0.0
+python manage.py runserver -h 0.0.0.0 -p 6000
