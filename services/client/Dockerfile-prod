@@ -9,15 +9,17 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # add environment variables
 ARG REACT_APP_USERS_SERVICE_URL
+ARG REACT_APP_EVENTS_SERVICE_URL
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
 ENV REACT_APP_USERS_SERVICE_URL $REACT_APP_USERS_SERVICE_URL
+ENV REACT_APP_EVENTS_SERVICE_URL $REACT_APP_EVENTS_SERVICE_URL
 
 # install and cache app dependencies
 ADD package.json /usr/src/app/package.json
 RUN npm install --silent
 RUN npm install pushstate-server -g --silent
-RUN npm install react-scripts@1.0.15 -g --silent
+RUN npm install react-scripts@1.1.1 -g --silent
 
 # add app
 ADD . /usr/src/app
@@ -26,4 +28,4 @@ ADD . /usr/src/app
 RUN npm run build
 
 # start app
-CMD ["pushstate-server", "build", "3000"]
+CMD ["npm", "start"]
