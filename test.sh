@@ -29,8 +29,8 @@ docker-compose -f $file run users-service flake8 project
 # if [[ "${env}" != "stage" ]]; then
 #   docker-compose -f $file run client npm test -- --coverage
 #   inspect $? client
-  # testcafe chrome e2e
-  # inspect $? e2e
+# testcafe chrome e2e
+# inspect $? e2e
 # else
 #   testcafe chrome e2e/index.test.js
 #   inspect $? e2e

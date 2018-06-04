@@ -5,7 +5,6 @@ class Content extends React.Component {
 
   renderCreatedTime(created) {
     const formatedCreated = moment.utc(created).toNow();
-    debugger;
     return (
       <span className="text-grey-light italic">{formatedCreated}</span>
     )
