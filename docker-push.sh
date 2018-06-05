@@ -17,8 +17,8 @@ then
 
   if [ "$TRAVIS_BRANCH" == "staging" ]
   then
-    export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-staging-alb-579190633.us-east-1.elb.amazonaws.com"
-    export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-staging-alb-579190633.us-east-1.elb.amazonaws.com"
+    export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com/"
+    export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com/"
   fi
 
   if [ "$TRAVIS_BRANCH" == "production" ]
@@ -56,7 +56,7 @@ then
     cd ../../../../
 
     cd $CLIENT_DIR
-    docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL .
+    docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL --build-arg REACT_APP_EVENTS_SERVICE_URL=$REACT_APP_EVENTS_SERVICE_URL .
     docker tag $CLIENT:$COMMIT $REPO/$CLIENT:$TAG
     docker push $REPO/$CLIENT:$TAG
     cd ../../

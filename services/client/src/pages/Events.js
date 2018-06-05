@@ -20,6 +20,7 @@ class Events extends Component {
   }
 
   getEvents = (e) => {
+    console.log(`url ${process.env.REACT_APP_EVENTS_SERVICE_URL}`)
     const options = {
       url: `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`,
       method: 'get'
