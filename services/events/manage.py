@@ -13,25 +13,25 @@ from project.api.models import Event
 
 COV = coverage.coverage(
     branch=True,
-    include='project/*',
+    include="project/*",
     omit=[
-        'project/tests/*',
-        'project/server/config.py',
-        'project/server/*/__init__.py'
-    ]
+        "project/tests/*",
+        "project/server/config.py",
+        "project/server/*/__init__.py",
+    ],
 )
 COV.start()
 
 
 app = create_app()
 manager = Manager(app)
-manager.add_command('db', MigrateCommand)
+manager.add_command("db", MigrateCommand)
 
 
 @manager.command
 def test():
     """Runs the unit tests without test coverage."""
-    tests = unittest.TestLoader().discover('project/tests', pattern='test*.py')
+    tests = unittest.TestLoader().discover("project/tests", pattern="test*.py")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         return 0
@@ -41,12 +41,12 @@ def test():
 @manager.command
 def cov():
     """Runs the unit tests with coverage."""
-    tests = unittest.TestLoader().discover('project/tests')
+    tests = unittest.TestLoader().discover("project/tests")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         COV.stop()
         COV.save()
-        print('Coverage Summary:')
+        print("Coverage Summary:")
         COV.report()
         COV.html_report()
         COV.erase()
@@ -65,26 +65,27 @@ def recreate_db():
 @manager.command
 def seed_db():
     """Seeds the database."""
-    created = datetime.utcfromtimestamp(
-        1525290524).replace(tzinfo=timezone.utc)
+    created = datetime.utcfromtimestamp(1525290524).replace(tzinfo=timezone.utc)
 
-    time = datetime.utcfromtimestamp(
-        1525290524).replace(tzinfo=timezone.utc)
+    time = datetime.utcfromtimestamp(1525290524).replace(tzinfo=timezone.utc)
 
-    db.session.add(Event(
-        id=1,
-        name='Meetup name',
-        created=created,
-        status='upcoming',
-        photo_url='http://example.com/photo.jpg',
-        event_url='http://example.com/id=1',
-        description='A description of the meetup',
-        group_name='Meetup Group',
-        member_type='Member',
-        time=time,
-        source='test'
-    ))
+    db.session.add(
+        Event(
+            id=1,
+            name="Meetup name",
+            created=created,
+            status="upcoming",
+            photo_url="http://example.com/photo.jpg",
+            event_url="http://example.com/id=1",
+            description="A description of the meetup",
+            group_name="Meetup Group",
+            member_type="Member",
+            time=time,
+            source="test",
+        )
+    )
     db.session.commit()
+
 
 @manager.command
 def run():
@@ -92,5 +93,6 @@ def run():
     """
     app.run(port=6000)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     manager.run()
