@@ -13,25 +13,25 @@ from project.api.models import User
 
 COV = coverage.coverage(
     branch=True,
-    include='project/*',
+    include="project/*",
     omit=[
-        'project/tests/*',
-        'project/server/config.py',
-        'project/server/*/__init__.py'
-    ]
+        "project/tests/*",
+        "project/server/config.py",
+        "project/server/*/__init__.py",
+    ],
 )
 COV.start()
 
 
 app = create_app()
 manager = Manager(app)
-manager.add_command('db', MigrateCommand)
+manager.add_command("db", MigrateCommand)
 
 
 @manager.command
 def test():
     """Runs the unit tests without test coverage."""
-    tests = unittest.TestLoader().discover('project/tests', pattern='test*.py')
+    tests = unittest.TestLoader().discover("project/tests", pattern="test*.py")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         return 0
@@ -41,12 +41,12 @@ def test():
 @manager.command
 def cov():
     """Runs the unit tests with coverage."""
-    tests = unittest.TestLoader().discover('project/tests')
+    tests = unittest.TestLoader().discover("project/tests")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         COV.stop()
         COV.save()
-        print('Coverage Summary:')
+        print("Coverage Summary:")
         COV.report()
         COV.html_report()
         COV.erase()
@@ -65,13 +65,13 @@ def recreate_db():
 @manager.command
 def seed_db():
     """Seeds the database."""
-    db.session.add(User(
-        username='apoclyps',
-        email='kyle90adam@hotmail.com',
-        password='hellokitty1'
-    ))
+    db.session.add(
+        User(
+            username="apoclyps", email="kyle90adam@hotmail.com", password="hellokitty1"
+        )
+    )
     db.session.commit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     manager.run()

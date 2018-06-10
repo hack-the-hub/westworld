@@ -25,7 +25,7 @@ def create_app():
     CORS(app)
 
     # set config
-    app_settings = os.getenv('APP_SETTINGS')
+    app_settings = os.getenv("APP_SETTINGS")
     app.config.from_object(app_settings)
 
     # set up extensions
@@ -35,8 +35,10 @@ def create_app():
 
     # register blueprints
     from project.api.users import users_blueprint
+
     app.register_blueprint(users_blueprint)
     from project.api.auth import auth_blueprint
+
     app.register_blueprint(auth_blueprint)
 
     return app
