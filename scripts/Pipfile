@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 black = "18.6b2"
 eventbrite = "==3.3.3"
-meetup-api = "==0.1.1"
+meetup-api = "*"
 requests = "*"
 safety = "*"
 

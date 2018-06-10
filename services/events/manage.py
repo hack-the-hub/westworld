@@ -81,7 +81,8 @@ def seed_db():
         description='A description of the meetup',
         group_name='Meetup Group',
         member_type='Member',
-        time=time
+        time=time,
+        source='test'
     ))
     db.session.commit()
 

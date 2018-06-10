@@ -24,6 +24,7 @@ def index():
         group_name = request.form['group_name']
         member_type = request.form['member_type']
         time = request.form['time']
+        source = request.form['source']
 
         event = Event(
             id=id,
@@ -35,7 +36,8 @@ def index():
             description=description,
             group_name=group_name,
             member_type=member_type,
-            time=time
+            time=time,
+            source=source
         )
 
         db.session.add(event)
@@ -80,7 +82,8 @@ def add_event():
     description = post_data.get('description')
     group_name = post_data.get('group_name')
     member_type = post_data.get('member_type')
-    time = post_data.get('time')
+    time = post_data.get('time'),
+    source = post_data.get('source')
 
     try:
         event = Event.query.filter_by(id=id).first()
@@ -95,7 +98,8 @@ def add_event():
                 description=description,
                 group_name=group_name,
                 member_type=member_type,
-                time=time
+                time=time,
+                source=source
             )
 
             db.session.add(event)
@@ -138,7 +142,8 @@ def get_single_event(event_id):
                     'description': event.description,
                     'group_name': group_name,
                     'member_type': member_type,
-                    'time': time
+                    'time': time,
+                    'source': source
                 }
             }
             return jsonify(response_object), 200

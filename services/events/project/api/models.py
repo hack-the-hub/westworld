@@ -21,8 +21,9 @@ class Event(db.Model):
     group_name = db.Column(db.String(128), nullable=False)
     member_type = db.Column(db.String(128), nullable=False)
     time = db.Column(db.DateTime, nullable=False)
+    source = db.Column(db.String(10), nullable=False)
 
-    def __init__(self, id, name, created, status, photo_url, event_url, description, group_name, member_type, time):
+    def __init__(self, id, name, created, status, photo_url, event_url, description, group_name, member_type, time, source):
         self.id = id
         self.name = name
         self.created = created
@@ -33,6 +34,7 @@ class Event(db.Model):
         self.group_name = group_name
         self.member_type = member_type
         self.time = time
+        self.source = source
 
     def to_json(self):
         return {
@@ -45,5 +47,6 @@ class Event(db.Model):
             'description': self.description,
             'group_name': self.group_name,
             'member_type': self.member_type,
-            'time': self.time
+            'time': self.time,
+            'source': self.source
         }

@@ -22,7 +22,8 @@ class TestEventModel(BaseTestCase):
             description='A description of the meetup',
             group_name='Meetup Group',
             member_type='Member',
-            time="2018-06-06 16:15:00Z"
+            time="2018-06-06 16:15:00Z",
+            source="event source"
         )
 
         self.assertEqual(event.id, '250383898')
@@ -34,6 +35,7 @@ class TestEventModel(BaseTestCase):
         self.assertEqual(event.group_name, 'Meetup Group')
         self.assertEqual(event.member_type, 'Member')
         self.assertEqual(event.time, datetime(2018, 6, 6, 16, 15, 00))
+        self.assertEqual(event.source, 'event source')
 
     def test_to_json(self):
         event = add_event(
@@ -46,6 +48,7 @@ class TestEventModel(BaseTestCase):
             description='A description of the meetup',
             group_name='Meetup Group',
             member_type='Member',
-            time="2018-06-06 14:22:09Z"
+            time="2018-06-06 14:22:09Z",
+            source='event source'
         )
         self.assertTrue(isinstance(event.to_json(), dict))

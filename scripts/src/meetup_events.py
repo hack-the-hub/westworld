@@ -1,4 +1,5 @@
 # std lib import
+import datetime
 import os
 import pprint
 import requests
@@ -27,6 +28,10 @@ def _transform_event(event):
         "%Y-%m-%d %H:%M:%SZ"
     )
 
+    time = datetime.datetime.fromtimestamp(int(event["time"] / 1000)).strftime(
+        "%Y-%m-%d %H:%M:%SZ"
+    )
+
     return {
         "created": created,
         "description": event["description"],
@@ -37,7 +42,8 @@ def _transform_event(event):
         "group_name": event["group"]["name"],
         "member_type": event["group"]["name"],
         "status": event["status"],
-        "time": event["time"],
+        "time": time,
+        "source": "meetup",
     }
 
 

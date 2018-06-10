@@ -26,6 +26,7 @@ def _transform_event(event):
         "member_type": "ticket",
         "status": event["status"],
         "time": event["start"]["utc"],
+        "source": "eventbrite",
     }
 
 
