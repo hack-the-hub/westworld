@@ -17,7 +17,7 @@ class Event(db.Model):
     status = db.Column(db.String(20), nullable=False)
     photo_url = db.Column(db.String(256), nullable=False)
     event_url = db.Column(db.String(256), nullable=False)
-    description = db.Column(db.String(4096), nullable=False)
+    description = db.Column(db.String(50000), nullable=False)
     group_name = db.Column(db.String(128), nullable=False)
     member_type = db.Column(db.String(128), nullable=False)
     time = db.Column(db.DateTime, nullable=False)

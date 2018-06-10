@@ -22,8 +22,13 @@ def get_events_by_member(member_id):
 
 
 def _transform_event(event):
+
+    created = datetime.datetime.fromtimestamp(int(event["created"] / 1000)).strftime(
+        "%Y-%m-%d %H:%M:%SZ"
+    )
+
     return {
-        "created": event["created"],
+        "created": created,
         "description": event["description"],
         "event_url": event["event_url"],
         "photo_url": event.get("photo_url", ""),

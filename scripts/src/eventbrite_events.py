@@ -18,7 +18,7 @@ def _transform_event(event):
     return {
         "created": event["created"],
         "description": event["description"]["text"],
-        "event_url": event["url"],
+        "event_url": event.get("url", ""),
         "photo_url": "",
         "id": event["id"],
         "name": event["name"]["text"],
