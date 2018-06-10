@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import axios from 'axios';
-import CallToActionBanner from '../components/CallToActionBanner';
-import Content from '../components/Content';
-import Pagination from '../components/Pagination';
+import React, { Component } from "react";
+import axios from "axios";
+import CallToActionBanner from "../components/CallToActionBanner";
+import Content from "../components/Content";
+import Pagination from "../components/Pagination";
 
-import _ from 'lodash';
+import _ from "lodash";
 
 class Events extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -19,19 +18,20 @@ class Events extends Component {
     this.getEvents();
   }
 
-  getEvents = (e) => {
-    console.log(`url ${process.env.REACT_APP_EVENTS_SERVICE_URL}`)
+  getEvents = e => {
     const options = {
       url: `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`,
-      method: 'get'
+      method: "get"
     };
-    return axios(options).then(res => {
-      const events = res.data.data.events;
-      const sortedEvents = _.orderBy(events, ['time'], ['desc']);
-      this.setState({ events: sortedEvents});
-    }).catch(error => {
-      console.log(error);
-    });
+    return axios(options)
+      .then(res => {
+        const events = res.data.data.events;
+        const sortedEvents = _.orderBy(events, ["time"], ["desc"]);
+        this.setState({ events: sortedEvents });
+      })
+      .catch(error => {
+        console.log("events error: " + error);
+      });
   };
 
   renderEvents() {
@@ -47,16 +47,30 @@ class Events extends Component {
         group_name,
         status
       } = el;
-      return (<Content key={id} id={id} name={name} description={description} created={created} event_url={event_url} photo_url={photo_url} status={status} groupName={group_name}/>);
+      return (
+        <Content
+          key={id}
+          id={id}
+          name={name}
+          description={description}
+          created={created}
+          event_url={event_url}
+          photo_url={photo_url}
+          status={status}
+          groupName={group_name}
+        />
+      );
     });
   }
 
   render() {
-    return (<div>
-      <CallToActionBanner/>
-      {this.renderEvents()}
-      <Pagination/>
-    </div>);
+    return (
+      <div>
+        <CallToActionBanner />
+        {this.renderEvents()}
+        <Pagination />
+      </div>
+    );
   }
 }
 

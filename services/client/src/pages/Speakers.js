@@ -1,15 +1,17 @@
-import React, {Component} from 'react';
-import CallToActionBanner from '../components/CallToActionBanner';
-import Content from '../components/Content';
-import Pagination from '../components/Pagination';
+import React, { Component } from "react";
+import CallToActionBanner from "../components/CallToActionBanner";
+import Content from "../components/Content";
+import Pagination from "../components/Pagination";
 
 class Speakers extends Component {
   render() {
-    return (<div>
-      <CallToActionBanner/>
-      <Content/>
-      <Pagination/>
-    </div>);
+    return (
+      <div>
+        <CallToActionBanner />
+        <Content />
+        <Pagination />
+      </div>
+    );
   }
 }
 
