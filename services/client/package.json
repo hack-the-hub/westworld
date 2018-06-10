@@ -24,7 +24,6 @@
     "start": "npm run tailwind:css && react-scripts start",
     "build": "npm run tailwind:css && react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint --config .eslintrc.json src --ignore-path eslint-ignore-test.txt . && prettier \"src/**/*.js\" --list-different",
@@ -33,7 +32,6 @@
   },
   "devDependencies": {
     "eslint-plugin-babel": "^5.1.0",
-    "gh-pages": "^1.1.0",
     "tailwindcss": "^0.5.1"
   }
 }
