@@ -1,7 +1,7 @@
 {
   "name": "my-dev-space",
   "devDependencies": {
-    "all-contributors-cli": "^4.11.2",
+    "all-contributors-cli": "^5.0.0",
     "randomstring": "^1.1.5",
     "testcafe": "^0.20.3"
   },
