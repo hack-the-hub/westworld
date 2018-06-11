@@ -17,8 +17,7 @@ class Home extends React.Component {
           <a
             className="text-white no-underline"
             href="https://my-dev-space.com"
-          >
-          </a>
+          />
         </div>
         <ul className="list-reset flex flex-wrap mt-1 ml-4">
           <li className="mr-6">

@@ -5,6 +5,7 @@ import Content from "../components/Content";
 import Pagination from "../components/Pagination";
 
 import _ from "lodash";
+import moment from "moment";
 
 class Events extends Component {
   constructor(props) {
@@ -25,8 +26,10 @@ class Events extends Component {
     };
     return axios(options)
       .then(res => {
-        const events = res.data.data.events;
-        const sortedEvents = _.orderBy(events, ["time"], ["desc"]);
+        var events = _.map(res.data.data.events, function(item) {
+          return _.extend({}, item, { timestamp: moment(item.time).valueOf() });
+        });
+        var sortedEvents = _.orderBy(events, ["timestamp"], ["asc"]);
         this.setState({ events: sortedEvents });
       })
       .catch(error => {
@@ -42,10 +45,12 @@ class Events extends Component {
         name,
         description,
         created,
+        time,
         event_url,
         photo_url,
         group_name,
-        status
+        status,
+        source
       } = el;
       return (
         <Content
@@ -54,10 +59,12 @@ class Events extends Component {
           name={name}
           description={description}
           created={created}
+          time={time}
           event_url={event_url}
           photo_url={photo_url}
           status={status}
           groupName={group_name}
+          source={source}
         />
       );
     });
