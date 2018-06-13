@@ -143,8 +143,12 @@ def get_single_event(event_id):
 @events_blueprint.route("/events", methods=["GET"])
 def get_all_events():
     """Get all events"""
+
+    current_time = datetime.utcnow()
+    events = Event.query.filter(Event.time > current_time).all()
+
     response_object = {
         "status": "success",
-        "data": {"events": [event.to_json() for event in Event.query.all()]},
+        "data": {"events": [event.to_json() for event in events]},
     }
     return jsonify(response_object), 200
