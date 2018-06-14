@@ -13,7 +13,7 @@
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "prettier": "^1.13.5",
-    "react": "^16.2.0",
+    "react": "^16.4.1",
     "react-dom": "^16.2.0",
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.2.2",
