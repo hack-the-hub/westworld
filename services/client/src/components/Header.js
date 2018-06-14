@@ -10,14 +10,10 @@ class Home extends React.Component {
     };
     return (
       <div className="bg-blue flex lg:mt-4 p-2 rounded-t">
-        <div>
-          <i className="fa fa-chevron-right fa-3" style={iconStyle} alt="" />
-        </div>
         <div className="mt-1 ml-2">
-          <a
-            className="text-white no-underline"
-            href="https://my-dev-space.com"
-          />
+          <Link className="text-white no-underline" to="/">
+            <i className="fa fa-chevron-right fa-3" style={iconStyle} alt="" />
+          </Link>
         </div>
         <ul className="list-reset flex flex-wrap mt-1 ml-4">
           <li className="mr-6">

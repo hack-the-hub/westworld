@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Events from "./pages/Events";
-import Projects from "./pages/Projects";
-import Latest from "./pages/Latest";
-import Speakers from "./pages/Speakers";
-import Developers from "./pages/Developers";
 
+import Events from "./pages/Events";
+import Latest from "./pages/Latest";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -26,21 +23,6 @@ class App extends Component {
               exact
               path="/event"
               render={props => <Events {...props} />}
-            />
-            <Route
-              exact
-              path="/project"
-              render={props => <Projects {...props} />}
-            />
-            <Route
-              exact
-              path="/speaker"
-              render={props => <Speakers {...props} />}
-            />
-            <Route
-              exact
-              path="/developer"
-              render={props => <Developers {...props} />}
             />
           </Switch>
           <Footer />
