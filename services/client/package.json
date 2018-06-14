@@ -21,11 +21,11 @@
   },
   "scripts": {
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c tailwind.js -o src/css/tailwind.css",
-    "start": "npm run tailwind:css && react-scripts start",
-    "build": "npm run tailwind:css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint --config .eslintrc.json src --ignore-path eslint-ignore-test.txt . && prettier \"src/**/*.js\" --list-different",
+    "lint": "eslint --config .eslintrc.json src --ignore-path eslint-ignore-test.txt .",
     "format": "prettier \"src/**/*.js\" --write",
     "dev": "npm run format && npm run lint"
   },
