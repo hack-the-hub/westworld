@@ -24,7 +24,7 @@ class Content extends React.Component {
     };
 
     const imageStyle = {
-      maxWidth: "25px",
+      maxWidth: "35px",
       paddingTop: "10px"
     };
 
@@ -44,6 +44,12 @@ class Content extends React.Component {
           alt=""
         />
       );
+    }  else if (source === "nisciencefestival") {
+      return (<img
+        style={imageStyle}
+        src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
+        alt=""
+      />)
     }
 
     return (
