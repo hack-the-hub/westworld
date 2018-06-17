@@ -9,6 +9,7 @@ eventbrite = "==3.3.3"
 meetup-api = "*"
 requests = "*"
 safety = "*"
+"beautifulsoup4" = "*"
 
 [dev-packages]
 
