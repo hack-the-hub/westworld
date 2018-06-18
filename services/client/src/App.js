@@ -13,7 +13,7 @@ class App extends Component {
         <div id="event" className="container mx-auto shadow-lg lg:max-w-md">
           <Header />
           <Switch>
-            <Route exact path="/" render={props => <Latest {...props} />} />
+            <Route exact path="/" render={props => <Events {...props} />} />
             <Route
               exact
               path="/latest"

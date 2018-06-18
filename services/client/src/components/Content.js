@@ -1,6 +1,16 @@
 import React from "react";
 import moment from "moment";
 
+const iconStyle = {
+  height: "32px",
+  fontSize: "1.5em"
+};
+
+const imageStyle = {
+  maxWidth: "35px",
+  paddingTop: "10px"
+};
+
 class Content extends React.Component {
   renderTime(time) {
     if (!time) return;
@@ -18,16 +28,6 @@ class Content extends React.Component {
   }
 
   renderSource(source) {
-    const iconStyle = {
-      height: "32px",
-      fontSize: "1.5em"
-    };
-
-    const imageStyle = {
-      maxWidth: "35px",
-      paddingTop: "10px"
-    };
-
     if (source === "eventbrite") {
       return (
         <img
@@ -44,12 +44,14 @@ class Content extends React.Component {
           alt=""
         />
       );
-    }  else if (source === "nisciencefestival") {
-      return (<img
-        style={imageStyle}
-        src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
-        alt=""
-      />)
+    } else if (source === "nisciencefestival") {
+      return (
+        <img
+          style={imageStyle}
+          src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
+          alt=""
+        />
+      );
     }
 
     return (
@@ -62,7 +64,15 @@ class Content extends React.Component {
   }
 
   render() {
-    const { id, name, groupName, time, event_url, source } = this.props;
+    debugger;
+    const {
+      id,
+      name,
+      time,
+      event_url,
+      group_name,
+      source
+    } = this.props.content;
 
     return (
       <div
@@ -88,7 +98,7 @@ class Content extends React.Component {
                   paddingRight: "1rem"
                 }}
               >
-                {groupName}
+                {group_name}
               </span>
               {this.renderTime(time)}
             </div>

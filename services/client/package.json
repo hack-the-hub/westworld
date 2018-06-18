@@ -34,6 +34,7 @@
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.9.1",
     "prettier": "^1.13.5",
     "tailwindcss": "^0.5.3"
   }
