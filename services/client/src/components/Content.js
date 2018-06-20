@@ -27,45 +27,20 @@ class Content extends React.Component {
   }
 
   renderSource(source) {
-    const iconStyle = {
-      height: "32px",
-      fontSize: "1.5em"
-    };
-
-    const imageStyle = {
-      maxWidth: "35px",
-      paddingTop: "10px"
-    };
-
+    let eventSourceImage = ""
     if (source === "eventbrite") {
-      return (
-        <img
-          style={imageStyle}
-          src="http://adultandchild.org/wp-content/uploads/2014/08/Eventbrite-Icon.png"
-          alt=""
-        />
-      );
+      eventSourceImage = "http://adultandchild.org/wp-content/uploads/2014/08/Eventbrite-Icon.png"
     } else if (source === "meetup") {
-      return (
-        <img
-          style={imageStyle}
-          src="https://assets.materialup.com/uploads/30b4082d-3390-44d6-973e-60ca8972f854/preview"
-          alt=""
-        />
-      );
+      eventSourceImage = "https://assets.materialup.com/uploads/30b4082d-3390-44d6-973e-60ca8972f854/preview"
     } else if (source === "nisciencefestival") {
+      eventSourceImage = "https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
+    }
+
+    if (eventSourceImage !== "") {
       return (
         <img
-          style={imageStyle}
-          src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
-          alt=""
-        />
-      );
-    } else if (source === "nisciencefestival") {
-      return (
-        <img
-          style={imageStyle}
-          src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
+          className="event-content-icon"
+          src={eventSourceImage}
           alt=""
         />
       );
@@ -73,8 +48,7 @@ class Content extends React.Component {
 
     return (
       <i
-        className="rounded-full mt-2 fa fa-calendar-o"
-        style={iconStyle}
+        className="rounded-full mt-2 fa fa-calendar-o event-content-icon"
         alt=""
       />
     );

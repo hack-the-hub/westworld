@@ -2,4 +2,33 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f9f9f7;
+}
+
+.event-content-icon {
+  max-width: 35px;
+  padding-top: 10px;
+}
+
+.call-to-action-message {
+  padding-right: 0.5em;
+}
+
+.homepage-icon {
+  height: 30px;
+  font-size: 1.5em;
+  color: white
+}
+
+.homepage-title{
+  top: -0.1rem;
+  position: relative;
+  left: 0.3rem;
+  font-size: 20px;
+}
+
+.nav-bar-link {
+  top: 0.22rem;
+  position: relative;
+  left: 0.3rem;
 }
