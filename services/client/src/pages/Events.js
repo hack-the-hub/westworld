@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import CallToActionBanner from "../components/CallToActionBanner";
-import Content from "../components/Content";
-import Pagination from "../components/Pagination";
-
 import _ from "lodash";
 import moment from "moment";
+
+import CallToActionBanner from "../components/CallToActionBanner";
+import Content from "../components/Content";
 
 class Events extends Component {
   constructor(props) {
@@ -39,34 +38,8 @@ class Events extends Component {
 
   renderEvents() {
     const events = this.state.events;
-    return events.map(el => {
-      const {
-        id,
-        name,
-        description,
-        created,
-        time,
-        event_url,
-        photo_url,
-        group_name,
-        status,
-        source
-      } = el;
-      return (
-        <Content
-          key={id}
-          id={id}
-          name={name}
-          description={description}
-          created={created}
-          time={time}
-          event_url={event_url}
-          photo_url={photo_url}
-          status={status}
-          groupName={group_name}
-          source={source}
-        />
-      );
+    return events.map(content => {
+      return <Content key={content.id} content={content} />;
     });
   }
 
@@ -75,7 +48,6 @@ class Events extends Component {
       <div>
         <CallToActionBanner />
         {this.renderEvents()}
-        <Pagination />
       </div>
     );
   }
