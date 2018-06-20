@@ -2,6 +2,10 @@ import React from "react";
 import moment from "moment";
 
 class Content extends React.Component {
+  formatTitle(str) {
+    return str.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase());
+  }
+
   renderTime(time) {
     if (!time) return;
 
@@ -14,7 +18,12 @@ class Content extends React.Component {
     } else if (eventTime.isAfter(now)) {
       formattedEventTime = eventTime.fromNow();
     }
-    return <span className="text-grey-light italic">{formattedEventTime}</span>;
+    return (
+      <span className="text-grey-light italic">
+        {" "}
+        next event {formattedEventTime}
+      </span>
+    );
   }
 
   renderSource(source) {
@@ -44,12 +53,22 @@ class Content extends React.Component {
           alt=""
         />
       );
-    }  else if (source === "nisciencefestival") {
-      return (<img
-        style={imageStyle}
-        src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
-        alt=""
-      />)
+    } else if (source === "nisciencefestival") {
+      return (
+        <img
+          style={imageStyle}
+          src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
+          alt=""
+        />
+      );
+    } else if (source === "nisciencefestival") {
+      return (
+        <img
+          style={imageStyle}
+          src="https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181"
+          alt=""
+        />
+      );
     }
 
     return (
@@ -62,7 +81,18 @@ class Content extends React.Component {
   }
 
   render() {
-    const { id, name, groupName, time, event_url, source } = this.props;
+    const {
+      id,
+      name,
+      time,
+      event_url,
+      group_name,
+      source
+    } = this.props.content;
+
+    const groupNameStyle = {
+      paddingRight: "0.3rem"
+    };
 
     return (
       <div
@@ -79,17 +109,11 @@ class Content extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {name}
+                {this.formatTitle(name)}
               </a>
             </div>
             <div className="text-xs text-grey">
-              <span
-                style={{
-                  paddingRight: "1rem"
-                }}
-              >
-                {groupName}
-              </span>
+              <span style={groupNameStyle}>{group_name}</span>
               {this.renderTime(time)}
             </div>
           </div>
