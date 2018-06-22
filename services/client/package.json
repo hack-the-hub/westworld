@@ -35,6 +35,6 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "prettier": "^1.13.5",
-    "tailwindcss": "^0.5.3"
+    "tailwindcss": "^0.6.0"
   }
 }
