@@ -28,7 +28,7 @@
     "dev": "npm run format && npm run lint"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-babel": "^5.1.0",
