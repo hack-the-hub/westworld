@@ -3,7 +3,7 @@
   "devDependencies": {
     "all-contributors-cli": "^5.2.1",
     "randomstring": "^1.1.5",
-    "testcafe": "^0.20.3"
+    "testcafe": "^0.20.4"
   },
   "scripts": {
     "contributors:add": "all-contributors add",
