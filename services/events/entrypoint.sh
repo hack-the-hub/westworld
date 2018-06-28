@@ -8,4 +8,4 @@ done
 
 echo "PostgreSQL started"
 
-python manage.py runserver -h 0.0.0.0 -p 6000
+newrelic-admin run-program python manage.py runserver -h 0.0.0.0 -p 6000

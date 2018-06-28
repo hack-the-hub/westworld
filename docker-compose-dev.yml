@@ -35,6 +35,7 @@ services:
       - APP_SETTINGS=project.config.DevelopmentConfig
       - DATABASE_URL=postgres://postgres:postgres@events-db:5432/events_dev
       - DATABASE_TEST_URL=postgres://postgres:postgres@events-db:5432/events_test
+      - NEW_RELIC_ENVIRONMENT = 'development'
     depends_on:
       - events-db
     links:

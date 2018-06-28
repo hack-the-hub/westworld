@@ -19,6 +19,7 @@ then
   then
     export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com"
     export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com"
+    export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
   fi
 
   if [ "$TRAVIS_BRANCH" == "production" ]
@@ -27,6 +28,7 @@ then
     export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-production-alb-453010484.us-east-1.elb.amazonaws.com"
     export DATABASE_URL="$AWS_RDS_URI"
     export SECRET_KEY="$PRODUCTION_SECRET_KEY"
+    export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
   fi
 
   if [ "$TRAVIS_BRANCH" == "staging" ] || [ "$TRAVIS_BRANCH" == "production" ]
@@ -44,7 +46,7 @@ then
     cd ../../../../
 
     cd $EVENTS_DIR
-    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV .
+    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY .
     docker tag $EVENTS:$COMMIT $REPO/$EVENTS:$TAG
     docker push $REPO/$EVENTS:$TAG
     cd ../../

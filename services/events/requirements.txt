@@ -12,3 +12,4 @@ flask-migrate==2.2.1
 flask-bcrypt==0.7.1
 pyjwt==1.6.4
 black==18.6b4
+newrelic==2.84.0.64

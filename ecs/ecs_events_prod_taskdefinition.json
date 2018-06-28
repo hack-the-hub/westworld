@@ -28,6 +28,18 @@
         {
           "name": "SECRET_KEY",
           "value": "%s"
+        },
+        {
+          "name": "NEW_RELIC_ENVIRONMENT",
+          "value": "production"
+        },
+        {
+          "name": "NEW_RELIC_APP_NAME",
+          "value": "Muxer (Production)"
+        },
+        {
+          "name": "NEW_RELIC_LICENSE_KEY",
+          "value": "%s"
         }
       ],
       "logConfiguration": {

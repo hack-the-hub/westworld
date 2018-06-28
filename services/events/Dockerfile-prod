@@ -19,5 +19,8 @@ RUN pip install -r requirements.txt
 # add app
 ADD . /usr/src/app
 
+# add newrelic config
+ADD ./newrelic.ini /usr/src/app/newrelic.ini
+
 # run server
-CMD gunicorn -b 0.0.0.0:6000 manage:app
+CMD newrelic-admin run-program gunicorn -b 0.0.0.0:6000 manage:app

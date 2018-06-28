@@ -44,6 +44,9 @@ services:
       - APP_SETTINGS=project.config.ProductionConfig
       - DATABASE_URL=postgres://postgres:postgres@events-db:5432/events_prod
       - DATABASE_TEST_URL=postgres://postgres:postgres@events-db:5432/events_test
+      - NEW_RELIC_ENVIRONMENT = 'production'
+      - NEW_RELIC_APP_NAME = 'Muxer (Production)'
+      - NEW_RELIC_LICENSE_KEY
     depends_on:
       - events-db
     links:
