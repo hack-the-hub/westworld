@@ -4,4 +4,14 @@ htmlcov/
 jest_0/
 node_modules
 
+*.pyc
+*.pyo
+.coverage
+.cache
+.env.*
+.python-version
+/tmp
+.pytest_cache/
+test-results/
+
 *.pem
