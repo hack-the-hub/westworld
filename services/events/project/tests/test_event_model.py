@@ -1,10 +1,5 @@
 from datetime import datetime
-from datetime import timezone
 
-from sqlalchemy.orm.exc import FlushError
-
-from project import db
-from project.api.models import Event
 from project.tests.base import BaseTestCase
 from project.tests.utils import add_event
 

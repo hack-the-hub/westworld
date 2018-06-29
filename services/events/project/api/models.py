@@ -1,10 +1,3 @@
-# stdlib
-import datetime
-import jwt
-
-# 3rd party imports
-from flask import current_app
-
 # local imports
 from project import db
 
