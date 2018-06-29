@@ -104,10 +104,10 @@ def add_event():
         else:
             response_object["message"] = "Sorry. That id already exists."
             return jsonify(response_object), 202
-    except (exc.IntegrityError, ValueError) as e:
+    except (exc.IntegrityError, ValueError):
         db.session.rollback()
         return jsonify(response_object), 400
-    except exc.IntegrityError as e:
+    except exc.IntegrityError:
         db.session.rollback()
         return jsonify(response_object), 400
 
