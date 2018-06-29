@@ -71,6 +71,11 @@ $ docker-compose -f docker-compose-dev.yml run client npm lint
 $ docker-compose -f docker-compose-dev.yml run users-service flake8 project
 ```
 
+###### `events-service`
+```bash
+$ docker-compose -f docker-compose-dev.yml run events-service py.test --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
+```
+
 ### Running code coverage
 ```bash
 $ docker-compose -f docker-compose-dev.yml run users-service python manage.py cov
