@@ -24,7 +24,7 @@ inspect() {
 
 docker-compose -f $file run users-service python manage.py test
 inspect $? users
-docker-compose -f $file run users-service flake8 project
+docker-compose -f $file run users-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 docker-compose -f $file run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 
 inspect $? users-lint

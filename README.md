@@ -73,7 +73,7 @@ $ docker-compose -f docker-compose-dev.yml run client npm run lint
 
 ###### `users-service`
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service flake8 project
+$ docker-compose -f docker-compose-dev.yml run user-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 ```
 
 ###### `events-service`
