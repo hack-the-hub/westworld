@@ -1,6 +1,3 @@
-# services/users/project/api/auth.py
-
-
 from flask import Blueprint, jsonify, request
 from sqlalchemy import exc, or_
 
@@ -41,8 +38,7 @@ def register_user():
         else:
             response_object["message"] = "Sorry. That user already exists."
             return jsonify(response_object), 400
-    # handler errors
-    except (exc.IntegrityError, ValueError) as e:
+    except (exc.IntegrityError, ValueError):
         db.session.rollback()
         return jsonify(response_object), 400
 
@@ -69,7 +65,7 @@ def login_user():
         else:
             response_object["message"] = "User does not exist."
             return jsonify(response_object), 404
-    except Exception as e:
+    except Exception:
         response_object["message"] = "Try again."
         return jsonify(response_object), 500
 

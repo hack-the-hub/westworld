@@ -1,10 +1,6 @@
-# services/users/project/api/models.py
-
-
 import datetime
 
 import jwt
-
 from flask import current_app
 
 from project import db, bcrypt
@@ -38,12 +34,13 @@ class User(db.Model):
     def encode_auth_token(self, user_id):
         """Generates the auth token"""
         try:
+            now = datetime.datetime.utcnow()
+            expiry = datetime.timedelta(
+                days=current_app.config.get("TOKEN_EXPIRATION_DAYS"),
+                seconds=current_app.config.get("TOKEN_EXPIRATION_SECONDS"),
+            )
             payload = {
-                "exp": datetime.datetime.utcnow()
-                + datetime.timedelta(
-                    days=current_app.config.get("TOKEN_EXPIRATION_DAYS"),
-                    seconds=current_app.config.get("TOKEN_EXPIRATION_SECONDS"),
-                ),
+                "exp": (now + expiry),
                 "iat": datetime.datetime.utcnow(),
                 "sub": user_id,
             }
