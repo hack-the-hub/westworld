@@ -28,6 +28,18 @@
         {
           "name": "SECRET_KEY",
           "value": "my_precious"
+        },
+        {
+          "name": "SECRET_KEY",
+          "value": "my_precious"
+        },
+        {
+          "name": "NEW_RELIC_ENVIRONMENT",
+          "value": "staging"
+        },
+        {
+          "name": "NEW_RELIC_APP_NAME",
+          "value": "Muxer - Users (Staging)"
         }
       ],
       "links": [

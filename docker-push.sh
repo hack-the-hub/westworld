@@ -34,7 +34,7 @@ then
   if [ "$TRAVIS_BRANCH" == "staging" ] || [ "$TRAVIS_BRANCH" == "production" ]
   then
     cd $USERS_DIR
-    docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV .
+    docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY .
     docker tag $USERS:$COMMIT $REPO/$USERS:$TAG
     docker push $REPO/$USERS:$TAG
     cd ../../

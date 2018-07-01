@@ -35,7 +35,7 @@
         },
         {
           "name": "NEW_RELIC_APP_NAME",
-          "value": "Muxer (Production)"
+          "value": "Muxer - Events (Production)"
         },
         {
           "name": "NEW_RELIC_LICENSE_KEY",

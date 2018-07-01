@@ -16,6 +16,10 @@ ADD ./requirements.txt /usr/src/app/requirements.txt
 # install requirements
 RUN pip install -r requirements.txt
 
+# add newrelic config
+ADD ./newrelic.ini /usr/src/app/newrelic.ini
+ENV NEW_RELIC_CONFIG_FILE=newrelic.ini
+
 # add entrypoint.sh
 ADD ./entrypoint.sh /usr/src/app/entrypoint.sh
 
