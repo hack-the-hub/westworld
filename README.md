@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/apoclyps/my-dev-space.svg?token=putHnyd9Fyt2bwsGacCD&branch=master)](https://travis-ci.com/apoclyps/my-dev-space?token=putHnyd9Fyt2bwsGacCD&branch=master)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](http://makeapullrequest.com)
 ![Code of Conduct](https://img.shields.io/badge/%E2%88%9A-Code%20of%20Conduct-blue.svg)
 
@@ -117,6 +117,7 @@ A list of contributors who participated in this project.
 <!-- prettier-ignore -->
 | [<img src="https://avatars0.githubusercontent.com/u/1443700?v=4" width="100px;"/><br /><sub><b>Kyle Harrison</b></sub>](http://www.kyleharrison.co.uk)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=apoclyps "Code") [📖](https://github.com/apoclyps/my-dev-space/commits?author=apoclyps "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/6596210?v=4" width="100px;"/><br /><sub><b>Adam Smith</b></sub>](https://github.com/FatalEnigma)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=FatalEnigma "Code") | [<img src="https://avatars2.githubusercontent.com/u/17544636?v=4" width="100px;"/><br /><sub><b>Ewa G </b></sub>](https://github.com/TheMicroGirl)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=TheMicroGirl "Code") | [<img src="https://avatars2.githubusercontent.com/u/16101792?v=4" width="100px;"/><br /><sub><b>Michael Grundie</b></sub>](https://www.linkedin.com/in/michaelgrundie)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=MichaelGrundie "Code") | [<img src="https://avatars1.githubusercontent.com/u/9554484?v=4" width="100px;"/><br /><sub><b>DermotMcAteer</b></sub>](https://github.com/DermotMcAteer)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=DermotMcAteer "Code") | [<img src="https://avatars2.githubusercontent.com/u/28186624?v=4" width="100px;"/><br /><sub><b>kimmoylan</b></sub>](https://github.com/kimmoylan)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=kimmoylan "Code") | [<img src="https://avatars2.githubusercontent.com/u/2376829?v=4" width="100px;"/><br /><sub><b>Peter Stevenson</b></sub>](https://github.com/GoldenCrow)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=GoldenCrow "Code") |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars2.githubusercontent.com/u/635903?v=4" width="100px;"/><br /><sub><b>Alistair Brown</b></sub>](http://alistairjcbrown.com)<br />[💻](https://github.com/apoclyps/my-dev-space/commits?author=alistairjcbrown "Code") |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
