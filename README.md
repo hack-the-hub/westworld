@@ -45,6 +45,8 @@ And to tear down the local development stack, simply run:
 $ docker-compose -f docker-compose-dev.yml down
 ```
 
+If you wish to populate your local database with events from external services, you can use the steps outlined in the scripts [README](scripts/README.md).
+
 ## Running the tests
 
 The following will run the unit tests for each respective service:
