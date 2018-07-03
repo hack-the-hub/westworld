@@ -4,10 +4,10 @@ env=$1
 file=""
 fails=""
 
-if [[ "${env}" == "stage" ]]; then
+if [[ "${env}" == "dev" ]]; then
   file="docker-compose-dev.yml"
-elif [[ "${env}" == "dev" ]]; then
-  file="docker-compose-dev.yml"
+elif [[ "${env}" == "stage" ]]; then
+  file="docker-compose-stage.yml"
 elif [[ "${env}" == "prod" ]]; then
   file="docker-compose-prod.yml"
 else
@@ -22,21 +22,29 @@ inspect() {
   fi
 }
 
+set -x
+
 docker-compose -f $file run users-service python manage.py test
 inspect $? users
 docker-compose -f $file run users-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 docker-compose -f $file run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
-
 inspect $? users-lint
+
+docker-compose -f $file build client-test
+docker-compose -f $file run client-test npm run lint
+inspect $? client-lint
+docker-compose -f $file -e CI=true run client-test npm test -- --coverage
+inspect $? client-test
+
 if [[ "${env}" != "stage" ]]; then
-  docker-compose -f $file run client npm test -- --coverage
-  inspect $? client
   testcafe chrome e2e
   inspect $? e2e
 else
   testcafe chrome e2e/index.test.js
   inspect $? e2e
 fi
+
+set +x
 
 if [ -n "${fails}" ]; then
   echo "Tests failed: ${fails}"

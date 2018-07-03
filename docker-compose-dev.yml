@@ -87,12 +87,24 @@ services:
       - '3007:3000' # expose ports - HOST:CONTAINER
     environment:
       - NODE_ENV=development
+      - CI=${CI}
       - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
       - REACT_APP_EVENTS_SERVICE_URL=${REACT_APP_EVENTS_SERVICE_URL}
     depends_on:
       - users-service
+      - events-service
     links:
       - users-service
+      - events-service
+
+  client-test:
+    container_name: client-test
+    build:
+      context: ./services/client
+      dockerfile: Dockerfile-dev
+    environment:
+      - NODE_ENV=development
+      - CI=${CI}
 
   swagger:
     container_name: swagger
