@@ -36,6 +36,10 @@
         {
           "name": "NEW_RELIC_APP_NAME",
           "value": "Muxer - Users (Production)"
+        },
+        {
+          "name": "NEW_RELIC_LICENSE_KEY",
+          "value": "%s"
         }
       ],
       "logConfiguration": {

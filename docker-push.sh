@@ -19,22 +19,10 @@ then
   then
     export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com"
     export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com"
+    export SECRET_KEY="$STAGING_SECRET_KEY"
     export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
-  fi
-
-  if [ "$TRAVIS_BRANCH" == "production" ]
-  then
-    export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-production-alb-453010484.us-east-1.elb.amazonaws.com"
-    export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-production-alb-453010484.us-east-1.elb.amazonaws.com"
-    export DATABASE_URL="$AWS_RDS_URI"
-    export SECRET_KEY="$PRODUCTION_SECRET_KEY"
-    export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
-  fi
-
-  if [ "$TRAVIS_BRANCH" == "staging" ]
-  then
     cd $USERS_DIR
-    docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY .
+    docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV .
     docker tag $USERS:$COMMIT $REPO/$USERS:$TAG
     docker push $REPO/$USERS:$TAG
     cd ../../
@@ -46,7 +34,7 @@ then
     cd ../../../../
 
     cd $EVENTS_DIR
-    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY .
+    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV .
     docker tag $EVENTS:$COMMIT $REPO/$EVENTS:$TAG
     docker push $REPO/$EVENTS:$TAG
     cd ../../
@@ -72,29 +60,24 @@ then
 
   if [ "$TRAVIS_BRANCH" == "production" ]
   then
+    export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-production-alb-453010484.us-east-1.elb.amazonaws.com"
+    export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-production-alb-453010484.us-east-1.elb.amazonaws.com"
+    export SECRET_KEY="$PRODUCTION_SECRET_KEY"
+    export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
+    export AWS_RDS_EVENTS_URI="$AWS_RDS_EVENTS_URI"
+    export AWS_RDS_USERS_URI="$AWS_RDS_USERS_URI"
+
     cd $USERS_DIR
-    docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg DATABASE_URL=AWS_RDS_USERS_URI .
+    docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV .
     docker tag $USERS:$COMMIT $REPO/$USERS:$TAG
     docker push $REPO/$USERS:$TAG
     cd ../../
 
-    cd $USERS_DB_DIR
-    docker build -t $USERS_DB:$COMMIT -f Dockerfile .
-    docker tag $USERS_DB:$COMMIT $REPO/$USERS_DB:$TAG
-    docker push $REPO/$USERS_DB:$TAG
-    cd ../../../../
-
     cd $EVENTS_DIR
-    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY --build-arg DATABASE_URL=AWS_RDS_EVENTS_URI .
+    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV .
     docker tag $EVENTS:$COMMIT $REPO/$EVENTS:$TAG
     docker push $REPO/$EVENTS:$TAG
     cd ../../
-
-    cd $EVENTS_DB_DIR
-    docker build -t $EVENTS_DB:$COMMIT -f Dockerfile .
-    docker tag $EVENTS_DB:$COMMIT $REPO/$EVENTS_DB:$TAG
-    docker push $REPO/$EVENTS_DB:$TAG
-    cd ../../../../
 
     cd $CLIENT_DIR
     docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL --build-arg REACT_APP_EVENTS_SERVICE_URL=$REACT_APP_EVENTS_SERVICE_URL .

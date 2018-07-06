@@ -39,7 +39,7 @@ then
       service="my-dev-space-users-prod-service"
       template="ecs_users_prod_taskdefinition.json"
       task_template=$(cat "ecs/$template")
-      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_URI $PRODUCTION_SECRET_KEY)
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_USERS_URI $SECRET_KEY $NEW_RELIC_LICENSE_KEY)
       echo "$task_def"
       register_definition
       update_service
@@ -48,7 +48,7 @@ then
       service="my-dev-space-events-prod-service"
       template="ecs_events_prod_taskdefinition.json"
       task_template=$(cat "ecs/$template")
-      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_URI $PRODUCTION_SECRET_KEY)
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_EVENTS_URI $SECRET_KEY $NEW_RELIC_LICENSE_KEY)
       echo "$task_def"
       register_definition
       update_service

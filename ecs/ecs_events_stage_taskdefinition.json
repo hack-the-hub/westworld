@@ -27,7 +27,7 @@
         },
         {
           "name": "SECRET_KEY",
-          "value": "my_precious"
+          "value": "%s"
         },
         {
           "name": "NEW_RELIC_ENVIRONMENT",
@@ -36,6 +36,10 @@
         {
           "name": "NEW_RELIC_APP_NAME",
           "value": "Muxer - Events (Staging)"
+        },
+        {
+          "name": "NEW_RELIC_LICENSE_KEY",
+          "value": "%s"
         }
       ],
       "links": [
