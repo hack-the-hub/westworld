@@ -14,6 +14,8 @@ export const linkStyles = resolveScopedStyles(
 
 export default css`
   ul {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 0.25rem 0.25rem 0 1.25rem;
@@ -22,5 +24,6 @@ export default css`
   li {
     top: 0.22rem;
     position: relative;
+    margin-right: 1.25rem;
   }
 `;

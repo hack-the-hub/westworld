@@ -8,6 +8,7 @@ node_modules
 *.pyo
 .coverage
 .cache
+.env*
 .env.*
 .python-version
 /tmp

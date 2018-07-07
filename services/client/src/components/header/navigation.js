@@ -11,6 +11,11 @@ const Navigation = () => (
         events
       </Link>
     </li>
+    <li>
+      <Link to="/video" className={`navigation-link ${linkStyles.className}`}>
+        videos
+      </Link>
+    </li>
   </ul>
 );
 
