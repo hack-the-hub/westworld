@@ -1,8 +1,5 @@
-# std lib
-from datetime import datetime, timedelta
-
 # 3rd party
-from sqlalchemy import exc, and_
+from sqlalchemy import exc
 from flask import Blueprint, jsonify, request
 
 # local
@@ -124,12 +121,10 @@ def get_single_video(video_id):
 @videos_blueprint.route("/videos", methods=["GET"])
 def get_all_videos():
     """Get all videos"""
-
-    current_time = datetime.utcnow()
     upcoming_videos = Video.query.all()
 
     response_object = {
         "status": "success",
-        "data": [video.to_json() for video in upcoming_videos]
+        "data": [video.to_json() for video in upcoming_videos],
     }
     return jsonify(response_object), 200
