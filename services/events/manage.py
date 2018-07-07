@@ -9,7 +9,7 @@ from flask_migrate import MigrateCommand
 
 from project import create_app, db
 from project.api.models import Event
-
+from project.api.models import Video
 
 COV = coverage.coverage(
     branch=True,
@@ -82,6 +82,17 @@ def seed_db():
             member_type="Member",
             time=time,
             source="test",
+        )
+    )
+    db.session.add(
+        Video(
+            id="cU-TGiWK-dc",
+            name="Stone Age To Serverless or: How I Learned To Stop Worrying And Love The Platform",
+            created="2018-05-05 14:30:00Z",
+            url="https://www.youtube.com/watch?v=cU-TGiWK-dc",
+            description="Due to a last-minute speaker dropout, Mark will be improvising on a theme",
+            channel="Northern Ireland Developer Conference",
+            source="youtube",
         )
     )
     db.session.commit()

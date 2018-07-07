@@ -1,5 +1,6 @@
 from project import db
 from project.api.models import Event
+from project.api.models import Video
 
 
 def add_event(
@@ -31,3 +32,18 @@ def add_event(
     db.session.add(event)
     db.session.commit()
     return event
+
+
+def add_video(id, name, created, url, description, channel, source):
+    video = Video(
+        id=id,
+        name=name,
+        created=created,
+        url=url,
+        description=description,
+        channel=channel,
+        source=source,
+    )
+    db.session.add(video)
+    db.session.commit()
+    return video

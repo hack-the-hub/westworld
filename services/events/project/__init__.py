@@ -26,11 +26,12 @@ def create_app():
     # set up extensions
     db.init_app(app)
     migrate.init_app(app, db)
-    migrate.init_app(app, db)
 
     # register blueprints
     from project.api.events import events_blueprint
+    from project.api.videos import videos_blueprint
 
     app.register_blueprint(events_blueprint)
+    app.register_blueprint(videos_blueprint)
 
     return app
