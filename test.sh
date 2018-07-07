@@ -33,7 +33,7 @@ inspect $? users-lint
 docker-compose -f $file build client-test
 docker-compose -f $file run client-test npm run lint
 inspect $? client-lint
-docker-compose -f $file -e CI=true run client-test npm test -- --coverage
+CI=true docker-compose -f $file run client-test npm test -- --coverage
 inspect $? client-test
 
 if [[ "${env}" != "stage" ]]; then
