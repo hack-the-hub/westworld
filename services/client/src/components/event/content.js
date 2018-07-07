@@ -2,9 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import TimeToEvent from "./time-to-event";
 import styles from "./styles/content";
-
-const formatTitle = str =>
-  str.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase());
+import {formatTitle} from "utils/format";
 
 const Content = ({ name, time, eventUrl, groupName }) => (
   <React.Fragment>

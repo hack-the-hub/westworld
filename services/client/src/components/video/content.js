@@ -2,9 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./styles/content";
 import TimeToVideo from "./time-to-video";
-
-const formatTitle = str =>
-  str.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase());
+import {formatTitle} from "utils/format";
 
 const Content = ({ name, created, url, channel }) => (
   <React.Fragment>

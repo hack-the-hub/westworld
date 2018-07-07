@@ -1,3 +1,6 @@
+# std lib
+from datetime import datetime
+
 # 3rd party
 from sqlalchemy import exc
 from flask import Blueprint, jsonify, request
@@ -121,7 +124,9 @@ def get_single_video(video_id):
 @videos_blueprint.route("/videos", methods=["GET"])
 def get_all_videos():
     """Get all videos"""
-    upcoming_videos = Video.query.all()
+    oldest_allowed_records = datetime(2017, 1, 1, 00, 00, 00)
+
+    upcoming_videos = Video.query.filter(Video.created > oldest_allowed_records).all()
 
     response_object = {
         "status": "success",

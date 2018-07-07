@@ -9,7 +9,7 @@ const updateVideosList = function(videosList) {
   const videos = _.map(videosList, item =>
     _.extend({}, item, { created: moment(item.created).valueOf() })
   );
-  return _.orderBy(videos, ["created"], ["asc"]);
+  return _.orderBy(videos, ["created"], ["desc"]);
 };
 
 class Videos extends Component {
