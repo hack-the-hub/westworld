@@ -30,13 +30,27 @@ $ cd my-dev-space
 $ docker-compose -f docker-compose-dev.yml up -d
 ```
 
-Once the service is up and running, you will need to manually run the migrations and seed data required to configure the local postgres instance.
+Once the service is up and running, you will need to manually create the required tables in the database and install the optional seed data to complete the local Postgres setup.
 
 ```bash
 $ docker-compose -f docker-compose-dev.yml run users-service python manage.py recreate_db
 $ docker-compose -f docker-compose-dev.yml run users-service python manage.py seed_db
 $ docker-compose -f docker-compose-dev.yml run events-service python manage.py recreate_db
 $ docker-compose -f docker-compose-dev.yml run events-service python manage.py seed_db
+```
+
+On subsequent runs (when the above steps have been completed), you can apply new database migrations to your local service by running:
+
+```bash
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db upgrade
+$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db upgrade
+```
+
+Alternatively, if you make a change to a model during development, you will need to create and commit a migration file for that service. As a best practive, migration files should be committed independently to code:
+
+```bash
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db migrate
+$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db migrate
 ```
 
 And to tear down the local development stack, simply run:
