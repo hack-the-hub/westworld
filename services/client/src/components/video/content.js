@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { formatTitle } from "utils/format";
 import styles from "./styles/content";
 import TimeToVideo from "./time-to-video";
-import {formatTitle} from "utils/format";
 
 const Content = ({ name, created, url, channel }) => (
   <React.Fragment>
@@ -19,7 +19,7 @@ const Content = ({ name, created, url, channel }) => (
     </div>
     <div className="video-details">
       <span>{channel}</span>
-      <TimeToVideo startTime={created}/>
+      <TimeToVideo startTime={created} />
     </div>
   </React.Fragment>
 );

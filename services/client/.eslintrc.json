@@ -24,6 +24,7 @@
     "react": {
       "version": "16.4.1"
     },
+    "import/core-modules": ["styled-jsx", "styled-jsx/css"],
     "import/resolver": {
       "node": {
         "moduleDirectory": [

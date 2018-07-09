@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { formatTitle } from "utils/format";
 import TimeToEvent from "./time-to-event";
 import styles from "./styles/content";
-import {formatTitle} from "utils/format";
 
 const Content = ({ name, time, eventUrl, groupName }) => (
   <React.Fragment>

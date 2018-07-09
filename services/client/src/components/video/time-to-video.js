@@ -15,9 +15,7 @@ const TimeToVideo = ({ startTime }) => {
           font-style: italic;
         }
       `}</style>
-      <span>
-        created {duration.humanize(true)}
-      </span>
+      <span>created {duration.humanize(true)}</span>
     </React.Fragment>
   );
 };
