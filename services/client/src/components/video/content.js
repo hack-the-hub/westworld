@@ -1,34 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TimeToEvent from "./time-to-event";
 import styles from "./styles/content";
+import TimeToVideo from "./time-to-video";
 import {formatTitle} from "utils/format";
 
-const Content = ({ name, time, eventUrl, groupName }) => (
+const Content = ({ name, created, url, channel }) => (
   <React.Fragment>
     <style jsx>{styles}</style>
-    <div className="event-content">
+    <div className="video-content">
       <a
-        className="event-title-link"
-        href={eventUrl}
+        className="video-title-link"
+        href={url}
         target="_blank"
         rel="noopener noreferrer"
       >
         {formatTitle(name)}
       </a>
     </div>
-    <div className="event-details">
-      <span>{groupName}</span>
-      <TimeToEvent startTime={time} />
+    <div className="video-details">
+      <span>{channel}</span>
+      <TimeToVideo startTime={created}/>
     </div>
   </React.Fragment>
 );
 
 Content.propTypes = {
   name: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
-  eventUrl: PropTypes.string.isRequired,
-  groupName: PropTypes.string.isRequired
+  created: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
+  channel: PropTypes.string.isRequired
 };
 
 export default Content;

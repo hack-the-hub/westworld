@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css";
 import Events from "./pages/events";
+import Videos from "./pages/videos";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
@@ -47,6 +48,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" render={props => <Events {...props} />} />
         <Route exact path="/event" render={props => <Events {...props} />} />
+        <Route exact path="/video" render={props => <Videos {...props} />} />
       </Switch>
       <Footer />
     </div>

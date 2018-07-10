@@ -13,7 +13,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
-    "lint": "eslint ."
+    "lint": "eslint ./src"
   },
   "dependencies": {
     "axios": "^0.18.0",
