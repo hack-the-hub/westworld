@@ -23,7 +23,7 @@
         },
         {
           "name": "DATABASE_URL",
-          "value": "postgres://postgres:postgres@users-db:5432/users_stage"
+          "value": "%s"
         },
         {
           "name": "SECRET_KEY",
@@ -42,43 +42,10 @@
           "value": "%s"
         }
       ],
-      "links": [
-        "users-db"
-      ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "my-dev-space-users-stage",
-          "awslogs-region": "us-east-1"
-        }
-      }
-    },
-    {
-      "name": "users-db",
-      "image": "%s.dkr.ecr.us-east-1.amazonaws.com/my-dev-space-users_db:staging",
-      "essential": true,
-      "memoryReservation": 300,
-      "portMappings": [
-        {
-          "hostPort": 0,
-          "protocol": "tcp",
-          "containerPort": 5432
-        }
-      ],
-      "environment": [
-        {
-          "name": "POSTGRES_PASSWORD",
-          "value": "postgres"
-        },
-        {
-          "name": "POSTGRES_USER",
-          "value": "postgres"
-        }
-      ],
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "my-dev-space-users_db-stage",
           "awslogs-region": "us-east-1"
         }
       }
