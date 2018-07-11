@@ -34,7 +34,7 @@ services:
     container_name: events-service
     build:
       context: ./services/events
-      dockerfile: Dockerfile-stage
+      dockerfile: Dockerfile-stage-test
     volumes:
       - './services/events:/usr/src/app'
     ports:
