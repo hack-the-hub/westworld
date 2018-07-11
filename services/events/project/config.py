@@ -38,7 +38,7 @@ class TestingConfig(BaseConfig):
 class StagingConfig(BaseConfig):
     """Staging configuration"""
 
-    DEBUG = False
+    DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 

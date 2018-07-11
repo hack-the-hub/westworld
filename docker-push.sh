@@ -2,8 +2,7 @@
 
 if [ -z "$TRAVIS_PULL_REQUEST" ] || [ "$TRAVIS_PULL_REQUEST" == "false" ]
 then
-  if [ "$TRAVIS_BRANCH" == "staging" ] || \
-    [ "$TRAVIS_BRANCH" == "production" ]
+  if [ "$TRAVIS_BRANCH" == "staging" ] || [ "$TRAVIS_BRANCH" == "production" ]
   then
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
 
