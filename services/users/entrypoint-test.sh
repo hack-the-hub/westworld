@@ -8,8 +8,9 @@ done
 
 echo "PostgreSQL started"
 
+# setup database
 python manage.py recreate_db
-python manage.py upgrade
+python manage.py db migrate
 python manage.py seed_db
 
 newrelic-admin run-program gunicorn -b 0.0.0.0:5000 manage:app
