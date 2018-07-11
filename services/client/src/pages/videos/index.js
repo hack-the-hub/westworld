@@ -3,6 +3,7 @@ import axios from "axios";
 import _ from "lodash";
 import moment from "moment";
 import CallToActionBanner from "components/call-to-action-banner";
+import Spinner from "components/spinner/loading";
 import Video from "components/video";
 
 const updateVideosList = function(videosList) {
@@ -39,7 +40,7 @@ class Videos extends Component {
   renderRecentVideos() {
     const { recentVideos } = this.state;
 
-    if (!_.isArray(recentVideos)) return <div>Loading...</div>;
+    if (!_.isArray(recentVideos)) return <Spinner />;
     if (recentVideos.length === 0) return null;
 
     return (

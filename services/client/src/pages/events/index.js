@@ -3,6 +3,7 @@ import axios from "axios";
 import _ from "lodash";
 import moment from "moment";
 import CallToActionBanner from "components/call-to-action-banner";
+import Spinner from "components/spinner/loading";
 import Event from "components/event";
 
 const updateEventsList = function(eventsList) {
@@ -40,7 +41,7 @@ class Events extends Component {
   renderRecentEvents() {
     const { recentEvents } = this.state;
 
-    if (!_.isArray(recentEvents)) return <div>Loading...</div>;
+    if (!_.isArray(recentEvents)) return <Spinner />;
     if (recentEvents.length === 0) return null;
 
     return (
@@ -55,7 +56,7 @@ class Events extends Component {
   renderUpcomingEvents() {
     const { upcomingEvents } = this.state;
 
-    if (!_.isArray(upcomingEvents)) return <div>Loading...</div>;
+    if (!_.isArray(upcomingEvents)) return null;
 
     return (
       <div>
