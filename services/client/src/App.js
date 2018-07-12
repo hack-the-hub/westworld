@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css";
 import Events from "./pages/events";
 import Videos from "./pages/videos";
+import Speakers from "./pages/speakers";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
@@ -49,6 +50,11 @@ const App = () => (
         <Route exact path="/" render={props => <Events {...props} />} />
         <Route exact path="/event" render={props => <Events {...props} />} />
         <Route exact path="/video" render={props => <Videos {...props} />} />
+        <Route
+          exact
+          path="/speaker"
+          render={props => <Speakers {...props} />}
+        />
       </Switch>
       <Footer />
     </div>

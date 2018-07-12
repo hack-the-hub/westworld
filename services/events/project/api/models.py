@@ -1,5 +1,9 @@
+# std stdlib
+from datetime import datetime
+
 # local imports
 from project import db
+from sqlalchemy.dialects.postgresql import ARRAY
 
 
 class Event(db.Model):
@@ -89,5 +93,46 @@ class Video(db.Model):
             "url": self.url,
             "description": self.description,
             "channel": self.channel,
+            "source": self.source,
+        }
+
+
+class Speaker(db.Model):
+    __tablename__ = "speakers"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), nullable=False)
+    image = db.Column(db.String(1024), nullable=False)
+    contact = db.Column(db.String(128), nullable=False)
+    created = db.Column(db.DateTime, default=datetime.utcnow)
+    role = db.Column(db.String(128), nullable=False)
+    topics = db.Column(ARRAY(db.String), nullable=False)
+    diversification = db.Column(db.ARRAY(db.String), nullable=False)
+    location = db.Column(db.String(128), nullable=False)
+    source = db.Column(db.String(50), nullable=False)
+
+    def __init__(
+        self, name, image, contact, role, topics, diversification, location, source
+    ):
+        self.name = name
+        self.image = image
+        self.contact = contact
+        self.role = role
+        self.topics = topics
+        self.diversification = diversification
+        self.location = location
+        self.source = source
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "image": self.image,
+            "created": self.created,
+            "contact": self.contact,
+            "role": self.role,
+            "topics": self.topics,
+            "diversification": self.diversification,
+            "location": self.location,
             "source": self.source,
         }

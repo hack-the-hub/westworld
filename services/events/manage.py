@@ -61,6 +61,12 @@ def recreate_db():
     db.create_all()
     db.session.commit()
 
+@manager.command
+def create_db():
+    """creates a database."""
+    db.create_all()
+    db.session.commit()
+
 
 @manager.command
 def seed_db():

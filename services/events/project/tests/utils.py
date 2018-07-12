@@ -1,6 +1,7 @@
 from project import db
 from project.api.models import Event
 from project.api.models import Video
+from project.api.models import Speaker
 
 
 def add_event(
@@ -47,3 +48,19 @@ def add_video(id, name, created, url, description, channel, source):
     db.session.add(video)
     db.session.commit()
     return video
+
+
+def add_speaker(name, image, contact, role, topics, diversification, location, source):
+    speaker = Speaker(
+        name=name,
+        image=image,
+        contact=contact,
+        role=role,
+        topics=topics,
+        diversification=diversification,
+        location=location,
+        source=source,
+    )
+    db.session.add(speaker)
+    db.session.commit()
+    return speaker

@@ -9,5 +9,7 @@ test(`should display the page correctly`, async (t) => {
   await t
     .navigateTo(TEST_URL)
     .expect(Selector('a').withText('events').exists).ok()
+    .expect(Selector('a').withText('videos').exists).ok()
+    .expect(Selector('a').withText('speakers').exists).ok()
     .expect(Selector('a').withText('Make a request').exists).ok()
 });

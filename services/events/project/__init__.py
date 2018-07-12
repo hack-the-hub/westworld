@@ -30,8 +30,10 @@ def create_app():
     # register blueprints
     from project.api.events import events_blueprint
     from project.api.videos import videos_blueprint
+    from project.api.speakers import speakers_blueprint
 
     app.register_blueprint(events_blueprint)
     app.register_blueprint(videos_blueprint)
+    app.register_blueprint(speakers_blueprint)
 
     return app
