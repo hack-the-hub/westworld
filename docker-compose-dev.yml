@@ -105,6 +105,8 @@ services:
     environment:
       - NODE_ENV=development
       - CI=${CI}
+    volumes:
+      - './services/client:/usr/src/app'
 
   swagger:
     container_name: swagger
