@@ -9,10 +9,10 @@ then
     JQ="jq --raw-output --exit-status"
 
     configure_aws_cli() {
-    	aws --version
-    	aws configure set default.region us-east-1
-    	aws configure set default.output json
-    	echo "AWS Configured!"
+      aws --version
+      aws configure set default.region us-east-1
+      aws configure set default.output json
+      echo "AWS Configured!"
     }
 
     register_definition() {
@@ -32,7 +32,6 @@ then
     }
 
     deploy_cluster() {
-
       cluster="my-dev-space-production-cluster"
 
       # users
@@ -70,12 +69,9 @@ then
       echo "$task_def"
       register_definition
       update_service
-
     }
 
     configure_aws_cli
     deploy_cluster
-
   fi
-
 fi

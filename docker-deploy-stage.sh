@@ -9,10 +9,10 @@ then
     JQ="jq --raw-output --exit-status"
 
     configure_aws_cli() {
-    	aws --version
-    	aws configure set default.region us-east-1
-    	aws configure set default.output json
-    	echo "AWS Configured!"
+      aws --version
+      aws configure set default.region us-east-1
+      aws configure set default.output json
+      echo "AWS Configured!"
     }
 
     register_definition() {
@@ -32,14 +32,13 @@ then
     }
 
     deploy_cluster() {
-
       cluster="my-dev-space-staging-cluster"
 
       # users
       service="my-dev-space-users-stage-service"
       template="ecs_users_stage_taskdefinition.json"
       task_template=$(cat "ecs/$template")
-      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_EVENTS_STAGING_URI $SECRET_KEY $NEW_RELIC_LICENSE_KEY)
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_USERS_STAGING_URI $SECRET_KEY $NEW_RELIC_LICENSE_KEY)
       echo "$task_def"
       register_definition
       update_service
@@ -48,7 +47,7 @@ then
       service="my-dev-space-events-stage-service"
       template="ecs_events_stage_taskdefinition.json"
       task_template=$(cat "ecs/$template")
-      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_USERS_STAGING_URI $SECRET_KEY $NEW_RELIC_LICENSE_KEY)
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_RDS_EVENTS_STAGING_URI $SECRET_KEY $NEW_RELIC_LICENSE_KEY)
       echo "$task_def"
       register_definition
       update_service
@@ -70,12 +69,10 @@ then
       echo "$task_def"
       register_definition
       update_service
-
     }
 
     configure_aws_cli
     deploy_cluster
-
   fi
 
 fi
