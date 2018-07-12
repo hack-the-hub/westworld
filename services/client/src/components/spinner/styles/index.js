@@ -4,7 +4,7 @@ export default css`
   .loading-container {
     margin-left: auto;
     margin-right: auto;
-    width: 5em
+    width: 5em;
   }
   .lds-ripple {
     display: inline-block;

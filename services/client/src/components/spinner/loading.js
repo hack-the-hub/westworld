@@ -1,18 +1,16 @@
 import React from "react";
 import styles from "./styles";
 
-const Spinner = () => {
-  return (
-    <React.Fragment>
-      <style jsx>{styles}</style>
-      <div className="loading-container">
-        <div className="lds-ripple">
-          <div></div>
-          <div></div>
-        </div>
+const Spinner = () => (
+  <React.Fragment>
+    <style jsx>{styles}</style>
+    <div className="loading-container">
+      <div className="lds-ripple">
+        <div />
+        <div />
       </div>
-    </React.Fragment>
-  );
-};
+    </div>
+  </React.Fragment>
+);
 
 export default Spinner;
