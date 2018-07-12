@@ -6,10 +6,10 @@ const Footer = () => (
   <div className="footer">
     <style jsx>{styles}</style>
     <div>
-      &copy; 2018 | Site by
-      <a href="https://twitter.com/apoclyps">
-        <FontAwesome name="twitter" />
-        {" Kyle Harrison"}
+      &copy; 2018 | Built by
+      <a href="https://github.com/apoclyps/my-dev-space/graphs/contributors">
+        <FontAwesome name="github" />
+        {" open source contributions"}
       </a>
     </div>
   </div>
