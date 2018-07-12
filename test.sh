@@ -24,6 +24,9 @@ inspect() {
 
 set -x
 
+# allows time for the docker containers to come up prior to running tests
+sleep 15
+
 docker-compose -f $file run users-service python manage.py test
 inspect $? users
 docker-compose -f $file run users-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
