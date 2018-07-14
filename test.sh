@@ -25,7 +25,9 @@ inspect() {
 set -x
 
 # allows time for the docker containers to come up prior to running tests
-sleep 15
+if [[ "${env}" != "dev" ]]; then
+  sleep 15
+fi
 
 docker-compose -f $file run users-service python manage.py test
 inspect $? users
