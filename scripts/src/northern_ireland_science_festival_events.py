@@ -102,7 +102,7 @@ def _transform_event(event):
             "%Y-%m-%d %H:%M:%SZ"
         )
         hashed_id = hashlib.sha256(
-            str(theme + name + created).encode("utf-8")
+            str(theme + name + day + month).encode("utf-8")
         ).hexdigest()
 
         events.append(

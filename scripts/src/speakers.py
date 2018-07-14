@@ -44,5 +44,5 @@ if __name__ == "__main__":
     try:
         for speaker in SPEAKERS:
             _post_payload(speaker)
-    except HttpError as e:
-        print("An HTTP error %d occurred:\n%s" % (e.resp.status, e.content))
+    except Exception as e:
+        print("An HTTP error %s occurred:\n" % (e))
