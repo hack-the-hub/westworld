@@ -52,14 +52,14 @@ class Event(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "created": self.created,
+            "created": self.created.isoformat(),
             "status": self.status,
             "photo_url": self.photo_url,
             "event_url": self.event_url,
             "description": self.description,
             "group_name": self.group_name,
             "member_type": self.member_type,
-            "time": self.time,
+            "time": self.time.isoformat(),
             "source": self.source,
         }
 
@@ -89,7 +89,7 @@ class Video(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "created": self.created,
+            "created": self.created.isoformat(),
             "url": self.url,
             "description": self.description,
             "channel": self.channel,
@@ -128,7 +128,7 @@ class Speaker(db.Model):
             "id": self.id,
             "name": self.name,
             "image": self.image,
-            "created": self.created,
+            "created": self.created.isoformat(),
             "contact": self.contact,
             "role": self.role,
             "topics": self.topics,
