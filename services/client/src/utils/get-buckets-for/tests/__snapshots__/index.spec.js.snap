@@ -10,19 +10,18 @@ Array [
         "name": "Meetup coming soon",
         "time": "2017-06-15T22:45:00",
       },
-    ],
-    "id": "today",
-    "message": "Today",
-  },
-  Object {
-    "className": "events-this-week",
-    "events": Array [
       Object {
         "id": "2",
         "name": "Meetup this week",
         "time": "2017-06-16T09:45:00",
       },
     ],
+    "id": "today",
+    "message": "Today",
+  },
+  Object {
+    "className": "events-this-week",
+    "events": Array [],
     "id": "this-week",
     "message": "This Week",
   },
@@ -80,19 +79,18 @@ Array [
         "name": "Meetup coming soon",
         "time": "2017-06-15T22:45:00",
       },
-    ],
-    "id": "today",
-    "message": "Today",
-  },
-  Object {
-    "className": "events-this-week",
-    "events": Array [
       Object {
         "id": "2",
         "name": "Meetup this week",
         "time": "2017-06-16T09:45:00",
       },
     ],
+    "id": "today",
+    "message": "Today",
+  },
+  Object {
+    "className": "events-this-week",
+    "events": Array [],
     "id": "this-week",
     "message": "This Week",
   },

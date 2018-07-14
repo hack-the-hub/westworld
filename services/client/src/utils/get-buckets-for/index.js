@@ -1,17 +1,14 @@
 import _ from "lodash";
 import moment from "moment";
 
-const sameTimePeriod = period => ({ time }) =>
-  moment().isSame(moment(time), period);
-
 const withinDays = days => ({ time }) =>
   moment(time).diff(moment(), "days") <= days;
 
 const buckets = [
-  { id: "today", check: sameTimePeriod("day"), message: "Today" },
+  { id: "today", check: withinDays(1), message: "Today" },
   {
     id: "this-week",
-    check: sameTimePeriod("week"),
+    check: withinDays(7),
     message: "This Week"
   },
   {
