@@ -62,6 +62,12 @@ def recreate_db():
     db.session.commit()
 
 @manager.command
+def drop_db():
+    """Recreates a database."""
+    db.drop_all()
+    db.session.commit()
+
+@manager.command
 def create_db():
     """creates a database."""
     db.create_all()

@@ -1,3 +1,5 @@
 CREATE DATABASE users_prod;
 CREATE DATABASE users_dev;
 CREATE DATABASE users_test;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
