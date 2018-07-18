@@ -10,7 +10,7 @@ from sqlalchemy.dialects.postgresql import UUID, ARRAY
 from project import db
 
 from sqlalchemy.orm import relationship
-from sqlalchemy import Table, Column, Integer, ForeignKey
+from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -27,6 +27,13 @@ video_topic_table = db.Table(
     "video_topic_association",
     db.Model.metadata,
     Column("video_id", UUID(as_uuid=True), ForeignKey("video.id")),
+    Column("topic_id", UUID(as_uuid=True), ForeignKey("topic.id")),
+)
+
+meetup_topic_table = db.Table(
+    "meetup_topic_association",
+    db.Model.metadata,
+    Column("meetup_id", UUID(as_uuid=True), ForeignKey("meetup.id")),
     Column("topic_id", UUID(as_uuid=True), ForeignKey("topic.id")),
 )
 
@@ -51,11 +58,32 @@ event_entry_table = db.Table(
     Column("entry_id", UUID(as_uuid=True), ForeignKey("entry.id")),
 )
 
+event_meetup_table = db.Table(
+    "event_meetup_association",
+    db.Model.metadata,
+    Column("event_id", UUID(as_uuid=True), ForeignKey("event.id")),
+    Column("meetup_id", UUID(as_uuid=True), ForeignKey("meetup.id")),
+)
+
 meetup_event_table = db.Table(
     "meetup_event_association",
     db.Model.metadata,
     Column("meetup_id", UUID(as_uuid=True), ForeignKey("meetup.id")),
     Column("event_id", UUID(as_uuid=True), ForeignKey("event.id")),
+)
+
+meetup_channel_table = db.Table(
+    "meetup_channel_association",
+    db.Model.metadata,
+    Column("meetup_id", UUID(as_uuid=True), ForeignKey("meetup.id")),
+    Column("channel_id", UUID(as_uuid=True), ForeignKey("channel.id")),
+)
+
+video_channel_table = db.Table(
+    "video_channel_association",
+    db.Model.metadata,
+    Column("video_id", UUID(as_uuid=True), ForeignKey("video.id")),
+    Column("channel_id", UUID(as_uuid=True), ForeignKey("channel.id")),
 )
 
 speaker_diversity_table = db.Table(
@@ -77,19 +105,12 @@ class Diversity(db.Model):
     name = Column(db.String(128), nullable=False)
     description = Column(db.String(1000), nullable=False)
 
-    def __init__(self, id, name, description, abbreviations):
-        self.id = id
+    def __init__(self, name, description):
         self.name = name
         self.description = description
-        self.abbreviations = abbreviations
 
     def to_json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "description": self.description,
-            "abbreviations": self.abbreviations,
-        }
+        return {"id": self.id, "name": self.name, "description": self.description}
 
 
 class Topic(db.Model):
@@ -102,20 +123,19 @@ class Topic(db.Model):
     )
     name = Column(db.String(128), nullable=False)
     description = Column(db.String(1000), nullable=False)
-    abbreviations = Column(ARRAY(db.String), nullable=False)
+    abbreviation = Column(db.String(10), nullable=False)
 
-    def __init__(self, id, name, description, abbreviations):
-        self.id = id
+    def __init__(self, name, description, abbreviation):
         self.name = name
         self.description = description
-        self.abbreviations = abbreviations
+        self.abbreviation = abbreviation
 
     def to_json(self):
         return {
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "abbreviations": self.abbreviations,
+            "abbreviation": self.abbreviation,
         }
 
 
@@ -130,13 +150,12 @@ class Entry(db.Model):
     type = Column(db.String(128), nullable=False)
     description = Column(db.String(1000), nullable=False)
 
-    def __init__(self, id, name, description):
-        self.id = id
-        self.name = name
+    def __init__(self, type, description):
+        self.type = type
         self.description = description
 
     def to_json(self):
-        return {"id": self.id, "name": self.name, "description": self.description}
+        return {"id": self.id, "type": self.type, "description": self.description}
 
 
 class Event(db.Model):
@@ -150,64 +169,51 @@ class Event(db.Model):
     name = Column(db.String(128), nullable=False)
     description = Column(db.String(50000), nullable=False)
     url = Column(db.String(2048), nullable=False)
-    meetup = relationship("Meetup", secondary=event_topic_table)
     start = Column(db.DateTime, nullable=False)
     end = Column(db.DateTime, nullable=False)
     duration = Column(Integer, nullable=False)
     topics = relationship("Topic", secondary=event_topic_table)
     entry = relationship("Entry", secondary=event_entry_table)
-    created = Column(db.DateTime, nullable=False)
-    updated = Column(db.DateTime, nullable=False)
-    deleted = Column(db.DateTime, nullable=False)
+    created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    deleted = Column(db.DateTime, nullable=True)
     source = Column(db.String(50), nullable=False)
 
     def __init__(
         self,
-        id,
         name,
         description,
         url,
-        meetup,
         start,
         end,
         duration,
         topics,
         entry,
-        created,
-        updated,
-        deleted,
+        channel,
         source,
     ):
-        self.id = id
         self.name = name
         self.description = description
         self.url = url
-        self.meetup = meetup
         self.start = start
         self.end = end
         self.duration = duration
         self.topics = topics
         self.entry = entry
-        self.created = created
-        self.updated = updated
-        self.deleted = deleted
+        self.channel = channel
         self.source = source
 
     def to_json(self):
         return {
-            "id": self.id,
             "name": self.name,
             "description": self.description,
             "url": self.url,
-            "meetup": self.meetup,
             "start": self.start,
             "end": self.end,
             "duration": self.duration,
             "topics": self.topics,
             "entry": self.entry,
-            "created": self.created.isoformat(),
-            "updated": self.updated.isoformat(),
-            "deleted": self.deleted.isoformat(),
+            "channel": self.channel,
             "source": self.source,
         }
 
@@ -226,20 +232,14 @@ class Channel(db.Model):
     topics = relationship("Topic", secondary=channel_topic_table)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    deleted = Column(db.DateTime, nullable=False)
+    deleted = Column(db.DateTime, nullable=True)
     source = Column(db.String(50), nullable=False)
 
-    def __init__(
-        self, id, name, url, description, topics, created, updated, deleted, source
-    ):
-        self.id = id
+    def __init__(self, name, url, description, topics, source):
         self.name = name
         self.url = url
         self.description = description
         self.topics = topics
-        self.created = created
-        self.updated = updated
-        self.deleted = deleted
         self.source = source
 
     def to_json(self):
@@ -268,22 +268,18 @@ class Video(db.Model):
     url = Column(db.String(2048), nullable=False)
     description = Column(db.String(50000), nullable=False)
     topics = relationship("Topic", secondary=video_topic_table)
-    channel = Column(db.String(128), nullable=False)
+    channel = relationship("Channel", secondary=video_channel_table)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    deleted = Column(db.DateTime, nullable=False)
+    deleted = Column(db.DateTime, nullable=True)
     source = Column(db.String(50), nullable=False)
 
-    def __init__(self, id, name, created, url, description, topics, channel, source):
-        self.id = id
+    def __init__(self, name, url, description, topics, channel, source):
         self.name = name
         self.url = url
         self.description = description
         self.topics = topics
         self.channel = channel
-        self.created = created
-        self.updated = updated
-        self.deleted = deleted
         self.source = source
 
     def to_json(self):
@@ -313,30 +309,15 @@ class Meetup(db.Model):
     logo = Column(db.String(1000), nullable=False)
     url = Column(db.String(2048), nullable=False)
     description = Column(db.String(50000), nullable=False)
-    topics = relationship("Topic", secondary=video_topic_table)
+    topics = relationship("Topic", secondary=meetup_topic_table)
     events = relationship("Event", secondary=meetup_event_table)
-    channel = relationship("Channel", uselist=False, back_populates="meetup")
+    channel = relationship("Channel", secondary=meetup_channel_table)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    deleted = Column(db.DateTime, nullable=False)
+    deleted = Column(db.DateTime, nullable=True)
     source = Column(db.String(50), nullable=False)
 
-    def __init__(
-        self,
-        id,
-        name,
-        logo,
-        url,
-        description,
-        topics,
-        events,
-        channel,
-        created,
-        updated,
-        deleted,
-        source,
-    ):
-        self.id = id
+    def __init__(self, name, logo, url, description, topics, events, channel, source):
         self.name = name
         self.logo = logo
         self.url = url
@@ -344,9 +325,6 @@ class Meetup(db.Model):
         self.topics = topics
         self.events = events
         self.channel = channel
-        self.created = created
-        self.updated = updated
-        self.deleted = deleted
         self.source = source
 
     def to_json(self):
@@ -384,7 +362,7 @@ class Speaker(db.Model):
     location = Column(db.String(128), nullable=False)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    deleted = Column(db.DateTime, nullable=False)
+    deleted = Column(db.DateTime, nullable=True)
     source = Column(db.String(50), nullable=False)
 
     def __init__(
@@ -397,9 +375,6 @@ class Speaker(db.Model):
         topics,
         diversification,
         location,
-        created,
-        updated,
-        deleted,
         source,
     ):
         self.name = name
@@ -410,9 +385,6 @@ class Speaker(db.Model):
         self.topics = topics
         self.diversification = diversification
         self.location = location
-        self.created = created
-        self.updated = updated
-        self.deleted = deleted
         self.source = source
 
     def to_json(self):

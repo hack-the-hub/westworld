@@ -5,29 +5,18 @@ from project.api.models import Speaker
 
 
 def add_event(
-    id,
-    name,
-    created,
-    status,
-    photo_url,
-    event_url,
-    description,
-    group_name,
-    member_type,
-    time,
-    source,
+    name, description, url, start, end, duration, topics, entry, channel, source
 ):
     event = Event(
-        id=id,
         name=name,
-        created=created,
-        status=status,
-        photo_url=photo_url,
-        event_url=event_url,
         description=description,
-        group_name=group_name,
-        member_type=member_type,
-        time=time,
+        url=url,
+        start=start,
+        end=end,
+        duration=duration,
+        topics=topics,
+        entry=entry,
+        channel=channel,
         source=source,
     )
     db.session.add(event)
@@ -35,13 +24,12 @@ def add_event(
     return event
 
 
-def add_video(id, name, created, url, description, channel, source):
+def add_video(name, url, description, topics, channel, source):
     video = Video(
-        id=id,
         name=name,
-        created=created,
         url=url,
         description=description,
+        topics=topics,
         channel=channel,
         source=source,
     )
@@ -50,10 +38,13 @@ def add_video(id, name, created, url, description, channel, source):
     return video
 
 
-def add_speaker(name, image, contact, role, topics, diversification, location, source):
+def add_speaker(
+    name, avatar, bio, contact, role, topics, diversification, location, source
+):
     speaker = Speaker(
         name=name,
-        image=image,
+        avatar=avatar,
+        bio=bio,
         contact=contact,
         role=role,
         topics=topics,

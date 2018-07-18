@@ -16,7 +16,6 @@ events_blueprint = Blueprint("events", __name__)
 @events_blueprint.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        id = request.form["id"]
         name = request.form["name"]
         created = request.form["created"]
         status = request.form["status"]
@@ -29,7 +28,6 @@ def index():
         source = request.form["source"]
 
         event = Event(
-            id=id,
             name=name,
             created=created,
             status=status,
