@@ -107,16 +107,15 @@ def _transform_event(event):
 
         events.append(
             {
-                "created": str(created),
-                "description": "missing desc",
-                "event_url": event_url,
-                "photo_url": event.get("photo_url", ""),
-                "id": hashed_id,
                 "name": name,
-                "group_name": theme,
-                "member_type": "public",
-                "status": "upcoming",
-                "time": str(time),
+                "description": theme,
+                "url": event_url,
+                "start": str(time),
+                "end": str(time),
+                "duration": 0,
+                "topics": [],
+                "entry": ['free'],
+                "category": 'Northern Ireland Science Festival',
                 "source": "nisciencefestival",
             }
         )

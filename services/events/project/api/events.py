@@ -6,42 +6,61 @@ from sqlalchemy import exc, and_
 from flask import Blueprint, jsonify, request
 
 # local
+from project.api.models import Topic
+from project.api.models import Entry
 from project.api.models import Event
 from project import db
 
-
 events_blueprint = Blueprint("events", __name__)
+
+
+def extract_topics(topics):
+    """Creates a list of topics from a given list."""
+    topics_list = []
+    for topic in topics:
+        if topic:
+            topics_list.append(Topic(name=str(topic)))
+    return topics_list
+
+
+def extract_enteries(entries):
+    entry_list = []
+    for entry in entries:
+        if entry:
+            entry_list.append(Entry(type=str(entry)))
+    return entry_list
 
 
 @events_blueprint.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         name = request.form["name"]
-        created = request.form["created"]
-        status = request.form["status"]
-        photo_url = request.form["photo_url"]
-        event_url = request.form["event_url"]
         description = request.form["description"]
-        group_name = request.form["group_name"]
-        member_type = request.form["member_type"]
-        time = request.form["time"]
+        url = request.form["url"]
+        start = request.form["start"]
+        end = request.form["end"]
+        duration = request.form["duration"]
+        topics = request.form["topics"]
+        entry = request.form["entry"]
+        category = request.form["category"]
         source = request.form["source"]
+
+        topic_list = extract_topics(topics)
 
         event = Event(
             name=name,
-            created=created,
-            status=status,
-            photo_url=photo_url,
-            event_url=event_url,
             description=description,
-            group_name=group_name,
-            member_type=member_type,
-            time=time,
+            url=url,
+            start=start,
+            end=end,
+            duration=duration,
+            topics=topic_list,
+            entry=entry,
+            category=category,
             source=source,
         )
 
         db.session.add(event)
-
         db.session.commit()
 
     events = Event.query.all()
@@ -62,42 +81,45 @@ def ping_pong():
 def add_event():
     post_data = request.get_json()
     response_object = {"status": "fail", "message": "Invalid payload."}
+
     if not post_data:
         return jsonify(response_object), 400
 
-    id = post_data.get("id")
     name = post_data.get("name")
-    created = post_data.get("created")
-    status = post_data.get("status")
-    photo_url = post_data.get("photo_url")
-    event_url = post_data.get("event_url")
     description = post_data.get("description")
-    group_name = post_data.get("group_name")
-    member_type = post_data.get("member_type")
-    time = (post_data.get("time"),)
+    url = post_data.get("url")
+    start = post_data.get("start")
+    end = post_data.get("end")
+    duration = post_data.get("duration")
+    topics = post_data.get("topics")
+    entries = post_data.get("entry")
+    category = post_data.get("category")
     source = post_data.get("source")
 
+    topics_list = extract_topics(topics)
+    entry_list = extract_enteries(entries)
+
     try:
-        event = Event.query.filter_by(id=id).first()
+        event = Event.query.filter_by(name=name, start=start).first()
         if not event:
             event = Event(
-                id=id,
                 name=name,
-                created=created,
-                status=status,
-                photo_url=photo_url,
-                event_url=event_url,
                 description=description,
-                group_name=group_name,
-                member_type=member_type,
-                time=time,
+                url=url,
+                start=start,
+                end=end,
+                duration=duration,
+                topics=topics_list,
+                entry=entry_list,
+                category=category,
                 source=source,
             )
-
             db.session.add(event)
             db.session.commit()
+
             response_object["status"] = "success"
             response_object["message"] = f"{name} was added!"
+
             return jsonify(response_object), 201
         else:
             response_object["message"] = "Sorry. That id already exists."
@@ -119,22 +141,7 @@ def get_single_event(event_id):
         if not event:
             return jsonify(response_object), 404
         else:
-            response_object = {
-                "status": "success",
-                "data": {
-                    "id": event.id,
-                    "name": event.name,
-                    "created": event.created,
-                    "status": event.status,
-                    "photo_url": event.photo_url,
-                    "event_url": event.event_url,
-                    "description": event.description,
-                    "group_name": event.group_name,
-                    "member_type": event.member_type,
-                    "time": event.time,
-                    "source": event.source,
-                },
-            }
+            response_object = {"status": "success", "data": event.to_json()}
             return jsonify(response_object), 200
     except ValueError:
         return jsonify(response_object), 404
@@ -147,10 +154,16 @@ def get_all_events():
     current_time = datetime.utcnow()
     recent_past = current_time - timedelta(hours=6)
 
-    upcoming_events = Event.query.filter(Event.time > current_time).all()
-    recent_events = Event.query.filter(
-        and_(Event.time <= current_time, Event.time >= recent_past)
-    ).all()
+    upcoming_events = (
+        Event.query.filter(Event.start > current_time).order_by(Event.start).all()
+    )
+    recent_events = (
+        Event.query.filter(
+            and_(Event.start <= current_time, Event.start >= recent_past)
+        )
+        .order_by(Event.start)
+        .all()
+    )
 
     response_object = {
         "status": "success",

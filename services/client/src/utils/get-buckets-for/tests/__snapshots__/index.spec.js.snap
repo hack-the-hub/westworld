@@ -8,7 +8,7 @@ Array [
       Object {
         "id": "1",
         "name": "Meetup coming soon",
-        "time": "2017-06-15T22:45:00",
+        "start": "2017-06-15T22:45:00",
       },
     ],
     "id": "today",
@@ -20,7 +20,7 @@ Array [
       Object {
         "id": "2",
         "name": "Meetup this week",
-        "time": "2017-06-16T09:45:00",
+        "start": "2017-06-16T09:45:00",
       },
     ],
     "id": "in-next-seven-days",
@@ -32,7 +32,7 @@ Array [
       Object {
         "id": "3",
         "name": "Meetup next month",
-        "time": "2017-07-13T11:30:00",
+        "start": "2017-07-13T11:30:00",
       },
     ],
     "id": "in-next-thirty-days",
@@ -44,7 +44,7 @@ Array [
       Object {
         "id": "4",
         "name": "Meetup in a few months",
-        "time": "2017-09-20T19:00:00",
+        "start": "2017-09-20T19:00:00",
       },
     ],
     "id": "in-next-three-months",
@@ -56,12 +56,12 @@ Array [
       Object {
         "id": "5",
         "name": "Meetup this year",
-        "time": "2017-11-01T10:47:00",
+        "start": "2017-11-01T10:47:00",
       },
       Object {
         "id": "6",
         "name": "Meetup next year",
-        "time": "2018-02-07T14:03:00",
+        "start": "2018-02-07T14:03:00",
       },
     ],
     "id": "in-the-future",
@@ -78,7 +78,7 @@ Array [
       Object {
         "id": "1",
         "name": "Meetup coming soon",
-        "time": "2017-06-15T22:45:00",
+        "start": "2017-06-15T22:45:00",
       },
     ],
     "id": "today",
@@ -90,7 +90,7 @@ Array [
       Object {
         "id": "2",
         "name": "Meetup this week",
-        "time": "2017-06-16T09:45:00",
+        "start": "2017-06-16T09:45:00",
       },
     ],
     "id": "in-next-seven-days",
@@ -108,17 +108,17 @@ Array [
       Object {
         "id": "3",
         "name": "Meetup this week too",
-        "time": "2017-07-16T11:30:00",
+        "start": "2017-07-16T11:30:00",
       },
       Object {
         "id": "4",
         "name": "Meetup in a few months",
-        "time": "2017-09-20T19:00:00",
+        "start": "2017-09-20T19:00:00",
       },
       Object {
         "id": "5",
         "name": "Meetup later this year",
-        "time": "2017-09-22T10:47:00",
+        "start": "2017-09-22T10:47:00",
       },
     ],
     "id": "in-next-three-months",
@@ -130,7 +130,7 @@ Array [
       Object {
         "id": "6",
         "name": "Meetup next year",
-        "time": "2018-02-07T14:03:00",
+        "start": "2018-02-07T14:03:00",
       },
     ],
     "id": "in-the-future",

@@ -5,7 +5,17 @@ from project.api.models import Speaker
 
 
 def add_event(
-    name, description, url, start, end, duration, topics, entry, channel, source
+    name,
+    description,
+    url,
+    start,
+    end,
+    duration,
+    topics,
+    entry,
+    channel,
+    category,
+    source,
 ):
     event = Event(
         name=name,
@@ -17,6 +27,7 @@ def add_event(
         topics=topics,
         entry=entry,
         channel=channel,
+        category=category,
         source=source,
     )
     db.session.add(event)

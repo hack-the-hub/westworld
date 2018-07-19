@@ -3,8 +3,7 @@ from datetime import datetime
 
 # 3rd party imports
 import sqlalchemy
-from sqlalchemy.dialects.postgresql import UUID, ARRAY
-
+from sqlalchemy.dialects.postgresql import UUID
 
 # local imports
 from project import db
@@ -122,10 +121,10 @@ class Topic(db.Model):
         server_default=sqlalchemy.text("uuid_generate_v4()"),
     )
     name = Column(db.String(128), nullable=False)
-    description = Column(db.String(1000), nullable=False)
-    abbreviation = Column(db.String(10), nullable=False)
+    description = Column(db.String(1000), nullable=True)
+    abbreviation = Column(db.String(10), nullable=True)
 
-    def __init__(self, name, description, abbreviation):
+    def __init__(self, name, description=None, abbreviation=None):
         self.name = name
         self.description = description
         self.abbreviation = abbreviation
@@ -148,9 +147,9 @@ class Entry(db.Model):
         server_default=sqlalchemy.text("uuid_generate_v4()"),
     )
     type = Column(db.String(128), nullable=False)
-    description = Column(db.String(1000), nullable=False)
+    description = Column(db.String(1000), nullable=True)
 
-    def __init__(self, type, description):
+    def __init__(self, type, description=None):
         self.type = type
         self.description = description
 
@@ -172,6 +171,7 @@ class Event(db.Model):
     start = Column(db.DateTime, nullable=False)
     end = Column(db.DateTime, nullable=False)
     duration = Column(Integer, nullable=False)
+    category = Column(db.String(256), nullable=False)
     topics = relationship("Topic", secondary=event_topic_table)
     entry = relationship("Entry", secondary=event_entry_table)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
@@ -189,7 +189,7 @@ class Event(db.Model):
         duration,
         topics,
         entry,
-        channel,
+        category,
         source,
     ):
         self.name = name
@@ -200,20 +200,19 @@ class Event(db.Model):
         self.duration = duration
         self.topics = topics
         self.entry = entry
-        self.channel = channel
+        self.category = category
         self.source = source
 
     def to_json(self):
         return {
+            "id": self.id,
             "name": self.name,
             "description": self.description,
             "url": self.url,
-            "start": self.start,
-            "end": self.end,
+            "start": self.start.isoformat(),
+            "end": self.end.isoformat(),
             "duration": self.duration,
-            "topics": self.topics,
-            "entry": self.entry,
-            "channel": self.channel,
+            "category": self.category,
             "source": self.source,
         }
 
@@ -235,7 +234,7 @@ class Channel(db.Model):
     deleted = Column(db.DateTime, nullable=True)
     source = Column(db.String(50), nullable=False)
 
-    def __init__(self, name, url, description, topics, source):
+    def __init__(self, name, topics, source, url=None, description=None):
         self.name = name
         self.url = url
         self.description = description

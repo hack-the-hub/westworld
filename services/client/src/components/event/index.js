@@ -5,13 +5,7 @@ import Content from "./content";
 import styles from "./styles";
 
 const Event = ({ className, content }) => {
-  const {
-    name,
-    time,
-    event_url: eventUrl,
-    group_name: groupName,
-    source
-  } = content;
+  const { id, name, start, url, category, source } = content;
 
   return (
     <div className={`event ${className}`}>
@@ -21,10 +15,11 @@ const Event = ({ className, content }) => {
       </div>
       <div className="event-content">
         <Content
+          id={id}
           name={name}
-          time={time}
-          eventUrl={eventUrl}
-          groupName={groupName}
+          start={start}
+          url={url}
+          category={category}
         />
       </div>
     </div>
@@ -34,11 +29,11 @@ const Event = ({ className, content }) => {
 Event.propTypes = {
   className: PropTypes.string,
   content: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     name: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
-    event_url: PropTypes.string.isRequired,
-    group_name: PropTypes.string.isRequired,
+    start: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
     source: PropTypes.string.isRequired
   }).isRequired
 };

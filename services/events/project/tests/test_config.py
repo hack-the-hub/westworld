@@ -1,6 +1,3 @@
-# services/events/project/tests/test_config.py
-
-
 import os
 import unittest
 

@@ -28,21 +28,28 @@ def _transform_event(event):
         "%Y-%m-%d %H:%M:%SZ"
     )
 
-    time = datetime.datetime.fromtimestamp(int(event["time"] / 1000)).strftime(
+    start = datetime.datetime.fromtimestamp(int(event["time"] / 1000)).strftime(
         "%Y-%m-%d %H:%M:%SZ"
     )
 
+    #TODO update to end time
+    end = datetime.datetime.fromtimestamp(int(event["time"] / 1000)).strftime(
+        "%Y-%m-%d %H:%M:%SZ"
+    )
+
+    # TODO calculate duration fo event
+    duration = 10000
+
     return {
-        "created": created,
-        "description": event["description"],
-        "event_url": event["event_url"],
-        "photo_url": event.get("photo_url", ""),
-        "id": event["id"],
         "name": event["name"],
-        "group_name": event["group"]["name"],
-        "member_type": event["group"]["name"],
-        "status": event["status"],
-        "time": time,
+        "description": event["description"],
+        "url": event["event_url"],
+        "start": start,
+        "end": end,
+        "duration": duration,
+        "topics": [],
+        "entry": ['free'],
+        "category": event["group"]["name"],
         "source": "meetup",
     }
 

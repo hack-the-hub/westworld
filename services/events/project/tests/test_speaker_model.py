@@ -1,8 +1,10 @@
 from project.tests.base import BaseTestCase
-from project.tests.utils import add_speaker
 
 from project.api.models import Topic
 from project.api.models import Diversity
+from project.api.models import Speaker
+
+from project import db
 
 
 class TestSpeakerModel(BaseTestCase):
@@ -10,7 +12,7 @@ class TestSpeakerModel(BaseTestCase):
         topic = Topic(name="Python", description="", abbreviation="py")
         diversification = Diversity(name="speaker", description="description")
 
-        speaker = add_speaker(
+        speaker = Speaker(
             name="Kyle Harrison",
             avatar="https://avatar.com",
             bio="description",
@@ -21,6 +23,8 @@ class TestSpeakerModel(BaseTestCase):
             location="Belfast",
             source="test",
         )
+        db.session.add(speaker)
+        db.session.commit()
 
         self.assertEqual(speaker.name, "Kyle Harrison")
         self.assertEqual(speaker.avatar, "https://avatar.com")
@@ -36,7 +40,7 @@ class TestSpeakerModel(BaseTestCase):
         topic = Topic(name="Python", description="", abbreviation="py")
         diversification = Diversity(name="speaker", description="description")
 
-        speaker = add_speaker(
+        speaker = Speaker(
             name="Kyle Harrison",
             avatar="https://avatar.com",
             bio="description",
@@ -47,4 +51,7 @@ class TestSpeakerModel(BaseTestCase):
             location="Belfast",
             source="test",
         )
+        db.session.add(speaker)
+        db.session.commit()
+
         self.assertTrue(isinstance(speaker.to_json(), dict))

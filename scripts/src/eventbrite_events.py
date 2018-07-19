@@ -16,16 +16,15 @@ client = Eventbrite(EVENTBRITE_API_TOKEN)
 
 def _transform_event(event):
     return {
-        "created": event["created"],
-        "description": event["description"]["text"],
-        "event_url": event.get("url", ""),
-        "photo_url": "",
-        "id": event["id"],
         "name": event["name"]["text"],
-        "group_name": event["name"]["text"],
-        "member_type": "ticket",
-        "status": event["status"],
-        "time": event["start"]["utc"],
+        "description": event["description"]["text"],
+        "url": event.get("url", ""),
+        "start": event["start"]["utc"],
+        "end": event["end"]["utc"],
+        "duration": 100000,
+        "topics": [],
+        "entry": ['ticket'],
+        "category": event["name"]["text"],
         "source": "eventbrite",
     }
 

@@ -82,17 +82,23 @@ def seed_db():
     time = datetime.utcfromtimestamp(event_date).replace(tzinfo=timezone.utc)
 
     db.session.add(
+        Topic(name="Python", description="", abbreviation="py"),
+        Entry(type="ticket", description="description"),
+        Channel(
+            name="test", url="", description="test", topics=[topic], source="test"
+        ),
+    )
+    db.session.add(
         Event(
-            id=1,
-            name="Meetup name",
-            created=created,
-            status="upcoming",
-            photo_url="http://example.com/photo.jpg",
-            event_url="http://example.com/id=1",
-            description="A description of the meetup",
-            group_name="Meetup Group",
-            member_type="Member",
-            time=time,
+            name="learning new technologies",
+            description="example description",
+            url="https://example.com",
+            start="2018-06-06 16:15:00Z",
+            end="2018-06-06 17:15:00Z",
+            channel=[channel],
+            duration=100000,
+            topics=[topic],
+            entry=[entry],
             source="test",
         )
     )

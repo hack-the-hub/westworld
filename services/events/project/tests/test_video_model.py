@@ -1,8 +1,10 @@
 from project.tests.base import BaseTestCase
-from project.tests.utils import add_video
 
 from project.api.models import Topic
 from project.api.models import Channel
+from project.api.models import Video
+
+from project import db
 
 
 class TestVideoModel(BaseTestCase):
@@ -12,7 +14,7 @@ class TestVideoModel(BaseTestCase):
             name="test", url="", description="", topics=[topic], source="test"
         )
 
-        video = add_video(
+        video = Video(
             name="Stone Age To Serverless or: How I Learned To Stop Worrying And Love The Platform",
             url="https://www.youtube.com/watch?v=cU-TGiWK-dc",
             description="Due to a last-minute speaker dropout, Mark will be improvising on a theme",
@@ -20,6 +22,8 @@ class TestVideoModel(BaseTestCase):
             channel=[channel],
             source="youtube",
         )
+        db.session.add(video)
+        db.session.commit()
 
         self.assertEqual(
             video.name,
@@ -35,7 +39,7 @@ class TestVideoModel(BaseTestCase):
             name="test", url="", description="", topics=[topic], source="test"
         )
 
-        video = add_video(
+        video = Video(
             name="Stone Age To Serverless or: How I Learned To Stop Worrying And Love The Platform",
             url="https://www.youtube.com/watch?v=cU-TGiWK-dc",
             description="Due to a last-minute speaker dropout, Mark will be improvising on a theme",
@@ -43,4 +47,7 @@ class TestVideoModel(BaseTestCase):
             channel=[channel],
             source="youtube",
         )
+        db.session.add(video)
+        db.session.commit()
+
         self.assertTrue(isinstance(video.to_json(), dict))

@@ -1,16 +1,16 @@
 import _ from "lodash";
 import moment from "moment";
 
-const withinDays = days => ({ time }) =>
-  moment(time).diff(moment(), "days") <= days - 1;
+const withinDays = days => ({ start }) =>
+  moment(start).diff(moment(), "days") <= days - 1;
 
 const buckets = [
   {
     id: "today",
-    check: ({ time }) =>
+    check: ({ start }) =>
       moment()
         .endOf("day")
-        .diff(moment(time)) > 0,
+        .diff(moment(start)) > 0,
     message: "Today"
   },
   {

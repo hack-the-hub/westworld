@@ -11,8 +11,9 @@ import getBucketsFor from "utils/get-buckets-for";
 
 const updateEventsList = function(eventsList) {
   const events = _.map(eventsList, item =>
-    _.extend({}, item, { timestamp: moment(item.time).valueOf() })
+    _.extend({}, item, { timestamp: moment(item.start).valueOf() })
   );
+
   return _.orderBy(events, ["timestamp"], ["asc"]);
 };
 
