@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 # 3rd party
 from sqlalchemy import exc, and_
 from flask import Blueprint, jsonify, request
+import ics
 
 # local
 from project.api.models import Event
@@ -162,3 +163,22 @@ def get_all_events():
         },
     }
     return jsonify(response_object), 200
+
+
+@events_blueprint.route("/events.ics", methods=["GET"])
+def get_all_events_as_ics():
+    """Get all events in iCalendar format"""
+
+    upcoming_events = Event.query.filter(Event.time > datetime.utcnow()).all()
+
+    calendar = ics.Calendar()
+    for upcoming_event in upcoming_events:
+        event = ics.Event()
+        event.name = upcoming_event.name
+        event.begin = upcoming_event.time
+        event.duration = timedelta(hours=1)
+        calendar.events.add(event)
+
+    return str(calendar), 200, {
+        'Content-Type': 'text/calendar; charset=utf-8'
+    }
