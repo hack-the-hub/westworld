@@ -273,13 +273,16 @@ class Video(db.Model):
     deleted = Column(db.DateTime, nullable=True)
     source = Column(db.String(50), nullable=False)
 
-    def __init__(self, name, url, description, topics, channel, source):
+    def __init__(self, name, url, description, topics, channel, source, created=None):
         self.name = name
         self.url = url
         self.description = description
         self.topics = topics
         self.channel = channel
         self.source = source
+
+        if created:
+            self.created = created
 
     def to_json(self):
         return {
@@ -288,7 +291,7 @@ class Video(db.Model):
             "url": self.url,
             "description": self.description,
             "topics": self.topics,
-            "channel": self.channel,
+            "channel": self.channel[0].to_json() if self.channel else None,
             "created": self.created.isoformat(),
             "udpated": self.created.isoformat(),
             "deleted": self.created.isoformat(),

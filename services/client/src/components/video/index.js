@@ -23,11 +23,12 @@ const Video = ({ className, content }) => {
 Video.propTypes = {
   className: PropTypes.string,
   content: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     created: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
-    channel: PropTypes.string.isRequired,
+    channel: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }),
     source: PropTypes.string.isRequired
   }).isRequired
 };

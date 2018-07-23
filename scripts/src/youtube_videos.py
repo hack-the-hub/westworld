@@ -69,6 +69,7 @@ def _transform_video(video):
     name = snippet["title"]
     created = snippet["publishedAt"]
     video_id = identifier["videoId"]
+    topics = []
     description = snippet["description"]
     channel = snippet["channelTitle"]
     source = "youtube"
@@ -82,6 +83,7 @@ def _transform_video(video):
         "url": url,
         "description": description,
         "channel": channel,
+        "topics": topics,
         "source": source,
     }
 

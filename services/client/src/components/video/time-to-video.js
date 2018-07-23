@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-const TimeToVideo = ({ startTime }) => {
+const TimeToVideo = ({ start }) => {
   const now = moment();
-  const eventTime = moment.utc(startTime);
+  const eventTime = moment.utc(start);
   const duration = moment.duration(eventTime.diff(now));
 
   return (
@@ -21,7 +21,7 @@ const TimeToVideo = ({ startTime }) => {
 };
 
 TimeToVideo.propTypes = {
-  startTime: PropTypes.number.isRequired
+  start: PropTypes.number.isRequired
 };
 
 export default TimeToVideo;

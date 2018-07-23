@@ -7,30 +7,59 @@ from flask import Blueprint, jsonify, request
 
 # local
 from project.api.models import Video
+from project.api.models import Topic
+from project.api.models import Channel
 from project import db
 
 
 videos_blueprint = Blueprint("videos", __name__)
 
 
+def extract_topics(topics):
+    """Creates a list of topics from a given list."""
+    topics_list = []
+    for topic in topics:
+        if topic:
+            topics_list.append(Topic(name=str(topic)))
+    return topics_list
+
+
+def extract_channels(channels):
+    results = []
+    for value in channels:
+        if value:
+            results.append(value)
+    return results
+
+
 @videos_blueprint.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        id = request.form["id"]
         name = request.form["name"]
-        created = request.form["created"]
         url = request.form["url"]
         description = request.form["description"]
+        topics = request.form["topics"]
         channel = request.form["channel"]
         source = request.form["source"]
 
+        topic_list = extract_topics(topics)
+
+        video_channels = []
+        channel = Channel(
+            name=channel,
+            url="http://youtube.com",
+            description="",
+            topics=topic_list,
+            source=source,
+        )
+        video_channels.append(channel)
+
         video = Video(
-            id=id,
             name=name,
-            created=created,
             url=url,
             description=description,
-            channel=channel,
+            topics=topic_list,
+            channel=video_channels,
             source=source,
         )
 
@@ -58,29 +87,42 @@ def add_video():
     if not post_data:
         return jsonify(response_object), 400
 
-    id = post_data.get("id")
     name = post_data.get("name")
-    created = post_data.get("created")
     url = post_data.get("url")
     description = post_data.get("description")
+    topics = post_data.get("topics")
     channel = post_data.get("channel")
     source = post_data.get("source")
+    created = post_data.get("created")
+
+    topic_list = extract_topics(topics)
+
+    video_channels = []
+    channel = Channel(
+        name=channel,
+        url="http://youtube.com",
+        description="",
+        topics=topic_list,
+        source=source,
+    )
+    video_channels.append(channel)
 
     try:
-        video = Video.query.filter_by(id=id).first()
+        video = Video.query.filter_by(name=name).first()
         if not video:
             video = Video(
-                id=id,
                 name=name,
-                created=created,
                 url=url,
                 description=description,
-                channel=channel,
+                topics=topic_list,
+                channel=video_channels,
                 source=source,
+                created=created,
             )
 
             db.session.add(video)
             db.session.commit()
+
             response_object["status"] = "success"
             response_object["message"] = f"{name} was added!"
             return jsonify(response_object), 201
@@ -95,24 +137,22 @@ def add_video():
         return jsonify(response_object), 400
 
 
-@videos_blueprint.route("/videos/<video_id>", methods=["GET"])
-def get_single_video(video_id):
+@videos_blueprint.route("/videos/<video_name>", methods=["GET"])
+def get_single_video(video_name):
     """Get single video details"""
     response_object = {"status": "fail", "message": "Video does not exist"}
     try:
-        video = Video.query.filter_by(id=int(video_id)).first()
+        video = Video.query.filter_by(name=video_name).first()
         if not video:
             return jsonify(response_object), 404
         else:
             response_object = {
                 "status": "success",
                 "data": {
-                    "id": video.id,
                     "name": video.name,
-                    "created": video.created,
                     "url": video.url,
                     "description": video.description,
-                    "channel": video.channel,
+                    "topics": video.topics,
                     "source": video.source,
                 },
             }

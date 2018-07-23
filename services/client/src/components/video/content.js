@@ -18,7 +18,7 @@ const Content = ({ name, created, url, channel }) => (
       </a>
     </div>
     <div className="video-details">
-      <span>{channel}</span>
+      <span>{channel.name}</span>
       <TimeToVideo startTime={created} />
     </div>
   </React.Fragment>
@@ -28,7 +28,9 @@ Content.propTypes = {
   name: PropTypes.string.isRequired,
   created: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
-  channel: PropTypes.string.isRequired
+  channel: PropTypes.shape({
+    name: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default Content;
