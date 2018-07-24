@@ -35,23 +35,3 @@ class TestSpeakerModel(BaseTestCase):
         self.assertEqual(speaker.diversification, [diversification])
         self.assertEqual(speaker.location, "Belfast")
         self.assertEqual(speaker.source, "test")
-
-    def test_to_json(self):
-        topic = Topic(name="Python", description="", abbreviation="py")
-        diversification = Diversity(name="speaker", description="description")
-
-        speaker = Speaker(
-            name="Kyle Harrison",
-            avatar="https://avatar.com",
-            bio="description",
-            contact="apoclyps",
-            role="Software Engineer",
-            topics=[topic],
-            diversification=[diversification],
-            location="Belfast",
-            source="test",
-        )
-        db.session.add(speaker)
-        db.session.commit()
-
-        self.assertTrue(isinstance(speaker.to_json(), dict))

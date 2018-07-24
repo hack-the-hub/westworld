@@ -29,11 +29,11 @@ if [[ "${env}" != "dev" ]]; then
   sleep 15
 fi
 
-docker-compose -f $file run users-service python manage.py test
-inspect $? users
+
 docker-compose -f $file run users-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
+inspect $? users-test
 docker-compose -f $file run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
-inspect $? users-lint
+inspect $? events-test
 
 docker-compose -f $file build client-test
 docker-compose -f $file run client-test npm run lint

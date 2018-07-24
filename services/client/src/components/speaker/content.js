@@ -19,7 +19,9 @@ const Content = ({ name, role, topics, contact }) => (
     <div className="speaker-subtitle">{formatTitle(role)}</div>
     <div className="speaker-details">
       <div className="speaker-tags">
-        {topics.map(tag => <span key={tag}>{formatTitle(tag)}</span>)}
+        {topics.map(topic => (
+          <span key={topic.id}>{formatTitle(topic.name)}</span>
+        ))}
       </div>
     </div>
   </React.Fragment>
@@ -28,7 +30,12 @@ const Content = ({ name, role, topics, contact }) => (
 Content.propTypes = {
   name: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
-  topics: PropTypes.arrayOf(PropTypes.string).isRequired,
+  topics: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired,
   contact: PropTypes.string.isRequired
 };
 

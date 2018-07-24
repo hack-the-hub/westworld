@@ -70,7 +70,7 @@ def index():
 
     response_object = {
         "status": "success",
-        "data": {"videos": [video.to_json() for video in videos]},
+        "data": {"videos": [video.to_dict() for video in videos]},
     }
     return jsonify(response_object), 200
 
@@ -170,6 +170,6 @@ def get_all_videos():
 
     response_object = {
         "status": "success",
-        "data": [video.to_json() for video in upcoming_videos],
+        "data": [video.to_dict() for video in upcoming_videos],
     }
     return jsonify(response_object), 200

@@ -4,13 +4,12 @@ from datetime import datetime
 # 3rd party imports
 import sqlalchemy
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
 
 # local imports
 from project import db
-
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Integer, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
+from project.api.mixins import OutputMixin
 
 Base = declarative_base()
 
@@ -80,7 +79,6 @@ meetup_channel_table = db.Table(
 
 video_channel_table = db.Table(
     "video_channel_association",
-    db.Model.metadata,
     Column("video_id", UUID(as_uuid=True), ForeignKey("video.id")),
     Column("channel_id", UUID(as_uuid=True), ForeignKey("channel.id")),
 )
@@ -93,7 +91,7 @@ speaker_diversity_table = db.Table(
 )
 
 
-class Diversity(db.Model):
+class Diversity(OutputMixin, db.Model):
     __tablename__ = "diversity"
 
     id = Column(
@@ -102,17 +100,14 @@ class Diversity(db.Model):
         server_default=sqlalchemy.text("uuid_generate_v4()"),
     )
     name = Column(db.String(128), nullable=False)
-    description = Column(db.String(1000), nullable=False)
+    description = Column(db.String(1000), nullable=True)
 
     def __init__(self, name, description):
         self.name = name
         self.description = description
 
-    def to_json(self):
-        return {"id": self.id, "name": self.name, "description": self.description}
 
-
-class Topic(db.Model):
+class Topic(OutputMixin, db.Model):
     __tablename__ = "topic"
 
     id = Column(
@@ -129,16 +124,8 @@ class Topic(db.Model):
         self.description = description
         self.abbreviation = abbreviation
 
-    def to_json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "description": self.description,
-            "abbreviation": self.abbreviation,
-        }
 
-
-class Entry(db.Model):
+class Entry(OutputMixin, db.Model):
     __tablename__ = "entry"
 
     id = Column(
@@ -153,11 +140,8 @@ class Entry(db.Model):
         self.type = type
         self.description = description
 
-    def to_json(self):
-        return {"id": self.id, "type": self.type, "description": self.description}
 
-
-class Event(db.Model):
+class Event(OutputMixin, db.Model):
     __tablename__ = "event"
 
     id = Column(
@@ -172,8 +156,8 @@ class Event(db.Model):
     end = Column(db.DateTime, nullable=False)
     duration = Column(Integer, nullable=False)
     category = Column(db.String(256), nullable=False)
-    topics = relationship("Topic", secondary=event_topic_table)
-    entry = relationship("Entry", secondary=event_entry_table)
+    topics = db.relationship("Topic", secondary=event_topic_table)
+    entry = db.relationship("Entry", secondary=event_entry_table)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     deleted = Column(db.DateTime, nullable=True)
@@ -203,21 +187,8 @@ class Event(db.Model):
         self.category = category
         self.source = source
 
-    def to_json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "description": self.description,
-            "url": self.url,
-            "start": self.start.isoformat(),
-            "end": self.end.isoformat(),
-            "duration": self.duration,
-            "category": self.category,
-            "source": self.source,
-        }
 
-
-class Channel(db.Model):
+class Channel(OutputMixin, db.Model):
     __tablename__ = "channel"
 
     id = Column(
@@ -228,7 +199,7 @@ class Channel(db.Model):
     name = Column(db.String(128), nullable=False)
     url = Column(db.String(2048), nullable=False)
     description = Column(db.String(50000), nullable=False)
-    topics = relationship("Topic", secondary=channel_topic_table)
+    topics = db.relationship("Topic", secondary=channel_topic_table)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     deleted = Column(db.DateTime, nullable=True)
@@ -241,21 +212,8 @@ class Channel(db.Model):
         self.topics = topics
         self.source = source
 
-    def to_json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "url": self.url,
-            "description": self.description,
-            "topics": self.topics,
-            "created": self.created.isoformat(),
-            "udpated": self.created.isoformat(),
-            "deleted": self.created.isoformat(),
-            "source": self.source,
-        }
 
-
-class Video(db.Model):
+class Video(OutputMixin, db.Model):
     __tablename__ = "video"
 
     id = Column(
@@ -266,8 +224,16 @@ class Video(db.Model):
     name = Column(db.String(128), nullable=False)
     url = Column(db.String(2048), nullable=False)
     description = Column(db.String(50000), nullable=False)
-    topics = relationship("Topic", secondary=video_topic_table)
-    channel = relationship("Channel", secondary=video_channel_table)
+    topics = db.relationship(
+        "Topic",
+        secondary=video_topic_table,
+        backref=db.backref("video", lazy="dynamic"),
+    )
+    channel = db.relationship(
+        "Channel",
+        secondary=video_channel_table,
+        backref=db.backref("video", lazy="dynamic"),
+    )
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     deleted = Column(db.DateTime, nullable=True)
@@ -284,22 +250,8 @@ class Video(db.Model):
         if created:
             self.created = created
 
-    def to_json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "url": self.url,
-            "description": self.description,
-            "topics": self.topics,
-            "channel": self.channel[0].to_json() if self.channel else None,
-            "created": self.created.isoformat(),
-            "udpated": self.created.isoformat(),
-            "deleted": self.created.isoformat(),
-            "source": self.source,
-        }
 
-
-class Meetup(db.Model):
+class Meetup(OutputMixin, db.Model):
     __tablename__ = "meetup"
 
     id = Column(
@@ -311,9 +263,21 @@ class Meetup(db.Model):
     logo = Column(db.String(1000), nullable=False)
     url = Column(db.String(2048), nullable=False)
     description = Column(db.String(50000), nullable=False)
-    topics = relationship("Topic", secondary=meetup_topic_table)
-    events = relationship("Event", secondary=meetup_event_table)
-    channel = relationship("Channel", secondary=meetup_channel_table)
+    topics = db.relationship(
+        "Topic",
+        secondary=meetup_topic_table,
+        backref=db.backref("meetup", lazy="dynamic"),
+    )
+    events = db.relationship(
+        "Event",
+        secondary=meetup_event_table,
+        backref=db.backref("meetup", lazy="dynamic"),
+    )
+    channel = db.relationship(
+        "Channel",
+        secondary=meetup_channel_table,
+        backref=db.backref("meetup", lazy="dynamic"),
+    )
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     deleted = Column(db.DateTime, nullable=True)
@@ -329,24 +293,8 @@ class Meetup(db.Model):
         self.channel = channel
         self.source = source
 
-    def to_json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "logo": self.logo,
-            "url": self.url,
-            "description": self.description,
-            "topics": self.topics,
-            "events": self.events,
-            "channel": self.channel,
-            "created": self.created.isoformat(),
-            "udpated": self.created.isoformat(),
-            "deleted": self.created.isoformat(),
-            "source": self.source,
-        }
 
-
-class Speaker(db.Model):
+class Speaker(OutputMixin, db.Model):
     __tablename__ = "speaker"
 
     id = Column(
@@ -359,8 +307,8 @@ class Speaker(db.Model):
     bio = Column(db.String(1024), nullable=False)
     contact = Column(db.String(128), nullable=False)
     role = Column(db.String(128), nullable=False)
-    topics = relationship("Topic", secondary=speaker_topic_table)
-    diversification = relationship("Diversity", secondary=speaker_diversity_table)
+    topics = db.relationship("Topic", secondary=speaker_topic_table)
+    diversification = db.relationship("Diversity", secondary=speaker_diversity_table)
     location = Column(db.String(128), nullable=False)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
@@ -388,20 +336,3 @@ class Speaker(db.Model):
         self.diversification = diversification
         self.location = location
         self.source = source
-
-    def to_json(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "avatar": self.avatar,
-            "bio": self.bio,
-            "contact": self.contact,
-            "role": self.role,
-            "topics": self.topics,
-            "diversification": self.diversification,
-            "location": self.location,
-            "created": self.created.isoformat(),
-            "udpated": self.created.isoformat(),
-            "deleted": self.created.isoformat(),
-            "source": self.source,
-        }

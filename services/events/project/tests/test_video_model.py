@@ -32,22 +32,3 @@ class TestVideoModel(BaseTestCase):
         self.assertEqual(video.url, "https://www.youtube.com/watch?v=cU-TGiWK-dc")
         self.assertEqual(video.channel, [channel])
         self.assertEqual(video.source, "youtube")
-
-    def test_to_json(self):
-        topic = Topic(name="Python", description="", abbreviation="py")
-        channel = Channel(
-            name="test", url="", description="", topics=[topic], source="test"
-        )
-
-        video = Video(
-            name="Stone Age To Serverless or: How I Learned To Stop Worrying And Love The Platform",
-            url="https://www.youtube.com/watch?v=cU-TGiWK-dc",
-            description="Due to a last-minute speaker dropout, Mark will be improvising on a theme",
-            topics=[topic],
-            channel=[channel],
-            source="youtube",
-        )
-        db.session.add(video)
-        db.session.commit()
-
-        self.assertTrue(isinstance(video.to_json(), dict))

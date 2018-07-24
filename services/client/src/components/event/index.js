@@ -29,7 +29,7 @@ const Event = ({ className, content }) => {
 Event.propTypes = {
   className: PropTypes.string,
   content: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     start: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,

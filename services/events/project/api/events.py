@@ -67,7 +67,7 @@ def index():
 
     response_object = {
         "status": "success",
-        "data": {"events": [event.to_json() for event in events]},
+        "data": {"events": [event.to_dict() for event in events]},
     }
     return jsonify(response_object), 200
 
@@ -141,7 +141,7 @@ def get_single_event(event_id):
         if not event:
             return jsonify(response_object), 404
         else:
-            response_object = {"status": "success", "data": event.to_json()}
+            response_object = {"status": "success", "data": event.to_dict()}
             return jsonify(response_object), 200
     except ValueError:
         return jsonify(response_object), 404
@@ -168,8 +168,8 @@ def get_all_events():
     response_object = {
         "status": "success",
         "data": {
-            "upcoming_events": [event.to_json() for event in upcoming_events],
-            "recent_events": [event.to_json() for event in recent_events],
+            "upcoming_events": [event.to_dict() for event in upcoming_events],
+            "recent_events": [event.to_dict() for event in recent_events],
         },
     }
     return jsonify(response_object), 200

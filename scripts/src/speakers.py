@@ -10,7 +10,8 @@ SPEAKERS_ENDPOINT = os.getenv("SPEAKERS_ENDPOINT")
 SPEAKERS = [
     {
         "name": "Kyle Harrison",
-        "image": "https://pbs.twimg.com/profile_images/591351050776502272/H6s459Ko_400x400.jpg",
+        "avatar": "https://pbs.twimg.com/profile_images/591351050776502272/H6s459Ko_400x400.jpg",
+        "bio": "Programmer, Tech Enthusiast, Maker, Geeky Dad",
         "contact": "apoclyps",
         "role": "Software Engineer",
         "topics": ["Python", "Backend", "Flask", "AWS"],
@@ -20,7 +21,8 @@ SPEAKERS = [
     },
     {
         "name": "Ewa Grabowiecka",
-        "image": "https://pbs.twimg.com/profile_images/988701324605820929/H5Hkrupc_400x400.jpg",
+        "avatar": "https://pbs.twimg.com/profile_images/988701324605820929/H5Hkrupc_400x400.jpg",
+        "bio": "Shrug Life ¯\_(ツ)_/¯ Eva. Developer. CodeCraft organiser. I'm all for good software practises - diversity being one of them",
         "contact": "lost_semicolon",
         "role": "Software Developer",
         "topics": ["Python", "Django", "Backend"],
