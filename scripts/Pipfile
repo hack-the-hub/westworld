@@ -1,10 +1,12 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
 [packages]
-black = "18.6b2"
+
+black = "==18.6b2"
 eventbrite = "==3.3.3"
 meetup-api = "*"
 requests = "*"
