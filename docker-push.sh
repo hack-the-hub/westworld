@@ -22,29 +22,6 @@ then
     export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
     export AWS_RDS_EVENTS_STAGING_URI="$AWS_RDS_EVENTS_STAGING_URI"
     export AWS_RDS_USERS_STAGING_URI="$AWS_RDS_USERS_STAGING_URI"
-    cd $USERS_DIR
-    docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV .
-    docker tag $USERS:$COMMIT $REPO/$USERS:$TAG
-    docker push $REPO/$USERS:$TAG
-    cd ../../
-
-    cd $EVENTS_DIR
-    docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV .
-    docker tag $EVENTS:$COMMIT $REPO/$EVENTS:$TAG
-    docker push $REPO/$EVENTS:$TAG
-    cd ../../
-
-    cd $CLIENT_DIR
-    docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL --build-arg REACT_APP_EVENTS_SERVICE_URL=$REACT_APP_EVENTS_SERVICE_URL .
-    docker tag $CLIENT:$COMMIT $REPO/$CLIENT:$TAG
-    docker push $REPO/$CLIENT:$TAG
-    cd ../../
-
-    cd $SWAGGER_DIR
-    docker build -t $SWAGGER:$COMMIT -f Dockerfile-$DOCKER_ENV .
-    docker tag $SWAGGER:$COMMIT $REPO/$SWAGGER:$TAG
-    docker push $REPO/$SWAGGER:$TAG
-    cd ../../
   fi
 
   if [ "$TRAVIS_BRANCH" == "production" ]
@@ -55,25 +32,32 @@ then
     export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
     export AWS_RDS_EVENTS_URI="$AWS_RDS_EVENTS_URI"
     export AWS_RDS_USERS_URI="$AWS_RDS_USERS_URI"
+  fi
 
+  if [ "$TRAVIS_BRANCH" == "staging" ] || [ "$TRAVIS_BRANCH" == "production" ]
+  then
+    echo "Building: ${USERS_DIR} for ${USERS}:${COMMIT} to push ${REPO}/${USERS}/${TAG}"
     cd $USERS_DIR
     docker build -t $USERS:$COMMIT -f Dockerfile-$DOCKER_ENV .
     docker tag $USERS:$COMMIT $REPO/$USERS:$TAG
     docker push $REPO/$USERS:$TAG
     cd ../../
 
+    echo "Building: ${EVENTS_DIR} for ${EVENTS}:${COMMIT} to push ${REPO}/${EVENTS}/${TAG}"
     cd $EVENTS_DIR
     docker build -t $EVENTS:$COMMIT -f Dockerfile-$DOCKER_ENV .
     docker tag $EVENTS:$COMMIT $REPO/$EVENTS:$TAG
     docker push $REPO/$EVENTS:$TAG
     cd ../../
 
+    echo "Building: ${CLIENT_DIR} for ${CLIENT}:${COMMIT} to push ${REPO}/${CLIENT}/${TAG}"
     cd $CLIENT_DIR
     docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL --build-arg REACT_APP_EVENTS_SERVICE_URL=$REACT_APP_EVENTS_SERVICE_URL .
     docker tag $CLIENT:$COMMIT $REPO/$CLIENT:$TAG
     docker push $REPO/$CLIENT:$TAG
     cd ../../
 
+    echo "Building: ${SWAGGER_DIR} for ${SWAGGER}:${COMMIT} to push ${REPO}/${SWAGGER}/${TAG}"
     cd $SWAGGER_DIR
     docker build -t $SWAGGER:$COMMIT -f Dockerfile-$DOCKER_ENV .
     docker tag $SWAGGER:$COMMIT $REPO/$SWAGGER:$TAG

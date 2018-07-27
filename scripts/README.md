@@ -16,6 +16,7 @@ You will also need to create API keys for Meetup.com and Eventbrite. These can b
 ```
 MEETUP_API_TOKEN=
 EVENTBRITE_API_TOKEN=
+DEVELOPER_KEY=
 ```
 
 You can request an API key for both services using the following links:
@@ -28,6 +29,8 @@ Lastly, you will need to provide the endpoint which will update your local servi
 
 ```
 EVENTS_ENDPOINT=http:localhost/events
+VIDEOS_ENDPOINT=http:localhost/videos
+SPEAKERS_ENDPOINT=http:localhost/speakers
 ```
 
 Ensure all database migrations have been applied to a running database, and that the seed_db command has been previously run. If you request data from http:localhost/events and do not see a Flask error page, then you are good to proceed.
@@ -49,3 +52,9 @@ $ pipenv run python src/meetup_events.py
 ```
 
 View http://localhost and you should now see a list of events
+
+### Loading data form all sources
+
+To load data from all sources, you can run the following shell scripts with an environment flag
+
+`./test.sh dev`
