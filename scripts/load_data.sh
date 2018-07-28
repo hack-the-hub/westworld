@@ -25,19 +25,17 @@ load_speakers()
 }
 
 if [[ "${env}" == "dev" ]]; then
-  file="dev"
-
   export EVENTS_ENDPOINT=http://localhost/events
   export VIDEOS_ENDPOINT=http://localhost/videos
   export SPEAKERS_ENDPOINT=http://localhost/speakers
 elif [[ "${env}" == "stage" ]]; then
-  file="staging"
-
   export EVENTS_ENDPOINT=http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com/events
   export VIDEOS_ENDPOINT=http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com/videos
   export SPEAKERS_ENDPOINT=http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com/speakers
 elif [[ "${env}" == "prod" ]]; then
-  file="production"
+  export EVENTS_ENDPOINT=http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com/events
+  export VIDEOS_ENDPOINT=http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com/videos
+  export SPEAKERS_ENDPOINT=http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com/speakers
 else
   echo "USAGE: sh load_data.sh environment_name"
   echo "* environment_name: must either be 'dev', 'stage', or 'prod'"
@@ -45,9 +43,7 @@ else
 fi
 
 echo "Start loading ${env}"
-
 load_events
 load_videos
 load_speakers
-
 echo "Completed loading ${env}"
