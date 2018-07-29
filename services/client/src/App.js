@@ -6,6 +6,7 @@ import Videos from "./pages/videos";
 import Speakers from "./pages/speakers";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import withTracker from "./withTracker";
 
 const App = () => (
   <Router>
@@ -47,14 +48,10 @@ const App = () => (
       `}</style>
       <Header />
       <Switch>
-        <Route exact path="/" render={props => <Events {...props} />} />
-        <Route exact path="/event" render={props => <Events {...props} />} />
-        <Route exact path="/video" render={props => <Videos {...props} />} />
-        <Route
-          exact
-          path="/speaker"
-          render={props => <Speakers {...props} />}
-        />
+        <Route exact path="/" component={withTracker(Events)} />
+        <Route exact path="/event" component={withTracker(Events)} />
+        <Route exact path="/video" component={withTracker(Videos)} />
+        <Route exact path="/speaker" component={withTracker(Speakers)} />
       </Switch>
       <Footer />
     </div>

@@ -82,6 +82,7 @@ services:
       dockerfile: Dockerfile-stage
       args:
         - NODE_ENV=staging
+        - REACT_APP_GOOGLE_ANALYTICS_ID=UA-123052755-2
         - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
         - REACT_APP_EVENTS_SERVICE_URL=${REACT_APP_EVENTS_SERVICE_URL}
     ports:
