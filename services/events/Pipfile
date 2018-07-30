@@ -22,7 +22,7 @@ newrelic = "==4.0.0.99"
 
 black = "==18.6b2"
 Flask-Testing = "==0.7.1"
-pytest = "==3.6.3"
+pytest = "==3.6.4"
 pytest-cov = "==2.5.1"
 pytest-flakes = "==3.0.2"
 pytest-mccabe = "==0.1"
