@@ -69,5 +69,14 @@ def seed_db():
     db.session.commit()
 
 
+@manager.shell
+def make_shell_context():
+    """Returns a dictionary of variables to be injected into new shell sessions
+    """
+    return {
+        "app": app,
+    }
+
+
 if __name__ == "__main__":
     manager.run()

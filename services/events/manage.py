@@ -116,6 +116,15 @@ def seed_db():
     db.session.commit()
 
 
+@manager.shell
+def make_shell_context():
+    """Returns a dictionary of variables to be injected into new shell sessions
+    """
+    return {
+        "app": app,
+    }
+
+
 @manager.command
 def run():
     """Run the application locally in the debug server

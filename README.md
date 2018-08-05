@@ -102,6 +102,15 @@ $ docker-compose -f docker-compose-dev.yml run events-service py.test --black --
 $ docker-compose -f docker-compose-dev.yml run users-service python manage.py cov
 ```
 
+### Local Postgres Connections
+```bash
+docker-compose -f docker-compose-dev.yml run events-db sh
+
+psql postgres://postgres:postgres@events-db:5432/events_dev
+```
+
+### Debugging Python Applications
+
 ##### End to End tests
 Integration tests used to evaluate all services behave correctly
 
