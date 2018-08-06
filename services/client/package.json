@@ -26,7 +26,7 @@
     "react-ga": "^2.5.3",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
-    "styled-jsx": "^2.2.7"
+    "styled-jsx": "^3.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
