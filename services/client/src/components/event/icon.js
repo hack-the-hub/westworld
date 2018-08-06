@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 
 const getSourceIcon = source => {
   if (source === "eventbrite")
-    return "http://adultandchild.org/wp-content/uploads/2014/08/Eventbrite-Icon.png";
+    return "http://roblysupport.com/marketing/wp-content/uploads/2017/07/favicon-194x194.png";
   if (source === "meetup")
     return "https://assets.materialup.com/uploads/30b4082d-3390-44d6-973e-60ca8972f854/preview";
   if (source === "nisciencefestival")
     return "https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181";
+  if (source === "farsetlabs")
+    return "https://pbs.twimg.com/profile_images/984127270968324097/9tDrzLzv_400x400.jpg";
   return undefined;
 };
 

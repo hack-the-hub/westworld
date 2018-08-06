@@ -10,6 +10,8 @@ load_events()
   pipenv run python src/meetup_events.py
   echo "Loading NISF events"
   pipenv run python src/northern_ireland_science_festival_events.py
+  echo "Loading Farset Lab events"
+  pipenv run python src/farset_events.py
 }
 
 load_videos()
