@@ -162,7 +162,7 @@ def get_all_events():
             and_(Event.start <= current_time, Event.start >= recent_past)
         )
         .order_by(Event.start)
-        .all()
+        .limit(30)
     )
 
     response_object = {
