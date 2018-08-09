@@ -45,7 +45,9 @@ class Speakers extends Component {
 
     return (
       <div>
-        {recentSpeakers.map(item => <Speaker key={item.id} content={item} />)}
+        {recentSpeakers.map(item => (
+          <Speaker key={item.id} content={item} />
+        ))}
       </div>
     );
   }
