@@ -68,7 +68,9 @@ class Events extends Component {
       <div key={id} className={className}>
         <EventSeparator content={message} id={id} />
         {events.length === 0 ? <NoEvents /> : null}
-        {_.map(events, item => <Event key={item.id} content={item} />)}
+        {_.map(events, item => (
+          <Event key={item.id} content={item} />
+        ))}
       </div>
     ));
   }
