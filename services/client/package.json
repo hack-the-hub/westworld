@@ -37,7 +37,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
-    "prettier": "1.13.7",
+    "prettier": "1.14.2",
     "react-app-rewired": "^1.5.2"
   }
 }
