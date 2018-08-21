@@ -2,14 +2,14 @@ import os
 
 from flask_cors import CORS
 from flask import Flask
+from flask_caching import Cache
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
 
 # instantiate the extensions
 db = SQLAlchemy()
 migrate = Migrate()
-
+cache = Cache(config={'CACHE_TYPE': 'simple'})
 
 def create_app():
 
@@ -26,6 +26,7 @@ def create_app():
     # set up extensions
     db.init_app(app)
     migrate.init_app(app, db)
+    cache.init_app(app)
 
     # register blueprints
     from project.api.events import events_blueprint

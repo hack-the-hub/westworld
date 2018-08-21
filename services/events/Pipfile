@@ -1,11 +1,9 @@
 [[source]]
-
 url = 'https://pypi.python.org/simple'
 verify_ssl = true
 name = 'pypi'
 
 [packages]
-
 Flask = "==1.0.2"
 Flask-Script = "==2.0.6"
 Flask-SQLAlchemy = "==2.3.2"
@@ -16,9 +14,9 @@ flask-migrate = "==2.2.1"
 flask-bcrypt = "==0.7.1"
 pyjwt = "==1.6.4"
 newrelic = "==4.2.0.100"
+flask-caching = "==1.4.0"
 
 [dev-packages]
-
 black = "==18.6b2"
 Flask-Testing = "==0.7.1"
 ipython = "==6.5.0"

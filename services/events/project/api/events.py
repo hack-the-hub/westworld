@@ -10,6 +10,7 @@ from project.api.models import Topic
 from project.api.models import Entry
 from project.api.models import Event
 from project import db
+from project import cache
 
 events_blueprint = Blueprint("events", __name__)
 
@@ -148,6 +149,7 @@ def get_single_event(event_id):
 
 
 @events_blueprint.route("/events", methods=["GET"])
+@cache.cached(timeout=1000)
 def get_all_events():
     """Get all events"""
 
@@ -162,7 +164,7 @@ def get_all_events():
             and_(Event.start <= current_time, Event.start >= recent_past)
         )
         .order_by(Event.start)
-        .limit(30)
+        .limit(50)
     )
 
     response_object = {
