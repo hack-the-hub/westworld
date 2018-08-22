@@ -15,6 +15,7 @@ flask-bcrypt = "==0.7.1"
 pyjwt = "==1.6.4"
 newrelic = "==4.2.0.100"
 flask-caching = "==1.4.0"
+flask-compress = "*"
 
 [dev-packages]
 black = "==18.6b2"
