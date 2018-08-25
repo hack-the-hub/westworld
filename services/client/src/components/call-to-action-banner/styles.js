@@ -2,6 +2,8 @@ import css from "styled-jsx/css";
 
 export default css`
   .banner {
+    position: abolute;
+    margin-top: 3.5rem;
     background-color: #f8fafc;
     border-bottom: 1px solid #dae1e7;
     padding: 1rem;
