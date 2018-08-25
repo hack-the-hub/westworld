@@ -2,14 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const getSourceIcon = source => {
-  if (source === "eventbrite")
-    return "http://roblysupport.com/marketing/wp-content/uploads/2017/07/favicon-194x194.png";
-  if (source === "meetup")
-    return "https://assets.materialup.com/uploads/30b4082d-3390-44d6-973e-60ca8972f854/preview";
-  if (source === "nisciencefestival")
-    return "https://i2.wp.com/www.belfasttimes.co.uk/wp-content/uploads/2016/02/NISF2016_FINAL.jpg?fit=1181%2C1181";
-  if (source === "farsetlabs")
-    return "https://pbs.twimg.com/profile_images/984127270968324097/9tDrzLzv_400x400.jpg";
+  const baseUrl = "https://s3-eu-west-1.amazonaws.com/muxer-images";
+  if (source === "eventbrite") return `${baseUrl}/eventbrite.png`;
+  if (source === "meetup") return `${baseUrl}/meetup.jpg`;
+  if (source === "nisciencefestival") return `${baseUrl}/nisf.jpg`;
+  if (source === "farsetlabs") return `${baseUrl}/farsetlabs.jpg`;
   return undefined;
 };
 

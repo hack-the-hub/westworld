@@ -98,7 +98,7 @@ services:
     container_name: client-test
     build:
       context: ./services/client
-      dockerfile: Dockerfile-prod
+      dockerfile: Dockerfile-stage
     environment:
       - NODE_ENV=production
       - CI=${CI}
