@@ -18,6 +18,7 @@ then
   then
     export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com"
     export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com"
+    export REACT_APP_GOOGLE_ANALYTICS_ID="UA-123052755-2"
     export SECRET_KEY="$STAGING_SECRET_KEY"
     export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
     export AWS_RDS_EVENTS_STAGING_URI="$AWS_RDS_EVENTS_STAGING_URI"
@@ -28,6 +29,7 @@ then
   then
     export REACT_APP_USERS_SERVICE_URL="http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com"
     export REACT_APP_EVENTS_SERVICE_URL="http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com"
+    export REACT_APP_GOOGLE_ANALYTICS_ID="UA-123052755-3"
     export SECRET_KEY="$PRODUCTION_SECRET_KEY"
     export NEW_RELIC_LICENSE_KEY="$NEW_RELIC_LICENSE_KEY"
     export AWS_RDS_EVENTS_URI="$AWS_RDS_EVENTS_URI"
@@ -52,7 +54,7 @@ then
 
     echo "Building: ${CLIENT_DIR} for ${CLIENT}:${COMMIT} to push ${REPO}/${CLIENT}/${TAG}"
     cd $CLIENT_DIR
-    docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL --build-arg REACT_APP_EVENTS_SERVICE_URL=$REACT_APP_EVENTS_SERVICE_URL .
+    docker build -t $CLIENT:$COMMIT -f Dockerfile-$DOCKER_ENV --build-arg REACT_APP_USERS_SERVICE_URL=$REACT_APP_USERS_SERVICE_URL --build-arg REACT_APP_EVENTS_SERVICE_URL=$REACT_APP_EVENTS_SERVICE_URL --build-arg REACT_APP_GOOGLE_ANALYTICS_ID=$REACT_APP_GOOGLE_ANALYTICS_ID .
     docker tag $CLIENT:$COMMIT $REPO/$CLIENT:$TAG
     docker push $REPO/$CLIENT:$TAG
     cd ../../
