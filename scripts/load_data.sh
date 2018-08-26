@@ -35,9 +35,9 @@ elif [[ "${env}" == "stage" ]]; then
   export VIDEOS_ENDPOINT=http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com/videos
   export SPEAKERS_ENDPOINT=http://my-dev-space-staging-alb-2128504978.us-east-1.elb.amazonaws.com/speakers
 elif [[ "${env}" == "prod" ]]; then
-  export EVENTS_ENDPOINT=http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com/events
-  export VIDEOS_ENDPOINT=http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com/videos
-  export SPEAKERS_ENDPOINT=http://my-dev-space-production-alb-292884342.us-east-1.elb.amazonaws.com/speakers
+  export EVENTS_ENDPOINT=https://muxer.co.uk/events
+  export VIDEOS_ENDPOINT=https://muxer.co.uk/videos
+  export SPEAKERS_ENDPOINT=https://muxer.co.uk/speakers
 else
   echo "USAGE: sh load_data.sh environment_name"
   echo "* environment_name: must either be 'dev', 'stage', or 'prod'"
