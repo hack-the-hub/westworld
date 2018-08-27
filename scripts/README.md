@@ -33,7 +33,7 @@ VIDEOS_ENDPOINT=http:localhost/videos
 SPEAKERS_ENDPOINT=http:localhost/speakers
 ```
 
-Ensure all database migrations have been applied to a running database, and that the seed_db command has been previously run. If you request data from http:localhost/events and do not see a Flask error page, then you are good to proceed.
+Ensure all database migrations have been applied to a running database, and that the optional seed_db command has been run for the users service. If you request data from http:localhost/events and do not see a Flask error page, then you are good to proceed.
 
 ### Installing
 

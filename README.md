@@ -20,9 +20,9 @@ What things you need to install the software and how to install them
 * [Python](https://maven.apache.org/) - Dependency Management
 * [Node](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-### Setting up local development
+### Setting up a local development environment
 
-The following steps will checkout the repository, install the dependencies needed for the React frontend and run the service on `http://localhost`.
+The following steps will check out the repository, install the dependencies needed for the React frontend and run the service on `http://localhost`.
 
 ```bash
 $ git clone https://github.com/apoclyps/my-dev-space
@@ -36,7 +36,6 @@ Once the service is up and running, you will need to manually create the require
 $ docker-compose -f docker-compose-dev.yml run users-service python manage.py recreate_db
 $ docker-compose -f docker-compose-dev.yml run users-service python manage.py seed_db
 $ docker-compose -f docker-compose-dev.yml run events-service python manage.py recreate_db
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py seed_db
 ```
 
 On subsequent runs (when the above steps have been completed), you can apply new database migrations to your local service by running:
@@ -46,11 +45,17 @@ $ docker-compose -f docker-compose-dev.yml run users-service python manage.py db
 $ docker-compose -f docker-compose-dev.yml run events-service python manage.py db upgrade
 ```
 
-Alternatively, if you make a change to a model during development, you will need to create and commit a migration file for that service. As a best practive, migration files should be committed independently to code:
+Alternatively, if you make a change to a model during development, you will need to create and commit a migration file for that service. As a best practice, migration files should be committed independently to code:
 
 ```bash
 $ docker-compose -f docker-compose-dev.yml run users-service python manage.py db migrate
 $ docker-compose -f docker-compose-dev.yml run events-service python manage.py db migrate
+```
+
+To load data into the service for development, the recommended solution is to use the load script within the `scripts` folder to populate the local database. Details on how to configure the script can be found in [`scripts/README.md`](scripts/README.md).
+
+```sh
+`./load_data.sh dev`
 ```
 
 And to tear down the local development stack, simply run:
