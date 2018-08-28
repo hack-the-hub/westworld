@@ -13,6 +13,7 @@ const updateEventsList = function(eventsList) {
   const events = _.map(eventsList, item =>
     _.extend({}, item, { timestamp: moment(item.start).valueOf() })
   );
+
   return _.orderBy(events, ["timestamp"], ["asc"]);
 };
 

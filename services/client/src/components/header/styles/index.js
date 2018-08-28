@@ -25,7 +25,6 @@ export const iconStyles = resolveScopedStyles(
   </scope>
 );
 
-
 export default css`
   .header {
     position: fixed;
@@ -40,7 +39,7 @@ export default css`
 
   @media (min-width: 992px) {
     .header {
-      //margin-top: 1rem;
+      margin-top: 1rem;
     }
   }
 
@@ -52,8 +51,6 @@ export default css`
   .homepage-title {
     font-size: 20px;
     left: 0.3rem;
-    //position: relative;
     top: -0.1rem;
   }
 `;
-
