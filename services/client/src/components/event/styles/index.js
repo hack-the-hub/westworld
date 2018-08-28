@@ -10,8 +10,6 @@ export default css`
 
   .recent-event {
     background-color: white;
-    border: 1px solid #ff0000;
-    border-top: none;
   }
 
   .event-icon {
