@@ -1,4 +1,4 @@
-FROM nginx:1.15.2
+FROM nginx:1.15.3
 
 RUN rm /etc/nginx/conf.d/default.conf
 ADD /flask.conf /etc/nginx/conf.d
