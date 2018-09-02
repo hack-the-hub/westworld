@@ -1,5 +1,7 @@
 language: node_js
 node_js: '8'
+python:
+  - "3.7"
 
 before_install:
   - stty cols 80
@@ -52,6 +54,13 @@ before_install:
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
+  - sudo apt-get -y install python3-pip python-dev
+  - sudo pip3 install -U setuptools
+  - sudo pip3 install -U virtualenvwrapper
+  - python3 -V
+  - pip3 -V
+  - pip install pipenv
+  - pipenv install -d --system
 
 before_script:
   - export TEST_URL=http://127.0.0.1
@@ -62,11 +71,11 @@ before_script:
   - export DOCKER_ENV=$(if [ "$TRAVIS_BRANCH" == "production" ]; then echo "prod"; else echo "stage"; fi)
   - sh -e /etc/init.d/xvfb start
   - sleep 3
-  - docker-compose -f docker-compose-stage.yml up --build -d
+  # - docker-compose -f docker-compose-stage.yml up --build -d
 
 script:
+  - bash scripts/ingest.sh stage
   - bash test.sh $DOCKER_ENV
-  - bash scripts/ingest.sh
 
 after_script:
   - docker-compose -f docker-compose-stage.yml down

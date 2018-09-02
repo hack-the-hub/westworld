@@ -1,16 +1,17 @@
 #!/bin/sh
 
-if [ "$TRAVIS_BRANCH" == "ingest" ]
-then
-  set -x
+set -x
 
-  echo "Running staging ingest"
-  bash ./load_data.sh stage
-  echo "Completed staging ingest"
+cd scripts
 
-  echo "Running production ingest"
-  bash ./load_data.sh prod
-  echo "Completed production ingest"
+echo "Running staging ingest"
+bash ./load_data.sh stage
+echo "Completed staging ingest"
 
-  set +x
-fi
+echo "Running production ingest"
+bash ./load_data.sh prod
+echo "Completed production ingest"
+
+cd ../
+
+set +x
