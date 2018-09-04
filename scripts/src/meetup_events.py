@@ -63,7 +63,7 @@ def _post_payloads(payloads):
             data=json.dumps(payload),
         )
 
-        responses.append(r)
+        print(r.status_code)
 
 
 if __name__ == "__main__":

@@ -14,37 +14,41 @@ URL = "http://www.nisciencefestival.com/programme.php?c=all"
 def _extract_event_time(raw_event_time):
     month = None
     reaccuring = None
+    transformed_days = None
 
-    raw_event_time = raw_event_time.replace("\t", "")
+    try:
 
-    days = raw_event_time.split(",")[0].split("&")
-    times = raw_event_time.split(",")[1].split("-")
+        raw_event_time = raw_event_time.replace("\t", "")
 
-    if len(days) > 1:
-        reaccuring = True
+        days = raw_event_time.split(",")[0].split("&")
+        times = raw_event_time.split(",")[1].split("-")
 
-    start_time = times[0].strip()
-    end_time = times[1].strip()
+        if len(days) > 1:
+            reaccuring = True
 
-    transformed_days = []
+        start_time = times[0].strip()
+        end_time = times[1].strip()
 
-    if len(days) == 1:
-        day_info = {}
-        raw_day_info = days[0].strip().split(" ")
-        day_info["day"] = raw_day_info[1]
-        if len(raw_day_info) >= 3:
-            day_info["month"] = raw_day_info[2]
-        transformed_days.append(day_info)
-    else:
-        for day in days:
+        transformed_days = []
+
+        if len(days) == 1:
             day_info = {}
-            raw_day_info = days[1].strip().split(" ")
+            raw_day_info = days[0].strip().split(" ")
             day_info["day"] = raw_day_info[1]
             if len(raw_day_info) >= 3:
                 day_info["month"] = raw_day_info[2]
-
             transformed_days.append(day_info)
+        else:
+            for day in days:
+                day_info = {}
+                raw_day_info = days[1].strip().split(" ")
+                day_info["day"] = raw_day_info[1]
+                if len(raw_day_info) >= 3:
+                    day_info["month"] = raw_day_info[2]
 
+                transformed_days.append(day_info)
+    except IndexError:
+        print(f'unable to process {raw_event_time}')
     return transformed_days
 
 
@@ -90,35 +94,36 @@ def _transform_event(event):
     event_url = base_url + event.a["href"]
     event_times = _extract_event_time(event.find_all("p")[1].get_text())
 
-    for event_time in event_times:
-        month = event_time["month"][0:3].lower()
-        day = event_time["day"]
+    if event_times:
+        for event_time in event_times:
+            month = event_time["month"][0:3].lower()
+            day = event_time["day"]
 
-        # TODO add hour of events
+            # TODO add hour of events
 
-        created = datetime.now().strftime("%Y-%m-%d %H:%M:%SZ")
+            created = datetime.now().strftime("%Y-%m-%d %H:%M:%SZ")
 
-        time = datetime(2018, _month_to_int(month), int(day)).strftime(
-            "%Y-%m-%d %H:%M:%SZ"
-        )
-        hashed_id = hashlib.sha256(
-            str(theme + name + day + month).encode("utf-8")
-        ).hexdigest()
+            time = datetime(2018, _month_to_int(month), int(day)).strftime(
+                "%Y-%m-%d %H:%M:%SZ"
+            )
+            hashed_id = hashlib.sha256(
+                str(theme + name + day + month).encode("utf-8")
+            ).hexdigest()
 
-        events.append(
-            {
-                "name": name,
-                "description": theme,
-                "url": event_url,
-                "start": str(time),
-                "end": str(time),
-                "duration": 0,
-                "topics": [],
-                "entry": ['free'],
-                "category": 'Northern Ireland Science Festival',
-                "source": "nisciencefestival",
-            }
-        )
+            events.append(
+                {
+                    "name": name,
+                    "description": theme,
+                    "url": event_url,
+                    "start": str(time),
+                    "end": str(time),
+                    "duration": 0,
+                    "topics": [],
+                    "entry": ['free'],
+                    "category": 'Northern Ireland Science Festival',
+                    "source": "nisciencefestival",
+                }
+            )
 
     return events
 
