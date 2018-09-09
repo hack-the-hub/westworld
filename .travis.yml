@@ -21,6 +21,7 @@ env:
   global:
     - DOCKER_COMPOSE_VERSION=1.14.0
     - COMMIT=${TRAVIS_COMMIT::8}
+    - CC_TEST_REPORTER_ID=${CC_TEST_REPORTER_ID}
     - MAIN_REPO=ssh://git@github.com/apoclyps/my-dev-space.git
 
     - USERS=my-dev-space-users
@@ -52,6 +53,9 @@ before_install:
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 before_script:
   - export TEST_URL=http://127.0.0.1
@@ -71,6 +75,7 @@ after_script:
   - docker-compose -f docker-compose-stage.yml down
 
 after_success:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
   - bash ./docker-push.sh
   - bash ./docker-deploy-stage.sh
   - bash ./docker-deploy-prod.sh

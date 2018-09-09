@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.com/apoclyps/my-dev-space.svg?token=putHnyd9Fyt2bwsGacCD&branch=production)](https://travis-ci.com/apoclyps/my-dev-space?token=putHnyd9Fyt2bwsGacCD&branch=production)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7cda329923afff4fc8e8/maintainability)](https://codeclimate.com/github/apoclyps/my-dev-space/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7cda329923afff4fc8e8/test_coverage)](https://codeclimate.com/github/apoclyps/my-dev-space/test_coverage)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](http://makeapullrequest.com)
 ![Code of Conduct](https://img.shields.io/badge/%E2%88%9A-Code%20of%20Conduct-blue.svg)
 
