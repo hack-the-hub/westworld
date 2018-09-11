@@ -58,6 +58,22 @@ class Events extends Component {
     );
   }
 
+  renderNowsEvents() {
+    const { recentEvents } = this.state;
+
+    if (!_.isArray(recentEvents)) return <Spinner />;
+    if (recentEvents.length === 0) return null;
+
+    return (
+      <div className="nows-events">
+        <EventSeparator content="Events on Right Now" id="now-events" />
+        {recentEvents.map(item => (
+          <Event key={item.id} className="nows-events" content={item} />
+        ))}
+      </div>
+    );
+  }
+
   renderUpcomingEvents() {
     const { upcomingEvents } = this.state;
 
@@ -81,6 +97,7 @@ class Events extends Component {
       <div>
         <CallToActionBanner />
         {this.renderRecentEvents()}
+        {this.renderNowsEvents()}
         {this.renderUpcomingEvents()}
       </div>
     );

@@ -5,7 +5,7 @@ import styles from "./styles";
 const NoEvents = ({ className }) => (
   <div className={`no-events ${className}`}>
     <style jsx>{styles}</style>
-    No Events
+    No Events Happening Later Today
   </div>
 );
 
