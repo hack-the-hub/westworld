@@ -21,7 +21,7 @@
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0",
+    "react-dom": "^16.5.1",
     "react-fontawesome": "^1.6.1",
     "react-ga": "^2.5.3",
     "react-router-dom": "^4.2.2",
