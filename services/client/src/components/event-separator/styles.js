@@ -7,7 +7,6 @@ export default css`
     font-size: 0.75rem;
     padding: 0.5em 0 0.4em 0.5em;
     position: sticky;
-    top: 0;
   }
 
   span {
