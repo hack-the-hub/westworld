@@ -8,7 +8,12 @@
     "meetupcom:update": "cd meetupcom && serverless deploy function -f hello --aws-profile meetupcomEvents",
     "meetupcom:invoke": "cd meetupcom && serverless invoke -f hello -l --aws-profile meetupcomEvents",
     "meetupcom:invoke-local": "cd meetupcom && serverless invoke local -f hello",
-    "meetupcom:logs": "cd meetupcom && serverless logs -f hello -l --aws-profile meetupcomEvents"
+    "meetupcom:logs": "cd meetupcom && serverless logs -f hello -l --aws-profile meetupcomEvents",
+    "eventbrite:deploy": "cd eventbrite && serverless deploy -v --aws-profile eventbriteEvents",
+    "eventbrite:update": "cd eventbrite && serverless deploy function -f hello --aws-profile eventbriteEvents",
+    "eventbrite:invoke": "cd eventbrite && serverless invoke -f hello -l --aws-profile eventbriteEvents",
+    "eventbrite:invoke-local": "cd eventbrite && serverless invoke local -f hello",
+    "eventbrite:logs": "cd eventbrite && serverless logs -f hello -l --aws-profile eventbriteEvents"
   },
   "dependencies": {
     "serverless": "^1.30.3"
