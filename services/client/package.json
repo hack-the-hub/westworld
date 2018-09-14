@@ -17,11 +17,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "react-fontawesome": "^1.6.1",
     "react-ga": "^2.5.3",
     "react-router-dom": "^4.2.2",
@@ -38,6 +38,6 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "prettier": "1.14.2",
-    "react-app-rewired": "^1.5.2"
+    "react-app-rewired": "^1.6.2"
   }
 }
