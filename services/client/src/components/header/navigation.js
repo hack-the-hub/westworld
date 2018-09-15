@@ -16,7 +16,7 @@ const Navigation = () => (
         videos
       </Link>
     </li>
-    <li>
+    <li style={{ display: "none" }}>
       <Link to="/speaker" className={`navigation-link ${linkStyles.className}`}>
         speakers
       </Link>

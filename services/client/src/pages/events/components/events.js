@@ -4,6 +4,7 @@ import _ from "lodash";
 import CallToActionBanner from "components/call-to-action-banner";
 import Spinner from "components/spinner/loading";
 import Event from "components/event";
+import Error from "components/event/error";
 import NoEvents from "components/no-events";
 import EventSeparator from "components/event-separator";
 import getBucketsFor from "utils/get-buckets-for";
@@ -27,6 +28,7 @@ class Events extends Component {
         {recentEvents.map(item => (
           <Event key={item.id} className="recent-event" content={item} />
         ))}
+        {recentEvents.length === 0 ? <NoEvents /> : null}
       </div>
     );
   }
@@ -65,7 +67,7 @@ class Events extends Component {
   renderError() {
     const { hasErrors } = this.props;
     if (hasErrors) {
-      return <p>Sorry! There was an error loading the events</p>;
+      return <Error />;
     }
     return null;
   }
