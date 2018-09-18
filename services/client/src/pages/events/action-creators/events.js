@@ -25,18 +25,15 @@ export function eventsFetchData(url) {
   return dispatch => {
     dispatch(eventsIsLoading(true));
 
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw Error(response.statusText);
+    return fetch(url)
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.statusText);
         }
-
         dispatch(eventsIsLoading(false));
-
-        return response;
+        return res.json();
       })
-      .then(response => response.json())
-      .then(events => dispatch(eventsFetchDataSuccess(events)))
+      .then(body => dispatch(eventsFetchDataSuccess(body)))
       .catch(() => dispatch(eventsHasErrored(true)));
   };
 }
