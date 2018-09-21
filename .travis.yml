@@ -1,11 +1,19 @@
 language: node_js
-node_js: '8'
+node_js: 'node'
 
 before_install:
   - stty cols 80
 
 dist: trusty
 sudo: required
+
+install:
+- npm install
+- npm install danger -g
+
+cache:
+  directories:
+  - "node_modules"
 
 addons:
   apt:
@@ -66,6 +74,7 @@ before_script:
 
 script:
   - bash test.sh $DOCKER_ENV
+  - danger ci
 
 after_script:
   - docker-compose -f docker-compose-stage.yml down
