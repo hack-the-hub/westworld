@@ -20,7 +20,7 @@ flask-compress = "*"
 [dev-packages]
 black = "==18.6b2"
 Flask-Testing = "==0.7.1"
-ipython = "==6.5.0"
+ipython = "==7.0.1"
 pytest = "==3.8.0"
 pytest-cov = "==2.6.0"
 pytest-flakes = "==4.0.0"
