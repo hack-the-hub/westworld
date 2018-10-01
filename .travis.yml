@@ -74,7 +74,6 @@ before_script:
 
 script:
   - bash test.sh $DOCKER_ENV
-  - danger ci
 
 after_script:
   - docker-compose -f docker-compose-stage.yml down
