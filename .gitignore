@@ -17,3 +17,5 @@ test-results/
 .coverage
 
 *.pem
+
+.vscode/

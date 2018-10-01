@@ -1,0 +1,9 @@
+{
+  "name": "pull-eventbrite-events",
+  "version": "1.0.0",
+  "description": "Pull meetup.com events data",
+  "main": "handler.js",
+  "dependencies": {
+    "aws-lambda-data-utils": "^1.0.0"
+  }
+}

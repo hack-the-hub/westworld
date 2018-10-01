@@ -1,0 +1,19 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "extends": [
+    "airbnb-base/legacy",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "env": {
+  },
+  "globals": {
+    "Promise": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "func-names": "off"
+  }
+}
