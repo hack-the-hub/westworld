@@ -3,7 +3,7 @@
   "devDependencies": {
     "all-contributors-cli": "^5.4.0",
     "randomstring": "^1.1.5",
-    "danger": "^4.0.1",
+    "danger": "^4.0.2",
     "testcafe": "^0.22.0"
   },
   "scripts": {
