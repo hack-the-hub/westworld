@@ -16,7 +16,7 @@ const App = () => (
           margin: 0;
           padding: 0;
           font-family: sans-serif;
-          background-color: #f9f9f7;
+          background-color: rgba(1, 1, 1, 0.05);
         }
       `}</style>
       <style jsx>{`

@@ -5,6 +5,8 @@ export default css`
     margin-left: auto;
     margin-right: auto;
     width: 5em;
+    margin-top: 30%;
+    margin-bottom: 30%;
   }
   .lds-ripple {
     display: inline-block;

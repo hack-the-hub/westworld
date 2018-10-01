@@ -8,6 +8,9 @@ export default css`
     border-bottom-left-radius: 0.25rem;
     font-size: 0.75rem;
     color: #fff;
+    margin-bottom: 0;
+    position: sticky;
+    bottom: 0;
   }
 
   @media (min-width: 992px) {

@@ -32,6 +32,9 @@ export default css`
     border-top-right-radius: 0.25rem;
     display: flex;
     padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
   @media (min-width: 992px) {
