@@ -2,9 +2,19 @@ import css from "styled-jsx/css";
 
 export default css`
   .loading-container {
+    margin-top: 47.5%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 47.5%;
     width: 5em;
+  }
+
+  @media (min-width: 992px){
+    .loading-container{
+      margin-top: 21rem;
+      margin-bottom: 24rem;
+      padding-bottom: 40rem;
+    }
   }
   .lds-ripple {
     display: inline-block;

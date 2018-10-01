@@ -32,11 +32,14 @@ export default css`
     border-top-right-radius: 0.25rem;
     display: flex;
     padding: 0.5rem;
+    position: fixed;
+    top: 0;
+    width: 46rem;
   }
 
   @media (min-width: 992px) {
     .header {
-      margin-top: 1rem;
+      margin-top: 0rem;
     }
   }
 

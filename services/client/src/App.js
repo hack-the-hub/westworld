@@ -25,7 +25,10 @@ const App = () => (
             0 5px 15px 0 rgba(0, 0, 0, 0.08);
           margin-left: auto;
           margin-right: auto;
+          margin-bottom: 0;
+          padding-bottom: 0;
           width: 100%;
+          
         }
 
         @media (min-width: 576px) {
@@ -42,7 +45,8 @@ const App = () => (
 
         @media (min-width: 992px) {
           .container {
-            max-width: 40rem;
+            max-width: 47rem;
+            auto;
           }
         }
       `}</style>

@@ -7,6 +7,8 @@ export default css`
     padding: 1rem;
     text-align: center;
     font-size: 0.875rem;
+    position: abolute;
+    margin-top: 3.5rem;
   }
 
   a {
