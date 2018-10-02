@@ -6,6 +6,7 @@ const TimeToEvent = ({ startTime }) => {
   const now = moment();
   const eventTime = moment.utc(startTime);
   const duration = moment.duration(eventTime.diff(now));
+  const eventTimeStamp = moment(startTime).format("dddd, Do of MMMM h:mmA");
 
   return (
     <React.Fragment>
@@ -16,7 +17,8 @@ const TimeToEvent = ({ startTime }) => {
         }
       `}</style>
       <span>
-        {duration > 0 ? "next" : "last"} event {duration.humanize(true)}
+        {duration > 0 ? "next" : "last"} event {duration.humanize(true)}(
+        {eventTimeStamp})
       </span>
     </React.Fragment>
   );
