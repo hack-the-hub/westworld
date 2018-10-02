@@ -8,7 +8,7 @@ export const linkStyles = resolveScopedStyles(
       .navigation-link {
         color: #dae1e7;
       }
-      .navigation-link:hover{
+      .navigation-link:hover {
         color: white;
       }
     `}</style>
@@ -29,5 +29,4 @@ export default css`
     position: relative;
     margin-right: 1.25rem;
   }
-  
 `;
