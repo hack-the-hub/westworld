@@ -18,6 +18,12 @@ export default css`
     color: #81878c;
   }
 
+  .event-time {
+    font-size: 0.75rem;
+    color: #81878c;
+    margin-bottom: 0.5rem;
+  }
+
   .event-details span {
     padding-right: 0.3rem;
   }

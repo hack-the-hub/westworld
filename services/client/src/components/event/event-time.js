@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 
 const TimeToEvent = ({ startTime }) => {
-  const now = moment();
-  const eventTime = moment.utc(startTime);
-  const duration = moment.duration(eventTime.diff(now));
+  const eventTimeStamp = moment(startTime).format("dddd, Do of MMMM h:mmA");
 
   return (
     <React.Fragment>
@@ -16,9 +14,7 @@ const TimeToEvent = ({ startTime }) => {
           font-weight: 200;
         }
       `}</style>
-      <span className="humanize">
-        ( {duration > 0 ? "next" : "last"} event {duration.humanize(true)} )
-      </span>
+      <span>{eventTimeStamp}</span>
     </React.Fragment>
   );
 };

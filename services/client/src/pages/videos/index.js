@@ -54,7 +54,7 @@ class Videos extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page">
         <CallToActionBanner />
         {this.renderRecentVideos()}
       </div>

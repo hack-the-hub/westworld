@@ -53,6 +53,7 @@ class Events extends Component {
 
   renderLoading() {
     const { isLoading } = this.props;
+
     if (isLoading) {
       return <Spinner />;
     }
@@ -74,7 +75,7 @@ class Events extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page">
         <CallToActionBanner />
         {this.renderLoading()}
         {this.renderError()}

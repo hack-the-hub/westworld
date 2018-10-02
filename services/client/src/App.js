@@ -18,6 +18,10 @@ const App = () => (
           font-family: sans-serif;
           background-color: rgba(1, 1, 1, 0.05);
         }
+        .page {
+          background: white;
+          height: 100%;
+        }
       `}</style>
       <style jsx>{`
         .container {
