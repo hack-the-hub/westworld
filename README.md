@@ -72,7 +72,7 @@ The following will run the unit tests for each respective service:
 
 ###### `client`
 ```bash
-$ docker-compose -f docker-compose-dev.yml run client run client npm test
+$ docker-compose -f docker-compose-dev.yml run client-test npm test
 ```
 
 ###### `users-service`
