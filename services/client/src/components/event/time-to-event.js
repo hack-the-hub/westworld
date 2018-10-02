@@ -17,7 +17,8 @@ const TimeToEvent = ({ startTime }) => {
         }
       `}</style>
       <span>
-        {duration > 0 ? "next" : "last"} event {duration.humanize(true)} ({eventTimeStamp})
+        {duration > 0 ? "next" : "last"} event {duration.humanize(true)}
+        ({eventTimeStamp})
       </span>
     </React.Fragment>
   );
