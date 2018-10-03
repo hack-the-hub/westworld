@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 import * as Actions from "../events";
 import * as Types from "../../actions";
 import { events } from "../../reducers/events";
+import moment from "moment/moment";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -136,7 +137,7 @@ describe("reducer", () => {
     };
     const updatedEvent = {
       ...event,
-      timestamp: 1538589600000
+      timestamp: moment(event.start).valueOf()
     };
     const action = {
       type: Types.EVENTS_FETCH_DATA_SUCCESS,
