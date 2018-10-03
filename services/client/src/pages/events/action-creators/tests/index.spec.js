@@ -118,12 +118,25 @@ describe("reducer", () => {
 
   it("should return the state with updated events", () => {
     const event = {
-      id: "007",
-      name: "Example event",
-      start: "20180908",
-      url: "www.example-event.io",
-      category: "Event",
-      source: "Eventbrite"
+      category: "Technology Monthly",
+      created: "2018-07-29T13:52:46.642580",
+      deleted: null,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      duration: 10000,
+      end: "2018-10-03T19:00:00",
+      entry: [{ description: "", id: "ea7c5b64-50be-439d-900a-6ed60fcf1ea3", type: "free" }],
+      id: "0611f963-0f2f-4bd3-8dc4-b3dea517f16f",
+      meetup: [],
+      name: "Monthly Meetup",
+      source: "meetup",
+      start: "2018-10-03T19:00:00",
+      topics: ["technology"],
+      updated: "2018-07-29T13:52:46.642589",
+      url: "https://www.example.com/events/253133796/"
+    };
+    const updatedEvent = {
+      ...event,
+      timestamp: 1538589600000
     };
     const action = {
       type: Types.EVENTS_FETCH_DATA_SUCCESS,
@@ -137,8 +150,8 @@ describe("reducer", () => {
     expect(events(defaultState, action)).toEqual(
       {
         ...defaultState,
-        recentEvents: [{ ...event, timestamp: 1536361200000 }],
-        upcomingEvents: [{ ...event, timestamp: 1536361200000 }]
+        recentEvents: [updatedEvent],
+        upcomingEvents: [updatedEvent]
       }
     );
   });
