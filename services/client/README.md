@@ -1,13 +1,43 @@
-# React and Tailwind CSS
+# My Dev Space
 
-[View Demo](https://landish.github.io/my-developer-space/) |
-[Post on Medium](https://medium.com/@Landish/how-to-use-tailwind-css-with-react-16e9d478b8b1)
+> The front end service for My Dev Space, an open source developer community to promote local hackathons, conferences, and meetups, mentoring, calls for speakers, and collaboration.
 
-## Usage:
+## Getting Started:
 
+Before you can can work on this serrvice, you will need to ensure that you have the most recent stable version of Node.js and npm install.
+
+#### 1. Install Dependencies
+
+``` bash
+$ npm install
 ```
-git clone git@github.com:Landish/my-developer-space.git
-cd my-developer-space
-npm install
-npm run start
+
+
+#### 2. Start the Dev Server
+
+``` bash
+$ npm start
 ```
+
+
+#### 3.) Build the app
+
+``` bash
+$ npm run build
+```
+
+#### 4.) Run tests
+
+``` bash
+$ npm run test
+```
+
+
+#### 5.) Lint code
+
+``` bash
+$ npm run lint
+```
+
+## Project Structure
+The majority of code for this project is located in the `src` folder. From there, the `pages` folder containes React Components which are responsible for rendering out full pages.
