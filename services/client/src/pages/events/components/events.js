@@ -14,7 +14,7 @@ class Events extends Component {
 
   componentDidMount() {
     const { fetchData } = this.props;
-    fetchData(`${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`);
+    fetchData(`http://localhost/events`);
   }
 
   renderRecentEvents() {
