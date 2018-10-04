@@ -3,6 +3,8 @@ import fetchMock from "fetch-mock";
 import thunk from "redux-thunk";
 import * as Actions from "../events";
 import * as Types from "../../actions";
+import { events } from "../../reducers/events";
+import moment from "moment/moment";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -77,5 +79,81 @@ describe("actions", () => {
       events
     };
     expect(Actions.eventsFetchDataSuccess(events)).toEqual(expectedAction);
+  });
+});
+
+describe("reducer", () => {
+  const defaultState = {
+    isLoading: false,
+    hasErrors: false,
+    upcomingEvents: [],
+    recentEvents: []
+  };
+  it("should return the initial state", () => {
+    expect(events(defaultState, {})).toEqual({
+        ...defaultState
+      }
+    );
+  });
+
+  it("should return the loading state", () => {
+    const action = { type: Types.EVENTS_IS_LOADING };
+    expect(events(defaultState, action)).toEqual(
+      {
+        ...defaultState,
+        isLoading: true
+      }
+    );
+  });
+
+  it("should return the error state", () => {
+    const action = { type: Types.EVENTS_HAS_ERRORED };
+    expect(events(defaultState, action)).toEqual(
+      {
+        ...defaultState,
+        hasErrors: true,
+        isLoading: false
+      }
+    );
+  });
+
+  it("should return the state with updated events", () => {
+    const event = {
+      category: "Technology Monthly",
+      created: "2018-07-29T13:52:46.642580",
+      deleted: null,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      duration: 10000,
+      end: "2018-10-03T19:00:00",
+      entry: [{ description: "", id: "ea7c5b64-50be-439d-900a-6ed60fcf1ea3", type: "free" }],
+      id: "0611f963-0f2f-4bd3-8dc4-b3dea517f16f",
+      meetup: [],
+      name: "Monthly Meetup",
+      source: "meetup",
+      start: "2018-10-03T19:00:00",
+      topics: ["technology"],
+      updated: "2018-07-29T13:52:46.642589",
+      url: "https://www.example.com/events/253133796/"
+    };
+    const updatedEvent = {
+      ...event,
+      timestamp: moment(event.start).valueOf()
+    };
+    const action = {
+      type: Types.EVENTS_FETCH_DATA_SUCCESS,
+      events: {
+        data: {
+          recent_events: [event],
+          upcoming_events: [event]
+        }
+      }
+    };
+    expect(events(defaultState, action)).toEqual(
+      {
+        ...defaultState,
+        recentEvents: [updatedEvent],
+        upcomingEvents: [updatedEvent]
+      }
+    );
   });
 });
