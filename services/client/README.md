@@ -4,7 +4,7 @@
 
 ## Getting Started:
 
-Before you can can work on this serrvice, you will need to ensure that you have the most [Docker](https://www.docker.com/) installed on your machine.
+Before you can work on this service, you will need to ensure that you have [Docker](https://www.docker.com/) installed on your machine.
 
 #### 1. Install Dependencies
 
@@ -40,4 +40,4 @@ $ docker-compose -f docker-compose-dev.yml run client npm run lint
 ```
 
 ## Project Structure
-The majority of code for this project is located in the `src` folder. From there, the `pages` folder containes React components which are responsible for rendering out full pages. The `components` folder contains more React components, these are consumed by the Page components. The `reducers`, `selectors` and `store` directories contain code responsible for state management. This app relies on [Redux](https://redux.js.org/) for state management. Finally, the `utils` directory contains usefult helper functions.
+The majority of code for this project is located in the `src` folder. From there, the `pages` folder contains React components which are responsible for rendering out full pages. The `components` folder contains more React components, these are consumed by the Page components. The `reducers`, `selectors` and `store` directories contain code responsible for state management. This app relies on [Redux](https://redux.js.org/) for state management. Finally, the `utils` directory contains useful helper functions.
