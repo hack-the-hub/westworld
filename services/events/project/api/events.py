@@ -153,11 +153,17 @@ def get_single_event(event_id):
 def get_all_events():
     """Get all events"""
 
+    page = request.args.get("page", 1, type=int)
+    page_size = request.args.get("page_size", 50, type=int)
+
     current_time = datetime.utcnow()
     recent_past = current_time - timedelta(hours=6)
 
     upcoming_events = (
-        Event.query.filter(Event.start > current_time).order_by(Event.start).all()
+        Event.query.filter(Event.start > current_time)
+        .order_by(Event.start)
+        .paginate(page, page_size, error_out=False)
+        .items
     )
     recent_events = (
         Event.query.filter(
