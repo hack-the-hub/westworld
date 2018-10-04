@@ -2,24 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-const DateOfEvent = () => {
-  const day = moment.utc(day);
-
-  return (
-    <React.Fragment>
-      <style jsx>{`
-        span {
-            color: #989fa5;
-            font-style: italic;
-          }
-        `}</style>
-      <span>
-        {day}
-      </span>
-    </React.Fragment>
-  )
-}
-
 const TimeToEvent = ({ startTime }) => {
   const now = moment();
   const eventTime = moment.utc(startTime);
