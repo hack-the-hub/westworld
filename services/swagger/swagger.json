@@ -1,8 +1,8 @@
 {
   "info": {
     "version": "0.0.1",
-    "description": "Swagger spec for documenting the users service",
-    "title": "Users Service"
+    "description": "A developer community for everyone with an interest in Technology & Meetups. You can find out more about Swagger at http://swagger.io.",
+    "title": "Muxer API Service"
   },
   "paths": {
     "/auth/logout": {
@@ -291,7 +291,7 @@
     }
   },
   "servers": [{
-    "url": "http://my-dev-space-production-alb-453010484.us-east-1.elb.amazonaws.com"
+    "url": "https://muxer.co.uk"
   }],
   "components": {
     "securitySchemes": {

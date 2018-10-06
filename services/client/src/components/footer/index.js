@@ -6,7 +6,12 @@ const Footer = () => (
   <div className="footer">
     <style jsx>{styles}</style>
     <div>
-      &copy; 2018 | Built by
+      &copy; 2018 |
+      <a href={`${process.env.REACT_APP_EVENTS_SERVICE_URL}/swagger`}>
+        <FontAwesome name="book" />
+        {" API"}
+      </a>
+      | Built by
       <a href="https://github.com/apoclyps/my-dev-space/graphs/contributors">
         <FontAwesome name="github" />
         {" open source contributions"}
