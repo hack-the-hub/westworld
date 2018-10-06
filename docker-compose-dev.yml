@@ -87,10 +87,10 @@ services:
       - '3007:3000' # expose ports - HOST:CONTAINER
     environment:
       - NODE_ENV=development
-      - CI=${CI}
+      - CI=${CI:-false}
       - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
       - REACT_APP_EVENTS_SERVICE_URL=${REACT_APP_EVENTS_SERVICE_URL}
-      - REACT_APP_GOOGLE_ANALYTICS_ID=UA-123052755-1
+      - REACT_APP_GOOGLE_ANALYTICS_ID=${REACT_APP_GOOGLE_ANALYTICS_ID:-UA-123052755-1}
     depends_on:
       - users-service
       - events-service
@@ -105,7 +105,7 @@ services:
       dockerfile: Dockerfile-dev
     environment:
       - NODE_ENV=development
-      - CI=${CI}
+      - CI=${CI:-false}
     volumes:
       - './services/client:/usr/src/app'
 
