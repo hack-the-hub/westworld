@@ -211,6 +211,83 @@
         }],
         "summary": "Returns a video based on its name"
       }
+    },
+    "/speakers": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Array of speaker objects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/speaker-full"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Returns all speakers"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/speaker-add-payload"
+              }
+            }
+          },
+          "required": true,
+          "description": "Speaker to add"
+        },
+        "security": [{
+          "bearerAuth": []
+        }],
+        "responses": {
+          "201": {
+            "description": "Speaker added"
+          },
+          "202": {
+            "description": "Speaker already exists"
+          },
+          "400": {
+            "description": "Invalid payload"
+          }
+        },
+        "summary": "Adds a speaker"
+      }
+    },
+    "/speakers/{name}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Speaker object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/speaker-full"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Speaker not found"
+          }
+        },
+        "parameters": [{
+          "schema": {
+            "type": "string"
+          },
+          "required": true,
+          "description": "Name of the speaker to fetch",
+          "name": "name",
+          "in": "path"
+        }],
+        "summary": "Returns a speaker based on their name"
+      }
     }
   },
   "servers": [{
@@ -306,19 +383,6 @@
           }
         }
       },
-      "topic": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "abbreviation": {
-            "type": "string"
-          }
-        }
-      },
       "channel": {
         "properties": {
           "name": {
@@ -337,6 +401,111 @@
             }
           },
           "source": {
+            "type": "string"
+          }
+        }
+      },
+      "speaker-full": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "bio": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/topic"
+            }
+          },
+          "diversification": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/diversity"
+            }
+          }
+        }
+      },
+      "speaker-add-payload": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "bio": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "diversification": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "topic": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "abbreviation": {
+            "type": "string"
+          }
+        }
+      },
+      "diversity": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           }
         }
