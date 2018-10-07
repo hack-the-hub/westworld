@@ -14,6 +14,15 @@ EVENTS_ENDPOINT = os.getenv("EVENTS_ENDPOINT")
 client = Eventbrite(EVENTBRITE_API_TOKEN)
 
 
+def init():
+    if not EVENTBRITE_API_TOKEN:
+        raise Exception("EVENTBRITE_API_TOKEN is not defined")
+    if not EVENTS_ENDPOINT:
+        raise Exception("EVENTS_ENDPOINT is not defined")
+
+    print(f"Configured Eventbrite Events to POST to {EVENTS_ENDPOINT}")
+
+
 def _transform_event(event):
     return {
         "name": event["name"]["text"],
@@ -23,7 +32,7 @@ def _transform_event(event):
         "end": event["end"]["utc"],
         "duration": 100000,
         "topics": [],
-        "entry": ['ticket'],
+        "entry": ["ticket"],
         "category": event["name"]["text"],
         "source": "eventbrite",
     }
@@ -37,6 +46,7 @@ def _post_payloads(payloads):
             headers={"Content-type": "application/json"},
             data=json.dumps(payload),
         )
+        print(r.status_code)
         responses.append(r)
 
 
