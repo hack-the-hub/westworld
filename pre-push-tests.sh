@@ -4,6 +4,8 @@ inspect() {
   fi
 }
 
+set -x
+
 docker-compose -f docker-compose-dev.yml run users-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 inspect $? users-test
 docker-compose -f docker-compose-dev.yml run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
@@ -14,6 +16,8 @@ docker-compose -f docker-compose-dev.yml run client-test npm run lint
 inspect $? client-lint
 CI=true docker-compose -f docker-compose-dev.yml run client-test npm test -- --coverage
 inspect $? client-test
+
+set +x
 
 if [ -n "${fails}" ]; then
   echo "Tests failed: ${fails}"

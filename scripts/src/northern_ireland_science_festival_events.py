@@ -11,11 +11,20 @@ EVENTS_ENDPOINT = os.getenv("EVENTS_ENDPOINT")
 URL = "http://www.nisciencefestival.com/programme.php?c=all"
 
 
+def init():
+    if not EVENTS_ENDPOINT:
+        raise Exception("EVENTS_ENDPOINT is not defined")
+
+    print(f"Configured NISF Events to POST to {EVENTS_ENDPOINT}")
+
+
 def _extract_event_time(raw_event_time):
     month = None
     reaccuring = None
 
     raw_event_time = raw_event_time.replace("\t", "")
+
+    raw_event_time = raw_event_time.replace("&", ",")
 
     days = raw_event_time.split(",")[0].split("&")
     times = raw_event_time.split(",")[1].split("-")
@@ -24,7 +33,10 @@ def _extract_event_time(raw_event_time):
         reaccuring = True
 
     start_time = times[0].strip()
-    end_time = times[1].strip()
+    if len(times) == 1:
+        end_time = times[1].strip()
+    else:
+        end_time = times[1].strip()
 
     transformed_days = []
 
@@ -114,8 +126,8 @@ def _transform_event(event):
                 "end": str(time),
                 "duration": 0,
                 "topics": [],
-                "entry": ['free'],
-                "category": 'Northern Ireland Science Festival',
+                "entry": ["free"],
+                "category": "Northern Ireland Science Festival",
                 "source": "nisciencefestival",
             }
         )
@@ -131,18 +143,23 @@ def _post_payloads(payloads):
             headers={"Content-type": "application/json"},
             data=json.dumps(payload),
         )
+        print(r.status_code)
         responses.append(r)
 
 
 if __name__ == "__main__":
+    init()
     data = requests.get(URL).text
     soup = BeautifulSoup(data, "html.parser")
 
     events = []
     for event in soup.findAll(True, {"class": ["brick", "event"]}):
-        list_of_events = _transform_event(event)
-        if list_of_events:
-            for list_event in list_of_events:
-                events.append(list_event)
+        try:
+            list_of_events = _transform_event(event)
+            if list_of_events:
+                for list_event in list_of_events:
+                    events.append(list_event)
+        except Exception:
+            print("failed to parse event")
 
     _post_payloads(events)

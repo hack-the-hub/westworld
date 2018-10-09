@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "./pre-commit-tests.sh"
+    "pre-push": "./pre-push-tests.sh"
   }
 }

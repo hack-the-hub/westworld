@@ -15,6 +15,15 @@ EVENTS_ENDPOINT = os.getenv("EVENTS_ENDPOINT")
 client = meetup.api.Client(MEETUP_API_TOKEN)
 
 
+def init():
+    if not MEETUP_API_TOKEN:
+        raise Exception("MEETUP_API_TOKEN is not defined")
+    if not EVENTS_ENDPOINT:
+        raise Exception("EVENTS_ENDPOINT is not defined")
+
+    print(f"Configured Meetup Events to POST to {EVENTS_ENDPOINT}")
+
+
 def get_events_by_member(member_id):
     """ Gets events for a specific member using a given members id.
     """
@@ -32,7 +41,7 @@ def _transform_event(event):
         "%Y-%m-%d %H:%M:%SZ"
     )
 
-    #TODO update to end time
+    # TODO update to end time
     end = datetime.datetime.fromtimestamp(int(event["time"] / 1000)).strftime(
         "%Y-%m-%d %H:%M:%SZ"
     )
@@ -48,7 +57,7 @@ def _transform_event(event):
         "end": end,
         "duration": duration,
         "topics": [],
-        "entry": ['free'],
+        "entry": ["free"],
         "category": event["group"]["name"],
         "source": "meetup",
     }
@@ -62,11 +71,13 @@ def _post_payloads(payloads):
             headers={"Content-type": "application/json"},
             data=json.dumps(payload),
         )
+        print(r.status_code)
 
         responses.append(r)
 
 
 if __name__ == "__main__":
+    init()
     member_id = "135086862"
 
     events = get_events_by_member(member_id)

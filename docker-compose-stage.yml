@@ -101,7 +101,7 @@ services:
       dockerfile: Dockerfile-stage
     environment:
       - NODE_ENV=staging
-      - CI=${CI}
+      - CI=${CI:-false}
 
   swagger:
     container_name: swagger

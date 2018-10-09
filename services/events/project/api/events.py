@@ -14,6 +14,8 @@ from project import cache
 
 events_blueprint = Blueprint("events", __name__)
 
+DEFAULT_PAGE_SIZE = 500
+
 
 def extract_topics(topics):
     """Creates a list of topics from a given list."""
@@ -64,7 +66,7 @@ def index():
         db.session.add(event)
         db.session.commit()
 
-    events = Event.query.all()
+    events = Event.query.filter(Event.deleted is None).all()
 
     response_object = {
         "status": "success",
@@ -154,7 +156,7 @@ def get_all_events():
     """Get all events"""
 
     page = request.args.get("page", 1, type=int)
-    page_size = request.args.get("page_size", 50, type=int)
+    page_size = request.args.get("page_size", DEFAULT_PAGE_SIZE, type=int)
 
     current_time = datetime.utcnow()
     recent_past = current_time - timedelta(hours=6)
@@ -169,8 +171,9 @@ def get_all_events():
         Event.query.filter(
             and_(Event.start <= current_time, Event.start >= recent_past)
         )
+        .filter(Event.deleted is None)
         .order_by(Event.start)
-        .limit(50)
+        .limit(DEFAULT_PAGE_SIZE)
     )
 
     response_object = {
