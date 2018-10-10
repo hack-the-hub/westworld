@@ -13,8 +13,8 @@ provider:
             - "Ref" : "MeetupcomEventsBucket"
             - "/*"
 functions:
-  hello:
-    handler: handler.hello
+  produce:
+    handler: handler.produce
     events:
       - schedule: rate(1 hour)
     environment:

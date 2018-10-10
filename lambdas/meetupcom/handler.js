@@ -44,7 +44,7 @@ const uploadData = function(groups, groupsEvents) {
   return [groupsUpload].concat(eventsUploads);
 };
 
-module.exports.hello = async (event, context, callback) => {
+module.exports.produce = async (event, context, callback) => {
   try {
     // Read list of local meet-up groups
     const groups = JSON.parse(await getFromWeb(getGroupsUrl()));

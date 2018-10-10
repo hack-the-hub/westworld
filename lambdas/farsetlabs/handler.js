@@ -38,7 +38,7 @@ const uploadData = function(calendarData) {
     );
 };
 
-module.exports.hello = async (event, context, callback) => {
+module.exports.produce = async (event, context, callback) => {
   try {
     // Read list of upcoming events
     const calendarData = await getFromApi();

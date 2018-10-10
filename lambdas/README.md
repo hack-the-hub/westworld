@@ -6,7 +6,7 @@ Serverless configured lambdas running on AWS.
 
 ## Meetup.com
 
-Lambda used to regularly pull events from Meetup.com. There are helper scripts
+Lambdas used to get and process events from Meetup.com. There are helper scripts
 to aid in deployment and development. Use `npm run <command>` with any of the
 below.
 
@@ -20,28 +20,33 @@ aws_access_key_id = <access-key-id-value>
 aws_secret_access_key = <access-key-value>
 ```
 
-You will also need to create a new entry in the AWS Systems Manager Parameter
-store for the Meetup.com API token. Make a secure string with the name
-`meetupcomApiToken` and the value of your Meetup.com API token. Serverless will
-then automatically pull that value into your lambda as an environment variable.
+#### `meetupcom:deploy`
 
-### `meetupcom:deploy`
-
-Deploy (or redeploy) the lambda and all associated infrastructure. Do this
+Deploy (or redeploy) the lambdas and all associated infrastructure. Do this
 when setting up for the first time, or whenever the `serverless.yml` file
 changes
 
-### `meetupcom:update`
+
+### Producer
+
+This lambda pulls data from the Meetup.com API and saves it to S3.
+
+You will need to create a new entry in the AWS Systems Manager Parameter store
+for the Meetup.com API token. Make a secure string with the name
+`meetupcomApiToken` and the value of your Meetup.com API token. Serverless will
+then automatically pull that value into your lambda as an environment variable.
+
+#### `meetupcom:producer:update`
 
 Update just the handler functionality. Do then whenever you change the
 functionality of the lambda.
 
-### `meetupcom:invoke`
+#### `meetupcom:producer:invoke`
 
 Invoke the lambda on AWS. As this lambda created files in S3, you should see new
 JSON files created of the data pulled from Meetup.com.
 
-### `meetupcom:invoke-local`
+#### `meetupcom:producer:invoke-local`
 
 Invoke the lambda locally. Use this for development. You will need to pass a
 Meetup.com API token as an environment variable:
@@ -54,7 +59,7 @@ The local lambda will also not have permissions to write the files to S3 and you
 will receive an "Access Denied" error. Instead you may want to comment out the
 `uploadTo` calls whilst in development.
 
-### `meetupcom:logs`
+#### `meetupcom:producer:logs`
 
 Pulls the logs from cloudwatch of the last lambda run. Useful for debugging.
 
@@ -62,7 +67,7 @@ Pulls the logs from cloudwatch of the last lambda run. Useful for debugging.
 
 ## Eventbrite
 
-Lambda used to regularly pull events from Eventbrite.com. There are helper scripts
+Lambdas used to get and process events from Eventbrite. There are helper scripts
 to aid in deployment and development. Use `npm run <command>` with any of the
 below.
 
@@ -76,28 +81,33 @@ aws_access_key_id = <access-key-id-value>
 aws_secret_access_key = <access-key-value>
 ```
 
-You will also need to create a new entry in the AWS Systems Manager Parameter
-store for the Eventbrite API token. Make a secure string with the name
-`eventbriteApiToken` and the value of your Eventbrite API token. Serverless will
-then automatically pull that value into your lambda as an environment variable.
+#### `eventbrite:deploy`
 
-### `eventbrite:deploy`
-
-Deploy (or redeploy) the lambda and all associated infrastructure. Do this
+Deploy (or redeploy) the lambdas and all associated infrastructure. Do this
 when setting up for the first time, or whenever the `serverless.yml` file
 changes
 
-### `eventbrite:update`
+
+### Producer
+
+This lambda pulls data from the Eventbrite.com API and saves it to S3.
+
+You will need to create a new entry in the AWS Systems Manager Parameter store
+for the Eventbrite API token. Make a secure string with the name
+`eventbriteApiToken` and the value of your Eventbrite API token. Serverless will
+then automatically pull that value into your lambda as an environment variable.
+
+#### `eventbrite:producer:update`
 
 Update just the handler functionality. Do then whenever you change the
 functionality of the lambda.
 
-### `eventbrite:invoke`
+#### `eventbrite:producer:invoke`
 
 Invoke the lambda on AWS. As this lambda created files in S3, you should see new
 JSON files created of the data pulled from Eventbrite.
 
-### `eventbrite:invoke-local`
+#### `eventbrite:producer:invoke-local`
 
 Invoke the lambda locally. Use this for development. You will need to pass an
 Eventbrite API token as an environment variable:
@@ -110,7 +120,7 @@ The local lambda will also not have permissions to write the files to S3 and you
 will receive an "Access Denied" error. Instead you may want to comment out the
 `uploadTo` calls whilst in development.
 
-### `eventbrite:logs`
+#### `eventbrite:producer:logs`
 
 Pulls the logs from cloudwatch of the last lambda run. Useful for debugging.
 
@@ -118,7 +128,7 @@ Pulls the logs from cloudwatch of the last lambda run. Useful for debugging.
 
 ## Farset Labs Calendar
 
-Lambda used to regularly pull events from the Farset Labs calendar. There are
+Lambdas used to get and process events from the Farset Labs calendar. There are
 helper scripts to aid in deployment and development. Use `npm run <command>`
 with any of the below.
 
@@ -132,26 +142,32 @@ aws_access_key_id = <access-key-id-value>
 aws_secret_access_key = <access-key-value>
 ```
 
-The Farset Labs calendar is public. You will not need to set any API tokens to
-run this lambda.
+#### `farsetlabs:deploy`
 
-### `farsetlabs:deploy`
-
-Deploy (or redeploy) the lambda and all associated infrastructure. Do this
+Deploy (or redeploy) the lambdas and all associated infrastructure. Do this
 when setting up for the first time, or whenever the `serverless.yml` file
 changes
 
-### `farsetlabs:update`
+
+### Producer
+
+This lambda pulls data from the Farset Labs calendar iCalendar endpoint and
+saves it to S3.
+
+The Farset Labs calendar is public. You will not need to set any API tokens to
+run this lambda.
+
+#### `farsetlabs:producer:update`
 
 Update just the handler functionality. Do then whenever you change the
 functionality of the lambda.
 
-### `farsetlabs:invoke`
+#### `farsetlabs:producer:invoke`
 
 Invoke the lambda on AWS. As this lambda created files in S3, you should see new
 ICS files created of the data pulled from the Farset Labs calendar.
 
-### `farsetlabs:invoke-local`
+#### `farsetlabs:producer:invoke-local`
 
 Invoke the lambda locally. Use this for development.
 
@@ -159,6 +175,6 @@ The local lambda will not have permissions to write the files to S3 and you
 will receive an "Access Denied" error. Instead you may want to comment out the
 `uploadTo` calls whilst in development.
 
-### `farsetlabs:logs`
+#### `farsetlabs:producer:logs`
 
 Pulls the logs from cloudwatch of the last lambda run. Useful for debugging.
