@@ -71,7 +71,7 @@ jobs:
       - sleep 3
       - docker-compose -f docker-compose-stage.yml up --build -d
       - bash test.sh $DOCKER_ENV
-    - stage: staging
+    - stage: cleanup
       script:
       - docker-compose -f docker-compose-stage.yml down
     - stage: deploy
