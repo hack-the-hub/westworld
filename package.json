@@ -2,7 +2,7 @@
   "name": "my-dev-space",
   "devDependencies": {
     "all-contributors-cli": "^5.4.0",
-    "danger": "^4.3.8",
+    "danger": "^4.4.6",
     "husky": "^1.1.1",
     "randomstring": "^1.1.5",
     "testcafe": "^0.22.0"
