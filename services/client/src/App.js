@@ -46,7 +46,7 @@ const App = () => (
 
         @media (min-width: 992px) {
           .container {
-            max-width: 40rem;
+            max-width: 50rem;
           }
         }
       `}</style>
