@@ -1,7 +1,6 @@
-service: muxer-pull-farsetlabs-events
+service: ${file(./package.json):name}
 
-custom:
-  bucketName: "farsetlabs-events-bucket"
+custom: ${file(./config.js):buckets}
 
 provider:
   name: aws
@@ -14,7 +13,16 @@ provider:
         Fn::Join:
           - ""
           - - "arn:aws:s3:::"
-            - ${self:custom.bucketName}
+            - ${self:custom.producerBucket}
+            - "/*"
+    - Effect: Allow
+      Action:
+        - "s3:PutObject"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - ${self:custom.eventsBucket}
             - "/*"
 
 functions:
@@ -24,6 +32,7 @@ functions:
       - schedule: rate(1 hour)
     environment:
       TZ: Europe/Belfast
+      GOOGLE_CALENDAR_API_TOKEN: ${ssm:googleCalendarApiToken~true}
   transform:
     handler: handlers/transformer.transform
     environment:
@@ -31,18 +40,18 @@ functions:
 
 resources:
   Resources:
-    S3BucketFarsetLabsEvents:
+    S3BucketMuxerProducedEventsFarsetLabs:
       DependsOn:
-        - TransformLambdaPermissionS3BucketFarsetLabsEventsS3
+        - TransformLambdaPermissionS3BucketMuxerProducedEventsFarsetLabsS3
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${self:custom.bucketName}
+        BucketName: ${self:custom.producerBucket}
         NotificationConfiguration:
           LambdaConfigurations:
             - Event: "s3:ObjectCreated:*"
               Function:
                 "Fn::GetAtt": [ TransformLambdaFunction, Arn ]
-    TransformLambdaPermissionS3BucketFarsetLabsEventsS3:
+    TransformLambdaPermissionS3BucketMuxerProducedEventsFarsetLabsS3:
       DependsOn:
         - TransformLambdaFunction
       Type: AWS::Lambda::Permission
@@ -51,4 +60,4 @@ resources:
           "Fn::GetAtt": [ TransformLambdaFunction, Arn ]
         Action: "lambda:InvokeFunction"
         Principal: "s3.amazonaws.com"
-        SourceArn: "arn:aws:s3:::${self:custom.bucketName}"
+        SourceArn: "arn:aws:s3:::${self:custom.producerBucket}"

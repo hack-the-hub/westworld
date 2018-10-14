@@ -1,9 +1,9 @@
 {
-  "name": "pull-eventbrite-events",
+  "name": "muxer-pull-events-eventbrite",
   "version": "1.0.0",
   "description": "Pull eventbrite.com events data",
-  "main": "handler.js",
   "dependencies": {
-    "aws-lambda-data-utils": "^1.0.0"
+    "aws-lambda-data-utils": "^1.0.0",
+    "jsonschema": "^1.2.4"
   }
 }

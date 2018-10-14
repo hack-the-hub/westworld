@@ -1,9 +1,6 @@
-const EVENTBRITE_TECH_CATEGORY = 102;
+const { convert } = require("./utils");
 
-const convert = params =>
-  Object.entries(params)
-    .map(([key, val]) => `${key}=${val}`)
-    .join("&");
+const EVENTBRITE_TECH_CATEGORY = 102;
 
 const eventsApi = "https://www.eventbriteapi.com/v3/events/search/";
 const eventsParams = page =>
@@ -19,6 +16,9 @@ const eventsParams = page =>
   });
 
 module.exports = {
-  bucketName: "eventbrite-events-bucket",
+  buckets: () => ({
+    producerBucket: "muxer-produced-events-eventbrite",
+    eventsBucket: "muxer-transformed-events"
+  }),
   getEventsUrl: ({ page }) => `${eventsApi}?${eventsParams(page)}`
 };

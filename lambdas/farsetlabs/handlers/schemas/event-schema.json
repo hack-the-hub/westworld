@@ -1,0 +1,260 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "time": {
+      "type": "object",
+      "required": [
+        "utc",
+        "timezone"
+      ],
+      "properties": {
+        "utc": {
+          "type": "string",
+          "format": "date-time",
+          "title": "ISO 8601 to second precision in UTC",
+          "pattern": "(:?\\d{4})-(:?\\d{2})-(:?\\d{2})T(:?\\d{2})\\:(:?\\d{2})\\:(:?\\d{2}).(:?\\d{3})Z",
+          "examples": ["2018-10-20T18:00:00.000Z"]
+        },
+        "timezone": {
+          "type": "string",
+          "title": "Timezone in TZ value",
+          "pattern": "\\w+\\/[\\w\\/]+",
+          "examples": ["Europe/Belfast"]
+        }
+      }
+    },
+    "image-set": {
+      "type": "object",
+      "required": [
+        "regular"
+      ],
+      "properties": {
+        "high": {
+          "type": "string",
+          "format": "uri",
+          "title": "URL to high resolution image"
+        },
+        "regular": {
+          "type": "string",
+          "format": "uri",
+          "title": "URL to regular resolution image"
+        },
+        "thumnail": {
+          "type": "string",
+          "format": "uri",
+          "title": "URL to thumbnail image"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": [
+    "name",
+    "times",
+    "venue",
+    "created_at",
+    "last_updated",
+    "source_data"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name of event",
+      "examples": ["Code Co-Op Challenge"]
+    },
+    "description": {
+      "type": "string",
+      "title": "Description of event",
+      "examples": ["Try your hand at this month's coding challenge and learn how your peers tackle the same task."]
+    },
+    "url": {
+      "type": "string",
+      "title": "URL to source webpage for event",
+      "examples": ["https://www.meetup.com/CodeCoop-NI/events/ggxkhqyxpbcb/"]
+    },
+    "times": {
+      "type": "object",
+      "title": "Timing information for the event",
+      "required": [
+        "start",
+        "end",
+        "duration"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "#/definitions/time"
+        },
+        "end": {
+          "$ref": "#/definitions/time"
+        },
+        "duration": {
+          "type": "integer",
+          "title": "Number of milliseconds between start and end times",
+          "examples": [14400000]
+        }
+      }
+    },
+    "logo": {
+      "$ref": "#/definitions/image-set"
+    },
+    "topics": {
+      "type": "array",
+      "title": "Topics describing the event",
+      "items": {
+        "type": "string",
+        "examples": ["Science & Technology"]
+      }
+    },
+    "venue": {
+      "type": "object",
+      "required": [
+        "name",
+        "address",
+        "country",
+        "latitude",
+        "longitude"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name of venue",
+          "examples": ["Farset Labs"]
+        },
+        "address": {
+          "type": "string",
+          "title": "Address of venue",
+          "examples": ["Weavers Court, Linfield Road, BT12 5GH"]
+        },
+        "city": {
+          "type": "string",
+          "title": "City the venue is in",
+          "examples": ["Belfast"]
+        },
+        "country": {
+          "type": "string",
+          "title": "Country the venue is in, must be ISO 3166-1 alpha-2 upper cased two-letter country code",
+          "pattern": "[A-Z]{2}",
+          "examples": ["GB"]
+        },
+        "latitude": {
+          "type": "string",
+          "title": "Latitude of venue location, no precision requirement",
+          "examples": ["54.592826"]
+        },
+        "longitude": {
+          "type": "string",
+          "title": "Longitude of venue location, no precision requirement",
+          "examples": ["-5.940666"]
+        }
+      }
+    },
+    "organiser": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name of organiser or organising group",
+          "examples": ["Code Co-Op"]
+        },
+        "logo": {
+          "$ref": "#/definitions/image-set"
+        }
+      }
+    },
+    "attendee_numbers": {
+      "type": "object",
+      "required": [
+        "capacity",
+        "responses",
+        "waitlist"
+      ],
+      "properties": {
+        "capacity": {
+          "type": "integer",
+          "title": "The maximum number of attendees",
+          "examples": [50]
+        },
+        "responses": {
+          "type": "integer",
+          "title": "The number of people who are going / have indicated they are going",
+          "examples": [38]
+        },
+        "waitlist": {
+          "type": "integer",
+          "title": "The number of people who are on the wait list (when at capacity)",
+          "examples": [0]
+        }
+      }
+    },
+    "charge": {
+      "type": "object",
+      "required": [
+        "is_free"
+      ],
+      "properties": {
+        "is_free": {
+          "type": "boolean",
+          "title": "Whether the event is free to attend",
+          "examples": [false]
+        },
+        "cost": {
+          "type": "object",
+          "required": [
+            "currency",
+            "value"
+          ],
+          "properties": {
+            "currency": {
+              "type": "string",
+              "title": "Currency of the cost, must be ISO 4217 three-letter currency code",
+              "pattern": "[A-Z]{2}",
+              "examples": ["GBP"]
+            },
+            "value": {
+              "type": "integer",
+              "title": "Number representing the value of the cost in the lowest denomination (eg. pence if in GBP)",
+              "examples": [1200]
+            }
+          }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "ISO 8601 to second precision in UTC",
+      "pattern": "(:?\\d{4})-(:?\\d{2})-(:?\\d{2})T(:?\\d{2})\\:(:?\\d{2})\\:(:?\\d{2}).(:?\\d{3})Z",
+      "examples": ["2018-06-20T09:26:59Z"]
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "title": "ISO 8601 to second precision in UTC",
+      "pattern": "(:?\\d{4})-(:?\\d{2})-(:?\\d{2})T(:?\\d{2})\\:(:?\\d{2})\\:(:?\\d{2}).(:?\\d{3})Z",
+      "examples": ["2018-10-07T14:51:21Z"]
+    },
+    "source_data": {
+      "type": "object",
+      "required": [
+        "name",
+        "id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name of the source, eg. farsetlabs-calendar, meetupcom, eventbrite, etc.",
+          "enum": ["meetupcom", "eventbrite", "farsetlabs-calendar"],
+          "examples": ["farsetlabs-calendar"]
+        },
+        "id": {
+          "type": "string",
+          "title": "ID of the event from the source",
+          "examples": ["316kag8mfr56qt58k3guo4ejsr@google.com"]
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,6 @@
-const MEETUPCOM_TECH_CATEGORY = 34;
+const { convert } = require("./utils");
 
-const convert = params =>
-  Object.entries(params)
-    .map(([key, val]) => `${key}=${val}`)
-    .join("&");
+const MEETUPCOM_TECH_CATEGORY = 34;
 
 const groupsApi = "https://api.meetup.com/find/groups";
 const groupsParams = convert({
@@ -29,7 +26,10 @@ const eventsParams = convert({
 });
 
 module.exports = {
-  bucketName: "meetupcom-events-bucket",
+  buckets: () => ({
+    producerBucket: "muxer-produced-events-meetupcom",
+    eventsBucket: "muxer-transformed-events"
+  }),
   getGroupsUrl: () => `${groupsApi}?${groupsParams}`,
   getEventsUrl: slug => `${eventsApi(slug)}?${eventsParams}`
 };

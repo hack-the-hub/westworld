@@ -1,4 +1,7 @@
-service: pull-meetupcom-events
+service: ${file(./package.json):name}
+
+custom: ${file(./config.js):buckets}
+
 provider:
   name: aws
   runtime: nodejs8.10
@@ -10,19 +13,20 @@ provider:
         Fn::Join:
           - ""
           - - "arn:aws:s3:::"
-            - "Ref" : "MeetupcomEventsBucket"
+            - ${self:custom.producerBucket}
             - "/*"
 functions:
   produce:
-    handler: handler.produce
+    handler: handlers/producer.produce
     events:
       - schedule: rate(1 hour)
     environment:
       TZ: Europe/Belfast
       MEETUPCOM_API_TOKEN: ${ssm:meetupcomApiToken~true}
+
 resources:
   Resources:
-    MeetupcomEventsBucket:
+    S3BucketMuxerProducedEventsMeetupcom:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: meetupcom-events-bucket
+        BucketName: ${self:custom.producerBucket}

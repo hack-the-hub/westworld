@@ -1,10 +1,9 @@
 {
-  "name": "pull-farsetlabs-events",
+  "name": "muxer-pull-events-farsetlabs",
   "version": "1.0.0",
   "description": "Pull Farset Labs events data",
-  "main": "handler.js",
   "dependencies": {
     "aws-lambda-data-utils": "^1.0.0",
-    "icalendar": "^0.7.1"
+    "jsonschema": "^1.2.4"
   }
 }

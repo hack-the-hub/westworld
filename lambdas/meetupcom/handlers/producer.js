@@ -1,12 +1,8 @@
 "use strict";
 
-const {
-  createHash,
-  getDateTimePathFor,
-  getFromWeb,
-  setInS3
-} = require("aws-lambda-data-utils");
-const { bucketName, getGroupsUrl, getEventsUrl } = require("./config");
+const { getFromWeb } = require("aws-lambda-data-utils");
+const { buckets, getGroupsUrl, getEventsUrl } = require("../config");
+const { uploadTo } = require("../utils");
 
 const getErrors = function(groupsEvents) {
   return groupsEvents.reduce(function(errors, groupEvents) {
@@ -15,19 +11,9 @@ const getErrors = function(groupsEvents) {
   }, []);
 };
 
-const uploadTo = function(createFilename, data) {
-  const fileContents = JSON.stringify(data);
-  const today = new Date();
-  const hash = createHash(fileContents);
-  const prefix = getDateTimePathFor(today);
-  const filename = createFilename(today, hash);
-  const filePath = `${prefix}/${filename}`;
-
-  return setInS3(prefix, bucketName, filePath, fileContents);
-};
-
-const uploadData = function(groups, groupsEvents) {
+const uploadData = function(bucketName, groups, groupsEvents) {
   const groupsUpload = uploadTo(
+    bucketName,
     (today, hash) => `meetupcom-groups__${today.valueOf()}__${hash}.json`,
     groups
   );
@@ -67,10 +53,11 @@ module.exports.produce = async (event, context, callback) => {
     }
 
     // Write captured data to S3
-    const uploads = uploadData(groups, groupsEvents);
+    const { producerBucket } = buckets();
+    const uploads = uploadData(producerBucket, groups, groupsEvents);
     const message = (await Promise.all(uploads)).map(({ key }) => key);
 
-    callback(null, { message, event });
+    callback(null, { message });
   } catch (err) {
     callback(err, null);
   }
