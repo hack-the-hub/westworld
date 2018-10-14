@@ -4,6 +4,7 @@ import "font-awesome/css/font-awesome.min.css";
 import Events from "./pages/events";
 import Videos from "./pages/videos";
 import Speakers from "./pages/speakers";
+import Developers from "./pages/developers";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import withTracker from "./withTracker";
@@ -57,6 +58,7 @@ const App = () => (
         <Route exact path="/event" component={withTracker(Events)} />
         <Route exact path="/video" component={withTracker(Videos)} />
         <Route exact path="/speaker" component={withTracker(Speakers)} />
+        <Route exact path="/developer" component={withTracker(Developers)} />
       </Switch>
       <Footer />
     </div>

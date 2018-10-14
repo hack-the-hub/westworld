@@ -21,6 +21,14 @@ const Navigation = () => (
         speakers
       </Link>
     </li>
+    <li>
+      <Link
+        to="/developer"
+        className={`navigation-link ${linkStyles.className}`}
+      >
+        developers
+      </Link>
+    </li>
   </ul>
 );
 
