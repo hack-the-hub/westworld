@@ -151,7 +151,7 @@ def get_single_event(event_id):
 
 
 @events_blueprint.route("/events", methods=["GET"])
-@cache.cached(timeout=1000)
+@cache.cached(timeout=1000, query_string=True)
 def get_all_events():
     """Get all events"""
 
