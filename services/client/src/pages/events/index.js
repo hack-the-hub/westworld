@@ -9,8 +9,7 @@ import {
   getUpcomingEvents,
   isLoading,
   hasErrors,
-  hasMoreItems,
-  page
+  hasMoreItems
 } from "./selectors";
 
 const mapStateToProps = function(state) {
@@ -18,9 +17,8 @@ const mapStateToProps = function(state) {
     upcomingEvents: getUpcomingEvents(state),
     recentEvents: getRecentEvents(state),
     hasErrors: hasErrors(state),
-    isLoading: isLoading(state),
     hasMoreItems: hasMoreItems(state),
-    page: page(state)
+    isLoading: isLoading(state)
   };
 };
 
@@ -36,4 +34,4 @@ const PaginatedEvents = withPagination(eventsUrl)(Events);
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PaginatedEvents);
+)(withPagination(`${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`)(Events));
