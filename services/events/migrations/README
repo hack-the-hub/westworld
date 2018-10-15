@@ -1,1 +1,14 @@
 Generic single-database configuration.
+
+### Creating local migrations
+
+If you attempt to crete local migrations you may need to perform the following steps first:
+
+* Ensure no other postgres instances are running e.g. `brew services postgres stop`
+* Drop the database created by `recreate_db` using
+
+* docker-compose -f docker-compose-dev.yml run events-service python manage.py drop_db
+
+* docker-compose -f docker-compose-dev.yml run events-service python manage.py db upgrade
+
+* docker-compose -f docker-compose-dev.yml run events-service python manage.py db migrate
