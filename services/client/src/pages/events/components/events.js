@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
 import CallToActionBanner from "components/call-to-action-banner";
-import Spinner from "components/spinner/loading";
 import Event from "components/event";
 import Error from "components/event/error";
 import NoEvents from "components/no-events";
@@ -11,11 +10,6 @@ import getBucketsFor from "utils/get-buckets-for";
 
 class Events extends Component {
   state = {};
-
-  componentDidMount() {
-    const { fetchData } = this.props;
-    fetchData(`${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`);
-  }
 
   renderRecentEvents() {
     const { recentEvents } = this.props;
@@ -51,12 +45,7 @@ class Events extends Component {
     ));
   }
 
-  renderLoading() {
-    const { isLoading } = this.props;
-
-    if (isLoading) {
-      return <Spinner />;
-    }
+  renderEvents() {
     return (
       <div>
         {this.renderRecentEvents()}
@@ -77,7 +66,7 @@ class Events extends Component {
     return (
       <div className="page">
         <CallToActionBanner />
-        {this.renderLoading()}
+        {this.renderEvents()}
         {this.renderError()}
       </div>
     );
@@ -85,8 +74,6 @@ class Events extends Component {
 }
 
 Events.propTypes = {
-  fetchData: PropTypes.func.isRequired,
-  isLoading: PropTypes.bool.isRequired,
   hasErrors: PropTypes.bool.isRequired,
   upcomingEvents: PropTypes.arrayOf(PropTypes.object).isRequired,
   recentEvents: PropTypes.arrayOf(PropTypes.object).isRequired

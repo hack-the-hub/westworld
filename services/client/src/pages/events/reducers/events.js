@@ -4,7 +4,8 @@ const defaultState = {
   isLoading: false,
   hasErrors: false,
   upcomingEvents: [],
-  recentEvents: []
+  recentEvents: [],
+  hasMoreItems: true
 };
 
 export function events(state = defaultState, action) {
@@ -23,14 +24,22 @@ export function events(state = defaultState, action) {
     case "EVENTS_FETCH_DATA_SUCCESS": {
       const { data } = action.events;
 
-      const upcomingEvents = updateEventsList(data.upcoming_events);
-      const recentEvents = updateEventsList(data.recent_events);
+      const upcomingEvents = updateEventsList([
+        ...state.upcomingEvents,
+        ...data.upcoming_events
+      ]);
+      const recentEvents = updateEventsList([
+        ...state.recentEvents,
+        ...data.recent_events
+      ]);
 
       return {
         ...state,
         upcomingEvents,
         recentEvents,
-        isLoading: false
+        isLoading: false,
+        hasMoreItems:
+          data.upcoming_events.length !== 0 || data.recent_events.length !== 0
       };
     }
     default: {
