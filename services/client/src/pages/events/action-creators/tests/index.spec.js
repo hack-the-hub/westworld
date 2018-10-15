@@ -119,7 +119,6 @@ describe("reducer", () => {
     hasErrors: false,
     upcomingEvents: [],
     recentEvents: [],
-    page: 1,
     hasMoreItems: true
   };
   it("should return the initial state", () => {
@@ -163,8 +162,7 @@ describe("reducer", () => {
       ...defaultState,
       recentEvents: [updatedEvent],
       upcomingEvents: [updatedEvent],
-      hasMoreItems: true,
-      page: defaultState.page + 1
+      hasMoreItems: true
     });
   });
 });
