@@ -5,7 +5,12 @@ import * as Actions from "../events";
 import * as Types from "../../actions";
 import { events } from "../../reducers/events";
 import moment from "moment/moment";
-import { getRecentEvents, getUpcomingEvents, hasErrors, isLoading } from "../../selectors";
+import {
+  getRecentEvents,
+  getUpcomingEvents,
+  hasErrors,
+  isLoading
+} from "../../selectors";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -87,10 +92,17 @@ const event = {
   category: "Technology Monthly",
   created: "2018-07-29T13:52:46.642580",
   deleted: null,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
   duration: 10000,
   end: "2018-10-03T19:00:00",
-  entry: [{ description: "", id: "ea7c5b64-50be-439d-900a-6ed60fcf1ea3", type: "free" }],
+  entry: [
+    {
+      description: "",
+      id: "ea7c5b64-50be-439d-900a-6ed60fcf1ea3",
+      type: "free"
+    }
+  ],
   id: "0611f963-0f2f-4bd3-8dc4-b3dea517f16f",
   meetup: [],
   name: "Monthly Meetup",
@@ -106,34 +118,30 @@ describe("reducer", () => {
     isLoading: false,
     hasErrors: false,
     upcomingEvents: [],
-    recentEvents: []
+    recentEvents: [],
+    hasMoreItems: true
   };
   it("should return the initial state", () => {
     expect(events(defaultState, {})).toEqual({
-        ...defaultState
-      }
-    );
+      ...defaultState
+    });
   });
 
   it("should return the loading state", () => {
     const action = { type: Types.EVENTS_IS_LOADING };
-    expect(events(defaultState, action)).toEqual(
-      {
-        ...defaultState,
-        isLoading: true
-      }
-    );
+    expect(events(defaultState, action)).toEqual({
+      ...defaultState,
+      isLoading: true
+    });
   });
 
   it("should return the error state", () => {
     const action = { type: Types.EVENTS_HAS_ERRORED };
-    expect(events(defaultState, action)).toEqual(
-      {
-        ...defaultState,
-        hasErrors: true,
-        isLoading: false
-      }
-    );
+    expect(events(defaultState, action)).toEqual({
+      ...defaultState,
+      hasErrors: true,
+      isLoading: false
+    });
   });
 
   it("should return the state with updated events", () => {
@@ -150,13 +158,12 @@ describe("reducer", () => {
         }
       }
     };
-    expect(events(defaultState, action)).toEqual(
-      {
-        ...defaultState,
-        recentEvents: [updatedEvent],
-        upcomingEvents: [updatedEvent]
-      }
-    );
+    expect(events(defaultState, action)).toEqual({
+      ...defaultState,
+      recentEvents: [updatedEvent],
+      upcomingEvents: [updatedEvent],
+      hasMoreItems: true
+    });
   });
 });
 
@@ -186,4 +193,3 @@ describe("selectors", () => {
     expect(hasErrors(state)).toEqual(state.events.hasErrors);
   });
 });
-
