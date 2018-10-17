@@ -7,8 +7,8 @@ const Content = ({
   login,
   name,
   bio,
-  publicRepos,
-  publicGists,
+  repositories,
+  gists,
   blog,
   company,
   location
@@ -39,8 +39,8 @@ const Content = ({
     </div>
     <div className="developer-repos">
       <i className="fa fa-github" alt="Event icon" />
-      <span> Public Repos: {publicRepos}</span>
-      <span> Public Gists: {publicGists}</span>
+      <span> Public Repos: {repositories}</span>
+      <span> Public Gists: {gists}</span>
     </div>
   </React.Fragment>
 );
@@ -48,8 +48,8 @@ const Content = ({
 Content.propTypes = {
   login: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  publicGists: PropTypes.number.isRequired,
-  publicRepos: PropTypes.number.isRequired,
+  gists: PropTypes.number.isRequired,
+  repositories: PropTypes.number.isRequired,
   bio: PropTypes.string.isRequired,
   blog: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,

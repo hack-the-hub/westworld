@@ -4,13 +4,13 @@ import Content from "./content";
 import styles from "./styles";
 
 const Developers = ({ className, content }) => {
-  const { name, avatarUrl } = content;
+  const { name, avatar } = content;
 
   return (
     <div className={`developer ${className}`}>
       <style jsx>{styles}</style>
       <div className="developer-icon">
-        <img src={avatarUrl} alt={`${name}`} />
+        <img src={avatar} alt={`${name}`} />
       </div>
       <div className="developer-content">
         <Content {...content} />
