@@ -4,31 +4,24 @@ import Spinner from "components/spinner/loading";
 
 const withPagination = url => Component => {
   class Pagination extends React.Component {
-    state = {
-      page: 1,
-      pageSize: 50
-    };
+    pageSize = 50;
 
-    fetchMore = () => {
+    fetch = () => {
       const {
-        props: { fetchData, hasMoreItems },
-        state: { page, pageSize }
+        pageSize,
+        props: { fetchData, page }
       } = this;
 
-      fetchData(`${url}?page=${page}&page_size=${pageSize}`).then(() => {
-        if (!hasMoreItems) return;
-        this.setState(currentState => ({ page: currentState.page + 1 }));
-      });
+      return fetchData(`${url}?page=${page}&page_size=${pageSize}`);
     };
 
     render() {
       const { isLoading, hasMoreItems } = this.props;
-      return isLoading ? (
-        <Spinner />
-      ) : (
+      return (
         <React.Fragment>
           <Component {...this.props} />
-          {hasMoreItems && <WayPoint onEnter={this.fetchMore} />}
+          {hasMoreItems && <WayPoint onEnter={this.fetch} />}
+          {isLoading && <Spinner centered={false} />}
         </React.Fragment>
       );
     }

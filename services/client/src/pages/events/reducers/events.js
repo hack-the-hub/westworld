@@ -5,6 +5,7 @@ const defaultState = {
   hasErrors: false,
   upcomingEvents: [],
   recentEvents: [],
+  page: 1,
   hasMoreItems: true
 };
 
@@ -24,14 +25,12 @@ export function events(state = defaultState, action) {
     case "EVENTS_FETCH_DATA_SUCCESS": {
       const { data } = action.events;
 
-      const upcomingEvents = updateEventsList([
-        ...state.upcomingEvents,
-        ...data.upcoming_events
-      ]);
-      const recentEvents = updateEventsList([
-        ...state.recentEvents,
-        ...data.recent_events
-      ]);
+      const upcomingEvents = updateEventsList(
+        state.upcomingEvents.concat(data.upcoming_events)
+      );
+      const recentEvents = updateEventsList(
+        state.recentEvents.concat(data.recent_events)
+      );
 
       return {
         ...state,
@@ -39,7 +38,8 @@ export function events(state = defaultState, action) {
         recentEvents,
         isLoading: false,
         hasMoreItems:
-          data.upcoming_events.length !== 0 || data.recent_events.length !== 0
+          data.upcoming_events.length !== 0 || data.recent_events.length !== 0,
+        page: state.page + 1
       };
     }
     default: {
