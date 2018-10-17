@@ -4,13 +4,13 @@ import Content from "./content";
 import styles from "./styles";
 
 const Developers = ({ className, content }) => {
-  const { name, avatar } = content;
+  const { avatar, login } = content;
 
   return (
     <div className={`developer ${className}`}>
       <style jsx>{styles}</style>
       <div className="developer-icon">
-        <img src={avatar} alt={`${name}`} />
+        <img src={avatar} alt={`https://github.com/${login}`} />
       </div>
       <div className="developer-content">
         <Content {...content} />
@@ -22,12 +22,13 @@ const Developers = ({ className, content }) => {
 Developers.propTypes = {
   className: PropTypes.string,
   content: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
+    login: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    contact: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    source: PropTypes.string.isRequired
+    gists: PropTypes.number.isRequired,
+    repositories: PropTypes.number.isRequired,
+    bio: PropTypes.string.isRequired,
+    blog: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired
   }).isRequired
 };
 

@@ -110,7 +110,7 @@ def add_developer():
                 repositories=repositories,
                 followers=followers,
                 url=url,
-                topics=topics,
+                topics=topic_list,
                 location=location,
                 source=source,
             )
@@ -136,6 +136,7 @@ def get_single_developer(name):
     """Get single developer details"""
     response_object = {"status": "fail", "message": "Developer does not exist"}
     try:
+        developer = Developer.query.filter_by(name=name).first()
         if not developer:
             return jsonify(response_object), 404
         else:

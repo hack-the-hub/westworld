@@ -10,7 +10,7 @@ const updateDevelopersList = function(developersList) {
   const developers = _.map(developersList, item =>
     _.extend({}, item, { created: moment(item.created).valueOf() })
   );
-  return _.orderBy(developers, ["name"], ["asc"]);
+  return _.orderBy(developers, ["repositories"], ["desc"]);
 };
 
 class Developers extends Component {
