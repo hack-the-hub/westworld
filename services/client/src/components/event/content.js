@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { formatTitle } from "utils/format";
 import TimeToEvent from "./time-to-event";
 import EventTime from "./event-time";
 import styles from "./styles/content";
@@ -15,7 +14,7 @@ const Content = ({ name, start, url, category }) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        {formatTitle(name)}
+        {name}
       </a>
     </div>
     <div className="event-time">

@@ -189,7 +189,7 @@ changes
 
 ### Producer
 
-This lambda pulls data from the Farset Labs calendar iCalendar endpoint and
+This lambda pulls data from the Farset Labs Google calendar JSON endpoint and
 saves it to S3.
 
 You will need to create a new entry in the AWS Systems Manager Parameter store
@@ -206,7 +206,7 @@ functionality of the lambda.
 #### `farsetlabs:producer:invoke`
 
 Invoke the lambda on AWS. As this lambda creates files in S3, you should see new
-ICS files created with the data pulled from the Farset Labs calendar.
+JSON files created with the data pulled from the Farset Labs calendar.
 
 #### `farsetlabs:producer:invoke-local`
 
@@ -228,7 +228,7 @@ Pulls the logs from cloudwatch of the last lambda run. Useful for debugging.
 
 ### Transformer
 
-This lambda takes the Farset Labs calendar iCalendar data which has been
+This lambda takes the Farset Labs Google calendar JSON data which has been
 saved to S3, transforms it into a standardised format and saves it back to S3.
 
 This lambda is triggered by the creation of the source file by the producer

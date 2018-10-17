@@ -4,7 +4,7 @@ const { getFromS3 } = require("aws-lambda-data-utils");
 const { validate } = require("jsonschema");
 const eventSchema = require("./schemas/event-schema");
 const { buckets } = require("../config");
-const { uploadData } = require("../utils");
+const { uploadTo } = require("../utils");
 
 const transformEvent = function (defaults, {
   id, summary, description, start, end, created, updated
@@ -46,6 +46,15 @@ const transformEvent = function (defaults, {
 };
 
 const isValidEvent = (event) => validate(event, eventSchema).errors.length === 0;
+
+const uploadData = function(bucketName, calendarData) {
+  return uploadTo(
+    bucketName,
+    (today, hash) =>
+      `farset-labs-calendar__${today.valueOf()}__${hash}.json`,
+    calendarData
+  );
+};
 
 module.exports.transform = async (event, context, callback) => {
   try {

@@ -19,7 +19,7 @@ module.exports.produce = async (event, context, callback) => {
     const { producerBucket } = buckets();
     const filePath = (await uploadData(producerBucket, calendarData)).key;
 
-    callback(null, { message: filePath });
+    callback(null, { message: [filePath] });
   } catch (err) {
     callback(err, null);
   }
