@@ -41,15 +41,14 @@ def add_user(resp):
     password = post_data.get("password")
     try:
         user = User.query.filter_by(email=email).first()
-        if not user:
-            db.session.add(User(username=username, email=email, password=password))
-            db.session.commit()
-            response_object["status"] = "success"
-            response_object["message"] = f"{email} was added!"
-            return jsonify(response_object), 201
-        else:
+        if user:
             response_object["message"] = "Sorry. That email already exists."
             return jsonify(response_object), 400
+        db.session.add(User(username=username, email=email, password=password))
+        db.session.commit()
+        response_object["status"] = "success"
+        response_object["message"] = f"{email} was added!"
+        return jsonify(response_object), 201
     except exc.IntegrityError:
         db.session.rollback()
         return jsonify(response_object), 400
@@ -66,17 +65,16 @@ def get_single_user(user_id):
         user = User.query.filter_by(id=int(user_id)).first()
         if not user:
             return jsonify(response_object), 404
-        else:
-            response_object = {
-                "status": "success",
-                "data": {
-                    "id": user.id,
-                    "username": user.username,
-                    "email": user.email,
-                    "active": user.active,
-                },
-            }
-            return jsonify(response_object), 200
+        response_object = {
+            "status": "success",
+            "data": {
+                "id": user.id,
+                "username": user.username,
+                "email": user.email,
+                "active": user.active,
+            },
+        }
+        return jsonify(response_object), 200
     except ValueError:
         return jsonify(response_object), 404
 
