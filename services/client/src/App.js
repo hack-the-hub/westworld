@@ -30,6 +30,7 @@ const App = () => (
           margin-left: auto;
           margin-right: auto;
           width: 100%;
+          background: white;
         }
 
         @media (min-width: 576px) {
