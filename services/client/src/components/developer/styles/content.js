@@ -7,31 +7,16 @@ export default css`
     margin-bottom: 0.5rem;
   }
 
-  .developer-title-link {
+  .developer-content span {
+    font-size: 0.75rem;
+    font-weight: 200;
+    color: black;
+    padding-bottom: 0.5rem;
+    padding-right: 15px;
+  }
+
+  .developer-title a {
     text-decoration: none;
-  }
-
-  .developer-title-link span {
-    color: #b8c2cc;
-  }
-
-  .developer-blog {
-    font-size: 0.75rem;
-    font-weight: 200;
-    color: black;
-    padding-bottom: 0.5rem;
-  }
-
-  .developer-repos {
-    font-size: 0.75rem;
-    font-weight: 200;
-    color: black;
-    padding-bottom: 0.5rem;
-  }
-
-  .developer-details {
-    font-size: 0.75rem;
-    color: #b8c2cc;
   }
 
   .developer-bio {
@@ -41,7 +26,9 @@ export default css`
     color: rgb(152, 159, 165);
   }
 
-  .developer-details span {
-    padding-right: 0.3rem;
+  @media (max-width: 576px) {
+    .developer-content span {
+      display: block;
+    }
   }
 `;

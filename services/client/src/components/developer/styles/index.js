@@ -19,6 +19,7 @@ export default css`
   }
 
   .developer-icon img {
+    border-radius: 50%;
     width: 50px;
     padding: 0.5rem 0 0 0;
   }

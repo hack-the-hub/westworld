@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { formatTitle, formatAvatar } from "utils/format";
 import styles from "./styles/content";
+import Blog from "./blog";
+import Company from "./company";
+import Stats from "./github";
 
 const Content = ({ login, name, bio, repositories, gists, blog, company }) => (
   <React.Fragment>
@@ -9,7 +12,7 @@ const Content = ({ login, name, bio, repositories, gists, blog, company }) => (
     <div className="developer-content">
       {formatTitle(name)} &nbsp;
       <a
-        className="developer-title-link"
+        className="developer-title"
         href={`https://github.com/${login}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -18,28 +21,10 @@ const Content = ({ login, name, bio, repositories, gists, blog, company }) => (
       </a>
     </div>
     <div className="developer-bio">{bio}</div>
-    <div className="developer-blog">
-      <i className="fa fa-building" alt="Work icon" />
-      <span>
-        &nbsp;
-        {company}
-      </span>
-    </div>
-    <div className="developer-blog">
-      <i className="fa fa-sitemap" alt="Browser icon" />
-      <span>
-        &nbsp;
-        <a href={blog} target="_blank" rel="noopener noreferrer">
-          {blog}
-        </a>
-      </span>
-    </div>
-    <div className="developer-repos">
-      <i className="fa fa-github" alt="Github icon" />
-      <span>
-        {" "}
-        Public Repositories: {repositories} | Public Gists: {gists}
-      </span>
+    <div className="developer-content">
+      <Company company={company} />
+      <Blog blog={blog} />
+      <Stats repositories={repositories} gists={gists} />
     </div>
   </React.Fragment>
 );
