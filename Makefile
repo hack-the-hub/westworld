@@ -2,9 +2,9 @@
 
 .PHONY: env-start env-stop env-restart env-build env-destroy
 .PHONY: migrate upgrade seed lint
-.PHONY: test-users-service recreate-users-service-db upgrade-users-service-db migrate-users-service-db
-.PHONY: seed_db lint-users-service-db test-events-service recreate-events-service-db
-.PHONY: upgrade-events-service-db migrate-events-service-db lint-events-service-db
+.PHONY: test-users recreate-users upgrade-users migrate-usersrvice
+.PHONY: seed-users lint-users test-events recreate-events
+.PHONY: upgrade-events migrate-events lint-events
 
 PROJECT_NAME := 'my-dev-space'
 DOCKER_COMPOSE_FILE := ./docker-compose-dev.yml
@@ -24,48 +24,53 @@ env-restart:
 env-destroy:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) down -v --rmi all --remove-orphans
 
-migrate: migrate-users-service-db migrate-events-service-db
 
-upgrade: upgrade-users-service-db upgrade-events-service-db
+migrate: migrate-users migrate-events
 
-seed: recreate-users-service-db seed-db recreate-events-service-db
+upgrade: upgrade-users upgrade-events
 
-lint: lint-users-service-db lint-events-service-db
+seed: recreate-users seed-users recreate-events
 
-test: test-events-service test-users-service
+lint: lint-users lint-events
 
-test-users-service:
+test: test-events test-users
+
+coverage:
+	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py cov
+
+
+test-users:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py test
 
-recreate-users-service-db:
+recreate-users:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py recreate_db
 
-upgrade-users-service-db:
+upgrade-users:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py upgrade
 
-migrate-users-service-db:
+migrate-users:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py migrate
 
-seed-db:
+seed-users:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py seed_db
 
-lint-users-service-db:
+lint-users:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service pytest --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 
 
-test-events-service:
+test-events:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run events-service python manage.py test
 
-recreate-events-service-db:
+recreate-events:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run events-service python manage.py recreate_db
 
-upgrade-events-service-db:
+upgrade-events:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run events-service python manage.py upgrade
 
-migrate-events-service-db:
+migrate-events:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run events-service python manage.py migrate
 
-lint-events-service-db:
+lint-events:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run events-service pytest --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 
 

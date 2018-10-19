@@ -27,29 +27,25 @@ The following steps will check out the repository, install the dependencies need
 ```bash
 $ git clone https://github.com/apoclyps/my-dev-space
 $ cd my-dev-space
-$ docker-compose -f docker-compose-dev.yml up -d
+$ make env-start
 ```
 
 Once the service is up and running, you will need to manually create the required tables in the database and install the optional seed data to complete the local Postgres setup.
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py recreate_db
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py seed_db
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py recreate_db
+$ make seed
 ```
 
 On subsequent runs (when the above steps have been completed), you can apply new database migrations to your local service by running:
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db upgrade
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db upgrade
+$ make upgrade
 ```
 
 Alternatively, if you make a change to a model during development, you will need to create and commit a migration file for that service. As a best practice, migration files should be committed independently to code:
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db migrate
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db migrate
+$ make migrate
 ```
 
 To load data into the service for development, the recommended solution is to use the load script within the `scripts` folder to populate the local database. Details on how to configure the script can be found in [`scripts/README.md`](scripts/README.md).
@@ -60,51 +56,45 @@ To load data into the service for development, the recommended solution is to us
 
 And to tear down the local development stack, simply run:
 
-```
-$ docker-compose -f docker-compose-dev.yml down
+```bash
+$ make env-stop
 ```
 
 If you wish to populate your local database with events from external services, you can use the steps outlined in the scripts [README](scripts/README.md).
 
 ## Running the tests
 
-The following will run the unit tests for each respective service:
-
-###### `client`
+To run the entire application test suite, you can run:
 ```bash
-$ docker-compose -f docker-compose-dev.yml run client-test npm test
+$ make test
 ```
 
-###### `users-service`
+Alternatively, you can run tests for each respective service with:
+
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py test
+$ make test-client
+$ make test-users
+$ make test-events
 ```
 
-###### `events-service`
+### Run linting
+
+To lint the entire project, you can execute:
 ```bash
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py test
+$ make lint
 ```
 
-### Running linting
+Alternatively, you can run linting for each respective service with:
 
-###### `client`
 ```bash
-$ docker-compose -f docker-compose-dev.yml run client npm run lint
-```
-
-###### `users-service`
-```bash
-$ docker-compose -f docker-compose-dev.yml run user-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
-```
-
-###### `events-service`
-```bash
-$ docker-compose -f docker-compose-dev.yml run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
+$ make lint-client
+$ make lint-users
+$ make lint-events
 ```
 
 ### Running code coverage
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py cov
+$ make coverage
 ```
 
 ### Local Postgres Connections
