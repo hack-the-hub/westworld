@@ -1,6 +1,10 @@
 #!/usr/bin/make -f
 
-.PHONY: env-start env-stop env-restart test-users-service test-events-service
+.PHONY: env-start env-stop env-restart env-build env-destroy
+.PHONY: migrate upgrade seed lint
+.PHONY: test-users-service recreate-users-service-db upgrade-users-service-db migrate-users-service-db
+.PHONY: seed_db lint-users-service-db test-events-service recreate-events-service-db
+.PHONY: upgrade-events-service-db migrate-events-service-db lint-events-service-db
 
 PROJECT_NAME := 'my-dev-space'
 DOCKER_COMPOSE_FILE := ./docker-compose-dev.yml
@@ -28,6 +32,7 @@ seed: recreate-users-service-db seed-db recreate-events-service-db
 
 lint: lint-users-service-db lint-events-service-db
 
+test: test-events-service test-users-service
 
 test-users-service:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py test
@@ -64,3 +69,8 @@ lint-events-service-db:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run events-service pytest --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 
 
+test-client:
+	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py seed_db
+
+lint-client:
+	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py seed_db
