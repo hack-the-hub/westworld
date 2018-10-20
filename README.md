@@ -27,7 +27,7 @@ The following steps will check out the repository, install the dependencies need
 ```bash
 $ git clone https://github.com/apoclyps/my-dev-space
 $ cd my-dev-space
-$ make env-start
+$ make start
 ```
 
 Once the service is up and running, you will need to manually create the required tables in the database and install the optional seed data to complete the local Postgres setup.
@@ -57,7 +57,7 @@ To load data into the service for development, the recommended solution is to us
 And to tear down the local development stack, simply run:
 
 ```bash
-$ make env-stop
+$ make stop
 ```
 
 If you wish to populate your local database with events from external services, you can use the steps outlined in the scripts [README](scripts/README.md).

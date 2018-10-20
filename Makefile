@@ -1,27 +1,32 @@
 #!/usr/bin/make -f
 
-.PHONY: env-start env-stop env-restart env-build env-destroy
+.PHONY: help start stop restart build destroy
 .PHONY: migrate upgrade seed lint
-.PHONY: test-users recreate-users upgrade-users migrate-usersrvice
+.PHONY: test-users recreate-users upgrade-users migrate-user
 .PHONY: seed-users lint-users test-events recreate-events
 .PHONY: upgrade-events migrate-events lint-events
+
+.DEFAULT_GOAL := help
 
 PROJECT_NAME := 'my-dev-space'
 DOCKER_COMPOSE_FILE := ./docker-compose-dev.yml
 
-env-start:
+help:
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
+
+start: ## Install dependencies and start all services
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) up -d
 
-env-build:
+build: ## Pull and build all services
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) build --no-cache --pull
 
-env-stop:
+stop: ## Bring down all services
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) down
 
-env-restart:
+restart: ## Restart all services
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) restart
 
-env-destroy:
+destroy: ## Remove all services, images, and their volumes
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) down -v --rmi all --remove-orphans
 
 
