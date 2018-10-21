@@ -7,8 +7,7 @@ const { uploadTo } = require("../utils");
 const uploadData = function(bucketName, calendarData) {
   return uploadTo(
     bucketName,
-    (today, hash) =>
-      `farset-labs-calendar__${today.valueOf()}__${hash}.json`,
+    (today, hash) => `farset-labs-calendar__${today.valueOf()}__${hash}.json`,
     calendarData
   );
 };

@@ -23,4 +23,4 @@ const convert = params =>
 module.exports = {
   uploadTo,
   convert
-}
+};

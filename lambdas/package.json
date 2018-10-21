@@ -1,7 +1,12 @@
 {
   "name": "muxer-lambdas",
   "description": "Tooling for developing and running lambdas",
-  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apoclyps/my-dev-space.git"
+  },
+  "private": true,
   "scripts": {
     "lint": "eslint .",
     "meetupcom:deploy": "cd meetupcom && serverless deploy -v --aws-profile meetupcomEvents",
@@ -36,11 +41,11 @@
     "serverless": "^1.30.3"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-prettier": "^2.4.0",
-    "prettier": "^1.12.1"
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.14.3"
   }
 }
