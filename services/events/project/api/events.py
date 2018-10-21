@@ -155,15 +155,15 @@ def get_single_event(event_id):
 
 
 @events_blueprint.route("/events", methods=["GET"])
-# @cache.cached(timeout=1000, query_string=True)
+@cache.cached(timeout=1000, query_string=True)
 def get_all_events():
     """Get all events"""
 
     page = request.args.get("page", 1, type=int)
     page_size = request.args.get("page_size", DEFAULT_PAGE_SIZE, type=int)
-    city = request.args.get("city", "belfast", type=str)
+    location = request.args.get("location", "belfast", type=str)
 
-    location = city.lower()
+    location = location.lower()
 
     current_time = datetime.utcnow()
     recent_past = current_time - timedelta(hours=6)
