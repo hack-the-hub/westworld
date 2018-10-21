@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Pull meetup.com events data",
   "dependencies": {
-    "aws-lambda-data-utils": "^1.0.0"
+    "aws-lambda-data-utils": "^1.0.0",
+    "jsonschema": "^1.2.4",
+    "striptags": "^3.1.1"
   }
 }
