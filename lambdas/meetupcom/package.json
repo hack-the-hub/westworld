@@ -1,8 +1,15 @@
 {
   "name": "muxer-pull-events-meetupcom",
-  "version": "1.0.0",
   "description": "Pull meetup.com events data",
+  "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/apoclyps/my-dev-space.git"
+  },
+  "private": true,
   "dependencies": {
-    "aws-lambda-data-utils": "^1.0.0"
+    "aws-lambda-data-utils": "^1.0.0",
+    "jsonschema": "^1.2.4",
+    "striptags": "^3.1.1"
   }
 }

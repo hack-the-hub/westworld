@@ -48,9 +48,11 @@ module.exports.produce = async (event, context, callback) => {
 
     // Write captured data to S3
     const { producerBucket } = buckets();
-    const filePaths = await Promise.all(await eventsPages.map(async function (eventsPage, index) {
-      return (await uploadData(producerBucket, eventsPage, { index })).key;
-    }));
+    const filePaths = await Promise.all(
+      await eventsPages.map(async function(eventsPage, index) {
+        return (await uploadData(producerBucket, eventsPage, { index })).key;
+      })
+    );
 
     callback(null, { message: filePaths });
   } catch (err) {

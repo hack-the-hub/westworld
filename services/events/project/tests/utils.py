@@ -1,4 +1,5 @@
 from project import db
+from project.api.models import Developer
 from project.api.models import Event
 from project.api.models import Video
 from project.api.models import Speaker
@@ -13,6 +14,7 @@ def add_event(
     duration,
     topics,
     entry,
+    location,
     channel,
     category,
     source,
@@ -26,6 +28,7 @@ def add_event(
         duration=duration,
         topics=topics,
         entry=entry,
+        location=location,
         channel=channel,
         category=category,
         source=source,
@@ -66,3 +69,38 @@ def add_speaker(
     db.session.add(speaker)
     db.session.commit()
     return speaker
+
+
+def add_developer(
+    name,
+    avatar,
+    bio,
+    blog,
+    company,
+    login,
+    gists,
+    repositories,
+    followers,
+    url,
+    topics,
+    location,
+    source,
+):
+    developer = Developer(
+        name=name,
+        avatar=avatar,
+        bio=bio,
+        blog=blog,
+        company=company,
+        login=login,
+        gists=gists,
+        repositories=repositories,
+        followers=followers,
+        url=url,
+        topics=topics,
+        location=location,
+        source=source,
+    )
+    db.session.add(developer)
+    db.session.commit()
+    return developer

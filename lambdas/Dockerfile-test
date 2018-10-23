@@ -1,0 +1,9 @@
+FROM node:8.10-alpine
+
+ENV NPM_CONFIG_LOGLEVEL warn
+
+COPY package.json package-lock.json /lambdas-test/
+WORKDIR /lambdas-test/
+RUN npm install
+
+COPY . /lambdas-test/

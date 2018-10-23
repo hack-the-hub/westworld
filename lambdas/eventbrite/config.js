@@ -10,7 +10,17 @@ const eventsParams = page =>
     "location.longitude": -6.762739,
     "location.latitude": 54.6425126, // Cookstown
     "location.within": "60mi", // 60 mile radius (all of Northern Ireland)
-    expand: "logo,venue,organizer,format,category,subcategory,bookmark_info,refund_policy,ticket_availability",
+    expand: [
+      "logo",
+      "venue",
+      "organizer",
+      "format",
+      "category",
+      "subcategory",
+      "bookmark_info",
+      "refund_policy",
+      "ticket_availability"
+    ].join(","),
     categories: EVENTBRITE_TECH_CATEGORY,
     token: process.env.EVENTBRITE_API_TOKEN
   });

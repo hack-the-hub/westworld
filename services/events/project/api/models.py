@@ -42,6 +42,13 @@ speaker_topic_table = db.Table(
     Column("topic_id", UUID(as_uuid=True), ForeignKey("topic.id")),
 )
 
+developer_topic_table = db.Table(
+    "developer_topic_association",
+    db.Model.metadata,
+    Column("developer_id", UUID(as_uuid=True), ForeignKey("developer.id")),
+    Column("topic_id", UUID(as_uuid=True), ForeignKey("topic.id")),
+)
+
 channel_topic_table = db.Table(
     "channel_topic_association",
     db.Model.metadata,
@@ -158,6 +165,7 @@ class Event(OutputMixin, db.Model):
     category = Column(db.String(256), nullable=False)
     topics = db.relationship("Topic", secondary=event_topic_table)
     entry = db.relationship("Entry", secondary=event_entry_table)
+    location = Column(db.String(128), nullable=False)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     deleted = Column(db.DateTime, nullable=True)
@@ -175,6 +183,7 @@ class Event(OutputMixin, db.Model):
         entry,
         category,
         source,
+        location,
     ):
         self.name = name
         self.description = description
@@ -186,6 +195,7 @@ class Event(OutputMixin, db.Model):
         self.entry = entry
         self.category = category
         self.source = source
+        self.location = location
 
 
 class Channel(OutputMixin, db.Model):
@@ -334,5 +344,61 @@ class Speaker(OutputMixin, db.Model):
         self.role = role
         self.topics = topics
         self.diversification = diversification
+        self.location = location
+        self.source = source
+
+
+class Developer(OutputMixin, db.Model):
+    __tablename__ = "developer"
+
+    id = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        server_default=sqlalchemy.text("uuid_generate_v4()"),
+    )
+    name = Column(db.String(128), nullable=False)
+    avatar = Column(db.String(1024), nullable=False)
+    bio = Column(db.String(1024), nullable=False)
+    blog = Column(db.String(512), nullable=True)
+    company = Column(db.String(128), nullable=True)
+    login = Column(db.String(128), nullable=False)
+    gists = Column(Integer, nullable=False)
+    repositories = Column(Integer, nullable=False)
+    followers = Column(Integer, nullable=False)
+    url = Column(db.String(128), nullable=False)
+    topics = db.relationship("Topic", secondary=developer_topic_table)
+    location = Column(db.String(128), nullable=False)
+    created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    deleted = Column(db.DateTime, nullable=True)
+    source = Column(db.String(50), nullable=False)
+
+    def __init__(
+        self,
+        name,
+        avatar,
+        bio,
+        blog,
+        company,
+        login,
+        gists,
+        repositories,
+        followers,
+        url,
+        topics,
+        location,
+        source,
+    ):
+        self.name = name
+        self.avatar = avatar
+        self.bio = bio
+        self.blog = blog
+        self.company = company
+        self.login = login
+        self.gists = gists
+        self.repositories = repositories
+        self.followers = followers
+        self.url = url
+        self.topics = topics
         self.location = location
         self.source = source

@@ -1,7 +1,12 @@
 {
   "name": "muxer-lambdas",
   "description": "Tooling for developing and running lambdas",
-  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apoclyps/my-dev-space.git"
+  },
+  "private": true,
   "scripts": {
     "lint": "eslint .",
     "meetupcom:deploy": "cd meetupcom && serverless deploy -v --aws-profile meetupcomEvents",
@@ -9,6 +14,10 @@
     "meetupcom:producer:invoke": "cd meetupcom && serverless invoke -f produce -l --aws-profile meetupcomEvents",
     "meetupcom:producer:invoke-local": "cd meetupcom && serverless invoke local -f produce",
     "meetupcom:producer:logs": "cd meetupcom && serverless logs -f produce -l --aws-profile meetupcomEvents",
+    "meetupcom:transformer:update": "cd meetupcom && serverless deploy function -f transform --aws-profile meetupcomEvents",
+    "meetupcom:transformer:invoke": "cd meetupcom && serverless invoke -f transform -l --aws-profile meetupcomEvents",
+    "meetupcom:transformer:invoke-local": "cd meetupcom && serverless invoke local -f transform",
+    "meetupcom:transformer:logs": "cd meetupcom && serverless logs -f transform -l --aws-profile meetupcomEvents",
     "eventbrite:deploy": "cd eventbrite && serverless deploy -v --aws-profile eventbriteEvents",
     "eventbrite:producer:update": "cd eventbrite && serverless deploy function -f produce --aws-profile eventbriteEvents",
     "eventbrite:producer:invoke": "cd eventbrite && serverless invoke -f produce -l --aws-profile eventbriteEvents",
@@ -32,11 +41,11 @@
     "serverless": "^1.30.3"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-prettier": "^2.4.0",
-    "prettier": "^1.12.1"
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.14.3"
   }
 }

@@ -34,7 +34,7 @@ def _extract_event_time(raw_event_time):
 
     start_time = times[0].strip()
     if len(times) == 1:
-        end_time = times[1].strip()
+        end_time = times[0].strip()
     else:
         end_time = times[1].strip()
 

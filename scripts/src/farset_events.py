@@ -51,6 +51,7 @@ def _transform_event(event):
         "entry": ["free"],
         "category": event["organizer"]["displayName"],
         "source": "farsetlabs",
+        "location": "belfast",
     }
 
 

@@ -29,18 +29,27 @@ if [[ "${env}" != "dev" ]]; then
   sleep 15
 fi
 
-
+# Users service
 docker-compose -f $file run users-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 inspect $? users-test
+
+# Events service
 docker-compose -f $file run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 inspect $? events-test
 
+# Client
 docker-compose -f $file build client-test
 docker-compose -f $file run client-test npm run lint
 inspect $? client-lint
 CI=true docker-compose -f $file run client-test npm test -- --coverage
 inspect $? client-test
 
+# Lambdas
+docker-compose -f $file build lambdas-test
+docker-compose -f $file run lambdas-test npm run lint
+inspect $? lambdas-lint
+
+# Integration tests
 if [[ "${env}" != "stage" ]]; then
   testcafe chrome e2e
   inspect $? e2e

@@ -103,6 +103,17 @@ services:
       - NODE_ENV=staging
       - CI=${CI:-false}
 
+  lambdas-test:
+    container_name: lambdas-test
+    build:
+      context: ./lambdas
+      dockerfile: Dockerfile-test
+    environment:
+      - NODE_ENV=staging
+      - CI=${CI:-false}
+    volumes:
+      - './lambdas:/usr/src/app'
+
   swagger:
     container_name: swagger
     build:

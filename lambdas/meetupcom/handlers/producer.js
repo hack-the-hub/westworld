@@ -21,6 +21,7 @@ const uploadData = function(bucketName, groups, groupsEvents) {
   const eventsUploads = groupsEvents.map(function(groupEvents, index) {
     const { urlname } = groups[index];
     return uploadTo(
+      bucketName,
       (today, hash) =>
         `groups-events/meetupcom-group-${urlname.toLowerCase()}__${today.valueOf()}__${hash}.json`,
       groupEvents
@@ -55,9 +56,9 @@ module.exports.produce = async (event, context, callback) => {
     // Write captured data to S3
     const { producerBucket } = buckets();
     const uploads = uploadData(producerBucket, groups, groupsEvents);
-    const message = (await Promise.all(uploads)).map(({ key }) => key);
+    const filePaths = (await Promise.all(uploads)).map(({ key }) => key);
 
-    callback(null, { message });
+    callback(null, { message: filePaths });
   } catch (err) {
     callback(err, null);
   }

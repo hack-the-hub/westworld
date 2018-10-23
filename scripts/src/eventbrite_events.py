@@ -10,6 +10,7 @@ from eventbrite import Eventbrite
 
 EVENTBRITE_API_TOKEN = os.getenv("EVENTBRITE_API_TOKEN")
 EVENTS_ENDPOINT = os.getenv("EVENTS_ENDPOINT")
+LOCATION = os.getenv("LOCATION")
 
 client = Eventbrite(EVENTBRITE_API_TOKEN)
 
@@ -19,7 +20,10 @@ def init():
         raise Exception("EVENTBRITE_API_TOKEN is not defined")
     if not EVENTS_ENDPOINT:
         raise Exception("EVENTS_ENDPOINT is not defined")
+    if not LOCATION:
+        raise Exception("LOCATION is not defined")
 
+    print(f"Loading events for {LOCATION}")
     print(f"Configured Eventbrite Events to POST to {EVENTS_ENDPOINT}")
 
 
@@ -35,6 +39,7 @@ def _transform_event(event):
         "entry": ["ticket"],
         "category": event["name"]["text"],
         "source": "eventbrite",
+        "location": LOCATION.lower(),
     }
 
 
@@ -51,8 +56,10 @@ def _post_payloads(payloads):
 
 
 if __name__ == "__main__":
+    init()
+
     response = client.get(
-        "/events/search/?q=technology&location.address=belfast&sort_by=-date"
+        f"/events/search/?q=technology&location.address={LOCATION}&sort_by=-date"
     )
     events = response["events"]
 

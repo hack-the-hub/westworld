@@ -5,6 +5,8 @@ export default css`
     margin-left: auto;
     margin-right: auto;
     width: 5em;
+  }
+  .loading-container.loading-container_centered {
     margin-top: 30%;
     margin-bottom: 30%;
   }

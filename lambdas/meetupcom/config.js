@@ -9,8 +9,16 @@ const groupsParams = convert({
   lon: -6.762739,
   lat: 54.6425126, // Cookstown
   radius: 60, // 60 mile radius (all of Northern Ireland)
-  fields: "approved,best_topics,past_event_count,plain_text_description,topics",
-  upcoming_events: true,
+  fields: [
+    "approved",
+    "best_topics",
+    "description_images",
+    "past_event_count_inclusive",
+    "group_past_event_count",
+    "plain_text_description",
+    "plain_text_no_images_description",
+    "topics"
+  ].join(","),
   fallback_suggestions: false,
   category: MEETUPCOM_TECH_CATEGORY,
   page: 200,
@@ -21,7 +29,7 @@ const groupsParams = convert({
 const eventsApi = slug => `https://api.meetup.com/${slug}/events`;
 const eventsParams = convert({
   "photo-host": "public",
-  status: "cancelled,past,proposed,suggested,upcoming",
+  status: ["cancelled", "past", "proposed", "suggested", "upcoming"].join(","),
   page: 200
 });
 

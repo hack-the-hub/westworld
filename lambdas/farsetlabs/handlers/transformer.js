@@ -6,9 +6,10 @@ const eventSchema = require("./schemas/event-schema");
 const { buckets } = require("../config");
 const { uploadTo } = require("../utils");
 
-const transformEvent = function (defaults, {
-  id, summary, description, start, end, created, updated
-}) {
+const transformEvent = function(
+  defaults,
+  { id, summary, description, start, end, created, updated }
+) {
   const startDate = new Date(start.dateTime);
   const endDate = new Date(end.dateTime);
 
@@ -45,13 +46,12 @@ const transformEvent = function (defaults, {
   };
 };
 
-const isValidEvent = (event) => validate(event, eventSchema).errors.length === 0;
+const isValidEvent = event => validate(event, eventSchema).errors.length === 0;
 
 const uploadData = function(bucketName, calendarData) {
   return uploadTo(
     bucketName,
-    (today, hash) =>
-      `farset-labs-calendar__${today.valueOf()}__${hash}.json`,
+    (today, hash) => `farset-labs-calendar__${today.valueOf()}__${hash}.json`,
     calendarData
   );
 };
@@ -60,29 +60,31 @@ module.exports.transform = async (event, context, callback) => {
   try {
     const records = event.Records;
 
-    const transformedCalendars = await Promise.all(await records.map(async function ({
-      s3: { bucket, object: file }
-    }) {
-      const calendarData = await getFromS3(bucket.name, file.key);
-      const calendar = JSON.parse(calendarData.Body.toString());
+    const transformedCalendars = await Promise.all(
+      await records.map(async function({ s3: { bucket, object: file } }) {
+        const calendarData = await getFromS3(bucket.name, file.key);
+        const calendar = JSON.parse(calendarData.Body.toString());
 
-      const transformedEvents = calendar.items.map((event) => (
-        transformEvent({ timeZone: calendar.timeZone }, event)
-      ));
+        const transformedEvents = calendar.items.map(rawEvent =>
+          transformEvent({ timeZone: calendar.timeZone }, rawEvent)
+        );
 
-      const validEvents = transformedEvents.filter(isValidEvent)
+        const validEvents = transformedEvents.filter(isValidEvent);
 
-      if (validEvents.length !== transformedEvents.length) {
-        console.log('WARNING: some events generated were not valid!')
-      }
+        if (validEvents.length !== transformedEvents.length) {
+          console.log("WARNING: some events generated were not valid!");
+        }
 
-      return validEvents;
-    }));
+        return validEvents;
+      })
+    );
 
     const { eventsBucket } = buckets();
-    const filePaths = await Promise.all(await transformedCalendars.map(async function (transformedCalendar) {
-      return (await uploadData(eventsBucket, transformedCalendar)).key;
-    }));
+    const filePaths = await Promise.all(
+      await transformedCalendars.map(async function(transformedCalendar) {
+        return (await uploadData(eventsBucket, transformedCalendar)).key;
+      })
+    );
 
     callback(null, { message: filePaths });
   } catch (err) {

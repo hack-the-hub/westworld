@@ -6,23 +6,26 @@ const eventSchema = require("./schemas/event-schema");
 const { buckets } = require("../config");
 const { uploadTo } = require("../utils");
 
-const getLogoFrom = function ({ logo }) {
+const getLogoFrom = function({ logo }) {
   if (!logo) return undefined;
 
   return {
     high: logo.original ? logo.original.url.trim() : undefined,
     regular: logo.url.trim()
-  }
+  };
 };
 
-const getTopicsFrom = function ({ category, subcategory }) {
+const getTopicsFrom = function({ category, subcategory }) {
   return [category, subcategory].reduce(
-    (topics, source) => !source ? topics : topics.concat(source.name.trim()),
+    (topics, source) => (!source ? topics : topics.concat(source.name.trim())),
     []
   );
 };
 
-const getChargeFrom = function ({ is_free: isFree, ticket_availability: tickets }) {
+const getChargeFrom = function({
+  is_free: isFree,
+  ticket_availability: tickets
+}) {
   if (isFree) return { is_free: true };
 
   return {
@@ -31,10 +34,10 @@ const getChargeFrom = function ({ is_free: isFree, ticket_availability: tickets 
       currency: tickets.minimum_ticket_price.currency.trim(),
       value: tickets.minimum_ticket_price.value
     }
-  }
+  };
 };
 
-const transformEvent = function (defaults, event) {
+const transformEvent = function(defaults, event) {
   const {
     id,
     name,
@@ -45,7 +48,7 @@ const transformEvent = function (defaults, event) {
     venue,
     organizer,
     created,
-    changed,
+    changed
   } = event;
   const startDate = new Date(start.utc);
   const endDate = new Date(end.utc);
@@ -85,16 +88,15 @@ const transformEvent = function (defaults, event) {
       name: "eventbrite",
       id
     }
-  }
+  };
 };
 
-const isValidEvent = (event) => validate(event, eventSchema).errors.length === 0;
+const isValidEvent = event => validate(event, eventSchema).errors.length === 0;
 
 const uploadData = function(bucketName, eventsPage) {
   return uploadTo(
     bucketName,
-    (today, hash) =>
-      `eventbrite-events__${today.valueOf()}__${hash}.json`,
+    (today, hash) => `eventbrite-events__${today.valueOf()}__${hash}.json`,
     eventsPage
   );
 };
@@ -103,29 +105,31 @@ module.exports.transform = async (event, context, callback) => {
   try {
     const records = event.Records;
 
-    const transformedFiles = await Promise.all(await records.map(async function ({
-      s3: { bucket, object: file }
-    }) {
-      const data = await getFromS3(bucket.name, file.key);
-      const response = JSON.parse(data.Body.toString());
+    const transformedFiles = await Promise.all(
+      await records.map(async function({ s3: { bucket, object: file } }) {
+        const data = await getFromS3(bucket.name, file.key);
+        const response = JSON.parse(data.Body.toString());
 
-      const transformedEvents = response.events.map((event) => (
-        transformEvent({ country: "GB" }, event)
-      ));
+        const transformedEvents = response.events.map(rawEvent =>
+          transformEvent({ country: "GB" }, rawEvent)
+        );
 
-      const validEvents = transformedEvents.filter(isValidEvent)
+        const validEvents = transformedEvents.filter(isValidEvent);
 
-      if (validEvents.length !== transformedEvents.length) {
-        console.log('WARNING: some events generated were not valid!')
-      }
+        if (validEvents.length !== transformedEvents.length) {
+          console.log("WARNING: some events generated were not valid!");
+        }
 
-      return validEvents;
-    }));
+        return validEvents;
+      })
+    );
 
     const { eventsBucket } = buckets();
-    const filePaths = await Promise.all(await transformedFiles.map(async function (transformedFile) {
-      return (await uploadData(eventsBucket, transformedFile)).key;
-    }));
+    const filePaths = await Promise.all(
+      await transformedFiles.map(async function(transformedFile) {
+        return (await uploadData(eventsBucket, transformedFile)).key;
+      })
+    );
 
     callback(null, { message: filePaths });
   } catch (err) {

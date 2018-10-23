@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Events from "./components/events";
+import withPagination from "../../withPagination";
 
 import { eventsFetchData } from "./action-creators/events";
 
@@ -7,7 +8,9 @@ import {
   getRecentEvents,
   getUpcomingEvents,
   isLoading,
-  hasErrors
+  hasErrors,
+  hasMoreItems,
+  page
 } from "./selectors";
 
 const mapStateToProps = function(state) {
@@ -15,7 +18,9 @@ const mapStateToProps = function(state) {
     upcomingEvents: getUpcomingEvents(state),
     recentEvents: getRecentEvents(state),
     hasErrors: hasErrors(state),
-    isLoading: isLoading(state)
+    isLoading: isLoading(state),
+    hasMoreItems: hasMoreItems(state),
+    page: page(state)
   };
 };
 
@@ -25,7 +30,10 @@ const mapDispatchToProps = function(dispatch) {
   };
 };
 
+const eventsUrl = `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`;
+const PaginatedEvents = withPagination(eventsUrl)(Events);
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Events);
+)(PaginatedEvents);

@@ -167,7 +167,6 @@
     "attendee_numbers": {
       "type": "object",
       "required": [
-        "capacity",
         "responses",
         "waitlist"
       ],

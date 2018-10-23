@@ -9,12 +9,17 @@ provider:
     - Effect: Allow
       Action:
         - s3:*
+      Resource: "*"
+    - Effect: Allow
+      Action:
+        - "s3:PutObject"
       Resource:
         Fn::Join:
           - ""
           - - "arn:aws:s3:::"
-            - ${self:custom.producerBucket}
+            - ${self:custom.eventsBucket}
             - "/*"
+
 functions:
   produce:
     handler: handlers/producer.produce
@@ -23,10 +28,31 @@ functions:
     environment:
       TZ: Europe/Belfast
       MEETUPCOM_API_TOKEN: ${ssm:meetupcomApiToken~true}
+  transform:
+    handler: handlers/transformer.transform
+    environment:
+      TZ: Europe/Belfast
 
 resources:
   Resources:
     S3BucketMuxerProducedEventsMeetupcom:
+      DependsOn:
+        - TransformLambdaPermissionS3BucketMuxerProducedEventsMeetupcomS3
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:custom.producerBucket}
+        NotificationConfiguration:
+          LambdaConfigurations:
+            - Event: "s3:ObjectCreated:*"
+              Function:
+                "Fn::GetAtt": [ TransformLambdaFunction, Arn ]
+    TransformLambdaPermissionS3BucketMuxerProducedEventsMeetupcomS3:
+      DependsOn:
+        - TransformLambdaFunction
+      Type: AWS::Lambda::Permission
+      Properties:
+        FunctionName:
+          "Fn::GetAtt": [ TransformLambdaFunction, Arn ]
+        Action: "lambda:InvokeFunction"
+        Principal: "s3.amazonaws.com"
+        SourceArn: "arn:aws:s3:::${self:custom.producerBucket}"
