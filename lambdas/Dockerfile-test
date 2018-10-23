@@ -7,3 +7,7 @@ WORKDIR /lambdas-test/
 RUN npm install
 
 COPY . /lambdas-test/
+
+RUN cd eventbrite && npm install
+RUN cd farsetlabs && npm install
+RUN cd meetupcom && npm install

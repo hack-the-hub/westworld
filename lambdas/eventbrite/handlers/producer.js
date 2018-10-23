@@ -12,7 +12,7 @@ const getErrors = function(eventsPages) {
 };
 
 const getFromApi = async function() {
-  const initialResponse = await getFromWeb(getEventsUrl({ page: 0 }));
+  const initialResponse = await getFromWeb(getEventsUrl({ page: 1 }));
   const initialData = JSON.parse(initialResponse);
 
   if (initialData.error) return [initialResponse];

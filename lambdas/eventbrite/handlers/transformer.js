@@ -117,7 +117,7 @@ module.exports.transform = async (event, context, callback) => {
         const validEvents = transformedEvents.filter(isValidEvent);
 
         if (validEvents.length !== transformedEvents.length) {
-          console.log("WARNING: some events generated were not valid!");
+          console.log("WARNING: some events generated were not valid!"); // eslint-disable-line no-console
         }
 
         return validEvents;

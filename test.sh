@@ -48,6 +48,8 @@ inspect $? client-test
 docker-compose -f $file build lambdas-test
 docker-compose -f $file run lambdas-test npm run lint
 inspect $? lambdas-lint
+docker-compose -f $file run lambdas-test npm test
+inspect $? lambdas-test
 
 # Integration tests
 if [[ "${env}" != "stage" ]]; then

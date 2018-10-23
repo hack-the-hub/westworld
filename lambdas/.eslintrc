@@ -6,11 +6,11 @@
     "airbnb-base/legacy",
     "prettier"
   ],
-  "plugins": ["prettier"],
+  "plugins": ["jest", "prettier"],
   "env": {
-  },
-  "globals": {
-    "Promise": true
+    "jest/globals": true,
+    "node": true,
+    "es6": true
   },
   "rules": {
     "prettier/prettier": "error",

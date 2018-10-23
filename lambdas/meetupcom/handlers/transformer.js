@@ -180,7 +180,7 @@ module.exports.transform = async (event, context, callback) => {
 
         const upcomingEvents = events.filter(isUpcomingEvent);
         if (upcomingEvents.length === 0) {
-          console.log(`No upcoming events from ${filePath}`);
+          console.log(`No upcoming events from ${filePath}`); // eslint-disable-line no-console
           return [];
         }
 
@@ -192,7 +192,7 @@ module.exports.transform = async (event, context, callback) => {
         const validEvents = transformedEvents.filter(isValidEvent);
 
         if (validEvents.length !== transformedEvents.length) {
-          console.log("WARNING: some events generated were not valid!");
+          console.log("WARNING: some events generated were not valid!"); // eslint-disable-line no-console
         }
 
         return validEvents;
