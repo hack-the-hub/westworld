@@ -12,7 +12,8 @@ PROJECT_NAME := 'my-dev-space'
 DOCKER_COMPOSE_FILE := ./docker-compose-dev.yml
 
 help:
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+
 
 start: ## Install dependencies and start all services
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) up -d
@@ -30,15 +31,20 @@ destroy: ## Remove all services, images, and their volumes
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) down -v --rmi all --remove-orphans
 
 
-migrate: migrate-users migrate-events
+migrate: ## Run the latest migrations for the users and events service
+	migrate-users migrate-events
 
-upgrade: upgrade-users upgrade-events
+upgrade: ## Run all migrations for the users and events service
+	upgrade-users upgrade-events
 
-seed: recreate-users seed-users recreate-events
+seed: ### Creates the users and events database and seeds the user database
+	recreate-users seed-users recreate-events
 
-lint: lint-users lint-events
+lint: ## Runs linting for the users and events services
+	lint-users lint-events
 
-test: test-events test-users
+test: ## Runs tests for the users and events services
+	test-events test-users
 
 coverage:
 	docker-compose -p $(PROJECT_NAME) -f $(DOCKER_COMPOSE_FILE) run users-service python manage.py cov
