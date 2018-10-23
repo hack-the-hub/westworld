@@ -25,6 +25,7 @@ class TestEventModel(BaseTestCase):
             entry=[entry],
             category="test category",
             source="test",
+            location="belfast",
         )
         db.session.add(event)
         db.session.commit()
@@ -36,3 +37,4 @@ class TestEventModel(BaseTestCase):
         self.assertEqual(event.end, datetime(2018, 6, 6, 17, 15, 00))
         self.assertEqual(event.duration, 100000)
         self.assertEqual(event.category, "test category")
+        self.assertEqual(event.location, "belfast")

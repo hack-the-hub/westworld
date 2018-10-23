@@ -11,6 +11,7 @@ import meetup.api
 
 MEETUP_API_TOKEN = os.getenv("MEETUP_API_TOKEN")
 EVENTS_ENDPOINT = os.getenv("EVENTS_ENDPOINT")
+LOCATION = os.getenv("LOCATION")
 
 client = meetup.api.Client(MEETUP_API_TOKEN)
 
@@ -20,7 +21,10 @@ def init():
         raise Exception("MEETUP_API_TOKEN is not defined")
     if not EVENTS_ENDPOINT:
         raise Exception("EVENTS_ENDPOINT is not defined")
+    if not LOCATION:
+        raise Exception("LOCATION is not defined")
 
+    print(f"Loading events for {LOCATION}")
     print(f"Configured Meetup Events to POST to {EVENTS_ENDPOINT}")
 
 
@@ -60,6 +64,7 @@ def _transform_event(event):
         "entry": ["free"],
         "category": event["group"]["name"],
         "source": "meetup",
+        "location": LOCATION.lower(),
     }
 
 
@@ -78,7 +83,7 @@ def _post_payloads(payloads):
 
 if __name__ == "__main__":
     init()
-    member_id = "135086862"
+    member_id = "220609283"
 
     events = get_events_by_member(member_id)
     transformed_events = [_transform_event(e) for e in events]

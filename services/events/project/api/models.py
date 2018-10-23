@@ -165,6 +165,7 @@ class Event(OutputMixin, db.Model):
     category = Column(db.String(256), nullable=False)
     topics = db.relationship("Topic", secondary=event_topic_table)
     entry = db.relationship("Entry", secondary=event_entry_table)
+    location = Column(db.String(128), nullable=False)
     created = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated = Column(db.DateTime, default=datetime.utcnow, nullable=False)
     deleted = Column(db.DateTime, nullable=True)
@@ -182,6 +183,7 @@ class Event(OutputMixin, db.Model):
         entry,
         category,
         source,
+        location,
     ):
         self.name = name
         self.description = description
@@ -193,6 +195,7 @@ class Event(OutputMixin, db.Model):
         self.entry = entry
         self.category = category
         self.source = source
+        self.location = location
 
 
 class Channel(OutputMixin, db.Model):
