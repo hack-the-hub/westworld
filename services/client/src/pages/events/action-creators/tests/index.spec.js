@@ -5,6 +5,7 @@ import * as Actions from "../events";
 import * as Types from "../../actions";
 import { events } from "../../reducers/events";
 import moment from "moment/moment";
+import { parsedDomain } from "../../utils";
 import {
   getRecentEvents,
   getUpcomingEvents,
@@ -120,7 +121,8 @@ describe("reducer", () => {
     upcomingEvents: [],
     recentEvents: [],
     page: 1,
-    hasMoreItems: true
+    hasMoreItems: true,
+    location: parsedDomain.subdomain
   };
   it("should return the initial state", () => {
     expect(events(defaultState, {})).toEqual({

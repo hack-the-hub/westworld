@@ -1,6 +1,7 @@
-import { updateEventsList } from "../utils";
+import { updateEventsList, parsedDomain } from "../utils";
 
 const defaultState = {
+  location: parsedDomain.subdomain,
   isLoading: false,
   hasErrors: false,
   upcomingEvents: [],

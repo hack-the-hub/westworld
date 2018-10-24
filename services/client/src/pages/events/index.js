@@ -10,7 +10,8 @@ import {
   isLoading,
   hasErrors,
   hasMoreItems,
-  page
+  page,
+  location
 } from "./selectors";
 
 const mapStateToProps = function(state) {
@@ -20,7 +21,8 @@ const mapStateToProps = function(state) {
     hasErrors: hasErrors(state),
     isLoading: isLoading(state),
     hasMoreItems: hasMoreItems(state),
-    page: page(state)
+    page: page(state),
+    location: location(state)
   };
 };
 
@@ -30,8 +32,13 @@ const mapDispatchToProps = function(dispatch) {
   };
 };
 
-const eventsUrl = `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`;
-const PaginatedEvents = withPagination(eventsUrl)(Events);
+const urlObject = {
+  url: `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`,
+  params: {
+    location: "dublin"
+  }
+};
+const PaginatedEvents = withPagination(urlObject)(Events);
 
 export default connect(
   mapStateToProps,

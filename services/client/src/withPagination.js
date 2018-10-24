@@ -12,7 +12,9 @@ const withPagination = url => Component => {
         props: { fetchData, page }
       } = this;
 
-      return fetchData(`${url}?page=${page}&page_size=${pageSize}`);
+      url.params.page = page;
+      url.params.page_size = pageSize;
+      fetchData(url);
     };
 
     render() {

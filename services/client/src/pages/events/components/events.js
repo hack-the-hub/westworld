@@ -12,7 +12,7 @@ class Events extends Component {
   state = {};
 
   renderRecentEvents() {
-    const { recentEvents } = this.props;
+    const { recentEvents, location } = this.props;
 
     if (!_.isArray(recentEvents)) return null;
 
@@ -22,13 +22,13 @@ class Events extends Component {
         {recentEvents.map(item => (
           <Event key={item.id} className="recent-event" content={item} />
         ))}
-        {recentEvents.length === 0 ? <NoEvents /> : null}
+        {recentEvents.length === 0 ? <NoEvents location={location} /> : null}
       </div>
     );
   }
 
   renderUpcomingEvents() {
-    const { upcomingEvents } = this.props;
+    const { upcomingEvents, location } = this.props;
 
     if (!_.isArray(upcomingEvents)) return null;
 
@@ -37,7 +37,7 @@ class Events extends Component {
     return _.map(bucketedEvents, ({ id, message, className, events }) => (
       <div key={id} className={className}>
         <EventSeparator content={message} id={id} />
-        {events.length === 0 ? <NoEvents /> : null}
+        {events.length === 0 ? <NoEvents location={location} /> : null}
         {_.map(events, item => (
           <Event key={item.id} content={item} />
         ))}
@@ -73,10 +73,15 @@ class Events extends Component {
   }
 }
 
+Events.defaultProps = {
+  location: ""
+};
+
 Events.propTypes = {
   hasErrors: PropTypes.bool.isRequired,
   upcomingEvents: PropTypes.arrayOf(PropTypes.object).isRequired,
-  recentEvents: PropTypes.arrayOf(PropTypes.object).isRequired
+  recentEvents: PropTypes.arrayOf(PropTypes.object).isRequired,
+  location: PropTypes.string
 };
 
 export default Events;
