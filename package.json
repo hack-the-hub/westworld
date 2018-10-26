@@ -5,7 +5,7 @@
     "danger": "^6.0.2",
     "husky": "^1.1.2",
     "randomstring": "^1.1.5",
-    "testcafe": "^0.22.0"
+    "testcafe": "^0.23.0"
   },
   "scripts": {
     "contributors:add": "all-contributors add",
