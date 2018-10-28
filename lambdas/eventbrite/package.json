@@ -3,8 +3,8 @@
   "description": "Pull eventbrite.com events data",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/apoclyps/my-dev-space.git"
+    "type": "git",
+    "url": "https://github.com/apoclyps/my-dev-space.git"
   },
   "private": true,
   "dependencies": {

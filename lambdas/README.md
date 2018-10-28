@@ -4,21 +4,67 @@ Serverless configured lambdas running on AWS.
 
 ---
 
+
+### First time setup
+
+#### Create a new AWS Profile within `~/.aws/credentials`
+
+For initial setup, please create a `muxer` profile in your
+`~/.aws/credentials` file. Serverless will use this when running the commands
+listed below.
+
+```
+[muxer]
+aws_access_key_id = <access-key-id-value>
+aws_secret_access_key = <access-key-value>
+region=us-east-1
+output=json
+```
+
+#### Install serverless and login
+
+Run the following commands from this directory. This will install serverless within the lambdas directory and ensure you are logged in to serverless prior to deploying changes to AWS.
+
+```bash
+$ npm install
+$ serverless login
+```
+
+> Note: The first time you login you will have to authenticate with Github in the Browser
+
+#### Adds secrets to SSM parameter store
+
+Prior to deploying changes you will need to add secret keys to the [SSM Parameter Store](https://console.aws.amazon.com/systems-manager/parameters/?region=us-east-1); This can be done via the UI or using the following commands (if you have the relevant environemntal variables configured).
+
+This creates the keys and values in the SSM parameter store:
+
+```bash
+$ aws ssm put-parameter --name googleCalendarApiToken --region=us-east-1 --type String --value ${GOOGLE_DEVELOPER_KEY}
+$ aws ssm put-parameter --name eventbriteApiToken --region=us-east-1 --type String --value ${EVENTBRITE_API_TOKEN}
+$ aws ssm put-parameter --name meetupcomApiToken --region=us-east-1 --type String --value ${MEETUP_API_TOKEN}
+```
+
+This reads the keys and values from the SSM paramter store to ensure they have been created successfully:
+
+```
+$ aws ssm get-parameters --region=us-east-1 --name googleCalendarApiToken eventbriteApiToken meetupcomApiToken
+```
+
+#### Install dependencies in each directory
+
+You will need to ensure you have installed the dependencies in the following directories prior to deploying:
+
+* `./lambda`
+* `./lambda/eventbrite`
+* `./lambda/meetup`
+* `./lambda/farsetlabs`
+
+
 ## Meetup.com
 
 Lambdas used to get and process events from Meetup.com. There are helper scripts
 to aid in deployment and development. Use `npm run <command>` with any of the
 below.
-
-For initial setup, please create a `meetupcomEvents` profile in your
-`~/.aws/credentials` file. Serverless will use this when running the commands
-listed below.
-
-```
-[meetupcomEvents]
-aws_access_key_id = <access-key-id-value>
-aws_secret_access_key = <access-key-value>
-```
 
 #### `meetupcom:deploy`
 
@@ -109,16 +155,6 @@ Lambdas used to get and process events from Eventbrite. There are helper scripts
 to aid in deployment and development. Use `npm run <command>` with any of the
 below.
 
-For initial setup, please create a `eventbriteEvents` profile in your
-`~/.aws/credentials` file. Serverless will use this when running the commands
-listed below.
-
-```
-[eventbriteEvents]
-aws_access_key_id = <access-key-id-value>
-aws_secret_access_key = <access-key-value>
-```
-
 #### `eventbrite:deploy`
 
 Deploy (or redeploy) the lambdas and all associated infrastructure. Do this
@@ -207,16 +243,6 @@ Pulls the logs from cloudwatch of the last lambda run. Useful for debugging.
 Lambdas used to get and process events from the Farset Labs calendar. There are
 helper scripts to aid in deployment and development. Use `npm run <command>`
 with any of the below.
-
-For initial setup, please create a `farsetlabsEvents` profile in your
-`~/.aws/credentials` file. Serverless will use this when running the commands
-listed below.
-
-```
-[farsetlabsEvents]
-aws_access_key_id = <access-key-id-value>
-aws_secret_access_key = <access-key-value>
-```
 
 #### `farsetlabs:deploy`
 
