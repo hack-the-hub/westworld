@@ -1,0 +1,877 @@
+{
+  "pagination": {
+    "object_count": 5,
+    "page_number": 1,
+    "page_size": 5,
+    "page_count": 1,
+    "has_more_items": false
+  },
+  "events": [
+    {
+      "name": {
+        "text": "Farset Labs Dojo 2018",
+        "html": "Farset Labs Dojo 2018"
+      },
+      "description": {
+        "text": "CoderDojo is a movement orientated around running free not-for-profit coding clubs and regular sessions for young people. Farset Labs’ CoderDojo is run by volunteers from the Farset community and offers a range of computer skills, from web application development to scratch.\nAt a CoderDojo, young people learn how to code, develop websites, apps, programs, games and more. Dojos are set up, run by and taught at by volunteers. In addition to learning to code, members meet like minded people, show off what they’ve been working on and so on. CoderDojo makes development and learning to code a fun, sociable, kick ass experience.\nCoderDojo also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally. CoderDojo has just one rule: “Above All: Be Cool“, bullying, lying, wasting people’s time and so on is uncool.\nIt also provides essential teaching and mentorship experience for budding software developers; after all, to teach is to learn twice! And you don’t have to be a hardcore code-hacker to mentor; anyone can help to guide these kids through the processes of problem solving, breaking down tasks, thinking in a stepwise fashion, or just picking out the killer-spelling-mistakes like variable names or missing semi-colons!\nFor more information about Coder Dojo, check out the CoderDojo global webpage.\nYou can also follow us on Twitter and Facebook\n\nWhat should I bring to the event?\nIf you can, please bring your own laptop.\nCan I join as a mentor/volunteer?\nYes! We always appreciate more hands on deck, but we do need to put people through a short induction/training programme first, so get in touch with us on dojo@farsetlabs.org.uk and we can add you to the next induction stream.\nI can’t make it, what can I do to help?\nIf you can’t make it to our Dojo, consider some of the other Dojos in Northern Ireland, like at BMC in Belfast,Ballymena, or the brand new Dojo in Newry.\nIf you just want to support our event here at Farset Labs, please consider making a donation to the charity and mention in your donation that you wish it to go to fund refreshments, resources, materials, and equipment for the Dojo.\nIs there an age limit to enter the event?\nCoderDojo is aimed loosely at the under 18’s, but any child younger than 14 must be accompanied by a parent or guardian and that guardian must stay on-site for the duration of the event\nWhat are my transport/parking options getting to the event?\nWe’re 5 minutes walk from Europa Bus Centre, and Parking is available all across the Weavers Court Campus\nIs there a charge for the event\nFarset Labs’ members operate the CoderDojo for free for all attendees, but donations to cover operating costs are greatly appreciated.\nWhat Child Protection Policies are in place?\nOnly those registered may attend, including mentors. For full details, see Farset Labs’ Child Protection Policy. At the lead mentors’ discretion, the event space may be sealed off from the rest of the space.",
+        "html": "<P>CoderDojo is a movement orientated around running free not-for-profit coding clubs and regular sessions for young people. Farset Labs’ CoderDojo is run by volunteers from the Farset community and offers a range of computer skills, from web application development to scratch.</P>\n<P>At a CoderDojo, young people learn how to code, develop websites, apps, programs, games and more. Dojos are set up, run by and taught at by volunteers. In addition to learning to code, members meet like minded people, show off what they’ve been working on and so on. CoderDojo makes development and learning to code a fun, sociable, kick ass experience.</P>\n<P>CoderDojo also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally. CoderDojo has just one rule: “Above All: Be Cool“, bullying, lying, wasting people’s time and so on is uncool.</P>\n<P>It also provides essential teaching and mentorship experience for budding software developers; after all, to teach is to learn twice! And you don’t have to be a hardcore code-hacker to mentor; anyone can help to guide these kids through the processes of problem solving, breaking down tasks, thinking in a stepwise fashion, or just picking out the killer-spelling-mistakes like variable names or missing semi-colons!</P>\n<P>For more information about Coder Dojo, check out the <A HREF=\"https://zen.coderdojo.com/dojo/279\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">CoderDojo global webpage</A>.</P>\n<P>You can also follow us on <A HREF=\"http://twitter.com/farsetdojo\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Twitter</A> and <A HREF=\"http://facebook.com/farsetdojo\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Facebook</A></P>\n<P><BR></P>\n<H2>What should I bring to the event?</H2>\n<P>If you can, please bring your own laptop.</P>\n<H2>Can I join as a mentor/volunteer?</H2>\n<P>Yes! We always appreciate more hands on deck, but we do need to put people through a short induction/training programme first, so get in touch with us on <A HREF=\"mailto:dojo@farsetlabs.org.uk\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">dojo@farsetlabs.org.uk</A> and we can add you to the next induction stream.</P>\n<H2>I can’t make it, what can I do to help?</H2>\n<P>If you can’t make it to our Dojo, consider some of the other Dojos in Northern Ireland, like at <A HREF=\"https://zen.coderdojo.com/dojo/110\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">BMC in Belfast</A>,<A HREF=\"https://zen.coderdojo.com/dojo/274\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Ballymena</A>, or the brand new Dojo in <A HREF=\"https://zen.coderdojo.com/dojo/45\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Newry</A>.</P>\n<P>If you just want to support our event here at Farset Labs, please consider making a <A HREF=\"http://www.farsetlabs.org.uk/about/donations.html\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">donation</A> to the charity and mention in your donation that you wish it to go to fund refreshments, resources, materials, and equipment for the Dojo.</P>\n<H2>Is there an age limit to enter the event?</H2>\n<P>CoderDojo is aimed loosely at the under 18’s, but any child younger than 14 <STRONG>must be accompanied by a parent or guardian and that guardian must stay on-site for the duration of the event</STRONG></P>\n<H2>What are my transport/parking options getting to the event?</H2>\n<P>We’re 5 minutes walk from Europa Bus Centre, and Parking is available all across the Weavers Court Campus</P>\n<H2>Is there a charge for the event</H2>\n<P>Farset Labs’ members operate the CoderDojo for free for all attendees, but donations to cover operating costs are greatly appreciated.</P>\n<H2>What Child Protection Policies are in place?</H2>\n<P>Only those registered may attend, including mentors. For full details, see <A HREF=\"http://www.farsetlabs.org.uk/about/child_protection.html\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Farset Labs’ Child Protection Policy</A>. At the lead mentors’ discretion, the event space may be sealed off from the rest of the space.</P>"
+      },
+      "id": "42152220426",
+      "url": "https://www.eventbrite.co.uk/e/farset-labs-dojo-2018-tickets-42152220426?aff=ebapi",
+      "start": {
+        "timezone": "Europe/London",
+        "local": "2018-11-02T19:00:00",
+        "utc": "2018-11-02T19:00:00Z"
+      },
+      "end": {
+        "timezone": "Europe/London",
+        "local": "2018-11-02T21:00:00",
+        "utc": "2018-11-02T21:00:00Z"
+      },
+      "organization_id": "32416783101",
+      "created": "2018-01-13T13:42:41Z",
+      "changed": "2018-01-13T13:42:44Z",
+      "capacity": null,
+      "capacity_is_custom": null,
+      "status": "live",
+      "currency": "GBP",
+      "listed": true,
+      "shareable": true,
+      "online_event": false,
+      "tx_time_limit": 480,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_GB",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": true,
+      "is_series_parent": false,
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "create_2.0",
+      "is_free": false,
+      "version": "3.0.0",
+      "logo_id": "39574425",
+      "organizer_id": "2238451237",
+      "venue_id": "22807212",
+      "category_id": "102",
+      "subcategory_id": null,
+      "format_id": "9",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/42152220426/",
+      "is_externally_ticketed": false,
+      "series_id": "42152165261",
+      "category": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/categories/102/",
+        "id": "102",
+        "name": "Science & Technology",
+        "name_localized": "Science & Technology",
+        "short_name": "Science & Tech",
+        "short_name_localized": "Science & Tech"
+      },
+      "subcategory": null,
+      "format": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/formats/9/",
+        "id": "9",
+        "name": "Class, Training, or Workshop",
+        "name_localized": "Class, Training, or Workshop",
+        "short_name": "Class",
+        "short_name_localized": "Class"
+      },
+      "venue": {
+        "address": {
+          "address_1": "Weavers Court",
+          "address_2": "Linfield Industrial Estate",
+          "city": "",
+          "region": "Co Antrim",
+          "postal_code": "BT12 5GH",
+          "country": "",
+          "latitude": "54.591804",
+          "longitude": "-5.942264000000023",
+          "localized_address_display": "Weavers Court Linfield Industrial Estate, Belfast, BT12 5GH",
+          "localized_area_display": "Belfast",
+          "localized_multi_line_address_display": [
+            "Weavers Court",
+            "Linfield Industrial Estate",
+            "Belfast",
+            "BT12 5GH"
+          ]
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/venues/22807212/",
+        "id": "22807212",
+        "age_restriction": null,
+        "capacity": null,
+        "name": "",
+        "latitude": "54.591804",
+        "longitude": "-5.942264000000023"
+      },
+      "refund_policy": {
+        "refund_policy": "not_defined"
+      },
+      "bookmark_info": {
+        "bookmarked": false
+      },
+      "organizer": {
+        "description": {
+          "text": "Farset Labs is a makerspace that provides a hub of creativity, technological innovation and entrepreneurship for local professionals, students and interested hobbyists in Belfast City Centre.\r\nFor a low membership fee, students, professionals, and all members of the local community will be able to congregate at their convenience at the Farset Labs premises, to discuss ideas and concepts with fellow members, and use communal manufacturing equipment, computing facilities and electronic resources to help bring their ideas to fruition.",
+          "html": "<P>Farset Labs is a <A STYLE=\"margin: 0px; padding: 1px 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; color: #1f8787; text-decoration: none;\" TITLE=\"Its really a Hackerspace, but Makerspace is easier to explain to the layman\" HREF=\"http://en.wikipedia.org/wiki/Hackerspace\" TARGET=\"_blank\" DATA-BITLY-TYPE=\"bitly_hover_card\" REL=\"noreferrer noopener noopener noopener noopener noopener noreferrer noopener nofollow noopener noreferrer nofollow noreferrer nofollow noreferrer nofollow noreferrer nofollow noreferrer nofollow nofollow noopener noreferrer nofollow\">makerspace </A>that provides a hub of creativity, technological innovation and entrepreneurship for local professionals, students and interested hobbyists in Belfast City Centre.</P>\r\n<P>For a low membership fee, students, professionals, and all members of the local community will be able to congregate at their convenience at the <A HREF=\"http://farsetlabs.org.uk/blog/about-farset/\" REL=\"nofollow\">Farset Labs premises</A>, to discuss ideas and concepts with fellow members, and use communal manufacturing equipment, computing facilities and electronic resources to help bring their ideas to fruition.</P>"
+        },
+        "long_description": {
+          "text": "Farset Labs is a makerspace that provides a hub of creativity, technological innovation and entrepreneurship for local professionals, students and interested hobbyists in Belfast City Centre.\r\nFor a low membership fee, students, professionals, and all members of the local community will be able to congregate at their convenience at the Farset Labs premises, to discuss ideas and concepts with fellow members, and use communal manufacturing equipment, computing facilities and electronic resources to help bring their ideas to fruition.",
+          "html": "<P>Farset Labs is a <A STYLE=\"margin: 0px; padding: 1px 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; color: #1f8787; text-decoration: none;\" TITLE=\"Its really a Hackerspace, but Makerspace is easier to explain to the layman\" HREF=\"http://en.wikipedia.org/wiki/Hackerspace\" TARGET=\"_blank\" DATA-BITLY-TYPE=\"bitly_hover_card\" REL=\"noopener noreferrer nofollow\">makerspace </A>that provides a hub of creativity, technological innovation and entrepreneurship for local professionals, students and interested hobbyists in Belfast City Centre.</P>\r\n<P>For a low membership fee, students, professionals, and all members of the local community will be able to congregate at their convenience at the <A HREF=\"http://farsetlabs.org.uk/blog/about-farset/\" REL=\"nofollow\">Farset Labs premises</A>, to discuss ideas and concepts with fellow members, and use communal manufacturing equipment, computing facilities and electronic resources to help bring their ideas to fruition.</P>"
+        },
+        "logo": {
+          "crop_mask": null,
+          "original": null,
+          "id": "482310",
+          "url": "https://cdn.evbuc.com/images/482310/32416783101/2/logo.png",
+          "aspect_ratio": null,
+          "edge_color": null,
+          "edge_color_set": null
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/organizers/2238451237/",
+        "id": "2238451237",
+        "name": "Farset Labs",
+        "url": "https://www.eventbrite.co.uk/o/farset-labs-2238451237",
+        "vanity_url": "http://farsetlabs.eventbrite.com",
+        "num_past_events": 59,
+        "num_future_events": 2,
+        "twitter": "FarsetLabs",
+        "facebook": "farsetlabs",
+        "instagram": "2238205448",
+        "logo_id": "482310"
+      },
+      "ticket_availability": {
+        "has_available_tickets": true,
+        "minimum_ticket_price": {
+          "currency": "GBP",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 GBP"
+        },
+        "maximum_ticket_price": {
+          "currency": "GBP",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 GBP"
+        },
+        "is_sold_out": false,
+        "start_sales_date": null
+      },
+      "logo": {
+        "crop_mask": {
+          "top_left": {
+            "x": 0,
+            "y": 66
+          },
+          "width": 800,
+          "height": 400
+        },
+        "original": {
+          "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?auto=compress&s=4855c40b0a3657500da81dbc0538485a",
+          "width": null,
+          "height": null
+        },
+        "id": "39574425",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C66%2C800%2C400&s=bd31fd7b61b36c0b8b61d2d1e03154d0",
+        "aspect_ratio": "2",
+        "edge_color": "#776656",
+        "edge_color_set": true
+      }
+    },
+    {
+      "name": {
+        "text": "Northern Ireland Raspberry Jam - November 2018 - 6th Birthday!",
+        "html": "Northern Ireland Raspberry Jam - November 2018 - 6th Birthday!"
+      },
+      "description": {
+        "text": "It's our Birthday! The NI Raspberry Jam is turning 6!\n\nCome one, come all to the Northern Ireland Raspberry Jam!\nIn collaboration with the School of Physics and Mathematics at Queens, Farset Labs and the Northern Ireland Raspberry Jam team, these free monthly events involve tinkering, coding, electronics and generally just having a stack of fun making stuff!Whether you want to try out computer programming for the first time, hack some electronics or just generally have some fun inventing, we have something for everyone!All equipment is provided and we have activities for ages 6-106, from complete beginners right up to seasoned Pi experts. Plus, like all our Raspberry Jam events, it is completely free!So what are you waiting for?\n\nFAQ\nWhat is a Raspberry Jam?\nA Raspberry Jam is an event for kids/adults of all ages to come together and learn a bit more about the Raspberry Pi and coding/electronics in general.\nI have no previous experience with coding/electronics/Raspberry Pi?\nThat is no problem! All our Raspberry Jams are suited for beginners, right up to Pi exports, plus all equipment is provided. All you need to bring is yourself.\nHow can I get there? Can I take public transport?\nThe new Maths and Physics Teaching Building is very easy to get to by car, or by public transport.\nBy car\nPark at the McClay Library car pack. If it is full, then there is plenty of additional car parking in the surrounding side streets.\n\nBy train\nTravel to Botanic station, then walk up Botanic street towards Queens University. The new Physics Teaching Building is directly opposite the entrance to the McClay library.\n\nHow often to do these Raspberry Jam events run?\nThe Northern Ireland Raspberry Jam runs on the 2nd Saturday of every month (excluding July/August) throughout the year. They are free as well and involve new workshops/activities each month. Details - https://niraspberryjam.eventbrite.co.uk.\nYou can also add our provisional future Jams calendar to yours by clicking here (or simply view it here).\n\nWhat age range is this event suitable for?\nAll of our Raspberry Jam events are suitable for kids as young as 6, right up to adults of 106! Although the majority of the attendees at the Raspberry Jam events are young people, they are open to adults as well, especially parents of kids attending.\nNote - By attending this event, you provide express permission to photographs/videos being taken and used by the Northern Ireland Raspberry Jam team. If this is an issue, please inform one of the team on your arrival.\n\n\nNote that normal Farset Labs Child Protection policy applies. This includes that all children under the age of 14 must have a designated guardian in on site for the entire event.\nWe also require children aged between 14 and 17 (inclusive) parents are within 10 minutes from venue and can be easily contactable in event of an emergency.\n\nThis event is run in collaboration with the School of Mathematics and Physics at Queens University and the School of Electronics, Electrical Engineering and Computer Science at Queens University.\nThe Northern Ireland Raspberry Jam wouldn't be possible without support from Institution of Engineering and Technology, Institution of Mechanical Engineers, Northern Ireland Department of Communities, Nitec Solutions and Farset Labs.",
+        "html": "<P><STRONG>It's our Birthday! The NI Raspberry Jam is turning 6!</STRONG></P>\n<P><BR></P>\n<P>Come one, come all to the Northern Ireland Raspberry Jam!</P>\n<P>In collaboration with the School of Physics and Mathematics at Queens, Farset Labs and the Northern Ireland Raspberry Jam team, these free monthly events involve tinkering, coding, electronics and generally just having a stack of fun making stuff!<BR>Whether you want to try out computer programming for the first time, hack some electronics or just generally have some fun inventing, we have something for everyone!<BR><BR>All equipment is provided and we have activities for ages 6-106, from complete beginners right up to seasoned Pi experts. Plus, like all our Raspberry Jam events, it is completely free!<BR>So what are you waiting for?</P>\n<P><IMG ALT=\"Young boy laughing at computer screen\" SRC=\"https://cdn.evbuc.com/eventlogos/198986481/img1094.jpg\"></P>\n<H2>FAQ<BR></H2>\n<H3>What is a Raspberry Jam?</H3>\n<P>A Raspberry Jam is an event for kids/adults of all ages to come together and learn a bit more about the Raspberry Pi and coding/electronics in general.<BR></P>\n<H3>I have no previous experience with coding/electronics/Raspberry Pi?</H3>\n<P>That is no problem! All our Raspberry Jams are suited for beginners, right up to Pi exports, plus all equipment is provided. All you need to bring is yourself.</P>\n<H3>How can I get there? Can I take public transport?</H3>\n<P>The new Maths and Physics Teaching Building is very easy to get to by car, or by public transport.</P>\n<H4>By car</H4>\n<P>Park at the McClay Library car pack. If it is full, then there is plenty of additional car parking in the surrounding side streets.</P>\n<P><IMG ALT=\"Car park location\" SRC=\"https://cdn.evbuc.com/eventlogos/198986481/screenshot20170127at00.28.24.jpg\"></P>\n<H4>By train</H4>\n<P>Travel to Botanic station, then walk up Botanic street towards Queens University. The new Physics Teaching Building is directly opposite the entrance to the McClay library.</P>\n<P><IMG ALT=\"Public transport\" SRC=\"https://cdn.evbuc.com/eventlogos/198986481/screenshot20170127at00.27.29.jpg\"></P>\n<H4>How often to do these Raspberry Jam events run?<BR></H4>\n<P>The Northern Ireland Raspberry Jam runs on the 2nd Saturday of every month (excluding July/August) throughout the year. They are free as well and involve new workshops/activities each month. Details - <A HREF=\"https://niraspberryjam.eventbrite.co.uk\" TARGET=\"_blank\" REL=\"noopener noreferrer noopener noreferrer\">https://niraspberryjam.eventbrite.co.uk</A>.</P>\n<P><SPAN>You can also add our provisional future Jams calendar to yours by </SPAN><A HREF=\"https://calendar.google.com/calendar/ical/niraspberryjam%40gmail.com/public/basic.ics\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">clicking here</A><SPAN> (or simply </SPAN><A HREF=\"https://calendar.google.com/calendar/embed?src=niraspberryjam%40gmail.com&ctz=Europe/London\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">view it here</A><SPAN>).</SPAN></P>\n<P><IMG ALT=\"Adult programming\" SRC=\"https://cdn.evbuc.com/eventlogos/198986481/img1139.jpg\"></P>\n<H4>What age range is this event suitable for?</H4>\n<P>All of our Raspberry Jam events are suitable for kids as young as 6, right up to adults of 106! Although the majority of the attendees at the Raspberry Jam events are young people, they are open to adults as well, especially parents of kids attending.<BR></P>\n<P>Note - By attending this event, you provide express permission to photographs/videos being taken and used by the Northern Ireland Raspberry Jam team. If this is an issue, please inform one of the team on your arrival.</P>\n<P><IMG ALT=\"Young girl excited by Sonic Pi music she has made\" SRC=\"https://cdn.evbuc.com/eventlogos/198986481/img1371.jpg\"></P>\n<P><BR></P>\n<P>Note that normal <A HREF=\"http://www.farsetlabs.org.uk/about/child_protection.html\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Farset Labs Child Protection policy</A> applies. This includes that all children under the age of 14 must have a designated guardian in on site for the entire event.</P>\n<P>We also require children aged between 14 and 17 (inclusive) parents are within 10 minutes from venue and can be easily contactable in event of an emergency.</P>\n<P><BR></P>\n<P>This event is run in collaboration with the <A HREF=\"https://www.qub.ac.uk/schools/SchoolofMathematicsandPhysics/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">School of Mathematics and Physics at Queens University</A> and the <A HREF=\"https://www.qub.ac.uk/schools/eeecs/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">School of Electronics, Electrical Engineering and Computer Science at Queens University</A>.</P>\n<P>The Northern Ireland Raspberry Jam wouldn't be possible without support from <A HREF=\"https://www.theiet.org/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Institution of Engineering and Technology</A>, <A HREF=\"http://www.imeche.org/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Institution of Mechanical Engineers</A>, <A HREF=\"https://www.communities-ni.gov.uk/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Northern Ireland Department of Communities</A>, <A HREF=\"https://www.nitec.com/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Nitec Solutions</A> and <A HREF=\"http://www.farsetlabs.org.uk/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Farset Labs</A>.</P>"
+      },
+      "id": "51292098046",
+      "url": null,
+      "vanity_url": "https://niraspberryjam-november-2018.eventbrite.co.uk",
+      "start": {
+        "timezone": "Europe/London",
+        "local": "2018-11-10T13:00:00",
+        "utc": "2018-11-10T13:00:00Z"
+      },
+      "end": {
+        "timezone": "Europe/London",
+        "local": "2018-11-10T17:00:00",
+        "utc": "2018-11-10T17:00:00Z"
+      },
+      "organization_id": "200379386367",
+      "created": "2018-10-11T14:15:46Z",
+      "changed": "2018-10-11T14:21:59Z",
+      "capacity": null,
+      "capacity_is_custom": null,
+      "status": "live",
+      "currency": "GBP",
+      "listed": true,
+      "shareable": true,
+      "online_event": false,
+      "tx_time_limit": 480,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_GB",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": false,
+      "is_series_parent": false,
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "create_2.0",
+      "is_free": true,
+      "version": "3.0.0",
+      "logo_id": "51160475",
+      "organizer_id": "12781086687",
+      "venue_id": "18130630",
+      "category_id": "102",
+      "subcategory_id": null,
+      "format_id": "9",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/51292098046/",
+      "is_externally_ticketed": false,
+      "category": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/categories/102/",
+        "id": "102",
+        "name": "Science & Technology",
+        "name_localized": "Science & Technology",
+        "short_name": "Science & Tech",
+        "short_name_localized": "Science & Tech"
+      },
+      "subcategory": null,
+      "format": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/formats/9/",
+        "id": "9",
+        "name": "Class, Training, or Workshop",
+        "name_localized": "Class, Training, or Workshop",
+        "short_name": "Class",
+        "short_name_localized": "Class"
+      },
+      "venue": {
+        "address": {
+          "address_1": "Queens University",
+          "address_2": "7-9 College Park E,",
+          "city": "Belfast",
+          "region": "Northern Ireland",
+          "postal_code": "BT7 1PS",
+          "country": "GB",
+          "latitude": "54.58392929999999",
+          "longitude": "-5.931720000000041",
+          "localized_address_display": "Queens University 7-9 College Park E,, Belfast, BT7 1PS",
+          "localized_area_display": "Belfast",
+          "localized_multi_line_address_display": [
+            "Queens University",
+            "7-9 College Park E",
+            "Belfast",
+            "BT7 1PS"
+          ]
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/venues/18130630/",
+        "id": "18130630",
+        "age_restriction": null,
+        "capacity": null,
+        "name": "School of Maths and Physics Teaching Centre",
+        "latitude": "54.58392929999999",
+        "longitude": "-5.931720000000041"
+      },
+      "refund_policy": {
+        "refund_policy": "not_defined"
+      },
+      "bookmark_info": {
+        "bookmarked": false
+      },
+      "organizer": {
+        "description": {
+          "text": "                            The Northern Ireland Raspberry Jam is a volunteer group of makers, tinkerers and inventors who in collaboration with Farset Labs, Queens University and a number of other organisations, run regular and free Raspberry Jams (coding/tinkering events using the Raspberry Pi computer) in Northern Ireland.\r\n                        ",
+          "html": "                            <P>The Northern Ireland Raspberry Jam is a volunteer group of makers, tinkerers and inventors who in collaboration with Farset Labs, Queens University and a number of other organisations, run regular and free Raspberry Jams (coding/tinkering events using the Raspberry Pi computer) in Northern Ireland.</P>\r\n                        "
+        },
+        "long_description": {
+          "text": "The Northern Ireland Raspberry Jam is a volunteer group of makers, tinkerers and inventors who in collaboration with Farset Labs, Queens University and a number of other organisations, run regular and free Raspberry Jams (coding/tinkering events using the Raspberry Pi computer) in Northern Ireland.",
+          "html": "<P>The Northern Ireland Raspberry Jam is a volunteer group of makers, tinkerers and inventors who in collaboration with Farset Labs, Queens University and a number of other organisations, run regular and free Raspberry Jams (coding/tinkering events using the Raspberry Pi computer) in Northern Ireland.</P>"
+        },
+        "logo": {
+          "crop_mask": null,
+          "original": null,
+          "id": "27794517",
+          "url": "https://cdn.evbuc.com/images/27794517/200379386367/2/logo.jpg",
+          "aspect_ratio": null,
+          "edge_color": null,
+          "edge_color_set": null
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/organizers/12781086687/",
+        "id": "12781086687",
+        "name": "Northern Ireland Raspberry Jam",
+        "url": "https://www.eventbrite.co.uk/o/northern-ireland-raspberry-jam-12781086687",
+        "vanity_url": "http://nijam.eventbrite.com",
+        "num_past_events": 19,
+        "num_future_events": 2,
+        "twitter": "niraspjam",
+        "logo_id": "27794517"
+      },
+      "ticket_availability": {
+        "has_available_tickets": true,
+        "minimum_ticket_price": {
+          "currency": "GBP",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 GBP"
+        },
+        "maximum_ticket_price": {
+          "currency": "GBP",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 GBP"
+        },
+        "is_sold_out": false,
+        "start_sales_date": {
+          "timezone": "Europe/London",
+          "local": "2018-10-13T15:00:00",
+          "utc": "2018-10-13T14:00:00Z"
+        }
+      },
+      "logo": {
+        "crop_mask": {
+          "top_left": {
+            "x": 0,
+            "y": 145
+          },
+          "width": 3000,
+          "height": 1500
+        },
+        "original": {
+          "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?auto=compress&s=ceea246e5556a880a8396ccabf646b92",
+          "width": 3000,
+          "height": 2000
+        },
+        "id": "51160475",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C145%2C3000%2C1500&s=295a58b4c6582d863fc1d57495ed1d49",
+        "aspect_ratio": "2",
+        "edge_color": "#847672",
+        "edge_color_set": true
+      }
+    },
+    {
+      "name": {
+        "text": "Holywood Code Club - Saturday 10th November",
+        "html": "Holywood Code Club - Saturday 10th November"
+      },
+      "description": {
+        "text": "Come join us at CodeClub Holywood!\nLet your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people. \n7-17 year olds of all abilities welcome. All young people must be accompanied by a responsible adult for the duration of the session.\n\n\nLearn to Code\n\n\n\nBuild websites\n\n\nMake games\n\n\nCreate apps for your phone\n\n\n\nFun & Social\n\n\nMake Friends\n\n\nGet inspired by technology\n\n\nMentors there to help\n\n\nFree\n\n\nPlease bring:\n\n\na laptop if you have one but don't worry if you don't as one can be provided on the day\n\n\na set of headphones\n\n",
+        "html": "<P>Come join us at CodeClub Holywood!</P>\n<P>Let your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people. </P>\n<P>7-17 year olds of all abilities welcome. All young people must be accompanied by a responsible adult for the duration of the session.<BR></P>\n<UL>\n<LI>\n<P>Learn to Code</P>\n</LI>\n<UL>\n<LI>\n<P>Build websites</P>\n</LI>\n<LI>\n<P>Make games</P>\n</LI>\n<LI>\n<P>Create apps for your phone</P>\n</LI>\n</UL>\n<LI>\n<P>Fun &amp; Social</P>\n</LI>\n<LI>\n<P>Make Friends</P>\n</LI>\n<LI>\n<P>Get inspired by technology</P>\n</LI>\n<LI>\n<P>Mentors there to help</P>\n</LI>\n<LI>\n<P>Free</P>\n</LI>\n</UL>\n<P>Please bring:</P>\n<UL>\n<LI>\n<P>a laptop if you have one but don't worry if you don't as one can be provided on the day</P>\n</LI>\n<LI>\n<P>a set of headphones</P>\n</LI>\n</UL>"
+      },
+      "id": "47149148372",
+      "url": "https://www.eventbrite.co.uk/e/holywood-code-club-saturday-10th-november-registration-47149148372?aff=ebapi",
+      "start": {
+        "timezone": "Europe/London",
+        "local": "2018-11-10T13:30:00",
+        "utc": "2018-11-10T13:30:00Z"
+      },
+      "end": {
+        "timezone": "Europe/London",
+        "local": "2018-11-10T15:00:00",
+        "utc": "2018-11-10T15:00:00Z"
+      },
+      "organization_id": "202325275908",
+      "created": "2018-06-17T21:28:44Z",
+      "changed": "2018-06-17T21:29:45Z",
+      "capacity": null,
+      "capacity_is_custom": null,
+      "status": "live",
+      "currency": "GBP",
+      "listed": true,
+      "shareable": true,
+      "online_event": false,
+      "tx_time_limit": 480,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_GB",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": false,
+      "is_series_parent": false,
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "create_2.0",
+      "is_free": true,
+      "version": "3.0.0",
+      "logo_id": "46203979",
+      "organizer_id": "12884057472",
+      "venue_id": "18686663",
+      "category_id": "102",
+      "subcategory_id": null,
+      "format_id": "9",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/47149148372/",
+      "is_externally_ticketed": false,
+      "category": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/categories/102/",
+        "id": "102",
+        "name": "Science & Technology",
+        "name_localized": "Science & Technology",
+        "short_name": "Science & Tech",
+        "short_name_localized": "Science & Tech"
+      },
+      "subcategory": null,
+      "format": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/formats/9/",
+        "id": "9",
+        "name": "Class, Training, or Workshop",
+        "name_localized": "Class, Training, or Workshop",
+        "short_name": "Class",
+        "short_name_localized": "Class"
+      },
+      "venue": {
+        "address": {
+          "address_1": "Knocknagoney Rd ",
+          "address_2": null,
+          "city": "Belfast",
+          "region": "Antrim",
+          "postal_code": "BT4 2PW",
+          "country": "GB",
+          "latitude": "54.6176244",
+          "longitude": "-5.8542112999999745",
+          "localized_address_display": "Knocknagoney Rd , Belfast, BT4 2PW",
+          "localized_area_display": "Belfast",
+          "localized_multi_line_address_display": [
+            "Knocknagoney Rd",
+            "Belfast",
+            "BT4 2PW"
+          ]
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/venues/18686663/",
+        "id": "18686663",
+        "age_restriction": null,
+        "capacity": null,
+        "name": "Community Room - Tesco Extra Knocknagoney",
+        "latitude": "54.6176244",
+        "longitude": "-5.8542112999999745"
+      },
+      "refund_policy": {
+        "refund_policy": "not_defined"
+      },
+      "bookmark_info": {
+        "bookmarked": false
+      },
+      "organizer": {
+        "description": {
+          "text": "CodeClub Holywood is a new group of volunteers who are all keen to help children and young people aware of the value and fun of being able to code.",
+          "html": "<P>CodeClub Holywood is a new group of volunteers who are all keen to help children and young people aware of the value and fun of being able to code.</P>"
+        },
+        "long_description": {
+          "text": "Come join us at CodeClub Holywood!Let your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people.7-17 year olds of all abilities welcome. All young people under the age of 15 must be accompanied by a responsible adult for the duration of the session.\r\n\r\nLearn to Code\r\nBuild websites\r\nMake games\r\nCreate apps for your phone\r\nFun & Social\r\nMake Friends\r\nGet inspired by technology\r\nMentors there to help\r\nFree\r\n\r\n \r\nPlease bring:\r\n\r\na laptop if you have one but don't worry if you don't as one can be provided on the day\r\na set of headphones\r\n\r\n \r\nVisit our facebook page to see more information about what we get up to and for our data processing policy.\r\n \r\n \r\n ",
+          "html": "<P><SPAN STYLE=\"color: #1d2129; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 14px; letter-spacing: -0.12px;\">Come join us at CodeClub Holywood!</SPAN><BR STYLE=\"color: #1d2129; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 14px; letter-spacing: -0.12px;\"><BR STYLE=\"color: #1d2129; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 14px; letter-spacing: -0.12px;\"><SPAN STYLE=\"color: #1d2129; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 14px; letter-spacing: -0.12px;\">Let your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people.</SPAN><BR STYLE=\"color: #1d2129; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 14px; letter-spacing: -0.12px;\"><BR STYLE=\"color: #1d2129; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 14px; letter-spacing: -0.12px;\"><SPAN STYLE=\"color: #1d2129; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 14px; letter-spacing: -0.12px;\">7-17 year olds of all abilities welcome. All young people under the age of 15 must be accompanied by a responsible adult for the duration of the session.</SPAN><SPAN STYLE=\"display: inline; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; color: #1d2129; font-size: 14px; letter-spacing: -0.12px;\"><BR><BR></SPAN></P>\r\n<UL>\r\n<LI>Learn to Code</LI>\r\n<LI>Build websites</LI>\r\n<LI>Make games</LI>\r\n<LI>Create apps for your phone</LI>\r\n<LI>Fun &amp; Social</LI>\r\n<LI>Make Friends</LI>\r\n<LI>Get inspired by technology</LI>\r\n<LI>Mentors there to help</LI>\r\n<LI>Free</LI>\r\n</UL>\r\n<P> </P>\r\n<P><SPAN STYLE=\"display: inline; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; color: #1d2129; font-size: 14px; letter-spacing: -0.12px;\">Please bring:<BR></SPAN></P>\r\n<UL>\r\n<LI>a laptop if you have one but don't worry if you don't as one can be provided on the day</LI>\r\n<LI>a set of headphones</LI>\r\n</UL>\r\n<P> </P>\r\n<P><SPAN STYLE=\"display: inline; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; color: #1d2129; font-size: 14px; letter-spacing: -0.12px;\"><SPAN STYLE=\"display: inline; font-family: 'SF Optimized', system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; color: #1d2129; font-size: 14px; letter-spacing: -0.12px;\">Visit our facebook page to see more information about what we get up to and for our data processing policy.</SPAN></SPAN></P>\r\n<P> </P>\r\n<P> </P>\r\n<P> </P>"
+        },
+        "logo": null,
+        "resource_uri": "https://www.eventbriteapi.com/v3/organizers/12884057472/",
+        "id": "12884057472",
+        "name": "Code Club Holywood",
+        "url": "https://www.eventbrite.co.uk/o/code-club-holywood-12884057472",
+        "num_past_events": 30,
+        "num_future_events": 4,
+        "twitter": "codeclubhwood",
+        "facebook": "codeclubholywood",
+        "logo_id": null
+      },
+      "ticket_availability": {
+        "has_available_tickets": true,
+        "minimum_ticket_price": {
+          "currency": "GBP",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 GBP"
+        },
+        "maximum_ticket_price": {
+          "currency": "GBP",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 GBP"
+        },
+        "is_sold_out": false,
+        "start_sales_date": {
+          "timezone": "Europe/London",
+          "local": "2018-10-22T09:30:00",
+          "utc": "2018-10-22T08:30:00Z"
+        }
+      },
+      "logo": {
+        "crop_mask": {
+          "top_left": {
+            "x": 23,
+            "y": 135
+          },
+          "width": 446,
+          "height": 223
+        },
+        "original": {
+          "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?auto=compress&s=6243ca54da44a4d699eef8fdcd5154f3",
+          "width": 500,
+          "height": 500
+        },
+        "id": "46203979",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=23%2C135%2C446%2C223&s=d7955c91802a83c7da2e4289dcd01d6d",
+        "aspect_ratio": "2",
+        "edge_color": null,
+        "edge_color_set": true
+      }
+    },
+    {
+      "name": {
+        "text": "Product Management Essentials 102 Training Workshop - Belfast",
+        "html": "Product Management Essentials 102 Training Workshop - Belfast"
+      },
+      "description": {
+        "text": "Increasing your strategic impact as a product manager\nTraining Workshop Overview\nEssentials 102  is an overview course intended for confident product managers who are looking to increase their strategic skills and influence. The intention of this course is to help product managers build a strategic layer onto their core product practices, and focus on the soft skills and influencing tactics that are often needed to ensure effective product delivery.  It seeks to answer the questions:\n\nHow can product managers increase organisational understanding of product practice?\nWhat parts of their process can be used as tools for increased alignment?\nHow can product teams craft an evidence-driven product vision and ensure buy-in?\n\nThis course is centered on the senior product manager’s role between the product team and the broader business. In order for teams to deliver effectively, they need buy-in and support from their stakeholders. Participants will gain an understanding of how to sharpen their product practice so that it becomes an alignment and educational tool.  \n\nWhat we’ll cover on the day\nEssentials 102 is a full-day workshop comprised of six modules. Each module includes a lecture component on theory and practice interspersed with up to three hands-on activities. This ensures that participants have an opportunity to apply and work with concepts in a setting that will answer questions and facilitate critical thinking. The following modules will be covered:\n\nEvaluating opportunity: Understanding how to unpack product assumptions and line up macro data to establish product viability and the foundations for product/market fit\nImplementing user research: Breaks down the components of running a user research round and what is needed to ensure maximum value of the time invested\nResearch techniques: Reviewing a range of research methodologies, beyond the classic interview, that help product teams validate problem and solution\nSynthesis: Distilling insights from research and how to collaborate with stakeholders to deepen user understanding and influence\nPrioritisation: Covering a range of techniques and their uses for alignment at points of product development lifecycle\nStakeholder management: A deep-dive into organizational relationships and understanding how to build a communication strategy\n\n\n\nMind the Product Trainers\nEvery Mind the Product trainer is a working product manager who has worked with multiple products and domains. Your trainer’s product management experience enriches the curriculum by delivering diverse perspectives on best practice in different scenarios. You will hear about the products they have worked on in the past, what went well, what didn’t go so well, and how they tried to make improvements. Our trainers’ main goal is not to provide participants with all of the answers, but help facilitate them in asking the right questions.  \n\nAbout Your Trainers\n\nEmma Mulholland, Senior Product Manager\nEmma has over 11 years' experience in Product. Recently joining ShopKeep as a Product Manager, Emma previously worked in an XP (extreme programming) lab for Allstate where she has used lean techniques and Design Thinking to solve business problems across the enterprise. Prior to that Emma worked as a Product Manager in eCommerce, working on the Search and User Experience for Marks and Spencer, and Tesco. She's a founder/organiser of ProductTank Belfast, and in her spare time loves being outdoors running, cycling and hiking. \nGraeme Stuart, Head of Product\nGraeme has over 14 years core product experience from startups through scale-ups to enterprise. He currently works as VP Product at Deep-Labs.com where his team is building a platform next generation risk mitigation & hyper-personalized consumer experiences through deep identity management. He loves bringing new initiatives to market and at the same time, building out product expertise in companies who hadn’t valued it before. He’s passionate in telling anyone who will listen that Belfast can provide global product expertise not only talented, well-priced engineers. Graeme advises startups wanting to scale & wanting to dip their toe into product management. He is a co-founder & organiser of ProductTank Belfast. He also tries to spend quality time with his family & play any sport in the little spare time he has.\n\n\nAgenda\n\n\nRegistration will begin at 9.00\n\n\nClass will start at 9.30 sharp and end at 17.00\n\n\nWe'll also provide a light breakfast, buffet lunch and plenty of tea and coffee to fuel you through the day.\n\n\n\nFrequently Asked Questions\nCan I change the name or other details on my tickets?Yes, but only the person who purchased the ticket can make these changes on Eventbrite. You are free to change your ticket details up to two days before the event, including name, title, etc. Please make sure these details are correct as they will be what we show on your badge! Just login to Eventbrite and make the changes, following these instructions. If you can’t reach the person who purchased the ticket in order to get them to change the information please contact us on tickets@mindtheproduct.com and we will help you make the updates.\nCan I get a refund?We offer a full refund up to one month before the event. Simply log in to Eventbrite and request the refund following these instructions. As with changes, only the person who purchased the tickets can request a refund.\nCan I pay by invoice?As we are a small team we only offer payment by invoice if you are buying 5 tickets or more due to the additional overhead. Early Bird conference tickets cannot be purchased by invoice. Please also note that no tickets are held/issued until payment of the invoice has been received.  Request to pay by invoice by emailing tickets@mindtheproduct.com\n\nTickets are not held until payment has been made – there are no exceptions to this.\nWe cannot agree to any terms and conditions associated with Purchase Order numbers or other supplier agreements.\nWe do not fill in supplier detail forms for ticket invoices – if you cannot find details you require on our website – please ask.\n\n\nFrequently Asked Questions | Terms & Conditions  |  Code of Conduct  |  Privacy Policy\n\n",
+        "html": "<H2>Increasing your strategic impact as a product manager</H2>\n<H3>Training Workshop Overview</H3>\n<P>Essentials 102  is an overview course intended for confident product managers who are looking to increase their strategic skills and influence. The intention of this course is to help product managers build a strategic layer onto their core product practices, and focus on the soft skills and influencing tactics that are often needed to ensure effective product delivery.  It seeks to answer the questions:</P>\n<UL>\n<LI>How can product managers increase organisational understanding of product practice?</LI>\n<LI>What parts of their process can be used as tools for increased alignment?</LI>\n<LI>How can product teams craft an evidence-driven product vision and ensure buy-in?</LI>\n</UL>\n<P>This course is centered on the senior product manager’s role between the product team and the broader business. In order for teams to deliver effectively, they need buy-in and support from their stakeholders. Participants will gain an understanding of how to sharpen their product practice so that it becomes an alignment and educational tool.  </P>\n<P><BR></P>\n<H3>What we’ll cover on the day</H3>\n<P>Essentials 102 is a full-day workshop comprised of six modules. Each module includes a lecture component on theory and practice interspersed with up to three hands-on activities. This ensures that participants have an opportunity to apply and work with concepts in a setting that will answer questions and facilitate critical thinking. The following modules will be covered:</P>\n<UL>\n<LI><STRONG>Evaluating opportunity:</STRONG> Understanding how to unpack product assumptions and line up macro data to establish product viability and the foundations for product/market fit</LI>\n<LI><STRONG>Implementing user research:</STRONG> Breaks down the components of running a user research round and what is needed to ensure maximum value of the time invested</LI>\n<LI><STRONG>Research techniques:</STRONG> Reviewing a range of research methodologies, beyond the classic interview, that help product teams validate problem and solution</LI>\n<LI><STRONG>Synthesis:</STRONG> Distilling insights from research and how to collaborate with stakeholders to deepen user understanding and influence</LI>\n<LI><STRONG>Prioritisation:</STRONG> Covering a range of techniques and their uses for alignment at points of product development lifecycle</LI>\n<LI><STRONG>Stakeholder management:</STRONG> A deep-dive into organizational relationships and understanding how to build a communication strategy</LI>\n</UL>\n<H3><BR></H3>\n<HR>\n<H3><SPAN>Mind the Product Trainers</SPAN></H3>\n<P>Every Mind the Product trainer is a working product manager who has worked with multiple products and domains. Your trainer’s product management experience enriches the curriculum by delivering diverse perspectives on best practice in different scenarios. You will hear about the products they have worked on in the past, what went well, what didn’t go so well, and how they tried to make improvements. Our trainers’ main goal is not to provide participants with all of the answers, but help facilitate them in asking the right questions.  </P>\n<H3><BR></H3>\n<H3>About Your Trainers</H3>\n<DIV CLASS=\"OutlineElement Ltr SCXP86465024\">\n<P><STRONG><SPAN>Emma Mulholland, Senior Product Manager</SPAN></STRONG><SPAN></SPAN></P>\n<P><SPAN>Emma has over 11 years' experience in Product. Recently joining ShopKeep as a Product Manager, Emma previously worked in an XP (extreme programming) lab for Allstate where she has used lean techniques and Design Thinking to solve business problems across the enterprise. Prior to that Emma worked as a Product Manager in eCommerce, working on the Search and User Experience for Marks and Spencer, and Tesco. She's a founder/organiser of ProductTank Belfast, and in her spare time loves being outdoors running, cycling and hiking. </SPAN></P>\n<P><SPAN><STRONG>Graeme Stuart, Head of Product</STRONG></SPAN></P>\n<P><SPAN>Graeme has over 14 years core product experience from startups through scale-ups to enterprise. He currently works as VP Product at Deep-Labs.com where his team is building a platform </SPAN><SPAN>next generation risk mitigation</SPAN><SPAN> &amp; </SPAN><SPAN>hyper-personalized consumer experiences through deep identity management. </SPAN>He loves bringing new initiatives to market and at the same time, building out product expertise in companies who hadn’t valued it before. He’s passionate in telling anyone who will listen that Belfast can provide global product expertise not only talented, well-priced engineers. Graeme advises startups wanting to scale &amp; wanting to dip their toe into product management. He is a co-founder &amp; organiser of ProductTank Belfast. He also tries to spend quality time with his family &amp; play any sport in the little spare time he has.</P>\n<P><BR></P>\n<HR>\n<H3>Agenda</H3>\n<UL>\n<LI>\n<P>Registration will begin at 9.00</P>\n</LI>\n<LI>\n<P>Class will start at 9.30 sharp and end at 17.00</P>\n</LI>\n</UL>\n<P>We'll also provide a light breakfast, buffet lunch and plenty of tea and coffee to fuel you through the day.</P>\n<P><BR></P>\n<P><BR></P>\n<HR>\n<H3>Frequently Asked Questions</H3>\n<P><STRONG>Can I change the name or other details on my tickets?</STRONG><BR><SPAN>Yes, but only the person who purchased the ticket can make these changes on Eventbrite. You are free to change your ticket details up to two days before the event, including name, title, etc. Please make sure these details are correct as they will be what we show on your badge! Just login to Eventbrite and make the changes, </SPAN><A HREF=\"https://www.eventbrite.com/support/articles/en_US/How_To/how-to-update-your-ticket-registration-information\" TARGET=\"_blank\" REL=\"noopener noreferrer noopener noreferrer\">following these instructions</A><SPAN>. If you can’t reach the person who purchased the ticket in order to get them to change the information please contact us on </SPAN><A HREF=\"mailto:tickets@mindtheproduct.com\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">tickets@mindtheproduct.com</A><SPAN> and we will help you make the updates.</SPAN><BR></P>\n<P><STRONG>Can I get a refund?</STRONG><BR>We offer a full refund up to one month before the event. Simply log in to Eventbrite and request the refund <A HREF=\"https://www.eventbrite.com/support/articles/en_US/How_To/can-i-get-a-refund#2\" TARGET=\"_blank\" REL=\"noopener noreferrer noopener noreferrer\">following these instructions</A>. As with changes, only the person who purchased the tickets can request a refund.</P>\n<P><STRONG>Can I pay by invoice?</STRONG><BR>As we are a small team we only offer payment by invoice if you are buying 5 tickets or more due to the additional overhead. Early Bird conference tickets cannot be purchased by invoice. Please also note that no tickets are held/issued until payment of the invoice has been received.  Request to pay by invoice by emailing <A HREF=\"mailto:tickets@mindtheproduct.com\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">tickets@mindtheproduct.com</A><BR></P>\n<UL>\n<LI><SPAN>Tickets are not held </SPAN>until payment has been made – there are no exceptions to this.</LI>\n<LI><SPAN>We cannot agree to any terms and conditions</SPAN> associated with Purchase Order numbers or other supplier agreements.</LI>\n<LI><SPAN>We do not fill in supplier detail forms</SPAN> for ticket invoices – if you cannot find details you require on our website – please ask.</LI>\n</UL>\n<P><BR></P>\n<P><A HREF=\"http://www.mindtheproduct.com/faq\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Frequently Asked Questions</A> | <A HREF=\"http://www.mindtheproduct.com/terms-and-conditions/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Terms &amp; Conditions</A>  |  <A HREF=\"http://www.mindtheproduct.com/code-of-conduct/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Code of Conduct</A>  |  <A HREF=\"http://www.mindtheproduct.com/privacy/\" TARGET=\"_blank\" REL=\"noreferrer noopener nofollow noopener noreferrer nofollow\">Privacy Policy</A><BR></P>\n<P><BR></P>\n</DIV>"
+      },
+      "id": "49693729282",
+      "url": "https://www.eventbrite.com/e/product-management-essentials-102-training-workshop-belfast-tickets-49693729282?aff=ebapi",
+      "start": {
+        "timezone": "Europe/London",
+        "local": "2018-11-12T09:30:00",
+        "utc": "2018-11-12T09:30:00Z"
+      },
+      "end": {
+        "timezone": "Europe/London",
+        "local": "2018-11-12T17:00:00",
+        "utc": "2018-11-12T17:00:00Z"
+      },
+      "organization_id": "27734885637",
+      "created": "2018-08-30T13:47:45Z",
+      "changed": "2018-10-19T09:27:43Z",
+      "capacity": null,
+      "capacity_is_custom": null,
+      "status": "live",
+      "currency": "GBP",
+      "listed": true,
+      "shareable": true,
+      "online_event": false,
+      "tx_time_limit": 900,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_US",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": false,
+      "is_series_parent": false,
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "create_2.0",
+      "is_free": false,
+      "version": "3.0.0",
+      "logo_id": "49107020",
+      "organizer_id": "1962515111",
+      "venue_id": "25589156",
+      "category_id": "102",
+      "subcategory_id": null,
+      "format_id": "9",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/49693729282/",
+      "is_externally_ticketed": false,
+      "category": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/categories/102/",
+        "id": "102",
+        "name": "Science & Technology",
+        "name_localized": "Science & Technology",
+        "short_name": "Science & Tech",
+        "short_name_localized": "Science & Tech"
+      },
+      "subcategory": null,
+      "format": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/formats/9/",
+        "id": "9",
+        "name": "Class, Training, or Workshop",
+        "name_localized": "Class, Training, or Workshop",
+        "short_name": "Class",
+        "short_name_localized": "Class"
+      },
+      "venue": {
+        "address": {
+          "address_1": "10 Exchange Street West",
+          "address_2": null,
+          "city": "Belfast",
+          "region": null,
+          "postal_code": "BT1 2NJ",
+          "country": "GB",
+          "latitude": "54.6035924",
+          "longitude": "-5.9275539999999864",
+          "localized_address_display": "10 Exchange Street West, Belfast, BT1 2NJ",
+          "localized_area_display": "Belfast",
+          "localized_multi_line_address_display": [
+            "10 Exchange Street West",
+            "Belfast",
+            "BT1 2NJ"
+          ]
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/venues/25589156/",
+        "id": "25589156",
+        "age_restriction": null,
+        "capacity": null,
+        "name": "The MAC",
+        "latitude": "54.6035924",
+        "longitude": "-5.9275539999999864"
+      },
+      "refund_policy": {
+        "refund_policy": "not_defined"
+      },
+      "bookmark_info": {
+        "bookmarked": false
+      },
+      "organizer": {
+        "description": {
+          "text": "Mind the Product is the world’s largest product management community, with regular local ProductTank meetups in over 150 cities around the world, as well as the biggest and best training events, workshops, and conferences in the world - with annual events in London, San Francisco, Hamburg, and more. These are the go-to events for meeting other product managers, designers, and developers and honing your product craft.",
+          "html": "<P><A HREF=\"https://www.eventbrite.com/http:/www.mindtheproduct.com\">Mind the Product</A> is the world’s largest product management community, with regular local <A HREF=\"http://www.producttank.com\" REL=\"nofollow\">ProductTank</A> meetups in over 150 cities around the world, as well as the biggest and best training events, workshops, and conferences in the world - with annual events in London, San Francisco, Hamburg, and more. These are the go-to events for meeting other product managers, designers, and developers and honing your product craft.</P>"
+        },
+        "long_description": {
+          "text": "Mind the Product is the world’s largest product management community, with regular local ProductTank meetups in over 150 cities around the world, as well as the biggest and best training events, workshops, and conferences in the world - with annual events in London, San Francisco, Hamburg, and more. These are the go-to events for meeting other product managers, designers, and developers and honing your product craft.",
+          "html": "<P><A HREF=\"https://www.eventbrite.com/http:/www.mindtheproduct.com\">Mind the Product</A> is the world’s largest product management community, with regular local <A HREF=\"http://www.producttank.com\" REL=\"nofollow\">ProductTank</A> meetups in over 150 cities around the world, as well as the biggest and best training events, workshops, and conferences in the world - with annual events in London, San Francisco, Hamburg, and more. These are the go-to events for meeting other product managers, designers, and developers and honing your product craft.</P>"
+        },
+        "logo": {
+          "crop_mask": null,
+          "original": null,
+          "id": "139997",
+          "url": "https://cdn.evbuc.com/images/139997/27734885637/1/logo.png",
+          "aspect_ratio": null,
+          "edge_color": null,
+          "edge_color_set": null
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/organizers/1962515111/",
+        "id": "1962515111",
+        "name": "Mind the Product",
+        "url": "https://www.eventbrite.com/o/mind-the-product-1962515111",
+        "vanity_url": "http://mindtheproduct.eventbrite.com",
+        "num_past_events": 79,
+        "num_future_events": 24,
+        "website": "http://www.mindtheproduct.com",
+        "twitter": "mindtheproduct",
+        "facebook": "mindtheproduct",
+        "logo_id": "139997"
+      },
+      "ticket_availability": {
+        "has_available_tickets": true,
+        "minimum_ticket_price": {
+          "currency": "GBP",
+          "value": 54900,
+          "major_value": "549.00",
+          "display": "549.00 GBP"
+        },
+        "maximum_ticket_price": {
+          "currency": "GBP",
+          "value": 54900,
+          "major_value": "549.00",
+          "display": "549.00 GBP"
+        },
+        "is_sold_out": false,
+        "start_sales_date": {
+          "timezone": "Europe/London",
+          "local": "2018-09-05T10:00:00",
+          "utc": "2018-09-05T09:00:00Z"
+        }
+      },
+      "logo": {
+        "crop_mask": {
+          "top_left": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 2160,
+          "height": 1080
+        },
+        "original": {
+          "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?auto=compress&s=3d789447b422260a386e5f3600feabb4",
+          "width": 2160,
+          "height": 1080
+        },
+        "id": "49107020",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C0%2C2160%2C1080&s=92599c1e149e13a4d708209286a479ef",
+        "aspect_ratio": "2",
+        "edge_color": null,
+        "edge_color_set": true
+      }
+    },
+    {
+      "name": {
+        "text": "Zombie Science: Worst Case Scenario ,13th Nov 7pm  Market House, Monaghan ",
+        "html": "Zombie Science: Worst Case Scenario ,13th Nov 7pm  Market House, Monaghan "
+      },
+      "description": {
+        "text": "Zombie Science returns with a spoof tutorial on the real science behind a Zombie epidemic. Join Theoretical Zombiologist Doctor Smith as he puts you at the heart of a hypothetical Zombieism outbreak and teaches you what to do when the inevitable Zombie pandemic occurs.  \nWorst Case Scenario is the second show in the Zombie Science spoof lecture series which has attracted audiences of over 36,000 at more than 400 lectures across the UK and Ireland performances at the London Horror Festival and Green Man Festival.       \n Zombie Science: Worst Case Scenario focuses on identifying, containing and controlling disease, and at key points in the show, the audience is invited to vote on courses of action that will determine the outcome of the show.  Only science can save you from the worst case scenario.",
+        "html": "<P><SPAN>Zombie Science returns with a spoof tutorial on the real science behind a Zombie epidemic. Join Theoretical Zombiologist Doctor Smith as he puts you at the heart of a hypothetical Zombieism outbreak and teaches you what to do when the inevitable Zombie pandemic occurs.  </SPAN></P>\n<P><SPAN>Worst Case Scenario is the second show in the Zombie Science spoof lecture series which has attracted audiences of over 36,000 at more than 400 lectures across the UK and Ireland performances at the London Horror Festival and Green Man Festival.       </SPAN></P>\n<P><SPAN> </SPAN><SPAN>Zombie Science: Worst Case Scenario focuses on identifying, containing and controlling disease, and at key points in the show, the audience is invited to vote on courses of action that will determine the outcome of the show.  Only science can save you from the worst case scenario.</SPAN></P>"
+      },
+      "id": "50982052692",
+      "url": "https://www.eventbrite.ie/e/zombie-science-worst-case-scenario-13th-nov-7pm-market-house-monaghan-tickets-50982052692?aff=ebapi",
+      "start": {
+        "timezone": "Europe/Dublin",
+        "local": "2018-11-13T19:00:00",
+        "utc": "2018-11-13T19:00:00Z"
+      },
+      "end": {
+        "timezone": "Europe/Dublin",
+        "local": "2018-11-13T20:30:00",
+        "utc": "2018-11-13T20:30:00Z"
+      },
+      "organization_id": "187206852598",
+      "created": "2018-10-03T21:17:54Z",
+      "changed": "2018-10-19T14:35:10Z",
+      "capacity": null,
+      "capacity_is_custom": null,
+      "status": "live",
+      "currency": "EUR",
+      "listed": true,
+      "shareable": true,
+      "online_event": false,
+      "tx_time_limit": 480,
+      "hide_start_date": false,
+      "hide_end_date": false,
+      "locale": "en_IE",
+      "is_locked": false,
+      "privacy_setting": "unlocked",
+      "is_series": false,
+      "is_series_parent": false,
+      "is_reserved_seating": false,
+      "show_pick_a_seat": false,
+      "show_seatmap_thumbnail": false,
+      "show_colors_in_seatmap_thumbnail": false,
+      "source": "create_2.0",
+      "is_free": true,
+      "version": "3.0.0",
+      "logo_id": "50771832",
+      "organizer_id": "11479577453",
+      "venue_id": "16952913",
+      "category_id": "102",
+      "subcategory_id": null,
+      "format_id": "2",
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/50982052692/",
+      "is_externally_ticketed": false,
+      "category": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/categories/102/",
+        "id": "102",
+        "name": "Science & Technology",
+        "name_localized": "Science & Technology",
+        "short_name": "Science & Tech",
+        "short_name_localized": "Science & Tech"
+      },
+      "subcategory": null,
+      "format": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/formats/2/",
+        "id": "2",
+        "name": "Seminar or Talk",
+        "name_localized": "Seminar or Talk",
+        "short_name": "Seminar",
+        "short_name_localized": "Seminar"
+      },
+      "venue": {
+        "address": {
+          "address_1": "Market Street",
+          "address_2": null,
+          "city": "Monaghan",
+          "region": "County Monaghan",
+          "postal_code": null,
+          "country": "IE",
+          "latitude": "54.247567",
+          "longitude": "-6.972217999999998",
+          "localized_address_display": "Market Street, Monaghan",
+          "localized_area_display": "Monaghan",
+          "localized_multi_line_address_display": [
+            "Market Street",
+            "Monaghan"
+          ]
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/venues/16952913/",
+        "id": "16952913",
+        "age_restriction": null,
+        "capacity": null,
+        "name": "The Market House Monaghan",
+        "latitude": "54.247567",
+        "longitude": "-6.972217999999998"
+      },
+      "refund_policy": {
+        "refund_policy": "not_defined"
+      },
+      "bookmark_info": {
+        "bookmarked": false
+      },
+      "organizer": {
+        "description": {
+          "text": "Now in it's 3rd year, the Cavan Monaghan Science Festival is lead by Monaghan County Council in partnership with Cavan County Council and Cavan Monaghan Education and Training Board,  funded by SFI. This  innovative festival will run from 10th - 24th November 2018 with hundreds of events planned to take place across the two counties in libraries, museums, schools, community centres and art centres.  \r\nMost Events are Free but Booking is essential",
+          "html": "<P><SPAN STYLE=\"align: left;\">Now in it's 3rd year, the Cavan Monaghan Science Festival is lead by Monaghan County Council in partnership with Cavan County Council and Cavan Monaghan Education and Training Board,  funded by SFI. This  innovative festival will run from 10th - 24th November 2018 with hundreds of events planned to take place across the two counties in libraries, museums, schools, community centres and art centres.  </SPAN></P>\r\n<P><STRONG><SPAN STYLE=\"color: #656565; font-family: Roboto; font-size: 15px; background-color: #f5f5f5;\">Most Events are Free but Booking is essential</SPAN></STRONG></P>"
+        },
+        "long_description": {
+          "text": "Now in it's 3rd year, the Cavan Monaghan Science Festival is lead by Monaghan County Council in partnership with Cavan County Council and Cavan Monaghan Education and Training Board,  funded by SFI. This  innovative festival will run from 10th - 24th November 2018 with hundreds of events planned to take place across the two counties in libraries, museums, schools, community centres and art centres.  \r\nMost Events are Free but Booking is essential",
+          "html": "<P><SPAN STYLE=\"align: left;\">Now in it's 3rd year, the Cavan Monaghan Science Festival is lead by Monaghan County Council in partnership with Cavan County Council and Cavan Monaghan Education and Training Board,  funded by SFI. This  innovative festival will run from 10th - 24th November 2018 with hundreds of events planned to take place across the two counties in libraries, museums, schools, community centres and art centres.  </SPAN></P>\r\n<P><STRONG><SPAN STYLE=\"color: #656565; font-family: Roboto; font-size: 15px; background-color: #f5f5f5;\">Most Events are Free but Booking is essential</SPAN></STRONG></P>"
+        },
+        "logo": {
+          "crop_mask": null,
+          "original": null,
+          "id": "36168369",
+          "url": "https://cdn.evbuc.com/images/36168369/187206852598/2/logo.jpg",
+          "aspect_ratio": null,
+          "edge_color": null,
+          "edge_color_set": null
+        },
+        "resource_uri": "https://www.eventbriteapi.com/v3/organizers/11479577453/",
+        "id": "11479577453",
+        "name": "Cavan Monaghan Science Festival",
+        "url": "https://www.eventbrite.ie/o/cavan-monaghan-science-festival-11479577453",
+        "num_past_events": 108,
+        "num_future_events": 65,
+        "website": "http://www.cavanmonaghansciencefestival.ie",
+        "twitter": "@CMSciFest",
+        "facebook": "CavanMonaghanScienceFestival",
+        "logo_id": "36168369"
+      },
+      "ticket_availability": {
+        "has_available_tickets": true,
+        "minimum_ticket_price": {
+          "currency": "EUR",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 EUR"
+        },
+        "maximum_ticket_price": {
+          "currency": "EUR",
+          "value": 0,
+          "major_value": "0.00",
+          "display": "0.00 EUR"
+        },
+        "is_sold_out": false,
+        "start_sales_date": {
+          "timezone": "Europe/Dublin",
+          "local": "2018-10-19T09:00:00",
+          "utc": "2018-10-19T08:00:00Z"
+        }
+      },
+      "logo": {
+        "crop_mask": {
+          "top_left": {
+            "x": 0,
+            "y": 19
+          },
+          "width": 1600,
+          "height": 800
+        },
+        "original": {
+          "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?auto=compress&s=ebafa8d1e125b7ff41fcb42f65fc424f",
+          "width": 1600,
+          "height": 1067
+        },
+        "id": "50771832",
+        "url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C19%2C1600%2C800&s=550f0f4c371ad9a2ec60248021d9fafd",
+        "aspect_ratio": "2",
+        "edge_color": "#4b4e31",
+        "edge_color_set": true
+      }
+    }
+  ],
+  "location": {
+    "latitude": "54.642513",
+    "within": "96.5606400369",
+    "longitude": "-6.762739"
+  }
+}

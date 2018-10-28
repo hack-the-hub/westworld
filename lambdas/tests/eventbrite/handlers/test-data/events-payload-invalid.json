@@ -1,0 +1,15 @@
+{
+  "pagination": {
+    "object_count": 0,
+    "page_number": 1,
+    "page_size": 0,
+    "page_count": 1,
+    "has_more_items": false
+  },
+  "events": [{ "invalid": true }],
+  "location": {
+    "latitude": "54.642513",
+    "within": "96.5606400369",
+    "longitude": "-6.762739"
+  }
+}

@@ -1,0 +1,1458 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Eventbrite transformer when a new file is added to the bucket which contains complete events uploads transformed events list 1`] = `
+Array [
+  Array [
+    "muxer-transformed-events",
+    [Function],
+    Array [
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 0,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-01-13T13:42:41.000Z",
+        "description": "CoderDojo is a movement orientated around running free not-for-profit coding clubs and regular sessions for young people. Farset Labs’ CoderDojo is run by volunteers from the Farset community and offers a range of computer skills, from web application development to scratch.
+At a CoderDojo, young people learn how to code, develop websites, apps, programs, games and more. Dojos are set up, run by and taught at by volunteers. In addition to learning to code, members meet like minded people, show off what they’ve been working on and so on. CoderDojo makes development and learning to code a fun, sociable, kick ass experience.
+CoderDojo also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally. CoderDojo has just one rule: “Above All: Be Cool“, bullying, lying, wasting people’s time and so on is uncool.
+It also provides essential teaching and mentorship experience for budding software developers; after all, to teach is to learn twice! And you don’t have to be a hardcore code-hacker to mentor; anyone can help to guide these kids through the processes of problem solving, breaking down tasks, thinking in a stepwise fashion, or just picking out the killer-spelling-mistakes like variable names or missing semi-colons!
+For more information about Coder Dojo, check out the CoderDojo global webpage.
+You can also follow us on Twitter and Facebook
+
+What should I bring to the event?
+If you can, please bring your own laptop.
+Can I join as a mentor/volunteer?
+Yes! We always appreciate more hands on deck, but we do need to put people through a short induction/training programme first, so get in touch with us on dojo@farsetlabs.org.uk and we can add you to the next induction stream.
+I can’t make it, what can I do to help?
+If you can’t make it to our Dojo, consider some of the other Dojos in Northern Ireland, like at BMC in Belfast,Ballymena, or the brand new Dojo in Newry.
+If you just want to support our event here at Farset Labs, please consider making a donation to the charity and mention in your donation that you wish it to go to fund refreshments, resources, materials, and equipment for the Dojo.
+Is there an age limit to enter the event?
+CoderDojo is aimed loosely at the under 18’s, but any child younger than 14 must be accompanied by a parent or guardian and that guardian must stay on-site for the duration of the event
+What are my transport/parking options getting to the event?
+We’re 5 minutes walk from Europa Bus Centre, and Parking is available all across the Weavers Court Campus
+Is there a charge for the event
+Farset Labs’ members operate the CoderDojo for free for all attendees, but donations to cover operating costs are greatly appreciated.
+What Child Protection Policies are in place?
+Only those registered may attend, including mentors. For full details, see Farset Labs’ Child Protection Policy. At the lead mentors’ discretion, the event space may be sealed off from the rest of the space.",
+        "last_updated": "2018-01-13T13:42:44.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?auto=compress&s=4855c40b0a3657500da81dbc0538485a",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C66%2C800%2C400&s=bd31fd7b61b36c0b8b61d2d1e03154d0",
+        },
+        "name": "Farset Labs Dojo 2018",
+        "organiser": Object {
+          "name": "Farset Labs",
+        },
+        "source_data": Object {
+          "id": "42152220426",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 7200000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T21:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/farset-labs-dojo-2018-tickets-42152220426?aff=ebapi",
+        "venue": Object {
+          "address": "Weavers Court Linfield Industrial Estate, Belfast, BT12 5GH",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.591804",
+          "longitude": "-5.942264000000023",
+          "name": "Farset Labs,",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-10-11T14:15:46.000Z",
+        "description": "It's our Birthday! The NI Raspberry Jam is turning 6!
+
+Come one, come all to the Northern Ireland Raspberry Jam!
+In collaboration with the School of Physics and Mathematics at Queens, Farset Labs and the Northern Ireland Raspberry Jam team, these free monthly events involve tinkering, coding, electronics and generally just having a stack of fun making stuff!Whether you want to try out computer programming for the first time, hack some electronics or just generally have some fun inventing, we have something for everyone!All equipment is provided and we have activities for ages 6-106, from complete beginners right up to seasoned Pi experts. Plus, like all our Raspberry Jam events, it is completely free!So what are you waiting for?
+
+FAQ
+What is a Raspberry Jam?
+A Raspberry Jam is an event for kids/adults of all ages to come together and learn a bit more about the Raspberry Pi and coding/electronics in general.
+I have no previous experience with coding/electronics/Raspberry Pi?
+That is no problem! All our Raspberry Jams are suited for beginners, right up to Pi exports, plus all equipment is provided. All you need to bring is yourself.
+How can I get there? Can I take public transport?
+The new Maths and Physics Teaching Building is very easy to get to by car, or by public transport.
+By car
+Park at the McClay Library car pack. If it is full, then there is plenty of additional car parking in the surrounding side streets.
+
+By train
+Travel to Botanic station, then walk up Botanic street towards Queens University. The new Physics Teaching Building is directly opposite the entrance to the McClay library.
+
+How often to do these Raspberry Jam events run?
+The Northern Ireland Raspberry Jam runs on the 2nd Saturday of every month (excluding July/August) throughout the year. They are free as well and involve new workshops/activities each month. Details - https://niraspberryjam.eventbrite.co.uk.
+You can also add our provisional future Jams calendar to yours by clicking here (or simply view it here).
+
+What age range is this event suitable for?
+All of our Raspberry Jam events are suitable for kids as young as 6, right up to adults of 106! Although the majority of the attendees at the Raspberry Jam events are young people, they are open to adults as well, especially parents of kids attending.
+Note - By attending this event, you provide express permission to photographs/videos being taken and used by the Northern Ireland Raspberry Jam team. If this is an issue, please inform one of the team on your arrival.
+
+
+Note that normal Farset Labs Child Protection policy applies. This includes that all children under the age of 14 must have a designated guardian in on site for the entire event.
+We also require children aged between 14 and 17 (inclusive) parents are within 10 minutes from venue and can be easily contactable in event of an emergency.
+
+This event is run in collaboration with the School of Mathematics and Physics at Queens University and the School of Electronics, Electrical Engineering and Computer Science at Queens University.
+The Northern Ireland Raspberry Jam wouldn't be possible without support from Institution of Engineering and Technology, Institution of Mechanical Engineers, Northern Ireland Department of Communities, Nitec Solutions and Farset Labs.",
+        "last_updated": "2018-10-11T14:21:59.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?auto=compress&s=ceea246e5556a880a8396ccabf646b92",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C145%2C3000%2C1500&s=295a58b4c6582d863fc1d57495ed1d49",
+        },
+        "name": "Northern Ireland Raspberry Jam - November 2018 - 6th Birthday!",
+        "organiser": Object {
+          "name": "Northern Ireland Raspberry Jam",
+        },
+        "source_data": Object {
+          "id": "51292098046",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 14400000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T17:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T13:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/northern-ireland-raspberry-jam-november-2018-6th-birthday-tickets-51292098046?aff=ebapi",
+        "venue": Object {
+          "address": "Queens University 7-9 College Park E,, Belfast, BT7 1PS",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.58392929999999",
+          "longitude": "-5.931720000000041",
+          "name": "School of Maths and Physics Teaching Centre",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-06-17T21:28:44.000Z",
+        "description": "Come join us at CodeClub Holywood!
+Let your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people. 
+7-17 year olds of all abilities welcome. All young people must be accompanied by a responsible adult for the duration of the session.
+
+
+Learn to Code
+
+
+
+Build websites
+
+
+Make games
+
+
+Create apps for your phone
+
+
+
+Fun & Social
+
+
+Make Friends
+
+
+Get inspired by technology
+
+
+Mentors there to help
+
+
+Free
+
+
+Please bring:
+
+
+a laptop if you have one but don't worry if you don't as one can be provided on the day
+
+
+a set of headphones",
+        "last_updated": "2018-06-17T21:29:45.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?auto=compress&s=6243ca54da44a4d699eef8fdcd5154f3",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=23%2C135%2C446%2C223&s=d7955c91802a83c7da2e4289dcd01d6d",
+        },
+        "name": "Holywood Code Club - Saturday 10th November",
+        "organiser": Object {
+          "name": "Code Club Holywood",
+        },
+        "source_data": Object {
+          "id": "47149148372",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T15:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T13:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/holywood-code-club-saturday-10th-november-registration-47149148372?aff=ebapi",
+        "venue": Object {
+          "address": "Knocknagoney Rd , Belfast, BT4 2PW",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6176244",
+          "longitude": "-5.8542112999999745",
+          "name": "Community Room - Tesco Extra Knocknagoney",
+        },
+      },
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 54900,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-08-30T13:47:45.000Z",
+        "description": "Increasing your strategic impact as a product manager
+Training Workshop Overview
+Essentials 102  is an overview course intended for confident product managers who are looking to increase their strategic skills and influence. The intention of this course is to help product managers build a strategic layer onto their core product practices, and focus on the soft skills and influencing tactics that are often needed to ensure effective product delivery.  It seeks to answer the questions:
+
+How can product managers increase organisational understanding of product practice?
+What parts of their process can be used as tools for increased alignment?
+How can product teams craft an evidence-driven product vision and ensure buy-in?
+
+This course is centered on the senior product manager’s role between the product team and the broader business. In order for teams to deliver effectively, they need buy-in and support from their stakeholders. Participants will gain an understanding of how to sharpen their product practice so that it becomes an alignment and educational tool.  
+
+What we’ll cover on the day
+Essentials 102 is a full-day workshop comprised of six modules. Each module includes a lecture component on theory and practice interspersed with up to three hands-on activities. This ensures that participants have an opportunity to apply and work with concepts in a setting that will answer questions and facilitate critical thinking. The following modules will be covered:
+
+Evaluating opportunity: Understanding how to unpack product assumptions and line up macro data to establish product viability and the foundations for product/market fit
+Implementing user research: Breaks down the components of running a user research round and what is needed to ensure maximum value of the time invested
+Research techniques: Reviewing a range of research methodologies, beyond the classic interview, that help product teams validate problem and solution
+Synthesis: Distilling insights from research and how to collaborate with stakeholders to deepen user understanding and influence
+Prioritisation: Covering a range of techniques and their uses for alignment at points of product development lifecycle
+Stakeholder management: A deep-dive into organizational relationships and understanding how to build a communication strategy
+
+
+
+Mind the Product Trainers
+Every Mind the Product trainer is a working product manager who has worked with multiple products and domains. Your trainer’s product management experience enriches the curriculum by delivering diverse perspectives on best practice in different scenarios. You will hear about the products they have worked on in the past, what went well, what didn’t go so well, and how they tried to make improvements. Our trainers’ main goal is not to provide participants with all of the answers, but help facilitate them in asking the right questions.  
+
+About Your Trainers
+
+Emma Mulholland, Senior Product Manager
+Emma has over 11 years' experience in Product. Recently joining ShopKeep as a Product Manager, Emma previously worked in an XP (extreme programming) lab for Allstate where she has used lean techniques and Design Thinking to solve business problems across the enterprise. Prior to that Emma worked as a Product Manager in eCommerce, working on the Search and User Experience for Marks and Spencer, and Tesco. She's a founder/organiser of ProductTank Belfast, and in her spare time loves being outdoors running, cycling and hiking. 
+Graeme Stuart, Head of Product
+Graeme has over 14 years core product experience from startups through scale-ups to enterprise. He currently works as VP Product at Deep-Labs.com where his team is building a platform next generation risk mitigation & hyper-personalized consumer experiences through deep identity management. He loves bringing new initiatives to market and at the same time, building out product expertise in companies who hadn’t valued it before. He’s passionate in telling anyone who will listen that Belfast can provide global product expertise not only talented, well-priced engineers. Graeme advises startups wanting to scale & wanting to dip their toe into product management. He is a co-founder & organiser of ProductTank Belfast. He also tries to spend quality time with his family & play any sport in the little spare time he has.
+
+
+Agenda
+
+
+Registration will begin at 9.00
+
+
+Class will start at 9.30 sharp and end at 17.00
+
+
+We'll also provide a light breakfast, buffet lunch and plenty of tea and coffee to fuel you through the day.
+
+
+
+Frequently Asked Questions
+Can I change the name or other details on my tickets?Yes, but only the person who purchased the ticket can make these changes on Eventbrite. You are free to change your ticket details up to two days before the event, including name, title, etc. Please make sure these details are correct as they will be what we show on your badge! Just login to Eventbrite and make the changes, following these instructions. If you can’t reach the person who purchased the ticket in order to get them to change the information please contact us on tickets@mindtheproduct.com and we will help you make the updates.
+Can I get a refund?We offer a full refund up to one month before the event. Simply log in to Eventbrite and request the refund following these instructions. As with changes, only the person who purchased the tickets can request a refund.
+Can I pay by invoice?As we are a small team we only offer payment by invoice if you are buying 5 tickets or more due to the additional overhead. Early Bird conference tickets cannot be purchased by invoice. Please also note that no tickets are held/issued until payment of the invoice has been received.  Request to pay by invoice by emailing tickets@mindtheproduct.com
+
+Tickets are not held until payment has been made – there are no exceptions to this.
+We cannot agree to any terms and conditions associated with Purchase Order numbers or other supplier agreements.
+We do not fill in supplier detail forms for ticket invoices – if you cannot find details you require on our website – please ask.
+
+
+Frequently Asked Questions | Terms & Conditions  |  Code of Conduct  |  Privacy Policy",
+        "last_updated": "2018-10-19T09:27:43.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?auto=compress&s=3d789447b422260a386e5f3600feabb4",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C0%2C2160%2C1080&s=92599c1e149e13a4d708209286a479ef",
+        },
+        "name": "Product Management Essentials 102 Training Workshop - Belfast",
+        "organiser": Object {
+          "name": "Mind the Product",
+        },
+        "source_data": Object {
+          "id": "49693729282",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 27000000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T17:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T09:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.com/e/product-management-essentials-102-training-workshop-belfast-tickets-49693729282?aff=ebapi",
+        "venue": Object {
+          "address": "10 Exchange Street West, Belfast, BT1 2NJ",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6035924",
+          "longitude": "-5.9275539999999864",
+          "name": "The MAC",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-10-03T21:17:54.000Z",
+        "description": "Zombie Science returns with a spoof tutorial on the real science behind a Zombie epidemic. Join Theoretical Zombiologist Doctor Smith as he puts you at the heart of a hypothetical Zombieism outbreak and teaches you what to do when the inevitable Zombie pandemic occurs.  
+Worst Case Scenario is the second show in the Zombie Science spoof lecture series which has attracted audiences of over 36,000 at more than 400 lectures across the UK and Ireland performances at the London Horror Festival and Green Man Festival.       
+ Zombie Science: Worst Case Scenario focuses on identifying, containing and controlling disease, and at key points in the show, the audience is invited to vote on courses of action that will determine the outcome of the show.  Only science can save you from the worst case scenario.",
+        "last_updated": "2018-10-19T14:35:10.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?auto=compress&s=ebafa8d1e125b7ff41fcb42f65fc424f",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C19%2C1600%2C800&s=550f0f4c371ad9a2ec60248021d9fafd",
+        },
+        "name": "Zombie Science: Worst Case Scenario ,13th Nov 7pm  Market House, Monaghan",
+        "organiser": Object {
+          "name": "Cavan Monaghan Science Festival",
+        },
+        "source_data": Object {
+          "id": "50982052692",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T20:30:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.ie/e/zombie-science-worst-case-scenario-13th-nov-7pm-market-house-monaghan-tickets-50982052692?aff=ebapi",
+        "venue": Object {
+          "address": "Market Street, Monaghan",
+          "city": "Monaghan",
+          "country": "IE",
+          "latitude": "54.247567",
+          "longitude": "-6.972217999999998",
+          "name": "The Market House Monaghan",
+        },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`Eventbrite transformer when a new file is added to the bucket which contains incomplete events uploads transformed events list, without incomplete events 1`] = `
+Array [
+  Array [
+    "muxer-transformed-events",
+    [Function],
+    Array [
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 0,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-01-13T13:42:41.000Z",
+        "description": "CoderDojo is a movement orientated around running free not-for-profit coding clubs and regular sessions for young people. Farset Labs’ CoderDojo is run by volunteers from the Farset community and offers a range of computer skills, from web application development to scratch.
+At a CoderDojo, young people learn how to code, develop websites, apps, programs, games and more. Dojos are set up, run by and taught at by volunteers. In addition to learning to code, members meet like minded people, show off what they’ve been working on and so on. CoderDojo makes development and learning to code a fun, sociable, kick ass experience.
+CoderDojo also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally. CoderDojo has just one rule: “Above All: Be Cool“, bullying, lying, wasting people’s time and so on is uncool.
+It also provides essential teaching and mentorship experience for budding software developers; after all, to teach is to learn twice! And you don’t have to be a hardcore code-hacker to mentor; anyone can help to guide these kids through the processes of problem solving, breaking down tasks, thinking in a stepwise fashion, or just picking out the killer-spelling-mistakes like variable names or missing semi-colons!
+For more information about Coder Dojo, check out the CoderDojo global webpage.
+You can also follow us on Twitter and Facebook
+
+What should I bring to the event?
+If you can, please bring your own laptop.
+Can I join as a mentor/volunteer?
+Yes! We always appreciate more hands on deck, but we do need to put people through a short induction/training programme first, so get in touch with us on dojo@farsetlabs.org.uk and we can add you to the next induction stream.
+I can’t make it, what can I do to help?
+If you can’t make it to our Dojo, consider some of the other Dojos in Northern Ireland, like at BMC in Belfast,Ballymena, or the brand new Dojo in Newry.
+If you just want to support our event here at Farset Labs, please consider making a donation to the charity and mention in your donation that you wish it to go to fund refreshments, resources, materials, and equipment for the Dojo.
+Is there an age limit to enter the event?
+CoderDojo is aimed loosely at the under 18’s, but any child younger than 14 must be accompanied by a parent or guardian and that guardian must stay on-site for the duration of the event
+What are my transport/parking options getting to the event?
+We’re 5 minutes walk from Europa Bus Centre, and Parking is available all across the Weavers Court Campus
+Is there a charge for the event
+Farset Labs’ members operate the CoderDojo for free for all attendees, but donations to cover operating costs are greatly appreciated.
+What Child Protection Policies are in place?
+Only those registered may attend, including mentors. For full details, see Farset Labs’ Child Protection Policy. At the lead mentors’ discretion, the event space may be sealed off from the rest of the space.",
+        "last_updated": "2018-01-13T13:42:44.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?auto=compress&s=4855c40b0a3657500da81dbc0538485a",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C66%2C800%2C400&s=bd31fd7b61b36c0b8b61d2d1e03154d0",
+        },
+        "name": "Farset Labs Dojo 2018",
+        "organiser": Object {
+          "name": "Farset Labs",
+        },
+        "source_data": Object {
+          "id": "42152220426",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 7200000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T21:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/farset-labs-dojo-2018-tickets-42152220426?aff=ebapi",
+        "venue": Object {
+          "address": "Weavers Court Linfield Industrial Estate, Belfast, BT12 5GH",
+          "city": undefined,
+          "country": "GB",
+          "latitude": "54.591804",
+          "longitude": "-5.942264000000023",
+          "name": "Weavers Court Linfield Industrial Estate, Belfast, BT12 5GH",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-06-17T21:28:44.000Z",
+        "description": "Come join us at CodeClub Holywood!
+Let your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people. 
+7-17 year olds of all abilities welcome. All young people must be accompanied by a responsible adult for the duration of the session.
+
+
+Learn to Code
+
+
+
+Build websites
+
+
+Make games
+
+
+Create apps for your phone
+
+
+
+Fun & Social
+
+
+Make Friends
+
+
+Get inspired by technology
+
+
+Mentors there to help
+
+
+Free
+
+
+Please bring:
+
+
+a laptop if you have one but don't worry if you don't as one can be provided on the day
+
+
+a set of headphones",
+        "last_updated": "2018-06-17T21:29:45.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?auto=compress&s=6243ca54da44a4d699eef8fdcd5154f3",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=23%2C135%2C446%2C223&s=d7955c91802a83c7da2e4289dcd01d6d",
+        },
+        "name": "Holywood Code Club - Saturday 10th November",
+        "organiser": Object {
+          "name": "Code Club Holywood",
+        },
+        "source_data": Object {
+          "id": "47149148372",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T15:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T13:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/holywood-code-club-saturday-10th-november-registration-47149148372?aff=ebapi",
+        "venue": Object {
+          "address": "Knocknagoney Rd , Belfast, BT4 2PW",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6176244",
+          "longitude": "-5.8542112999999745",
+          "name": "Community Room - Tesco Extra Knocknagoney",
+        },
+      },
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 54900,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-08-30T13:47:45.000Z",
+        "description": "Increasing your strategic impact as a product manager
+Training Workshop Overview
+Essentials 102  is an overview course intended for confident product managers who are looking to increase their strategic skills and influence. The intention of this course is to help product managers build a strategic layer onto their core product practices, and focus on the soft skills and influencing tactics that are often needed to ensure effective product delivery.  It seeks to answer the questions:
+
+How can product managers increase organisational understanding of product practice?
+What parts of their process can be used as tools for increased alignment?
+How can product teams craft an evidence-driven product vision and ensure buy-in?
+
+This course is centered on the senior product manager’s role between the product team and the broader business. In order for teams to deliver effectively, they need buy-in and support from their stakeholders. Participants will gain an understanding of how to sharpen their product practice so that it becomes an alignment and educational tool.  
+
+What we’ll cover on the day
+Essentials 102 is a full-day workshop comprised of six modules. Each module includes a lecture component on theory and practice interspersed with up to three hands-on activities. This ensures that participants have an opportunity to apply and work with concepts in a setting that will answer questions and facilitate critical thinking. The following modules will be covered:
+
+Evaluating opportunity: Understanding how to unpack product assumptions and line up macro data to establish product viability and the foundations for product/market fit
+Implementing user research: Breaks down the components of running a user research round and what is needed to ensure maximum value of the time invested
+Research techniques: Reviewing a range of research methodologies, beyond the classic interview, that help product teams validate problem and solution
+Synthesis: Distilling insights from research and how to collaborate with stakeholders to deepen user understanding and influence
+Prioritisation: Covering a range of techniques and their uses for alignment at points of product development lifecycle
+Stakeholder management: A deep-dive into organizational relationships and understanding how to build a communication strategy
+
+
+
+Mind the Product Trainers
+Every Mind the Product trainer is a working product manager who has worked with multiple products and domains. Your trainer’s product management experience enriches the curriculum by delivering diverse perspectives on best practice in different scenarios. You will hear about the products they have worked on in the past, what went well, what didn’t go so well, and how they tried to make improvements. Our trainers’ main goal is not to provide participants with all of the answers, but help facilitate them in asking the right questions.  
+
+About Your Trainers
+
+Emma Mulholland, Senior Product Manager
+Emma has over 11 years' experience in Product. Recently joining ShopKeep as a Product Manager, Emma previously worked in an XP (extreme programming) lab for Allstate where she has used lean techniques and Design Thinking to solve business problems across the enterprise. Prior to that Emma worked as a Product Manager in eCommerce, working on the Search and User Experience for Marks and Spencer, and Tesco. She's a founder/organiser of ProductTank Belfast, and in her spare time loves being outdoors running, cycling and hiking. 
+Graeme Stuart, Head of Product
+Graeme has over 14 years core product experience from startups through scale-ups to enterprise. He currently works as VP Product at Deep-Labs.com where his team is building a platform next generation risk mitigation & hyper-personalized consumer experiences through deep identity management. He loves bringing new initiatives to market and at the same time, building out product expertise in companies who hadn’t valued it before. He’s passionate in telling anyone who will listen that Belfast can provide global product expertise not only talented, well-priced engineers. Graeme advises startups wanting to scale & wanting to dip their toe into product management. He is a co-founder & organiser of ProductTank Belfast. He also tries to spend quality time with his family & play any sport in the little spare time he has.
+
+
+Agenda
+
+
+Registration will begin at 9.00
+
+
+Class will start at 9.30 sharp and end at 17.00
+
+
+We'll also provide a light breakfast, buffet lunch and plenty of tea and coffee to fuel you through the day.
+
+
+
+Frequently Asked Questions
+Can I change the name or other details on my tickets?Yes, but only the person who purchased the ticket can make these changes on Eventbrite. You are free to change your ticket details up to two days before the event, including name, title, etc. Please make sure these details are correct as they will be what we show on your badge! Just login to Eventbrite and make the changes, following these instructions. If you can’t reach the person who purchased the ticket in order to get them to change the information please contact us on tickets@mindtheproduct.com and we will help you make the updates.
+Can I get a refund?We offer a full refund up to one month before the event. Simply log in to Eventbrite and request the refund following these instructions. As with changes, only the person who purchased the tickets can request a refund.
+Can I pay by invoice?As we are a small team we only offer payment by invoice if you are buying 5 tickets or more due to the additional overhead. Early Bird conference tickets cannot be purchased by invoice. Please also note that no tickets are held/issued until payment of the invoice has been received.  Request to pay by invoice by emailing tickets@mindtheproduct.com
+
+Tickets are not held until payment has been made – there are no exceptions to this.
+We cannot agree to any terms and conditions associated with Purchase Order numbers or other supplier agreements.
+We do not fill in supplier detail forms for ticket invoices – if you cannot find details you require on our website – please ask.
+
+
+Frequently Asked Questions | Terms & Conditions  |  Code of Conduct  |  Privacy Policy",
+        "last_updated": "2018-10-19T09:27:43.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?auto=compress&s=3d789447b422260a386e5f3600feabb4",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C0%2C2160%2C1080&s=92599c1e149e13a4d708209286a479ef",
+        },
+        "name": "Product Management Essentials 102 Training Workshop - Belfast",
+        "organiser": Object {
+          "name": "Mind the Product",
+        },
+        "source_data": Object {
+          "id": "49693729282",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 27000000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T17:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T09:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.com/e/product-management-essentials-102-training-workshop-belfast-tickets-49693729282?aff=ebapi",
+        "venue": Object {
+          "address": "10 Exchange Street West, Belfast, BT1 2NJ",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6035924",
+          "longitude": "-5.9275539999999864",
+          "name": "The MAC",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-10-03T21:17:54.000Z",
+        "description": "Zombie Science returns with a spoof tutorial on the real science behind a Zombie epidemic. Join Theoretical Zombiologist Doctor Smith as he puts you at the heart of a hypothetical Zombieism outbreak and teaches you what to do when the inevitable Zombie pandemic occurs.  
+Worst Case Scenario is the second show in the Zombie Science spoof lecture series which has attracted audiences of over 36,000 at more than 400 lectures across the UK and Ireland performances at the London Horror Festival and Green Man Festival.       
+ Zombie Science: Worst Case Scenario focuses on identifying, containing and controlling disease, and at key points in the show, the audience is invited to vote on courses of action that will determine the outcome of the show.  Only science can save you from the worst case scenario.",
+        "last_updated": "2018-10-19T14:35:10.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?auto=compress&s=ebafa8d1e125b7ff41fcb42f65fc424f",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C19%2C1600%2C800&s=550f0f4c371ad9a2ec60248021d9fafd",
+        },
+        "name": "Zombie Science: Worst Case Scenario ,13th Nov 7pm  Market House, Monaghan",
+        "organiser": Object {
+          "name": "Cavan Monaghan Science Festival",
+        },
+        "source_data": Object {
+          "id": "50982052692",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T20:30:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.ie/e/zombie-science-worst-case-scenario-13th-nov-7pm-market-house-monaghan-tickets-50982052692?aff=ebapi",
+        "venue": Object {
+          "address": "Market Street, Monaghan",
+          "city": "Monaghan",
+          "country": "IE",
+          "latitude": "54.247567",
+          "longitude": "-6.972217999999998",
+          "name": "The Market House Monaghan",
+        },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`Eventbrite transformer when multiple new files are added to the bucket uploads transformed events lists 1`] = `
+Array [
+  Array [
+    "muxer-transformed-events",
+    [Function],
+    Array [
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 0,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-01-13T13:42:41.000Z",
+        "description": "CoderDojo is a movement orientated around running free not-for-profit coding clubs and regular sessions for young people. Farset Labs’ CoderDojo is run by volunteers from the Farset community and offers a range of computer skills, from web application development to scratch.
+At a CoderDojo, young people learn how to code, develop websites, apps, programs, games and more. Dojos are set up, run by and taught at by volunteers. In addition to learning to code, members meet like minded people, show off what they’ve been working on and so on. CoderDojo makes development and learning to code a fun, sociable, kick ass experience.
+CoderDojo also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally. CoderDojo has just one rule: “Above All: Be Cool“, bullying, lying, wasting people’s time and so on is uncool.
+It also provides essential teaching and mentorship experience for budding software developers; after all, to teach is to learn twice! And you don’t have to be a hardcore code-hacker to mentor; anyone can help to guide these kids through the processes of problem solving, breaking down tasks, thinking in a stepwise fashion, or just picking out the killer-spelling-mistakes like variable names or missing semi-colons!
+For more information about Coder Dojo, check out the CoderDojo global webpage.
+You can also follow us on Twitter and Facebook
+
+What should I bring to the event?
+If you can, please bring your own laptop.
+Can I join as a mentor/volunteer?
+Yes! We always appreciate more hands on deck, but we do need to put people through a short induction/training programme first, so get in touch with us on dojo@farsetlabs.org.uk and we can add you to the next induction stream.
+I can’t make it, what can I do to help?
+If you can’t make it to our Dojo, consider some of the other Dojos in Northern Ireland, like at BMC in Belfast,Ballymena, or the brand new Dojo in Newry.
+If you just want to support our event here at Farset Labs, please consider making a donation to the charity and mention in your donation that you wish it to go to fund refreshments, resources, materials, and equipment for the Dojo.
+Is there an age limit to enter the event?
+CoderDojo is aimed loosely at the under 18’s, but any child younger than 14 must be accompanied by a parent or guardian and that guardian must stay on-site for the duration of the event
+What are my transport/parking options getting to the event?
+We’re 5 minutes walk from Europa Bus Centre, and Parking is available all across the Weavers Court Campus
+Is there a charge for the event
+Farset Labs’ members operate the CoderDojo for free for all attendees, but donations to cover operating costs are greatly appreciated.
+What Child Protection Policies are in place?
+Only those registered may attend, including mentors. For full details, see Farset Labs’ Child Protection Policy. At the lead mentors’ discretion, the event space may be sealed off from the rest of the space.",
+        "last_updated": "2018-01-13T13:42:44.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?auto=compress&s=4855c40b0a3657500da81dbc0538485a",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C66%2C800%2C400&s=bd31fd7b61b36c0b8b61d2d1e03154d0",
+        },
+        "name": "Farset Labs Dojo 2018",
+        "organiser": Object {
+          "name": "Farset Labs",
+        },
+        "source_data": Object {
+          "id": "42152220426",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 7200000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T21:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/farset-labs-dojo-2018-tickets-42152220426?aff=ebapi",
+        "venue": Object {
+          "address": "Weavers Court Linfield Industrial Estate, Belfast, BT12 5GH",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.591804",
+          "longitude": "-5.942264000000023",
+          "name": "Farset Labs,",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-10-11T14:15:46.000Z",
+        "description": "It's our Birthday! The NI Raspberry Jam is turning 6!
+
+Come one, come all to the Northern Ireland Raspberry Jam!
+In collaboration with the School of Physics and Mathematics at Queens, Farset Labs and the Northern Ireland Raspberry Jam team, these free monthly events involve tinkering, coding, electronics and generally just having a stack of fun making stuff!Whether you want to try out computer programming for the first time, hack some electronics or just generally have some fun inventing, we have something for everyone!All equipment is provided and we have activities for ages 6-106, from complete beginners right up to seasoned Pi experts. Plus, like all our Raspberry Jam events, it is completely free!So what are you waiting for?
+
+FAQ
+What is a Raspberry Jam?
+A Raspberry Jam is an event for kids/adults of all ages to come together and learn a bit more about the Raspberry Pi and coding/electronics in general.
+I have no previous experience with coding/electronics/Raspberry Pi?
+That is no problem! All our Raspberry Jams are suited for beginners, right up to Pi exports, plus all equipment is provided. All you need to bring is yourself.
+How can I get there? Can I take public transport?
+The new Maths and Physics Teaching Building is very easy to get to by car, or by public transport.
+By car
+Park at the McClay Library car pack. If it is full, then there is plenty of additional car parking in the surrounding side streets.
+
+By train
+Travel to Botanic station, then walk up Botanic street towards Queens University. The new Physics Teaching Building is directly opposite the entrance to the McClay library.
+
+How often to do these Raspberry Jam events run?
+The Northern Ireland Raspberry Jam runs on the 2nd Saturday of every month (excluding July/August) throughout the year. They are free as well and involve new workshops/activities each month. Details - https://niraspberryjam.eventbrite.co.uk.
+You can also add our provisional future Jams calendar to yours by clicking here (or simply view it here).
+
+What age range is this event suitable for?
+All of our Raspberry Jam events are suitable for kids as young as 6, right up to adults of 106! Although the majority of the attendees at the Raspberry Jam events are young people, they are open to adults as well, especially parents of kids attending.
+Note - By attending this event, you provide express permission to photographs/videos being taken and used by the Northern Ireland Raspberry Jam team. If this is an issue, please inform one of the team on your arrival.
+
+
+Note that normal Farset Labs Child Protection policy applies. This includes that all children under the age of 14 must have a designated guardian in on site for the entire event.
+We also require children aged between 14 and 17 (inclusive) parents are within 10 minutes from venue and can be easily contactable in event of an emergency.
+
+This event is run in collaboration with the School of Mathematics and Physics at Queens University and the School of Electronics, Electrical Engineering and Computer Science at Queens University.
+The Northern Ireland Raspberry Jam wouldn't be possible without support from Institution of Engineering and Technology, Institution of Mechanical Engineers, Northern Ireland Department of Communities, Nitec Solutions and Farset Labs.",
+        "last_updated": "2018-10-11T14:21:59.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?auto=compress&s=ceea246e5556a880a8396ccabf646b92",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C145%2C3000%2C1500&s=295a58b4c6582d863fc1d57495ed1d49",
+        },
+        "name": "Northern Ireland Raspberry Jam - November 2018 - 6th Birthday!",
+        "organiser": Object {
+          "name": "Northern Ireland Raspberry Jam",
+        },
+        "source_data": Object {
+          "id": "51292098046",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 14400000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T17:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T13:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/northern-ireland-raspberry-jam-november-2018-6th-birthday-tickets-51292098046?aff=ebapi",
+        "venue": Object {
+          "address": "Queens University 7-9 College Park E,, Belfast, BT7 1PS",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.58392929999999",
+          "longitude": "-5.931720000000041",
+          "name": "School of Maths and Physics Teaching Centre",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-06-17T21:28:44.000Z",
+        "description": "Come join us at CodeClub Holywood!
+Let your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people. 
+7-17 year olds of all abilities welcome. All young people must be accompanied by a responsible adult for the duration of the session.
+
+
+Learn to Code
+
+
+
+Build websites
+
+
+Make games
+
+
+Create apps for your phone
+
+
+
+Fun & Social
+
+
+Make Friends
+
+
+Get inspired by technology
+
+
+Mentors there to help
+
+
+Free
+
+
+Please bring:
+
+
+a laptop if you have one but don't worry if you don't as one can be provided on the day
+
+
+a set of headphones",
+        "last_updated": "2018-06-17T21:29:45.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?auto=compress&s=6243ca54da44a4d699eef8fdcd5154f3",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=23%2C135%2C446%2C223&s=d7955c91802a83c7da2e4289dcd01d6d",
+        },
+        "name": "Holywood Code Club - Saturday 10th November",
+        "organiser": Object {
+          "name": "Code Club Holywood",
+        },
+        "source_data": Object {
+          "id": "47149148372",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T15:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T13:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/holywood-code-club-saturday-10th-november-registration-47149148372?aff=ebapi",
+        "venue": Object {
+          "address": "Knocknagoney Rd , Belfast, BT4 2PW",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6176244",
+          "longitude": "-5.8542112999999745",
+          "name": "Community Room - Tesco Extra Knocknagoney",
+        },
+      },
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 54900,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-08-30T13:47:45.000Z",
+        "description": "Increasing your strategic impact as a product manager
+Training Workshop Overview
+Essentials 102  is an overview course intended for confident product managers who are looking to increase their strategic skills and influence. The intention of this course is to help product managers build a strategic layer onto their core product practices, and focus on the soft skills and influencing tactics that are often needed to ensure effective product delivery.  It seeks to answer the questions:
+
+How can product managers increase organisational understanding of product practice?
+What parts of their process can be used as tools for increased alignment?
+How can product teams craft an evidence-driven product vision and ensure buy-in?
+
+This course is centered on the senior product manager’s role between the product team and the broader business. In order for teams to deliver effectively, they need buy-in and support from their stakeholders. Participants will gain an understanding of how to sharpen their product practice so that it becomes an alignment and educational tool.  
+
+What we’ll cover on the day
+Essentials 102 is a full-day workshop comprised of six modules. Each module includes a lecture component on theory and practice interspersed with up to three hands-on activities. This ensures that participants have an opportunity to apply and work with concepts in a setting that will answer questions and facilitate critical thinking. The following modules will be covered:
+
+Evaluating opportunity: Understanding how to unpack product assumptions and line up macro data to establish product viability and the foundations for product/market fit
+Implementing user research: Breaks down the components of running a user research round and what is needed to ensure maximum value of the time invested
+Research techniques: Reviewing a range of research methodologies, beyond the classic interview, that help product teams validate problem and solution
+Synthesis: Distilling insights from research and how to collaborate with stakeholders to deepen user understanding and influence
+Prioritisation: Covering a range of techniques and their uses for alignment at points of product development lifecycle
+Stakeholder management: A deep-dive into organizational relationships and understanding how to build a communication strategy
+
+
+
+Mind the Product Trainers
+Every Mind the Product trainer is a working product manager who has worked with multiple products and domains. Your trainer’s product management experience enriches the curriculum by delivering diverse perspectives on best practice in different scenarios. You will hear about the products they have worked on in the past, what went well, what didn’t go so well, and how they tried to make improvements. Our trainers’ main goal is not to provide participants with all of the answers, but help facilitate them in asking the right questions.  
+
+About Your Trainers
+
+Emma Mulholland, Senior Product Manager
+Emma has over 11 years' experience in Product. Recently joining ShopKeep as a Product Manager, Emma previously worked in an XP (extreme programming) lab for Allstate where she has used lean techniques and Design Thinking to solve business problems across the enterprise. Prior to that Emma worked as a Product Manager in eCommerce, working on the Search and User Experience for Marks and Spencer, and Tesco. She's a founder/organiser of ProductTank Belfast, and in her spare time loves being outdoors running, cycling and hiking. 
+Graeme Stuart, Head of Product
+Graeme has over 14 years core product experience from startups through scale-ups to enterprise. He currently works as VP Product at Deep-Labs.com where his team is building a platform next generation risk mitigation & hyper-personalized consumer experiences through deep identity management. He loves bringing new initiatives to market and at the same time, building out product expertise in companies who hadn’t valued it before. He’s passionate in telling anyone who will listen that Belfast can provide global product expertise not only talented, well-priced engineers. Graeme advises startups wanting to scale & wanting to dip their toe into product management. He is a co-founder & organiser of ProductTank Belfast. He also tries to spend quality time with his family & play any sport in the little spare time he has.
+
+
+Agenda
+
+
+Registration will begin at 9.00
+
+
+Class will start at 9.30 sharp and end at 17.00
+
+
+We'll also provide a light breakfast, buffet lunch and plenty of tea and coffee to fuel you through the day.
+
+
+
+Frequently Asked Questions
+Can I change the name or other details on my tickets?Yes, but only the person who purchased the ticket can make these changes on Eventbrite. You are free to change your ticket details up to two days before the event, including name, title, etc. Please make sure these details are correct as they will be what we show on your badge! Just login to Eventbrite and make the changes, following these instructions. If you can’t reach the person who purchased the ticket in order to get them to change the information please contact us on tickets@mindtheproduct.com and we will help you make the updates.
+Can I get a refund?We offer a full refund up to one month before the event. Simply log in to Eventbrite and request the refund following these instructions. As with changes, only the person who purchased the tickets can request a refund.
+Can I pay by invoice?As we are a small team we only offer payment by invoice if you are buying 5 tickets or more due to the additional overhead. Early Bird conference tickets cannot be purchased by invoice. Please also note that no tickets are held/issued until payment of the invoice has been received.  Request to pay by invoice by emailing tickets@mindtheproduct.com
+
+Tickets are not held until payment has been made – there are no exceptions to this.
+We cannot agree to any terms and conditions associated with Purchase Order numbers or other supplier agreements.
+We do not fill in supplier detail forms for ticket invoices – if you cannot find details you require on our website – please ask.
+
+
+Frequently Asked Questions | Terms & Conditions  |  Code of Conduct  |  Privacy Policy",
+        "last_updated": "2018-10-19T09:27:43.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?auto=compress&s=3d789447b422260a386e5f3600feabb4",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C0%2C2160%2C1080&s=92599c1e149e13a4d708209286a479ef",
+        },
+        "name": "Product Management Essentials 102 Training Workshop - Belfast",
+        "organiser": Object {
+          "name": "Mind the Product",
+        },
+        "source_data": Object {
+          "id": "49693729282",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 27000000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T17:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T09:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.com/e/product-management-essentials-102-training-workshop-belfast-tickets-49693729282?aff=ebapi",
+        "venue": Object {
+          "address": "10 Exchange Street West, Belfast, BT1 2NJ",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6035924",
+          "longitude": "-5.9275539999999864",
+          "name": "The MAC",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-10-03T21:17:54.000Z",
+        "description": "Zombie Science returns with a spoof tutorial on the real science behind a Zombie epidemic. Join Theoretical Zombiologist Doctor Smith as he puts you at the heart of a hypothetical Zombieism outbreak and teaches you what to do when the inevitable Zombie pandemic occurs.  
+Worst Case Scenario is the second show in the Zombie Science spoof lecture series which has attracted audiences of over 36,000 at more than 400 lectures across the UK and Ireland performances at the London Horror Festival and Green Man Festival.       
+ Zombie Science: Worst Case Scenario focuses on identifying, containing and controlling disease, and at key points in the show, the audience is invited to vote on courses of action that will determine the outcome of the show.  Only science can save you from the worst case scenario.",
+        "last_updated": "2018-10-19T14:35:10.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?auto=compress&s=ebafa8d1e125b7ff41fcb42f65fc424f",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C19%2C1600%2C800&s=550f0f4c371ad9a2ec60248021d9fafd",
+        },
+        "name": "Zombie Science: Worst Case Scenario ,13th Nov 7pm  Market House, Monaghan",
+        "organiser": Object {
+          "name": "Cavan Monaghan Science Festival",
+        },
+        "source_data": Object {
+          "id": "50982052692",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T20:30:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.ie/e/zombie-science-worst-case-scenario-13th-nov-7pm-market-house-monaghan-tickets-50982052692?aff=ebapi",
+        "venue": Object {
+          "address": "Market Street, Monaghan",
+          "city": "Monaghan",
+          "country": "IE",
+          "latitude": "54.247567",
+          "longitude": "-6.972217999999998",
+          "name": "The Market House Monaghan",
+        },
+      },
+    ],
+  ],
+  Array [
+    "muxer-transformed-events",
+    [Function],
+    Array [
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 0,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-01-13T13:42:41.000Z",
+        "description": "CoderDojo is a movement orientated around running free not-for-profit coding clubs and regular sessions for young people. Farset Labs’ CoderDojo is run by volunteers from the Farset community and offers a range of computer skills, from web application development to scratch.
+At a CoderDojo, young people learn how to code, develop websites, apps, programs, games and more. Dojos are set up, run by and taught at by volunteers. In addition to learning to code, members meet like minded people, show off what they’ve been working on and so on. CoderDojo makes development and learning to code a fun, sociable, kick ass experience.
+CoderDojo also puts a strong emphasis on open source and free software, and has a strong network of members and volunteers globally. CoderDojo has just one rule: “Above All: Be Cool“, bullying, lying, wasting people’s time and so on is uncool.
+It also provides essential teaching and mentorship experience for budding software developers; after all, to teach is to learn twice! And you don’t have to be a hardcore code-hacker to mentor; anyone can help to guide these kids through the processes of problem solving, breaking down tasks, thinking in a stepwise fashion, or just picking out the killer-spelling-mistakes like variable names or missing semi-colons!
+For more information about Coder Dojo, check out the CoderDojo global webpage.
+You can also follow us on Twitter and Facebook
+
+What should I bring to the event?
+If you can, please bring your own laptop.
+Can I join as a mentor/volunteer?
+Yes! We always appreciate more hands on deck, but we do need to put people through a short induction/training programme first, so get in touch with us on dojo@farsetlabs.org.uk and we can add you to the next induction stream.
+I can’t make it, what can I do to help?
+If you can’t make it to our Dojo, consider some of the other Dojos in Northern Ireland, like at BMC in Belfast,Ballymena, or the brand new Dojo in Newry.
+If you just want to support our event here at Farset Labs, please consider making a donation to the charity and mention in your donation that you wish it to go to fund refreshments, resources, materials, and equipment for the Dojo.
+Is there an age limit to enter the event?
+CoderDojo is aimed loosely at the under 18’s, but any child younger than 14 must be accompanied by a parent or guardian and that guardian must stay on-site for the duration of the event
+What are my transport/parking options getting to the event?
+We’re 5 minutes walk from Europa Bus Centre, and Parking is available all across the Weavers Court Campus
+Is there a charge for the event
+Farset Labs’ members operate the CoderDojo for free for all attendees, but donations to cover operating costs are greatly appreciated.
+What Child Protection Policies are in place?
+Only those registered may attend, including mentors. For full details, see Farset Labs’ Child Protection Policy. At the lead mentors’ discretion, the event space may be sealed off from the rest of the space.",
+        "last_updated": "2018-01-13T13:42:44.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?auto=compress&s=4855c40b0a3657500da81dbc0538485a",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39574425%2F32416783101%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C66%2C800%2C400&s=bd31fd7b61b36c0b8b61d2d1e03154d0",
+        },
+        "name": "Farset Labs Dojo 2018",
+        "organiser": Object {
+          "name": "Farset Labs",
+        },
+        "source_data": Object {
+          "id": "42152220426",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 7200000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T21:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-02T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/farset-labs-dojo-2018-tickets-42152220426?aff=ebapi",
+        "venue": Object {
+          "address": "Weavers Court Linfield Industrial Estate, Belfast, BT12 5GH",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.591804",
+          "longitude": "-5.942264000000023",
+          "name": "Farset Labs,",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-10-11T14:15:46.000Z",
+        "description": "It's our Birthday! The NI Raspberry Jam is turning 6!
+
+Come one, come all to the Northern Ireland Raspberry Jam!
+In collaboration with the School of Physics and Mathematics at Queens, Farset Labs and the Northern Ireland Raspberry Jam team, these free monthly events involve tinkering, coding, electronics and generally just having a stack of fun making stuff!Whether you want to try out computer programming for the first time, hack some electronics or just generally have some fun inventing, we have something for everyone!All equipment is provided and we have activities for ages 6-106, from complete beginners right up to seasoned Pi experts. Plus, like all our Raspberry Jam events, it is completely free!So what are you waiting for?
+
+FAQ
+What is a Raspberry Jam?
+A Raspberry Jam is an event for kids/adults of all ages to come together and learn a bit more about the Raspberry Pi and coding/electronics in general.
+I have no previous experience with coding/electronics/Raspberry Pi?
+That is no problem! All our Raspberry Jams are suited for beginners, right up to Pi exports, plus all equipment is provided. All you need to bring is yourself.
+How can I get there? Can I take public transport?
+The new Maths and Physics Teaching Building is very easy to get to by car, or by public transport.
+By car
+Park at the McClay Library car pack. If it is full, then there is plenty of additional car parking in the surrounding side streets.
+
+By train
+Travel to Botanic station, then walk up Botanic street towards Queens University. The new Physics Teaching Building is directly opposite the entrance to the McClay library.
+
+How often to do these Raspberry Jam events run?
+The Northern Ireland Raspberry Jam runs on the 2nd Saturday of every month (excluding July/August) throughout the year. They are free as well and involve new workshops/activities each month. Details - https://niraspberryjam.eventbrite.co.uk.
+You can also add our provisional future Jams calendar to yours by clicking here (or simply view it here).
+
+What age range is this event suitable for?
+All of our Raspberry Jam events are suitable for kids as young as 6, right up to adults of 106! Although the majority of the attendees at the Raspberry Jam events are young people, they are open to adults as well, especially parents of kids attending.
+Note - By attending this event, you provide express permission to photographs/videos being taken and used by the Northern Ireland Raspberry Jam team. If this is an issue, please inform one of the team on your arrival.
+
+
+Note that normal Farset Labs Child Protection policy applies. This includes that all children under the age of 14 must have a designated guardian in on site for the entire event.
+We also require children aged between 14 and 17 (inclusive) parents are within 10 minutes from venue and can be easily contactable in event of an emergency.
+
+This event is run in collaboration with the School of Mathematics and Physics at Queens University and the School of Electronics, Electrical Engineering and Computer Science at Queens University.
+The Northern Ireland Raspberry Jam wouldn't be possible without support from Institution of Engineering and Technology, Institution of Mechanical Engineers, Northern Ireland Department of Communities, Nitec Solutions and Farset Labs.",
+        "last_updated": "2018-10-11T14:21:59.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?auto=compress&s=ceea246e5556a880a8396ccabf646b92",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F51160475%2F200379386367%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C145%2C3000%2C1500&s=295a58b4c6582d863fc1d57495ed1d49",
+        },
+        "name": "Northern Ireland Raspberry Jam - November 2018 - 6th Birthday!",
+        "organiser": Object {
+          "name": "Northern Ireland Raspberry Jam",
+        },
+        "source_data": Object {
+          "id": "51292098046",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 14400000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T17:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T13:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/northern-ireland-raspberry-jam-november-2018-6th-birthday-tickets-51292098046?aff=ebapi",
+        "venue": Object {
+          "address": "Queens University 7-9 College Park E,, Belfast, BT7 1PS",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.58392929999999",
+          "longitude": "-5.931720000000041",
+          "name": "School of Maths and Physics Teaching Centre",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-06-17T21:28:44.000Z",
+        "description": "Come join us at CodeClub Holywood!
+Let your creativity have a stretch…… CodeClub is a volunteer lead, global movement running free coding clubs for young people. 
+7-17 year olds of all abilities welcome. All young people must be accompanied by a responsible adult for the duration of the session.
+
+
+Learn to Code
+
+
+
+Build websites
+
+
+Make games
+
+
+Create apps for your phone
+
+
+
+Fun & Social
+
+
+Make Friends
+
+
+Get inspired by technology
+
+
+Mentors there to help
+
+
+Free
+
+
+Please bring:
+
+
+a laptop if you have one but don't worry if you don't as one can be provided on the day
+
+
+a set of headphones",
+        "last_updated": "2018-06-17T21:29:45.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?auto=compress&s=6243ca54da44a4d699eef8fdcd5154f3",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F46203979%2F202325275908%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=23%2C135%2C446%2C223&s=d7955c91802a83c7da2e4289dcd01d6d",
+        },
+        "name": "Holywood Code Club - Saturday 10th November",
+        "organiser": Object {
+          "name": "Code Club Holywood",
+        },
+        "source_data": Object {
+          "id": "47149148372",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T15:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-10T13:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.co.uk/e/holywood-code-club-saturday-10th-november-registration-47149148372?aff=ebapi",
+        "venue": Object {
+          "address": "Knocknagoney Rd , Belfast, BT4 2PW",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6176244",
+          "longitude": "-5.8542112999999745",
+          "name": "Community Room - Tesco Extra Knocknagoney",
+        },
+      },
+      Object {
+        "charge": Object {
+          "cost": Object {
+            "currency": "GBP",
+            "value": 54900,
+          },
+          "is_free": false,
+        },
+        "created_at": "2018-08-30T13:47:45.000Z",
+        "description": "Increasing your strategic impact as a product manager
+Training Workshop Overview
+Essentials 102  is an overview course intended for confident product managers who are looking to increase their strategic skills and influence. The intention of this course is to help product managers build a strategic layer onto their core product practices, and focus on the soft skills and influencing tactics that are often needed to ensure effective product delivery.  It seeks to answer the questions:
+
+How can product managers increase organisational understanding of product practice?
+What parts of their process can be used as tools for increased alignment?
+How can product teams craft an evidence-driven product vision and ensure buy-in?
+
+This course is centered on the senior product manager’s role between the product team and the broader business. In order for teams to deliver effectively, they need buy-in and support from their stakeholders. Participants will gain an understanding of how to sharpen their product practice so that it becomes an alignment and educational tool.  
+
+What we’ll cover on the day
+Essentials 102 is a full-day workshop comprised of six modules. Each module includes a lecture component on theory and practice interspersed with up to three hands-on activities. This ensures that participants have an opportunity to apply and work with concepts in a setting that will answer questions and facilitate critical thinking. The following modules will be covered:
+
+Evaluating opportunity: Understanding how to unpack product assumptions and line up macro data to establish product viability and the foundations for product/market fit
+Implementing user research: Breaks down the components of running a user research round and what is needed to ensure maximum value of the time invested
+Research techniques: Reviewing a range of research methodologies, beyond the classic interview, that help product teams validate problem and solution
+Synthesis: Distilling insights from research and how to collaborate with stakeholders to deepen user understanding and influence
+Prioritisation: Covering a range of techniques and their uses for alignment at points of product development lifecycle
+Stakeholder management: A deep-dive into organizational relationships and understanding how to build a communication strategy
+
+
+
+Mind the Product Trainers
+Every Mind the Product trainer is a working product manager who has worked with multiple products and domains. Your trainer’s product management experience enriches the curriculum by delivering diverse perspectives on best practice in different scenarios. You will hear about the products they have worked on in the past, what went well, what didn’t go so well, and how they tried to make improvements. Our trainers’ main goal is not to provide participants with all of the answers, but help facilitate them in asking the right questions.  
+
+About Your Trainers
+
+Emma Mulholland, Senior Product Manager
+Emma has over 11 years' experience in Product. Recently joining ShopKeep as a Product Manager, Emma previously worked in an XP (extreme programming) lab for Allstate where she has used lean techniques and Design Thinking to solve business problems across the enterprise. Prior to that Emma worked as a Product Manager in eCommerce, working on the Search and User Experience for Marks and Spencer, and Tesco. She's a founder/organiser of ProductTank Belfast, and in her spare time loves being outdoors running, cycling and hiking. 
+Graeme Stuart, Head of Product
+Graeme has over 14 years core product experience from startups through scale-ups to enterprise. He currently works as VP Product at Deep-Labs.com where his team is building a platform next generation risk mitigation & hyper-personalized consumer experiences through deep identity management. He loves bringing new initiatives to market and at the same time, building out product expertise in companies who hadn’t valued it before. He’s passionate in telling anyone who will listen that Belfast can provide global product expertise not only talented, well-priced engineers. Graeme advises startups wanting to scale & wanting to dip their toe into product management. He is a co-founder & organiser of ProductTank Belfast. He also tries to spend quality time with his family & play any sport in the little spare time he has.
+
+
+Agenda
+
+
+Registration will begin at 9.00
+
+
+Class will start at 9.30 sharp and end at 17.00
+
+
+We'll also provide a light breakfast, buffet lunch and plenty of tea and coffee to fuel you through the day.
+
+
+
+Frequently Asked Questions
+Can I change the name or other details on my tickets?Yes, but only the person who purchased the ticket can make these changes on Eventbrite. You are free to change your ticket details up to two days before the event, including name, title, etc. Please make sure these details are correct as they will be what we show on your badge! Just login to Eventbrite and make the changes, following these instructions. If you can’t reach the person who purchased the ticket in order to get them to change the information please contact us on tickets@mindtheproduct.com and we will help you make the updates.
+Can I get a refund?We offer a full refund up to one month before the event. Simply log in to Eventbrite and request the refund following these instructions. As with changes, only the person who purchased the tickets can request a refund.
+Can I pay by invoice?As we are a small team we only offer payment by invoice if you are buying 5 tickets or more due to the additional overhead. Early Bird conference tickets cannot be purchased by invoice. Please also note that no tickets are held/issued until payment of the invoice has been received.  Request to pay by invoice by emailing tickets@mindtheproduct.com
+
+Tickets are not held until payment has been made – there are no exceptions to this.
+We cannot agree to any terms and conditions associated with Purchase Order numbers or other supplier agreements.
+We do not fill in supplier detail forms for ticket invoices – if you cannot find details you require on our website – please ask.
+
+
+Frequently Asked Questions | Terms & Conditions  |  Code of Conduct  |  Privacy Policy",
+        "last_updated": "2018-10-19T09:27:43.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?auto=compress&s=3d789447b422260a386e5f3600feabb4",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F49107020%2F27734885637%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C0%2C2160%2C1080&s=92599c1e149e13a4d708209286a479ef",
+        },
+        "name": "Product Management Essentials 102 Training Workshop - Belfast",
+        "organiser": Object {
+          "name": "Mind the Product",
+        },
+        "source_data": Object {
+          "id": "49693729282",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 27000000,
+          "end": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T17:00:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/London",
+            "utc": "2018-11-12T09:30:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.com/e/product-management-essentials-102-training-workshop-belfast-tickets-49693729282?aff=ebapi",
+        "venue": Object {
+          "address": "10 Exchange Street West, Belfast, BT1 2NJ",
+          "city": "Belfast",
+          "country": "GB",
+          "latitude": "54.6035924",
+          "longitude": "-5.9275539999999864",
+          "name": "The MAC",
+        },
+      },
+      Object {
+        "charge": Object {
+          "is_free": true,
+        },
+        "created_at": "2018-10-03T21:17:54.000Z",
+        "description": "Zombie Science returns with a spoof tutorial on the real science behind a Zombie epidemic. Join Theoretical Zombiologist Doctor Smith as he puts you at the heart of a hypothetical Zombieism outbreak and teaches you what to do when the inevitable Zombie pandemic occurs.  
+Worst Case Scenario is the second show in the Zombie Science spoof lecture series which has attracted audiences of over 36,000 at more than 400 lectures across the UK and Ireland performances at the London Horror Festival and Green Man Festival.       
+ Zombie Science: Worst Case Scenario focuses on identifying, containing and controlling disease, and at key points in the show, the audience is invited to vote on courses of action that will determine the outcome of the show.  Only science can save you from the worst case scenario.",
+        "last_updated": "2018-10-19T14:35:10.000Z",
+        "logo": Object {
+          "high": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?auto=compress&s=ebafa8d1e125b7ff41fcb42f65fc424f",
+          "regular": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F50771832%2F187206852598%2F1%2Foriginal.jpg?h=200&w=450&auto=compress&rect=0%2C19%2C1600%2C800&s=550f0f4c371ad9a2ec60248021d9fafd",
+        },
+        "name": "Zombie Science: Worst Case Scenario ,13th Nov 7pm  Market House, Monaghan",
+        "organiser": Object {
+          "name": "Cavan Monaghan Science Festival",
+        },
+        "source_data": Object {
+          "id": "50982052692",
+          "name": "eventbrite",
+        },
+        "times": Object {
+          "duration": 5400000,
+          "end": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T20:30:00.000Z",
+          },
+          "start": Object {
+            "timezone": "Europe/Dublin",
+            "utc": "2018-11-13T19:00:00.000Z",
+          },
+        },
+        "topics": Array [
+          "Science & Technology",
+        ],
+        "url": "https://www.eventbrite.ie/e/zombie-science-worst-case-scenario-13th-nov-7pm-market-house-monaghan-tickets-50982052692?aff=ebapi",
+        "venue": Object {
+          "address": "Market Street, Monaghan",
+          "city": "Monaghan",
+          "country": "IE",
+          "latitude": "54.247567",
+          "longitude": "-6.972217999999998",
+          "name": "The Market House Monaghan",
+        },
+      },
+    ],
+  ],
+]
+`;
