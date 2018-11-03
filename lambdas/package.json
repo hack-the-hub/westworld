@@ -36,7 +36,7 @@
     "farsetlabs:transformer:update": "cd farsetlabs && serverless deploy function -f transform --aws-profile muxer",
     "farsetlabs:transformer:invoke": "cd farsetlabs && serverless invoke -f transform -l --aws-profile muxer",
     "farsetlabs:transformer:invoke-local": "cd farsetlabs && serverless invoke local -f transform",
-    "farsetlabs:transformer:logs": "cd farsetlabs && serverless logs -f transform -l --aws-profile muxers"
+    "farsetlabs:transformer:logs": "cd farsetlabs && serverless logs -f transform -l --aws-profile muxer"
   },
   "dependencies": {
     "serverless": "^1.30.3"
