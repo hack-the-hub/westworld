@@ -27,7 +27,6 @@ Run the following commands from this directory. This will install serverless wit
 
 ```bash
 $ npm install
-$ serverless login
 ```
 
 > Note: The first time you login you will have to authenticate with Github in the Browser
