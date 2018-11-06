@@ -37,10 +37,17 @@ def create_app():
     from project.api.videos import videos_blueprint
     from project.api.speakers import speakers_blueprint
     from project.api.developers import developers_blueprint
+    from project.api.calendar import calendar_blueprint
 
     app.register_blueprint(events_blueprint)
     app.register_blueprint(videos_blueprint)
     app.register_blueprint(speakers_blueprint)
     app.register_blueprint(developers_blueprint)
+    app.register_blueprint(calendar_blueprint)
+
+    # shell context for flask cli
+    @app.shell_context_processor
+    def ctx():
+        return {"app": app, "db": db}
 
     return app
