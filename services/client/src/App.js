@@ -5,6 +5,7 @@ import Events from "./pages/events";
 import Videos from "./pages/videos";
 import Speakers from "./pages/speakers";
 import Developers from "./pages/developers";
+import EventCalendar from "./pages/calendar";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import withTracker from "./withTracker";
@@ -59,6 +60,7 @@ const App = () => (
         <Route exact path="/video" component={withTracker(Videos)} />
         <Route exact path="/speaker" component={withTracker(Speakers)} />
         <Route exact path="/developer" component={withTracker(Developers)} />
+        <Route exact path="/calendar" component={withTracker(EventCalendar)} />
       </Switch>
       <Footer />
     </div>

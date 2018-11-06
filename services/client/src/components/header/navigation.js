@@ -12,6 +12,14 @@ const Navigation = () => (
       </Link>
     </li>
     <li>
+      <Link
+        to="/calendar"
+        className={`navigation-link ${linkStyles.className}`}
+      >
+        calendar
+      </Link>
+    </li>
+    <li>
       <Link to="/video" className={`navigation-link ${linkStyles.className}`}>
         videos
       </Link>
