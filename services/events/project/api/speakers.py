@@ -64,11 +64,6 @@ def index():
     return jsonify(response_object), 200
 
 
-@speakers_blueprint.route("/status", methods=["GET"])
-def ping_pong():
-    return jsonify({"status": "success", "message": "Speakers available"})
-
-
 @speakers_blueprint.route("/speakers", methods=["POST"])
 def add_speaker():
     data = request.get_json()

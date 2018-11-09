@@ -68,11 +68,6 @@ def index():
     return jsonify(response_object), 200
 
 
-@developers_blueprint.route("/status", methods=["GET"])
-def ping_pong():
-    return jsonify({"status": "success", "message": "Developers available"})
-
-
 @developers_blueprint.route("/developers", methods=["POST"])
 def add_developer():
     data = request.get_json()

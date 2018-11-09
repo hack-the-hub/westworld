@@ -69,11 +69,6 @@ def index():
     return jsonify(response_object), 200
 
 
-@events_blueprint.route("/status", methods=["GET"])
-def ping_pong():
-    return jsonify({"status": "success", "message": "Events available"})
-
-
 @events_blueprint.route("/events", methods=["POST"])
 def add_event():
     post_data = request.get_json()

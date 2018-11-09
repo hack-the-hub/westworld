@@ -67,11 +67,6 @@ def index():
     return jsonify(response_object), 200
 
 
-@videos_blueprint.route("/status", methods=["GET"])
-def ping_pong():
-    return jsonify({"status": "success", "message": "Videos available"})
-
-
 @videos_blueprint.route("/videos", methods=["POST"])
 def add_video():
     post_data = request.get_json()
