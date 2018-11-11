@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { formatTitle } from "utils/format";
 import styles from "./styles/content";
 import TimeToVideo from "./time-to-video";
 
@@ -19,7 +18,7 @@ const Content = ({ name, created, url, channel }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {formatTitle(name)}
+          {name}
         </a>
       </div>
       <div className="video-details">
