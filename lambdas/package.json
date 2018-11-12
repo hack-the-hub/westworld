@@ -49,6 +49,6 @@
     "eslint-plugin-jest": "^22.0.0",
     "eslint-plugin-prettier": "^3.0.0",
     "jest": "^23.6.0",
-    "prettier": "^1.15.1"
+    "prettier": "^1.15.2"
   }
 }
