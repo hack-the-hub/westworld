@@ -41,6 +41,23 @@ services:
     links:
       - events-db
 
+  events-task:
+    container_name: events-task
+    build:
+      context: ./services/events
+      dockerfile: Dockerfile-dev
+    volumes:
+      - './services/events:/usr/src/app'
+    environment:
+      - SECRET_KEY=my_precious
+      - APP_SETTINGS=project.config.DevelopmentConfig
+      - DATABASE_URL=postgres://postgres:postgres@events-db:5432/events_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@events-db:5432/events_test
+    depends_on:
+      - events-db
+    links:
+      - events-db
+
   events-db:
     container_name: events-db
     build:

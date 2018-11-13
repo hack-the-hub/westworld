@@ -113,6 +113,15 @@ docker-compose -f docker-compose-dev.yml run events-db sh
 psql postgres://postgres:postgres@events-db:5432/events_dev
 ```
 
+### Running one off scripts
+
+Allows scripts/tasks to be run in environments specific docker containers.
+
+```
+docker-compose -f docker-compose-dev.yml build events-task
+docker-compose -f docker-compose-dev.yml run events-task python scripts/test.py
+```
+
 ### Debugging Python Applications
 
 ##### End to End tests
