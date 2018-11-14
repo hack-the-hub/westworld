@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e17a58657586a3f136d04a9ddb41ef75257d5fa9de42f82f4470f770250b9335"
+            "sha256": "73a0ac81352f0af8490420873635930e3b68deb3b9a935a4d1b3210b0b8a8755"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -16,9 +16,9 @@
     "default": {
         "alembic": {
             "hashes": [
-                "sha256:04bcb970ca8659c3607ddd8ffd86cc9d6a99661c9bc590955e8813c66bfa582b"
+                "sha256:4b6ff7433247fe80b6ef522ef3763acb959cbdef027d03f76f4cd3c7118c1872"
             ],
-            "version": "==1.0.2"
+            "version": "==1.0.3"
         },
         "bcrypt": {
             "hashes": [
@@ -228,10 +228,10 @@
         },
         "newrelic": {
             "hashes": [
-                "sha256:eb60752a2c2a9904ea1eaf6b25dfbe8181e02fca9c11f895c13469057971b343"
+                "sha256:b6d10cb2e6a0efddd7145ef30b923249443d14b9bea4217cfe96d806a80a94b1"
             ],
             "index": "pypi",
-            "version": "==4.4.1.104"
+            "version": "==4.6.0.106"
         },
         "psycopg2-binary": {
             "hashes": [
