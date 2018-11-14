@@ -52,23 +52,6 @@ services:
     links:
       - events-db
 
-  events-task:
-    container_name: events-service
-    build:
-      context: ./services/events
-      dockerfile: Dockerfile-stage-test
-    volumes:
-      - './services/events:/usr/src/app'
-    environment:
-      - SECRET_KEY=my_precious
-      - APP_SETTINGS=project.config.StagingConfig
-      - DATABASE_URL=postgres://postgres:postgres@events-db:5432/events_stage
-      - DATABASE_TEST_URL=postgres://postgres:postgres@events-db:5432/events_test
-    depends_on:
-      - events-db
-    links:
-      - events-db
-
   events-db:
     container_name: events-db
     build:
