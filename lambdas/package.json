@@ -39,7 +39,7 @@
     "farsetlabs:transformer:logs": "cd farsetlabs && serverless logs -f transform -l --aws-profile muxer"
   },
   "dependencies": {
-    "serverless": "^1.32.0"
+    "serverless": "^1.33.1"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
