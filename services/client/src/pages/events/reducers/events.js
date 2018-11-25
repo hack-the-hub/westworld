@@ -1,13 +1,16 @@
-import { updateEventsList, parsedDomain } from "../utils";
+import { updateEventsList } from "../utils";
 
 const defaultState = {
-  location: parsedDomain.subdomain,
   isLoading: false,
   hasErrors: false,
   upcomingEvents: [],
   recentEvents: [],
-  page: 1,
-  hasMoreItems: true
+  hasMoreItems: true,
+  url: {
+    url: `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`,
+    params: { page: 1 }
+  },
+  location: ""
 };
 
 export function events(state = defaultState, action) {
@@ -40,7 +43,16 @@ export function events(state = defaultState, action) {
         isLoading: false,
         hasMoreItems:
           data.upcoming_events.length !== 0 || data.recent_events.length !== 0,
-        page: state.page + 1
+        url: {
+          ...state.url,
+          params: { ...state.url.params, page: state.url.params.page + 1 }
+        }
+      };
+    }
+    case "EVENTS_UPDATE_LOCATION": {
+      return {
+        ...state,
+        location: action.location
       };
     }
     default: {

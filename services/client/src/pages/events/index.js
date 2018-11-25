@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 import Events from "./components/events";
-import withPagination from "../../withPagination";
 
-import { eventsFetchData } from "./action-creators/events";
+import { eventsFetchData, eventsLocation } from "./action-creators/events";
 
 import {
   getRecentEvents,
@@ -10,8 +9,8 @@ import {
   isLoading,
   hasErrors,
   hasMoreItems,
-  page,
-  location
+  getEventsUrl,
+  getEventsLocation
 } from "./selectors";
 
 const mapStateToProps = function(state) {
@@ -21,26 +20,19 @@ const mapStateToProps = function(state) {
     hasErrors: hasErrors(state),
     isLoading: isLoading(state),
     hasMoreItems: hasMoreItems(state),
-    page: page(state),
-    location: location(state)
+    url: getEventsUrl(state),
+    location: getEventsLocation(state)
   };
 };
 
 const mapDispatchToProps = function(dispatch) {
   return {
-    fetchData: url => dispatch(eventsFetchData(url))
+    fetchData: url => dispatch(eventsFetchData(url)),
+    setLocation: location => dispatch(eventsLocation(location))
   };
 };
-
-const urlObject = {
-  url: `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`,
-  params: {
-    location: "dublin"
-  }
-};
-const PaginatedEvents = withPagination(urlObject)(Events);
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PaginatedEvents);
+)(Events);

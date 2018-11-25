@@ -40,3 +40,10 @@ export function eventsFetchData(urlObject) {
       .catch(() => dispatch(eventsHasErrored(true)));
   };
 }
+
+export function eventsLocation(location) {
+  return {
+    type: Actions.EVENTS_UPDATE_LOCATION,
+    location
+  };
+}

@@ -13,11 +13,11 @@ const NoEvents = ({ className, location }) => (
 
 NoEvents.propTypes = {
   className: PropTypes.string,
-  location: PropTypes.string
+  location: PropTypes.bool
 };
 
 NoEvents.defaultProps = {
-  location: "",
+  location: false,
   className: ""
 };
 
