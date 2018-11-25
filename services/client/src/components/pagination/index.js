@@ -14,7 +14,8 @@ const Pagination = ({ isLoading, hasMoreItems, fetch, children }) => (
 Pagination.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   hasMoreItems: PropTypes.bool.isRequired,
-  fetch: PropTypes.func.isRequired
+  fetch: PropTypes.func.isRequired,
+  children: PropTypes.isRequired
 };
 
 export default Pagination;
