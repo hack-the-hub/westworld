@@ -3,6 +3,6 @@ import NoEvents from "../";
 
 describe("no-events", function() {
   it("renders", function() {
-    expect(<NoEvents />).toMatchSnapshot("location");
+    expect(<NoEvents location={"belfast"}/>).toMatchSnapshot("location");
   });
 });

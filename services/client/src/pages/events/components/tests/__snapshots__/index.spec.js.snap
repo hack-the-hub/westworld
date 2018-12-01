@@ -1,186 +1,220 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Events when the component is rendered renders correctly 1`] = `
-<div
-  className="page"
+Array [
+  <div
+    className="page"
 >
-  <mock-call-to-action-banner />
-  <div>
-    <div
-      className="recent-events"
-    >
-      <mock-event-separator
-        content="Recent Events"
-        id="recent-events"
-      />
-      <mock-event
-        className="recent-event"
-        content={
-          Object {
-            "id": "1",
+    <mock-call-to-action-banner />
+    <div>
+        <div
+            className="recent-events"
+        >
+            <mock-event-separator
+                content="Recent Events"
+                id="recent-events"
+            />
+            <mock-event
+                className="recent-event"
+                content={
+                    Object {
+                        "id": "1",
+                      }
+                }
+            />
+            <mock-event
+                className="recent-event"
+                content={
+                    Object {
+                        "id": "2",
+                      }
+                }
+            />
+        </div>
+        <div
+            className="events-today"
+        >
+            <mock-event-separator
+                content="Today"
+                id="today"
+            />
+            <mock-event
+                content={
+                    Object {
+                        "id": "1",
+                      }
+                }
+            />
+            <mock-event
+                content={
+                    Object {
+                        "id": "2",
+                      }
+                }
+            />
+        </div>
+        <div
+            className="events-in-next-seven-days"
+        >
+            <mock-event-separator
+                content="Next 7 days"
+                id="in-next-seven-days"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+        <div
+            className="events-in-next-thirty-days"
+        >
+            <mock-event-separator
+                content="Next 30 days"
+                id="in-next-thirty-days"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+        <div
+            className="events-in-next-three-months"
+        >
+            <mock-event-separator
+                content="Next 3 months"
+                id="in-next-three-months"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+        <div
+            className="events-in-the-future"
+        >
+            <mock-event-separator
+                content="And beyond..."
+                id="in-the-future"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+    </div>
+</div>,
+  <span
+    style={
+        Object {
+            "fontSize": 0,
           }
-        }
-      />
-      <mock-event
-        className="recent-event"
-        content={
-          Object {
-            "id": "2",
-          }
-        }
-      />
-    </div>
-    <div
-      className="events-today"
-    >
-      <mock-event-separator
-        content="Today"
-        id="today"
-      />
-      <mock-event
-        content={
-          Object {
-            "id": "1",
-          }
-        }
-      />
-      <mock-event
-        content={
-          Object {
-            "id": "2",
-          }
-        }
-      />
-    </div>
-    <div
-      className="events-in-next-seven-days"
-    >
-      <mock-event-separator
-        content="Next 7 days"
-        id="in-next-seven-days"
-      />
-      <mock-no-events />
-    </div>
-    <div
-      className="events-in-next-thirty-days"
-    >
-      <mock-event-separator
-        content="Next 30 days"
-        id="in-next-thirty-days"
-      />
-      <mock-no-events />
-    </div>
-    <div
-      className="events-in-next-three-months"
-    >
-      <mock-event-separator
-        content="Next 3 months"
-        id="in-next-three-months"
-      />
-      <mock-no-events />
-    </div>
-    <div
-      className="events-in-the-future"
-    >
-      <mock-event-separator
-        content="And beyond..."
-        id="in-the-future"
-      />
-      <mock-no-events />
-    </div>
-  </div>
-</div>
+    }
+/>,
+]
 `;
 
 exports[`Events when the component is rendered with errors renders correctly 1`] = `
-<div
-  className="page"
+Array [
+  <div
+    className="page"
 >
-  <mock-call-to-action-banner />
-  <div>
-    <div
-      className="recent-events"
-    >
-      <mock-event-separator
-        content="Recent Events"
-        id="recent-events"
-      />
-      <mock-event
-        className="recent-event"
-        content={
-          Object {
-            "id": "1",
+    <mock-call-to-action-banner />
+    <div>
+        <div
+            className="recent-events"
+        >
+            <mock-event-separator
+                content="Recent Events"
+                id="recent-events"
+            />
+            <mock-event
+                className="recent-event"
+                content={
+                    Object {
+                        "id": "1",
+                      }
+                }
+            />
+            <mock-event
+                className="recent-event"
+                content={
+                    Object {
+                        "id": "2",
+                      }
+                }
+            />
+        </div>
+        <div
+            className="events-today"
+        >
+            <mock-event-separator
+                content="Today"
+                id="today"
+            />
+            <mock-event
+                content={
+                    Object {
+                        "id": "1",
+                      }
+                }
+            />
+            <mock-event
+                content={
+                    Object {
+                        "id": "2",
+                      }
+                }
+            />
+        </div>
+        <div
+            className="events-in-next-seven-days"
+        >
+            <mock-event-separator
+                content="Next 7 days"
+                id="in-next-seven-days"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+        <div
+            className="events-in-next-thirty-days"
+        >
+            <mock-event-separator
+                content="Next 30 days"
+                id="in-next-thirty-days"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+        <div
+            className="events-in-next-three-months"
+        >
+            <mock-event-separator
+                content="Next 3 months"
+                id="in-next-three-months"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+        <div
+            className="events-in-the-future"
+        >
+            <mock-event-separator
+                content="And beyond..."
+                id="in-the-future"
+            />
+            <mock-no-events
+                location="belfast"
+            />
+        </div>
+    </div>
+    <mock-error />
+</div>,
+  <span
+    style={
+        Object {
+            "fontSize": 0,
           }
-        }
-      />
-      <mock-event
-        className="recent-event"
-        content={
-          Object {
-            "id": "2",
-          }
-        }
-      />
-    </div>
-    <div
-      className="events-today"
-    >
-      <mock-event-separator
-        content="Today"
-        id="today"
-      />
-      <mock-event
-        content={
-          Object {
-            "id": "1",
-          }
-        }
-      />
-      <mock-event
-        content={
-          Object {
-            "id": "2",
-          }
-        }
-      />
-    </div>
-    <div
-      className="events-in-next-seven-days"
-    >
-      <mock-event-separator
-        content="Next 7 days"
-        id="in-next-seven-days"
-      />
-      <mock-no-events />
-    </div>
-    <div
-      className="events-in-next-thirty-days"
-    >
-      <mock-event-separator
-        content="Next 30 days"
-        id="in-next-thirty-days"
-      />
-      <mock-no-events />
-    </div>
-    <div
-      className="events-in-next-three-months"
-    >
-      <mock-event-separator
-        content="Next 3 months"
-        id="in-next-three-months"
-      />
-      <mock-no-events />
-    </div>
-    <div
-      className="events-in-the-future"
-    >
-      <mock-event-separator
-        content="And beyond..."
-        id="in-the-future"
-      />
-      <mock-no-events />
-    </div>
-  </div>
-  <mock-error />
-</div>
+    }
+/>,
+]
 `;

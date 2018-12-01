@@ -3,6 +3,6 @@
 exports[`location 1`] = `
 <NoEvents
   className=""
-  location=""
+  location="belfast"
 />
 `;

@@ -16,19 +16,21 @@ class Events extends Component {
   componentDidMount() {
     const { setLocation } = this.props;
 
-    if (parsedDomain.subdomain) {
-      setLocation(parsedDomain.subdomain);
+    if (parsedDomain) {
+      if (parsedDomain.subdomain) {
+        setLocation(parsedDomain.subdomain);
+      }
     }
   }
 
   fetch = () => {
-    const { fetchData, url, location } = this.props;
+    const { fetchData, url, params, location } = this.props;
 
     if (location) {
-      url.params.location = location;
+      params.location = location;
     }
 
-    fetchData(url);
+    fetchData(url, params);
   };
 
   renderRecentEvents() {
@@ -42,7 +44,7 @@ class Events extends Component {
         {recentEvents.map(item => (
           <Event key={item.id} className="recent-event" content={item} />
         ))}
-        {recentEvents.length === 0 ? <NoEvents location={!!location} /> : null}
+        {recentEvents.length === 0 ? <NoEvents location={location} /> : null}
       </div>
     );
   }
@@ -56,7 +58,7 @@ class Events extends Component {
     return _.map(bucketedEvents, ({ id, message, className, events }) => (
       <div key={id} className={className}>
         <EventSeparator content={message} id={id} />
-        {events.length === 0 ? <NoEvents location={!!location} /> : null}
+        {events.length === 0 ? <NoEvents location={location} /> : null}
         {_.map(events, item => (
           <Event key={item.id} content={item} />
         ))}
@@ -108,9 +110,10 @@ Events.propTypes = {
   setLocation: PropTypes.func.isRequired,
   fetchData: PropTypes.func.isRequired,
   location: PropTypes.string.isRequired,
-  url: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    params: PropTypes.object
+  url: PropTypes.string.isRequired,
+  params: PropTypes.shape({
+    page: PropTypes.number.isRequired,
+    location: PropTypes.string.isRequired
   }).isRequired
 };
 

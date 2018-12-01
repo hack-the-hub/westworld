@@ -11,11 +11,15 @@ const Pagination = ({ isLoading, hasMoreItems, fetch, children }) => (
   </React.Fragment>
 );
 
+Pagination.defaultProps = {
+  children: null
+};
+
 Pagination.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   hasMoreItems: PropTypes.bool.isRequired,
   fetch: PropTypes.func.isRequired,
-  children: PropTypes.isRequired
+  children: PropTypes.element
 };
 
 export default Pagination;

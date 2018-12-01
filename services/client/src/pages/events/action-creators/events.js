@@ -1,4 +1,3 @@
-import axios from "axios";
 import * as Actions from "../actions";
 
 export function eventsHasErrored(bool) {
@@ -22,21 +21,21 @@ export function eventsFetchDataSuccess(events) {
   };
 }
 
-export function eventsFetchData(urlObject) {
+export function eventsFetchData(url, params) {
   return dispatch => {
     dispatch(eventsIsLoading(true));
 
-    return axios(urlObject)
-      .then(({ data, statusText }) => {
-        if (statusText !== "OK") {
-          throw Error(statusText);
+    const eventsURL = `${url}?page=${params.page}&location=${params.location}`;
+
+    return fetch(eventsURL)
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.statusText);
         }
-
         dispatch(eventsIsLoading(false));
-
-        return data;
+        return res.json();
       })
-      .then(events => dispatch(eventsFetchDataSuccess(events)))
+      .then(body => dispatch(eventsFetchDataSuccess(body)))
       .catch(() => dispatch(eventsHasErrored(true)));
   };
 }

@@ -6,11 +6,9 @@ const defaultState = {
   upcomingEvents: [],
   recentEvents: [],
   hasMoreItems: true,
-  url: {
-    url: `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`,
-    params: { page: 1 }
-  },
-  location: ""
+  url: `${process.env.REACT_APP_EVENTS_SERVICE_URL}/events`,
+  params: { page: 1, location: "belfast" },
+  location: "belfast"
 };
 
 export function events(state = defaultState, action) {
@@ -36,22 +34,23 @@ export function events(state = defaultState, action) {
         state.recentEvents.concat(data.recent_events)
       );
 
+      const moreItemsAvailable =
+        data.upcoming_events.length !== 0 || data.recent_events.length !== 0;
+
       return {
         ...state,
         upcomingEvents,
         recentEvents,
         isLoading: false,
-        hasMoreItems:
-          data.upcoming_events.length !== 0 || data.recent_events.length !== 0,
-        url: {
-          ...state.url,
-          params: { ...state.url.params, page: state.url.params.page + 1 }
-        }
+        hasMoreItems: moreItemsAvailable,
+        url: state.url,
+        params: { ...state.params, page: state.params.page + 1 }
       };
     }
     case "EVENTS_UPDATE_LOCATION": {
       return {
         ...state,
+        params: { ...state.params, location: action.location },
         location: action.location
       };
     }

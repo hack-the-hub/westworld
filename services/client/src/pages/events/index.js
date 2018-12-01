@@ -10,6 +10,7 @@ import {
   hasErrors,
   hasMoreItems,
   getEventsUrl,
+  getEventParams,
   getEventsLocation
 } from "./selectors";
 
@@ -21,13 +22,14 @@ const mapStateToProps = function(state) {
     isLoading: isLoading(state),
     hasMoreItems: hasMoreItems(state),
     url: getEventsUrl(state),
+    params: getEventParams(state),
     location: getEventsLocation(state)
   };
 };
 
 const mapDispatchToProps = function(dispatch) {
   return {
-    fetchData: url => dispatch(eventsFetchData(url)),
+    fetchData: (url, params) => dispatch(eventsFetchData(url, params)),
     setLocation: location => dispatch(eventsLocation(location))
   };
 };

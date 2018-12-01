@@ -10,4 +10,6 @@ export const hasMoreItems = state => state.events.hasMoreItems;
 
 export const getEventsUrl = state => state.events.url;
 
+export const getEventParams = state => state.events.params;
+
 export const getEventsLocation = state => state.events.location;

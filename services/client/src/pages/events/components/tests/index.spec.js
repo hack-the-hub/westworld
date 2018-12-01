@@ -21,8 +21,13 @@ describe("Events", () => {
     testContext = {};
     testContext.defaultProps = {
       fetchData: () => jest.fn(),
+      setLocation: () => jest.fn(),
+      location: "belfast",
+      url: "http://localhost/",
+      params: { page: 1, location: "belfast"},
       isLoading: false,
       hasErrors: false,
+      hasMoreItems: true,
       upcomingEvents: [{ id: "1" }, { id: "2" }],
       recentEvents: [{ id: "1" }, { id: "2" }]
     };
