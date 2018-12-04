@@ -14,14 +14,23 @@ class Events extends Component {
   state = {};
 
   componentDidMount() {
+    this.setLocationFromSubdomain();
+  }
+
+  setLocationFromSubdomain = () => {
     const { setLocation } = this.props;
 
     if (parsedDomain) {
-      if (parsedDomain.subdomain) {
-        setLocation(parsedDomain.subdomain);
+      const { subdomain } = parsedDomain;
+      if (subdomain) {
+        if (
+          _.includes(["belfast", "glasgow", "edinburgh", "dublin"], subdomain)
+        ) {
+          setLocation(subdomain);
+        }
       }
     }
-  }
+  };
 
   fetch = () => {
     const { fetchData, url, params, location } = this.props;
