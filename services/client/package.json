@@ -19,7 +19,7 @@
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "parse-domain": "^2.1.6",
+    "parse-domain": "^2.1.7",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
