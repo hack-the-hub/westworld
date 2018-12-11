@@ -30,27 +30,29 @@ $ npm install
 $ cd services/client
 $ npm install
 $ cd ../../
-$ make start
+$ docker-compose -f docker-compose-dev.yml up -d
 ```
-
-Alternatively, if `make` is unavailable on your operating system you can run docker-compose directly following this [README](docs/docker-readme.md)
 
 Once the service is up and running, you will need to manually create the required tables in the database and install the optional seed data to complete the local Postgres setup.
 
 ```bash
-$ make seed
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py recreate_db
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py seed_db
+$ docker-compose -f docker-compose-dev.yml run events-service python manage.py recreate_db
 ```
 
 On subsequent runs (when the above steps have been completed), you can apply new database migrations to your local service by running:
 
 ```bash
-$ make upgrade
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db upgrade
+$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db upgrade
 ```
 
 Alternatively, if you make a change to a model during development, you will need to create and commit a migration file for that service. As a best practice, migration files should be committed independently to code:
 
 ```bash
-$ make migrate
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db migrate
+$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db migrate
 ```
 
 To load data into the service for development, the recommended solution is to use the load script within the `scripts` folder to populate the local database. Details on how to configure the script can be found in [`scripts/README.md`](scripts/README.md)\.
@@ -62,47 +64,58 @@ To load data into the service for development, the recommended solution is to us
 And to tear down the local development stack, simply run:
 
 ```bash
-$ make stop
+$ docker-compose -f docker-compose-dev.yml down
 ```
 
 If you wish to populate your local database with events from external services, you can use the steps outlined in the scripts [README](scripts/README.md).
 
-### Running the tests
+Running the tests
+-----------------
 
-To run the entire application test suite, you can run:
+The following will run the unit tests for each respective service:
+
+###### `client`
 
 ```bash
-$ make test
+$ docker-compose -f docker-compose-dev.yml run client-test npm test
 ```
 
-Alternatively, you can run tests for each respective service with:
+###### `users-service`
 
 ```bash
-$ make test-client
-$ make test-users
-$ make test-events
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py test
 ```
 
-### Run linting
-
-To lint the entire project, you can execute:
+###### `events-service`
 
 ```bash
-$ make lint
+$ docker-compose -f docker-compose-dev.yml run events-service python manage.py test
 ```
 
-Alternatively, you can run linting for each respective service with:
+### Running linting
+
+###### `client`
 
 ```bash
-$ make lint-client
-$ make lint-users
-$ make lint-events
+$ docker-compose -f docker-compose-dev.yml run client npm run lint
+```
+
+###### `users-service`
+
+```bash
+$ docker-compose -f docker-compose-dev.yml run user-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
+```
+
+###### `events-service`
+
+```bash
+$ docker-compose -f docker-compose-dev.yml run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 ```
 
 ### Running code coverage
 
 ```bash
-$ make coverage
+$ docker-compose -f docker-compose-dev.yml run users-service python manage.py cov
 ```
 
 ### Local Postgres Connections
@@ -165,3 +178,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ### Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
