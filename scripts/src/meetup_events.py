@@ -10,6 +10,7 @@ import meetup.api
 
 
 MEETUP_API_TOKEN = os.getenv("MEETUP_API_TOKEN")
+MEETUP_MEMBER_ID = os.getenv("MEETUP_MEMBER_ID")
 EVENTS_ENDPOINT = os.getenv("EVENTS_ENDPOINT")
 LOCATION = os.getenv("LOCATION")
 
@@ -23,6 +24,8 @@ def init():
         raise Exception("EVENTS_ENDPOINT is not defined")
     if not LOCATION:
         raise Exception("LOCATION is not defined")
+    if not MEETUP_MEMBER_ID:
+        raise Exception("MEETUP_MEMBER_ID is not defined")
 
     print(f"Loading events for {LOCATION}")
     print(f"Configured Meetup Events to POST to {EVENTS_ENDPOINT}")
@@ -32,6 +35,7 @@ def get_events_by_member(member_id):
     """ Gets events for a specific member using a given members id.
     """
     response = client.GetEvents({"member_id": member_id})
+
     return [event for event in response.results]
 
 
@@ -83,9 +87,8 @@ def _post_payloads(payloads):
 
 if __name__ == "__main__":
     init()
-    member_id = "220609283"
 
-    events = get_events_by_member(member_id)
+    events = get_events_by_member(MEETUP_MEMBER_ID)
     transformed_events = [_transform_event(e) for e in events]
 
     _post_payloads(transformed_events)

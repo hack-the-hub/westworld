@@ -24,7 +24,10 @@ class Events extends Component {
       const { subdomain } = parsedDomain;
       if (subdomain) {
         if (
-          _.includes(["belfast", "glasgow", "edinburgh", "dublin"], subdomain)
+          _.includes(
+            ["belfast", "glasgow", "edinburgh", "dublin", "nyc"],
+            subdomain
+          )
         ) {
           setLocation(subdomain);
         }
