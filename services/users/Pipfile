@@ -12,7 +12,7 @@ gunicorn = "==19.9.0"
 flask-cors = "==3.0.7"
 flask-migrate = "==2.3.1"
 flask-bcrypt = "==0.7.1"
-pyjwt = "==1.7.0"
+pyjwt = "==1.7.1"
 newrelic = "==4.8.0.110"
 itsdangerous = "*"
 
