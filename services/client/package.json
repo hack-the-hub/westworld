@@ -21,7 +21,7 @@
     "moment": "^2.23.0",
     "parse-domain": "^2.1.7",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
+    "react": "^16.7.0",
     "react-dom": "^16.6.3",
     "react-big-calendar": "^0.20.1",
     "react-fontawesome": "^1.6.1",
