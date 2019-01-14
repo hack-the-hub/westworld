@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a74dd953483c7524c30ce359d8a03bc197271aeac3093369d84960c6c26c7e9e"
+            "sha256": "512a9ee2427f289609f2755331d23d53537d2686ffab0af58ff5eee1e2ed838a"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -16,9 +16,9 @@
     "default": {
         "alembic": {
             "hashes": [
-                "sha256:e9ffdece0eece55f4108b14b6b0f29ffc730d58e28446a434fe41a1cc5c5f266"
+                "sha256:35660f7e6159288e2be111126be148ef04cbf7306da73c8b8bd4400837bb08e3"
             ],
-            "version": "==1.0.5"
+            "version": "==1.0.6"
         },
         "bcrypt": {
             "hashes": [
@@ -577,11 +577,11 @@
         },
         "pytest": {
             "hashes": [
-                "sha256:3e65a22eb0d4f1bdbc1eacccf4a3198bf8d4049dea5112d70a0c61b00e748d02",
-                "sha256:5924060b374f62608a078494b909d341720a050b5224ff87e17e12377486a71d"
+                "sha256:41568ea7ecb4a68d7f63837cf65b92ce8d0105e43196ff2b26622995bb3dc4b2",
+                "sha256:c3c573a29d7c9547fb90217ece8a8843aa0c1328a797e200290dc3d0b4b823be"
             ],
             "index": "pypi",
-            "version": "==4.1.0"
+            "version": "==4.1.1"
         },
         "pytest-black": {
             "hashes": [
