@@ -12,60 +12,60 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the software (latest versions) and how to install them
 
 -	[Docker](https://docs.docker.com/install/) - Used to build, ship, and run all services
--	[Python](https://maven.apache.org/) - Dependency Management
--	[Node](https://rometools.github.io/rome/) - Used to generate RSS Feeds
--	[Make](https://en.wikipedia.org/wiki/Make_(software)) - Used to shorten common docker-compose commands
+-	[Python](https://www.python.org/) - Dependency Management for backend services & scripts
+- [Pipenv](https://pipenv.readthedocs.io/en/latest/) - A tool that aims to bring the best of all packaging worlds
+-	[Node](https://nodejs.org/en/) - Used to create a UI via React, manage frontend dependencies
 
 ### Setting up a local development environment
 
 The following steps are required for first time setup. These steps will check out the repository, install the project dependencies, and the client dependencies needed for the React frontend and run the service on `http://localhost`. *Note* `http://localhost` will show a gateway error until the client has completed building (typically 1 minute for first time setup).
 
 ```bash
-$ git clone https://github.com/apoclyps/my-dev-space
-$ cd my-dev-space
-$ npm install
-$ cd services/client
-$ npm install
-$ cd ../../
-$ docker-compose -f docker-compose-dev.yml up -d
+git clone https://github.com/apoclyps/my-dev-space
+cd my-dev-space
+npm install
+cd services/client
+npm install
+cd ../../
+docker-compose -f docker-compose-dev.yml up -d
 ```
 
 Once the service is up and running, you will need to manually create the required tables in the database and install the optional seed data to complete the local Postgres setup.
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py recreate_db
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py seed_db
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py recreate_db
+docker-compose -f docker-compose-dev.yml run users-service python manage.py recreate_db
+docker-compose -f docker-compose-dev.yml run users-service python manage.py seed_db
+docker-compose -f docker-compose-dev.yml run events-service python manage.py recreate_db
 ```
 
 On subsequent runs (when the above steps have been completed), you can apply new database migrations to your local service by running:
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db upgrade
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db upgrade
+docker-compose -f docker-compose-dev.yml run users-service python manage.py db upgrade
+docker-compose -f docker-compose-dev.yml run events-service python manage.py db upgrade
 ```
 
 Alternatively, if you make a change to a model during development, you will need to create and commit a migration file for that service. As a best practice, migration files should be committed independently to code:
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py db migrate
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py db migrate
+docker-compose -f docker-compose-dev.yml run users-service python manage.py db migrate
+docker-compose -f docker-compose-dev.yml run events-service python manage.py db migrate
 ```
 
 To load data into the service for development, the recommended solution is to use the load script within the `scripts` folder to populate the local database. Details on how to configure the script can be found in [`scripts/README.md`](scripts/README.md)\.
 
 ```sh
-$ cd scripts/
-$ ./load_data.sh dev
+cd scripts/
+./load_data.sh dev
 ```
 
 And to tear down the local development stack, simply run:
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml down
+docker-compose -f docker-compose-dev.yml down
 ```
 
 If you wish to populate your local database with events from external services, you can use the steps outlined in the scripts [README](scripts/README.md).
@@ -78,19 +78,19 @@ The following will run the unit tests for each respective service:
 ###### `client`
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run client-test npm test
+docker-compose -f docker-compose-dev.yml run client-test npm test
 ```
 
 ###### `users-service`
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py test
+docker-compose -f docker-compose-dev.yml run users-service python manage.py test
 ```
 
 ###### `events-service`
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run events-service python manage.py test
+docker-compose -f docker-compose-dev.yml run events-service python manage.py test
 ```
 
 ### Running linting
@@ -98,25 +98,25 @@ $ docker-compose -f docker-compose-dev.yml run events-service python manage.py t
 ###### `client`
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run client npm run lint
+docker-compose -f docker-compose-dev.yml run client npm run lint
 ```
 
 ###### `users-service`
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run user-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
+docker-compose -f docker-compose-dev.yml run user-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 ```
 
 ###### `events-service`
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
+docker-compose -f docker-compose-dev.yml run events-service py.test --black --pep8 --flakes -vv --mccabe --cov=project --cov-report=term-missing --junitxml=test-results/results.xml
 ```
 
 ### Running code coverage
 
 ```bash
-$ docker-compose -f docker-compose-dev.yml run users-service python manage.py cov
+docker-compose -f docker-compose-dev.yml run users-service python manage.py cov
 ```
 
 ### Local Postgres Connections
@@ -143,9 +143,9 @@ docker-compose -f docker-compose-dev.yml run events-task python scripts/test.py
 Integration tests used to evaluate all services behave correctly
 
 ```bash
-$ npm install testcafe -g
-$ export TEST_URL='http://localhost'
-$ testcafe chrome e2e
+npm install testcafe -g
+export TEST_URL='http://localhost'
+testcafe chrome e2e
 ```
 
 ### Deployment
