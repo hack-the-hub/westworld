@@ -107,10 +107,10 @@
         },
         "packaging": {
             "hashes": [
-                "sha256:0886227f54515e592aaa2e5a553332c73962917f2831f1b0f9b9f4380a4b9807",
-                "sha256:f95a1e147590f204328170981833854229bb2912ac3d5f89e2a8ccd2834800c9"
+                "sha256:0c98a5d0be38ed775798ece1b9727178c4469d9c3b4ada66e8e6b7849f8732af",
+                "sha256:9e1cbf8c12b1f1ce0bb5344b8d7ecf66a6f8a6e91bcb0c84593ed6d3ab5c4ab3"
             ],
-            "version": "==18.0"
+            "version": "==19.0"
         },
         "pygithub": {
             "hashes": [
@@ -174,10 +174,10 @@
         },
         "soupsieve": {
             "hashes": [
-                "sha256:009d8865916766f7f452880d08ff94ed4c5445011a3deaac67543b82bdb0b9ee",
-                "sha256:97599c45a1ddfe9ab0a0cba889b7f214b3e310b703f176a0610c0b54e207cc04"
+                "sha256:466910df7561796a60748826781ebe9a888f7a1668a636ae86783f44d10aae73",
+                "sha256:87db12ae79194f0ff9808d2b1641c4f031ae39ffa3cab6b907ea7c1e5e5ed445"
             ],
-            "version": "==1.7.1"
+            "version": "==1.7.3"
         },
         "toml": {
             "hashes": [
@@ -195,9 +195,9 @@
         },
         "wrapt": {
             "hashes": [
-                "sha256:e03f19f64d81d0a3099518ca26b04550026f131eced2e76ced7b85c6b8d32128"
+                "sha256:4aea003270831cceb8a90ff27c4031da6ead7ec1886023b80ce0dfe0adf61533"
             ],
-            "version": "==1.11.0"
+            "version": "==1.11.1"
         }
     },
     "develop": {}
