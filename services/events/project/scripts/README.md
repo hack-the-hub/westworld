@@ -13,9 +13,9 @@ from project.scripts import meetup_tool as tool
 tool.create_meetups()
 ```
 
-### Running a one off tasks
+### Running one off tasks
 
-Allows arbitary python to be run against the app instance
+Allows arbitrary python to be run against the app instance
 
 ```bash
 docker-compose -f docker-compose-dev.yml build events-task
