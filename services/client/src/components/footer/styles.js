@@ -11,6 +11,7 @@ export default css`
     margin-bottom: 0;
     position: sticky;
     bottom: 0;
+    z-index: 4;
   }
 
   @media (min-width: 992px) {
