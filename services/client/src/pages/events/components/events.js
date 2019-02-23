@@ -25,7 +25,15 @@ class Events extends Component {
       if (subdomain) {
         if (
           _.includes(
-            ["belfast", "glasgow", "edinburgh", "dublin", "nyc"],
+            [
+              "belfast",
+              "glasgow",
+              "edinburgh",
+              "dublin",
+              "nyc",
+              "venezuela",
+              "brighton"
+            ],
             subdomain
           )
         ) {
