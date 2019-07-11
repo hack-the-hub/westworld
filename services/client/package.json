@@ -17,7 +17,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "font-awesome": "^4.7.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "parse-domain": "^2.1.7",
     "prop-types": "^15.6.2",
